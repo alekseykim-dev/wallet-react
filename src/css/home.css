@@ -57,7 +57,7 @@
     color: #E3C08D;
 }
 
-.homepage .top_restaurant_frame {
+.homepage .top_shop_frame {
     width: 100%;
     height: 605px;
     display: flex;
@@ -76,7 +76,7 @@
     color: #E3C08D;
 }
 
-.homepage .best_restaurant_frame {
+.homepage .best_shop_frame {
     width: 100%;
     height: 775px;
     display: flex;
@@ -186,7 +186,7 @@
 }
 
 
-.homepage .ads_restaurant_frame {
+.homepage .ads_shop_frame {
     width: 100%;
     height: 693px;
     display: flex;

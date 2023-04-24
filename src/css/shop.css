@@ -1,4 +1,4 @@
-.restaurant_page {
+.shop_page {
     position: relative;
     width: 100%;
     height: auto;
@@ -6,10 +6,10 @@
 }
 
 
-/** ALL RESTAURANT*/
+/** ALL SHOPS*/
 
 
-.restaurant_page .all_restaurant .fill_search_box {
+.shop_page .all_shops .fill_search_box {
     position: relative;
     width: 100%;
     height: 33px;
@@ -21,7 +21,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .all_restaurant .fill_box {
+.shop_page .all_shops .fill_box {
     position: relative;
     width: 420px;
     height: 45px;
@@ -31,7 +31,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .all_restaurant .fill_box a {
+.shop_page .all_shops .fill_box a {
     position: relative;
 
     display: flex;
@@ -43,13 +43,13 @@
     color: #ffffff;
 }
 
-.restaurant_page .all_restaurant .fill_box a {
+.shop_page .all_shops .fill_box a {
     overflow: hidden;
     position: relative;
     display: inline-block;
 }
 
-.restaurant_page .all_restaurant .fill_box a::before,
+.shop_page .all_shops .fill_box a::before,
 .fill_box a::after {
     content: "";
     position: absolute;
@@ -57,7 +57,7 @@
     left: 0;
 }
 
-.restaurant_page .all_restaurant .fill_box a::before {
+.shop_page .all_shops .fill_box a::before {
     background-color: #d7b686;
     height: 2px;
     bottom: 0;
@@ -66,7 +66,7 @@
     transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.restaurant_page .all_restaurant .fill_box a::after {
+.shop_page .all_shops .fill_box a::after {
     content: attr(data-replace);
     height: 100%;
     top: 0;
@@ -76,32 +76,32 @@
     color: #d7b686;
 }
 
-.restaurant_page .all_restaurant .fill_box a:hover::before {
+.shop_page .all_shops .fill_box a:hover::before {
     transform-origin: 0% 50%;
     transform: scaleX(1);
 }
 
-.restaurant_page .all_restaurant .fill_box a:hover::after {
+.shop_page .all_shops .fill_box a:hover::after {
     transform: translate3d(0, 0, 0);
 }
 
-.restaurant_page .all_restaurant .fill_box a span {
+.shop_page .all_shops .fill_box a span {
     display: inline-block;
     transition: transform 0.3s cubic-bezier(0.76, 0, 0.24, 1);
 }
 
-.restaurant_page .all_restaurant .fill_box a:hover span {
+.shop_page .all_shops .fill_box a:hover span {
     transform: translate3d(-200%, 0, 0);
 }
 
-.restaurant_page .all_restaurant .fill_box a {
+.shop_page .all_shops .fill_box a {
     text-decoration: none;
     color: #ffffff;
     font-weight: 700;
     vertical-align: top;
 }
 
-.restaurant_page .all_restaurant .search_big_box {
+.shop_page .all_shops .search_big_box {
     position: relative;
     width: 360px;
     height: 33px;
@@ -115,7 +115,7 @@
     box-sizing: border-box;
 }
 
-.restaurant_page .all_restaurant .search_form {
+.shop_page .all_shops .search_form {
     position: relative;
     width: 100%;
     display: flex;
@@ -124,7 +124,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .all_restaurant .searchInput {
+.shop_page .all_shops .searchInput {
     position: relative;
     width: 245px;
     height: 29px;
@@ -141,7 +141,7 @@
     color: #4f547b;
 }
 
-.restaurant_page .all_restaurant .button_search {
+.shop_page .all_shops .button_search {
     position: relative;
     width: 100px;
     height: 33px;
@@ -151,7 +151,7 @@
     background: #f8be69;
 }
 
-.restaurant_page .all_restaurant .all_res_box {
+.shop_page .all_shops .all_res_box {
     position: relative;
     width: 1305px;
     height: auto;
@@ -162,7 +162,7 @@
     flex-wrap: wrap;
 }
 
-.restaurant_page .all_restaurant .restaurant_box {
+.shop_page .all_shops .shop_box {
     margin: 13px;
     padding: 5px;
     width: 300px;
@@ -177,7 +177,7 @@
     border-radius: 8px;
 }
 
-.restaurant_page .all_restaurant .restaurant_img {
+.shop_page .all_shops .shop_img {
     width: 280px;
     height: 330px;
 
@@ -185,14 +185,14 @@
     background-size: cover;
 }
 
-.restaurant_page .all_restaurant .restaurant_desc {
+.shop_page .all_shops .shop_desc {
     width: 280px;
     margin-top: 10px;
     display: flex;
     flex-direction: column;
 }
 
-.restaurant_page .all_restaurant .restaurant_title_text {
+.shop_page .all_shops .shop_title_text {
     font-family: "GT Walsheim Pro", sans-serif;
     font-style: normal;
     font-weight: 400;
@@ -202,7 +202,7 @@
     color: #140342;
 }
 
-.restaurant_page .all_restaurant .restaurant_desc_text {
+.shop_page .all_shops .shop_desc_text {
     margin-top: 6px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -211,7 +211,7 @@
     color: #4f547b;
 }
 
-.restaurant_page .all_restaurant .bottom_box {
+.shop_page .all_shops .bottom_box {
     position: relative;
     width: 100%;
     height: 168px;
@@ -229,9 +229,9 @@
 }
 
 
-/** SINGLE RESTAURANT*/
+/** SINGLE SHOP*/
 
-.restaurant_page .single_restaurant {
+.shop_page .single_shop {
     width: 100%;
     height: auto;
 
@@ -241,7 +241,7 @@
 
 }
 
-.restaurant_page .single_restaurant .avatar_big_box {
+.shop_page .single_shop .avatar_big_box {
     position: relative;
     width: 100%;
     height: auto;
@@ -252,7 +252,7 @@
 }
 
 
-.restaurant_page .single_restaurant .top_text {
+.shop_page .single_shop .top_text {
     position: relative;
     width: 100%;
     height: 43px;
@@ -264,7 +264,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .single_restaurant .top_text p {
+.shop_page .single_shop .top_text p {
     position: relative;
     margin-left: 380px;
 
@@ -278,7 +278,7 @@
     color: #e3c08d;
 }
 
-.restaurant_page .single_restaurant .Single_search_big_box {
+.shop_page .single_shop .Single_search_big_box {
     position: relative;
     width: 360px;
     height: 33px;
@@ -292,7 +292,7 @@
     box-sizing: border-box;
 }
 
-.restaurant_page .single_restaurant .Single_search_form {
+.shop_page .single_shop .Single_search_form {
     position: relative;
     width: 100%;
     display: flex;
@@ -301,7 +301,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .single_restaurant .Single_searchInput {
+.shop_page .single_shop .Single_searchInput {
     position: relative;
     width: 245px;
     height: 29px;
@@ -319,7 +319,7 @@
     color: #4f547b;
 }
 
-.restaurant_page .single_restaurant .Single_button_search {
+.shop_page .single_shop .Single_button_search {
     position: relative;
     width: 100px;
     height: 33px;
@@ -329,8 +329,8 @@
     background: #f8be69;
 }
 
-.restaurant_page .single_restaurant .prev_btn,
-.single_restaurant .next_btn {
+.shop_page .single_shop .prev_btn,
+.single_shop .next_btn {
     width: 10%;
     height: 147px;
 
@@ -339,7 +339,7 @@
     align-items: center;
 }
 
-.restaurant_page .single_restaurant .restaurant_avatars_wrapper {
+.shop_page .single_shop .shop_avatars_wrapper {
     width: 90%;
     height: 147px;
 
@@ -351,7 +351,7 @@
     cursor: pointer;
 }
 
-.restaurant_page .single_restaurant .restaurant_avatars_wrapper .restaurant_avatars {
+.shop_page .single_shop .shop_avatars_wrapper .shop_avatars {
     width: 108px;
     height: 100%;
 
@@ -361,14 +361,14 @@
     justify-content: center;
 }
 
-.restaurant_page .single_restaurant .restaurant_avatars img {
+.shop_page .single_shop .shop_avatars img {
     width: 108px;
     height: 108px;
 
     border-radius: 50%;
 }
 
-.restaurant_page .single_restaurant .restaurant_avatars span {
+.shop_page .single_shop .shop_avatars span {
     margin-top: 14px;
     font-family: "Solway",
         sans-serif;
@@ -379,7 +379,7 @@
     color: #fffcfc;
 }
 
-.restaurant_page .single_restaurant .dish_wrapper {
+.shop_page .single_shop .dish_wrapper {
     margin-left: 20px;
     width: 100%;
     height: auto;
@@ -389,7 +389,7 @@
     flex-wrap: wrap;
 }
 
-.restaurant_page .single_restaurant .dish_box {
+.shop_page .single_shop .dish_box {
     margin-top: 60px;
     margin-right: 26px;
     width: 273px;
@@ -399,7 +399,7 @@
     align-items: center;
 }
 
-.restaurant_page .single_restaurant .dish_box .dish_img {
+.shop_page .single_shop .dish_box .dish_img {
     position: relative;
     width: 273px;
     height: 275px;
@@ -407,7 +407,7 @@
     border-radius: 0px 50px 0px 0px;
 }
 
-.restaurant_page .single_restaurant .dish_img .dish_sale {
+.shop_page .single_shop .dish_img .dish_sale {
     margin-top: 43px;
     width: 84px;
     height: 39px;
@@ -426,7 +426,7 @@
     color: #c50a09;
 }
 
-.restaurant_page .single_restaurant .dish_box .dish_desc {
+.shop_page .single_shop .dish_box .dish_desc {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -434,7 +434,7 @@
     cursor: pointer;
 }
 
-.restaurant_page .single_restaurant .dish_desc .dish_title_text {
+.shop_page .single_shop .dish_desc .dish_title_text {
     margin-top: 18px;
     font-family: "Poppins",
         sans-serif;
@@ -446,7 +446,7 @@
     color: #d1d1d1;
 }
 
-.restaurant_page .single_restaurant .dish_desc .dish_desc_text {
+.shop_page .single_shop .dish_desc .dish_desc_text {
     margin-top: 15px;
     font-family: "Poppins",
         sans-serif;
@@ -461,7 +461,7 @@
     align-items: center;
 }
 
-.restaurant_page .single_restaurant .dish_img:before {
+.shop_page .single_shop .dish_img:before {
     border-radius: 0px 50px 0px 0px;
     content: "";
     opacity: 0;
@@ -475,12 +475,12 @@
     z-index: 2;
 }
 
-.restaurant_page .single_restaurant .dish_img:hover:before {
+.shop_page .single_shop .dish_img:hover:before {
     border-radius: 0px 50px 0px 0px;
     opacity: 1;
 }
 
-.restaurant_page .single_restaurant .dish_img img {
+.shop_page .single_shop .dish_img img {
     position: absolute;
     display: block;
     max-width: 100%;
@@ -488,7 +488,7 @@
     z-index: 1;
 }
 
-.restaurant_page .single_restaurant .view_btn {
+.shop_page .single_shop .view_btn {
     position: absolute;
     padding: 20px;
 
@@ -518,11 +518,11 @@
     color: #ffffff;
 }
 
-.restaurant_page .single_restaurant .dish_img:hover .view_btn {
+.shop_page .single_shop .dish_img:hover .view_btn {
     opacity: 1;
 }
 
-.restaurant_page .single_restaurant .like_view_btn {
+.shop_page .single_shop .like_view_btn {
     position: absolute;
     top: 223px;
     padding: 5px;
@@ -541,11 +541,11 @@
     border-radius: 50%;
 }
 
-.restaurant_page .single_restaurant .dish_img:hover .like_view_btn {
+.shop_page .single_shop .dish_img:hover .like_view_btn {
     opacity: 1;
 }
 
-.restaurant_page .single_restaurant .member_reviews {
+.shop_page .single_shop .member_reviews {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -553,7 +553,7 @@
     margin-bottom: 60px;
 }
 
-.restaurant_page .single_restaurant .review_for_restaurant {
+.shop_page .single_shop .review_for_shop {
     margin-top: 60px;
     width: 100%;
     height: 630px;
@@ -562,7 +562,7 @@
     background-color: #0d1518;
 }
 
-.restaurant_page .single_restaurant .category_title {
+.shop_page .single_shop .category_title {
     font-family: "Dancing Script",
         sans-serif;
     font-style: normal;
@@ -572,7 +572,7 @@
     color: #e3c08d;
 }
 
-.restaurant_page .single_restaurant .review_box {
+.shop_page .single_shop .review_box {
     margin-top: 40px;
     padding: 20px;
     width: 249px;
@@ -588,7 +588,7 @@
     border-radius: 16px;
 }
 
-.restaurant_page .single_restaurant .review_img {
+.shop_page .single_shop .review_img {
     width: 110px;
     height: 110px;
 
@@ -596,7 +596,7 @@
     border-radius: 37px;
 }
 
-.restaurant_page .single_restaurant .review_name {
+.shop_page .single_shop .review_name {
     margin-top: 10px;
     font-family: "Commissioner",
         sans-serif;
@@ -607,7 +607,7 @@
     color: #08090d;
 }
 
-.restaurant_page .single_restaurant .review_stars {
+.shop_page .single_shop .review_stars {
     margin-top: 10px;
     width: 149px;
     height: 24px;
@@ -618,7 +618,7 @@
     align-items: center;
 }
 
-.restaurant_page .single_restaurant .review_prof {
+.shop_page .single_shop .review_prof {
     font-family: "Commissioner",
         sans-serif;
     font-style: normal;
@@ -628,7 +628,7 @@
     color: #a1a1a1;
 }
 
-.restaurant_page .single_restaurant .review_desc {
+.shop_page .single_shop .review_desc {
     margin-top: 10px;
     font-family: "DM Sans",
         sans-serif;
@@ -639,7 +639,7 @@
     color: #616164;
 }
 
-.restaurant_page .single_restaurant .about_left {
+.shop_page .single_shop .about_left {
     width: 50%;
     height: auto;
 
@@ -650,7 +650,7 @@
     background-position: center;
 }
 
-.restaurant_page .single_restaurant .about_left .about_left_desc {
+.shop_page .single_shop .about_left .about_left_desc {
     padding: 20px;
     width: 100%;
     height: 329px;
@@ -660,7 +660,7 @@
     background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 90.88%);
 }
 
-.restaurant_page .single_restaurant .about_left_desc span {
+.shop_page .single_shop .about_left_desc span {
     font-family: "Poppins",
         sans-serif;
     font-style: normal;
@@ -670,7 +670,7 @@
     color: #ffffff;
 }
 
-.restaurant_page .single_restaurant .about_right {
+.shop_page .single_shop .about_right {
     margin-left: 20px;
     width: 50%;
     height: 480px;
@@ -680,7 +680,7 @@
     justify-content: space-between;
 }
 
-.restaurant_page .single_restaurant .about_left_desc p {
+.shop_page .single_shop .about_left_desc p {
     margin-top: 10px;
     font-family: "Poppins",
         sans-serif;
@@ -691,7 +691,7 @@
     color: #d4d4d4;
 }
 
-.restaurant_page .single_restaurant .about_right .about_right_img {
+.shop_page .single_shop .about_right .about_right_img {
     width: 160px;
     height: 140px;
     left: 763px;
@@ -704,7 +704,7 @@
     background-position: center;
 }
 
-.restaurant_page .single_restaurant .about_right .about_right_desc {
+.shop_page .single_shop .about_right .about_right_desc {
     padding-bottom: 5px;
     margin-left: 20px;
     display: flex;
@@ -712,7 +712,7 @@
     justify-content: flex-end;
 }
 
-.restaurant_page .single_restaurant .about_right_desc span {
+.shop_page .single_shop .about_right_desc span {
     font-family: "Poppins",
         sans-serif;
     font-style: normal;
@@ -722,7 +722,7 @@
     color: #ffffff;
 }
 
-.restaurant_page .single_restaurant .about_right_desc p {
+.shop_page .single_shop .about_right_desc p {
     margin-top: 10px;
     font-family: "Poppins",
         sans-serif;
@@ -733,13 +733,13 @@
     color: #d4d4d4;
 }
 
-.restaurant_page .single_restaurant .swiper-wrapper {
+.shop_page .single_shop .swiper-wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-.single_restaurant .dishes_filter_box {
+.single_shop .dishes_filter_box {
     width: 35%;
     height: auto;
 
@@ -748,7 +748,7 @@
     justify-content: space-between;
 }
 
-.single_restaurant .dish_category_box {
+.single_shop .dish_category_box {
     margin-top: 60px;
     width: 50px;
     height: auto;
@@ -757,7 +757,7 @@
     flex-direction: column;
 }
 
-.single_restaurant .dish_detail_box {
+.single_shop .dish_detail_box {
     width: 418px;
     height: auto;
 
@@ -769,7 +769,7 @@
     border-radius: 16px;
 }
 
-.single_restaurant .dish_detail_box .modal_dish_info {
+.single_shop .dish_detail_box .modal_dish_info {
     width: 100%;
     height: 112px;
 
@@ -777,14 +777,14 @@
     flex-direction: row;
 }
 
-.single_restaurant .dish_detail_box .modal_dish_info .modal_dish_img {
+.single_shop .dish_detail_box .modal_dish_info .modal_dish_img {
     width: 115px;
 
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 37px;
 }
 
-.single_restaurant .dish_detail_box .modal_dish_info .modal_dish_name {
+.single_shop .dish_detail_box .modal_dish_info .modal_dish_name {
     font-family: "Poppins",
         sans-serif;
     font-style: normal;
@@ -794,7 +794,7 @@
     color: #000000;
 }
 
-.single_restaurant .dish_detail_box .modal_dish_info .modal_dish_price {
+.single_shop .dish_detail_box .modal_dish_info .modal_dish_price {
     margin-top: 10px;
     font-family: "Poppins",
         sans-serif;
@@ -805,7 +805,7 @@
     color: #ae0000;
 }
 
-.single_restaurant .dish_detail_box .modal_dish_desc {
+.single_shop .dish_detail_box .modal_dish_desc {
     margin-top: 20px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -815,14 +815,14 @@
     color: #000000;
 }
 
-.single_restaurant .dish_detail_box .dish_create_dt {
+.single_shop .dish_detail_box .dish_create_dt {
     font-style: normal;
     font-weight: 600;
     font-size: 15px;
     color: #000000;
 }
 
-.single_restaurant .dish_detail_box .to_basket_box {
+.single_shop .dish_detail_box .to_basket_box {
     margin-top: 10px;
     width: 100%;
     height: 64px;
@@ -832,11 +832,11 @@
     border-top: 1px solid rgba(0, 0, 0, 0.5);
 }
 
-.single_restaurant .dish_detail_box .to_basket_box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+.single_shop .dish_detail_box .to_basket_box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
     padding: 6.5px 14px;
 }
 
-.single_restaurant .dish_category_box .dish_category_main {
+.single_shop .dish_category_box .dish_category_main {
     display: flex;
     flex-direction: row;
     justify-content: flex-end;
@@ -847,12 +847,12 @@
     -webkit-transform: rotate(-90deg);
 }
 
-.single_restaurant .dish_category_box .dish_category_main button {
+.single_shop .dish_category_box .dish_category_main button {
     min-width: auto;
     margin-right: 10px;
 }
 
-.single_restaurant .css-1p7b7rs-MuiBadge-badge {
+.single_shop .css-1p7b7rs-MuiBadge-badge {
     position: absolute;
     top: 26%;
     right: 15%;
@@ -862,7 +862,7 @@
 
 /** CHOSEN DISH PAGE*/
 
-.restaurant_page .chosen_dish_page {
+.shop_page .chosen_dish_page {
     position: relative;
     width: 100%;
     height: auto;

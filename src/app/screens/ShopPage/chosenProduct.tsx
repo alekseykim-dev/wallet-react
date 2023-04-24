@@ -19,16 +19,16 @@ import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import {
   retrieveChosenProduct,
-  retrieveChosenRestaurant,
-} from "../../screens/RestaurantPage/selector";
+  retrieveChosenShop,
+} from "./selector";
 import { Dispatch } from "@reduxjs/toolkit";
 import {
   setChosenProduct,
-  setChosenRestaurant,
-} from "../../screens/RestaurantPage/slice";
-import { Restaurant } from "../../../types/user";
+  setChosenShop,
+} from "./slice";
+import { Shop } from "../../../types/user";
 import ProductApiService from "../../apiServices/productApiService";
-import RestaurantApiService from "../../apiServices/restaurantApiService";
+import ShopApiService from "../../apiServices/shopApiService";
 import { serverApi } from "../../../lib/config";
 import assert from "assert";
 import { Definer } from "../../../lib/Definer";
@@ -42,8 +42,8 @@ import { verifiedMemberData } from "../../apiServices/verify";
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
   setChosenProduct: (data: Product) => dispatch(setChosenProduct(data)),  // 1st useDispatch. 2nd slice.ts payload 'data'
-  setChosenRestaurant: (data: Restaurant) =>
-    dispatch(setChosenRestaurant(data)),
+  setChosenShop: (data: Shop) =>
+    dispatch(setChosenShop(data)),
 });
 /* REDUX SELECTOR */
 const chosenProductRetriever = createSelector(
@@ -52,37 +52,37 @@ const chosenProductRetriever = createSelector(
     chosenProduct,
   })
 );
-const chosenRestaurantRetriever = createSelector(
-  retrieveChosenRestaurant,
-  (chosenRestaurant) => ({
-    chosenRestaurant,
+const chosenShopRetriever = createSelector(
+  retrieveChosenShop,
+  (chosenShop) => ({
+    chosenShop: chosenShop,
   })
 );
 
 export function ChosenDish(props: any) {
   /** INITIALIZATIONS */
   let { dish_id } = useParams<{ dish_id: string }>();
-  const { setChosenProduct, setChosenRestaurant } = actionDispatch(
+  const { setChosenProduct, setChosenShop: setChosenShop } = actionDispatch(
     useDispatch() // needs to update the state after user interaction
   ); // useState ids functional component. useDispatch is a global component for store from redux. // reducer takes initial state and action.
   const { chosenProduct } = useSelector(chosenProductRetriever);
-  const { chosenRestaurant } = useSelector(chosenRestaurantRetriever);
+  const { chosenShop: chosenShop } = useSelector(chosenShopRetriever);
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
   // Date force re-rendering of the state and updates the app
 
-  // dishRelatedProcess updates the chosenProduct and chosenRestaurant in the Redux store
+  // dishRelatedProcess updates the chosenProduct and chosenShop in the Redux store
   const dishRelatedProcess = async () => {
     try {
       const productService = new ProductApiService();
       const product: Product = await productService.getChosenDish(dish_id);
       setChosenProduct(product);
 
-      const restaurantService = new RestaurantApiService();
-      const restaurant: Restaurant =
-        await restaurantService.getChosenRestaurant(product.restaurant_mb_id);
-      setChosenRestaurant(restaurant);
+      const shopService = new ShopApiService();
+      const shop: Shop =
+        await shopService.getChosenShop(product.shop_mb_id);
+      setChosenShop(shop);
     } catch (err) {
       console.log(`dishRelatedProcess, ERROR:`, err);
     }
@@ -187,7 +187,7 @@ export function ChosenDish(props: any) {
         <Stack className="chosen_dish_info_container">
           <Box className="chosen_dish_info_box">
             <strong className="dish_txt">{chosenProduct?.product_name}</strong>
-            <span className="resto_name">{chosenRestaurant?.mb_nick}</span>
+            <span className="resto_name">{chosenShop?.mb_nick}</span>
             <Box className="rating_box">
               <Rating
                 name="half-rating"

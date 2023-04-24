@@ -15,7 +15,7 @@ export function Statistics() {
           <div className="character_img left"></div>
           <Stack className="static_box">
             <Box className="static_num">12</Box>
-            <Box className="static_text">Restaurants</Box>
+            <Box className="static_text">Stores</Box>
           </Stack>
           <Marginer direction="vertical" height="64" width="2" bg="#E3C08D" />
           <Stack className="static_box">

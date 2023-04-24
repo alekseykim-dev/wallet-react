@@ -14,8 +14,8 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 // REDUX
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveTopRestaurants } from "../../screens/HomePage/selector";
-import { Restaurant } from "../../../types/user";
+import { retrieveTopShops } from "./selector";
+import { Shop } from "../../../types/user";
 import { serverApi } from "../../../lib/config";
 import { auth_err1, sweetErrorHandling, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
 import assert from "assert";
@@ -29,28 +29,28 @@ import { verifiedMemberData } from "../../apiServices/verify";
 
 /** REDUX SELECTOR */
 
-const topRestaurantRetriever = createSelector(
+const topShopRetriever = createSelector(
   // will recompute the output if the input has changed
-  retrieveTopRestaurants, // improves the performance since re-renders less
-  (topRestaurants) => ({
-    topRestaurants,
+  retrieveTopShops, // improves the performance since re-renders less
+  (topShops) => ({
+    topShops: topShops,
   })
 );
 
-export function TopRestaurants() {
+export function TopShops() {
 
   /** INITIALIZATIONS */
   const history = useHistory();
-  const { topRestaurants } = useSelector(topRestaurantRetriever);
+  const { topShops: topShops } = useSelector(topShopRetriever);
   // selector : takes data from store
-  console.log("topRestaurants:::", topRestaurants);
+  console.log("topShops:::", topShops);
 
   const refs: any = useRef([]);
 
 
   /** HANDLERS */
-    const chosenRestaurantHandler = (id: string) => {
-    history.push(`/restaurant/${id}`);
+    const chosenShopHandler = (id: string) => {
+    history.push(`/shop/${id}`);
   };
 
   const targetLikeTop = async (e: any, id: string) => {
@@ -79,21 +79,21 @@ export function TopRestaurants() {
     }
   };
   return (
-    <div className="top_restaurant_frame">
+    <div className="top_shop_frame">
       <Container>
         <Stack
           flexDirection={"column"}
           alignItems={"center"}
           sx={{ mt: "45px" }}
         >
-          <Box className="category_title">TOP Restaurants</Box>
+          <Box className="category_title">TOP Shops</Box>
           <Stack sx={{ mt: "43" }} flexDirection={"row"} m={"16px"}>
-            {topRestaurants.map((ele: Restaurant) => {
+            {topShops.map((ele: Shop) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               return (
                 <CssVarsProvider key={ele._id}>
                   <Card
-                    onClick={() => chosenRestaurantHandler(ele._id)}
+                    onClick={() => chosenShopHandler(ele._id)}
                     sx={{
                       minHeight: "430px",
                       minWidth: 325,
@@ -103,7 +103,7 @@ export function TopRestaurants() {
                     }}
                   >
                     <CardCover>
-                      <img src={image_path} loading="lazy" alt="restaurant" />
+                      <img src={image_path} loading="lazy" alt="store" />
                     </CardCover>
                     <CardCover
                       sx={{

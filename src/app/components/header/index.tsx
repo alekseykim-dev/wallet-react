@@ -16,21 +16,6 @@ import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
 
 export function NavbarHome(props: any) {
-  // verifiedMemberData comes from app.tsx useState. memberData
-
-  /** INITIALIZATION */
-  // const [count, setCount] = useState(0)   // array destructuring
-  // const [value, setValue] = useState(true);
-
-  /** HANDLERS */
-  // const countHandler = () => {
-  //   setCount(count + 1)
-  // }
-
-  // useState is used for action and data change through axios by requesting to backend and update.
-  // useEffect(() => {   // Used for calling data from backend
-  //   setCount(count + 1);
-  // }, [value]); // [ optional array of dependencies] [control the useEffect]
   return (
     <div className="format home_navbar">
       <Container>
@@ -40,7 +25,7 @@ export function NavbarHome(props: any) {
           justifyContent={"space-between"}
         >
           <Box>
-            <img src="/icons/Bitsafe.Store.svg" alt="logo" />
+            <img src="/icons/Logo.svg" alt="logo" />
           </Box>
           <Stack
             flexDirection={"row"}
@@ -54,8 +39,8 @@ export function NavbarHome(props: any) {
               </NavLink>
             </Box>
             <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/restaurant" activeClassName="underline">
-                Store
+              <NavLink to="/shop" activeClassName="underline">
+                Shops
               </NavLink>
             </Box>
             {verifiedMemberData ? (
@@ -103,7 +88,7 @@ export function NavbarHome(props: any) {
               <Box>
                 <Button
                   variant="contained"
-                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  style={{ color: "#000", background: "#E3C08D" }}
                   onClick={props.handleSignUpOpen}
                 >
                   Sign up
@@ -115,7 +100,7 @@ export function NavbarHome(props: any) {
               <Box>
                 <Button
                   variant="contained"
-                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  style={{ color: "#000", background: "#E3C08D" }}
                   onClick={props.handleLoginOpen}
                 >
                   Log in
@@ -182,7 +167,9 @@ export function NavbarHome(props: any) {
             <Box>
               <img src="/icons/welcome.svg" alt="welcome" />
             </Box>
-            <Box className="define_restaurant">Own your assets</Box>
+            <Box className="define_shop">
+              The ₿est place to find your next cold wallet
+            </Box>
             <Box className="timeline_service">Worldwide shipping</Box>
           </Stack>
 

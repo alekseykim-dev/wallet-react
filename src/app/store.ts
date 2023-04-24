@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 import HomePageReducer from './screens/HomePage/slice';
 import reduxLogger from "redux-logger"
-import RestaurantPageReducer from "./screens/RestaurantPage/slice";
+import ShopPageReducer from "./screens/ShopPage/slice";
 import OrdersPageReducer from "./screens/OrdersPage/slice";
 import CommunityPageReducer from './screens/CommunityPage/slice';
 import MemberPageReducer from './screens/MemberPage/slice';
@@ -11,7 +11,7 @@ export const store = configureStore({
     getDefaultMiddleware().concat(reduxLogger),
   reducer: {
     homePage: HomePageReducer,
-    restaurantPage: RestaurantPageReducer,  // allocated store for restaurant components
+    shopPage: ShopPageReducer,  // allocated store for shop components
     ordersPage: OrdersPageReducer,
     communityPage: CommunityPageReducer,
     memberPage: MemberPageReducer,  // from slice.ts

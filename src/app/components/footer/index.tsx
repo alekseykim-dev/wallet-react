@@ -49,8 +49,8 @@ export function Footer() {
                 </NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/restaurant">
-                  Restaurants
+                <NavLink to="/shop">
+                  Stores
                 </NavLink>
               </Box>
               <Box className="targets">
@@ -77,14 +77,14 @@ export function Footer() {
               </Stack>
               <Stack className="details" sx={{ mt: "9px" }}>
                 <Box className="detail_first">E.</Box>
-                <Box className="detail_second">Papays@restaurant.com</Box>
+                <Box className="detail_second">Bit.Safe@gmail.com</Box>
               </Stack>
             </Stack>
           </Stack>
           <Box className="liner" sx={{ mt: "86px" }}></Box>
           <Box className="copyrights" sx={{ mt: "15px" }}>
             {" "}
-            Copyrights Papays 2023. All rights reserved
+            Copyrights BitSafe 2023. All rights reserved
           </Box>
         </Stack>
       </Container>

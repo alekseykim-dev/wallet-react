@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Statistics } from "./statistics";
-import { TopRestaurants } from "./topRestaurants";
-import { BestRestaurants } from "./bestRestaurants";
-import { BestDishes } from "./bestDishes";
+import { TopShops } from "./topShops";
+import { BestShops } from "./bestShops";
+import { BestDishes } from "./bestProducts";
 import { Advertisements } from "./advertisements";
 import { Events } from "./events";
 import { Recommendations } from "./recommendations";
@@ -12,24 +12,24 @@ import "../../../css/home.css";
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
 import { createSelector } from "reselect";
-import { setBestRestaurants, setTopRestaurants } from "../../screens/HomePage/slice";
+import { setBestShops, setTopShops } from "../../screens/HomePage/slice";
 import {
-  retrieveBestRestaurants,
-  retrieveTopRestaurants,
+  retrieveBestShops,
+  retrieveTopShops,
 } from "../../screens/HomePage/selector";
-import { Restaurant } from "../../../types/user";
-import RestaurantApiService from "../../apiServices/restaurantApiService";
+import { Shop } from "../../../types/user";
+import ShopApiService from "../../apiServices/shopApiService";
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
   // from reduxToolkit sends actions to redux store
-  setTopRestaurants: (data: Restaurant[]) => dispatch(setTopRestaurants(data)),
-  setBestRestaurants: (data: Restaurant[]) => dispatch(setBestRestaurants(data)),
+  setTopShops: (data: Shop[]) => dispatch(setTopShops(data)),
+  setBestShops: (data: Shop[]) => dispatch(setBestShops(data)),
 });
 
 export function HomePage() {
   /** INITIALIZATION */
-  const { setTopRestaurants, setBestRestaurants } = actionDispatch(
+  const { setTopShops: setTopShops, setBestShops: setBestShops } = actionDispatch(
     useDispatch()
   );
 
@@ -37,18 +37,18 @@ export function HomePage() {
     // must be sync
     // console.log("componentDidMount => Data fetch");   // fetch data form backend
 
-    const restaurantService = new RestaurantApiService();
-    restaurantService
-      .getTopRestaurants()
+    const shopService = new ShopApiService();
+    shopService
+      .getTopShops()
       .then((data) => {
-        setTopRestaurants(data);
+        setTopShops(data);
       })
       .catch((err) => console.log(err));
 
-    restaurantService
-      .getRestaurants({ page: 1, limit: 4, order: "mb_point" })
+    shopService
+      .getShops({ page: 1, limit: 4, order: "mb_point" })
       .then((data) => {
-        setBestRestaurants(data)
+        setBestShops(data)
       })
       .catch((err) => console.log(err));
   }, []);
@@ -62,8 +62,8 @@ export function HomePage() {
   return (
     <div className="homepage">
       <Statistics />
-      <TopRestaurants />
-      <BestRestaurants />
+      <TopShops />
+      <BestShops />
       <BestDishes />
       <Advertisements />
       <Events />

@@ -10,8 +10,8 @@ import CallIcon from "@mui/icons-material/Call";
 // REDUX
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveBestRestaurants } from "../../screens/HomePage/selector";
-import { Restaurant } from "../../../types/user";
+import { retrieveBestShops } from "./selector";
+import { Shop } from "../../../types/user";
 import { serverApi } from "../../../lib/config";
 import assert from "assert";
 import { auth_err1, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
@@ -21,28 +21,28 @@ import { useHistory } from "react-router-dom";
 import { verifiedMemberData } from "../../apiServices/verify";
 
 /** REDUX SELECTOR */
-const bestRestaurantRetriever = createSelector(
+const bestShopRetriever = createSelector(
   // will recompute the output if the input has changed
-  retrieveBestRestaurants,
-  (bestRestaurants) => ({
-    bestRestaurants,
+  retrieveBestShops,
+  (bestShops) => ({
+    bestShops: bestShops,
   })
 );
 
-export function BestRestaurants() {
+export function BestShops() {
 
   /** INITIALIZATION */
   const history = useHistory();
-  const { bestRestaurants } = useSelector(bestRestaurantRetriever);
+  const { bestShops: bestShops } = useSelector(bestShopRetriever);
   // selector : takes data from store
-  console.log("bestRestaurants:::", bestRestaurants);
+  console.log("bestShops:::", bestShops);
   const refs: any = useRef([]);
 
   /** HANDLERS */
-   const chosenRestaurantHandler = (id: string) => {
-    history.push(`/restaurant/${id}`);
+   const chosenShopHandler = (id: string) => {
+    history.push(`/shop/${id}`);
   };
-  const goRestaurantHandler = () => history.push("/restaurant");
+  const goShopHandler = () => history.push("/shop");
   
   const targetLikeBest = async (e: any, id: string) => {
     try {
@@ -71,7 +71,7 @@ export function BestRestaurants() {
   };
 
   return (
-    <div className="best_restaurant_frame">
+    <div className="best_shop_frame">
       <img
         src={"/icons/line.svg"}
         alt="line"
@@ -79,14 +79,14 @@ export function BestRestaurants() {
       />
       <Container sx={{ paddingTop: "153px" }}>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">Best Restaurants</Box>
+          <Box className="category_title">Best Shops</Box>
           <Stack flexDirection={"row"} sx={{ mt: "43px" }}>
-            {bestRestaurants.map((ele: Restaurant) => {
+            {bestShops.map((ele: Shop) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               return (
                 <CssVarsProvider key={ele._id}>
                   <Card
-                    onClick={() => chosenRestaurantHandler(ele._id)}
+                    onClick={() => chosenShopHandler(ele._id)}
                     variant="outlined"
                     sx={{
                       minHeight: 483,
@@ -212,7 +212,7 @@ export function BestRestaurants() {
           >
             <Button
               style={{ background: "#1976d2", color: "#fff" }}
-              onClick={goRestaurantHandler}
+              onClick={goShopHandler}
             >
               See All
             </Button>

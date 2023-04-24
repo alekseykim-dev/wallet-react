@@ -103,7 +103,7 @@ export function CommunityPage(props: any) {
                     >
                       <Tab label="All Articles" value={"1"} />
                       <Tab label="Popular" value={"2"} />
-                      <Tab label="Restaurant review" value={"3"} />
+                      <Tab label="Shop review" value={"3"} />
                       <Tab label="Stories" value={"4"} />
                     </TabList>
                   </Box>

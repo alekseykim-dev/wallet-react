@@ -1,7 +1,7 @@
 import { MeFollowed } from "./follow";
 import { MeLiked } from "./product";
 
-export interface Restaurant {
+export interface Shop {
   _id: string;
   mb_nick: string;
   mb_email: string;

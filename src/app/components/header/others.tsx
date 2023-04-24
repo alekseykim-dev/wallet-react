@@ -19,7 +19,7 @@ import { verifiedMemberData } from "../../apiServices/verify";
 
 export function NavbarOthers(props: any) {
   return (
-    <div className="format_restaurant home_navbar">
+    <div className="format_shop home_navbar">
       ;
       <Container>
         <Stack
@@ -28,7 +28,7 @@ export function NavbarOthers(props: any) {
           justifyContent={"space-between"}
         >
           <Box>
-            <img src="/icons/papay.svg" alt="logo" />
+            <img src="/icons/Logo.svg" alt="logo" />
           </Box>
           <Stack
             flexDirection={"row"}
@@ -40,8 +40,8 @@ export function NavbarOthers(props: any) {
               <NavLink to="/">Home</NavLink>
             </Box>
             <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/restaurant" activeClassName="underline">
-                Restaurant
+              <NavLink to="/shop" activeClassName="underline">
+                Shops
               </NavLink>
             </Box>
             {verifiedMemberData ? (
@@ -69,6 +69,13 @@ export function NavbarOthers(props: any) {
                 Help
               </NavLink>
             </Box>
+          </Stack>
+          <Stack
+            flexDirection={"row"}
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            className="navbar_icons"
+          >
             <Basket
               cartItems={props.cartItems}
               onAdd={props.onAdd}
@@ -77,6 +84,18 @@ export function NavbarOthers(props: any) {
               onDeleteAll={props.onDeleteAll}
               setOrderRebuild={props.setOrderRebuild}
             />
+            {!verifiedMemberData ? (
+              <Box>
+                <Button
+                  variant="contained"
+                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  onClick={props.handleSignUpOpen}
+                >
+                  Sign up
+                </Button>
+              </Box>
+            ) : null}
+
             {!verifiedMemberData ? (
               <Box>
                 <Button

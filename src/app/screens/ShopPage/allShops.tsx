@@ -21,11 +21,11 @@ import FavoriteIcon from "@mui/icons-material/Favorite";
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
-import { retrieveTargetRestaurants } from "../../screens/RestaurantPage/selector";
-import { Restaurant } from "../../../types/user";
+import { retrieveTargetShops } from "./selector";
+import { Shop } from "../../../types/user";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setTargetRestaurants } from "../../screens/RestaurantPage/slice";
-import RestaurantApiService from "../../apiServices/restaurantApiService";
+import { setTargetShops } from "./slice";
+import ShopApiService from "../../apiServices/shopApiService";
 import { SearchObj } from "../../../types/others";
 import { serverApi } from "../../../lib/config";
 import { Category } from "@mui/icons-material";
@@ -38,26 +38,26 @@ import { verifiedMemberData } from "../../apiServices/verify";
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
-  setTargetRestaurants: (data: Restaurant[]) =>
-    dispatch(setTargetRestaurants(data)),
+  setTargetShops: (data: Shop[]) =>
+    dispatch(setTargetShops(data)),
 });
 
 // const order_list = Array.from(Array(8).keys());
 
 
 /** REDUX SELECTOR */
-const targetRestaurantsRetriever = createSelector(
-  retrieveTargetRestaurants,
-  (targetRestaurants) => ({
-    targetRestaurants,
+const targetShopsRetriever = createSelector(
+  retrieveTargetShops,
+  (targetShops) => ({
+    targetShops: targetShops,
   })
 );
 
-export function AllRestaurants() {
+export function AllShops() {
   /* INITIALIZATIONS */
   const history = useHistory(); // react router-dom
-  const { setTargetRestaurants } = actionDispatch(useDispatch());
-  const { targetRestaurants } = useSelector(targetRestaurantsRetriever);
+  const { setTargetShops: setTargetShops } = actionDispatch(useDispatch());
+  const { targetShops: targetShops } = useSelector(targetShopsRetriever);
   const [targetSearchObject, setTargetSearchObject] = useState<SearchObj>({
     page: 1,
     limit: 8,
@@ -71,17 +71,17 @@ export function AllRestaurants() {
   // trending => mb_likes
   // new => createdAt
   useEffect(() => {
-    // TODO: Retrieve targetRestaurantData  // set targetRestaurants
-    const restaurantService = new RestaurantApiService();
-    restaurantService
-      .getRestaurants(targetSearchObject)
-      .then((data) => setTargetRestaurants(data))
+    // TODO: Retrieve targetShopData  // set targetShops
+    const shopService = new ShopApiService();
+    shopService
+      .getShops(targetSearchObject)
+      .then((data) => setTargetShops(data))
       .catch((err) => console.log(err));
   }, [targetSearchObject]); // updates after data is changed
 
-  /** HANDLEERS */
-    const chosenRestaurantHandler = (id: string) => {
-      history.push(`/restaurant/${id}`);
+  /** HANDLERS */
+    const chosenShopHandler = (id: string) => {
+      history.push(`/shop/${id}`);
     };
   const searchHandler = (category: string) => {
     targetSearchObject.page = 1;
@@ -120,7 +120,7 @@ export function AllRestaurants() {
    };
 
   return (
-    <div className="all_restaurant">
+    <div className="all_shops">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Box className="fill_search_box">
@@ -152,12 +152,12 @@ export function AllRestaurants() {
 
           <Stack className="all_res_box">
             <CssVarsProvider>
-              {targetRestaurants.map((ele: Restaurant) => {
+              {targetShops.map((ele: Shop) => {
                 const image_path = `${serverApi}/${ele.mb_image}`;
                 // map 8
                 return (
                   <Card
-                    onClick={() => chosenRestaurantHandler(ele._id)}
+                    onClick={() => chosenShopHandler(ele._id)}
                     key={ele._id}
                     variant="outlined"
                     sx={{
@@ -202,7 +202,7 @@ export function AllRestaurants() {
                       </IconButton>
                     </CardOverflow>
                     <Typography level="h2" sx={{ fontSize: "md", mt: 2 }}>
-                      {ele.mb_nick} restaurant
+                      {ele.mb_nick} Shop
                     </Typography>
                     <Typography level="body2" sx={{ mt: 0.5, mb: 2 }}>
                       <Link

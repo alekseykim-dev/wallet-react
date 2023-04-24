@@ -4,7 +4,7 @@ import "../css/navbar.css";
 import "../css/footer.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import { RestaurantPage } from "./screens/RestaurantPage";
+import { ShopPage } from "./screens/ShopPage";
 import { CommunityPage } from "./screens/CommunityPage";
 import { OrdersPage } from "./screens/OrdersPage";
 import { MemberPage } from "./screens/MemberPage";
@@ -12,7 +12,7 @@ import { HelpPage } from "./screens/HelpPage";
 import { LoginPage } from "./screens/LoginPage";
 import { HomePage } from "./screens/HomePage";
 import { NavbarHome } from "./components/header";
-import { NavbarRestaurant } from "./components/header/restaurant";
+import { NavbarShop } from "./components/header/shop";
 import { NavbarOthers } from "./components/header/others";
 import { Footer } from "./components/footer";
 // import Car from "./screens/testCar";
@@ -144,7 +144,6 @@ function App() {
           handleLogOutClick={handleLogOutClick}
           handleCloseLogOut={handleCloseLogOut}
           handleLogOutRequest={handleLogOutRequest}
-
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
@@ -152,8 +151,8 @@ function App() {
           onDeleteAll={onDeleteAll}
           setOrderRebuild={setOrderRebuild}
         />
-      ) : main_path.includes("/restaurant") ? (
-        <NavbarRestaurant
+      ) : main_path.includes("/shop") ? (
+        <NavbarShop
           setPath={setPath}
           handleLoginOpen={handleLoginOpen}
           handleSignUpOpen={handleSignUpOpen}
@@ -162,7 +161,6 @@ function App() {
           handleLogOutClick={handleLogOutClick}
           handleCloseLogOut={handleCloseLogOut}
           handleLogOutRequest={handleLogOutRequest}
-
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
@@ -180,7 +178,6 @@ function App() {
           handleLogOutClick={handleLogOutClick}
           handleCloseLogOut={handleCloseLogOut}
           handleLogOutRequest={handleLogOutRequest}
-
           cartItems={cartItems}
           onAdd={onAdd}
           onRemove={onRemove}
@@ -193,8 +190,8 @@ function App() {
       {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
       <Switch>
-        <Route path="/restaurant">
-          <RestaurantPage onAdd={onAdd} />
+        <Route path="/shop">
+          <ShopPage onAdd={onAdd} />
         </Route>
         <Route path="/community">
           <CommunityPage />
@@ -203,7 +200,6 @@ function App() {
           <OrdersPage
             orderRebuild={orderRebuild}
             setOrderRebuild={setOrderRebuild}
-
           />
         </Route>
         <Route path="/member-page">

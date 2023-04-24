@@ -3,7 +3,7 @@ import React from "react";
 
 export function Advertisements() {
   return (
-    <div className="ads_restaurant_frame">
+    <div className="ads_shop_frame">
       <video
         className={"ads_video"}
         autoPlay={true}

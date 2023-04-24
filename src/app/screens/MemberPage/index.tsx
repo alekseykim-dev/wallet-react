@@ -22,7 +22,7 @@ export function MemberPage(props: any) {
 
 
   return (
-    <div className="restaurant_page">
+    <div className="shop_page">
       <Switch>
         <Route path={`${member.path}/other`}>
           <VisitOtherPage

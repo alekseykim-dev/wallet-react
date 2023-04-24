@@ -5,7 +5,7 @@ import React, { useEffect } from "react";
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
-import { setTrendProducts } from "../../screens/HomePage/slice";
+import { setTrendProducts } from "./slice";
 import { Product } from "../../../types/product";
 import ProductApiService from "../../apiServices/productApiService";
 import { createSelector } from "reselect";
@@ -44,7 +44,7 @@ export function BestDishes() {
 
   /** HANDLERS  */
   const chosenDishHandler = (id: string) => {
-    history.push(`/restaurant/dish/${id}`)
+    history.push(`/shop/dish/${id}`);
   }
 
   return (

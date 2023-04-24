@@ -17,22 +17,22 @@ import { useHistory, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
 import {
-  retrieveRandomRestaurants,
-  retrieveChosenRestaurant,
+  retrieveRandomShops,
+  retrieveChosenShop,
   retrieveTargetProducts,
-} from "../../screens/RestaurantPage/selector";
-import { Restaurant } from "../../../types/user";
+} from "./selector";
+import { Shop } from "../../../types/user";
 import { Dispatch } from "@reduxjs/toolkit";
 import {
-  setRandomRestaurants,
-  setChosenRestaurant,
+  setRandomShops,
+  setChosenShop,
   setTargetProducts,
-} from "../../screens/RestaurantPage/slice";
+} from "./slice";
 import { Product } from "../../../types/product";
 import { ProductSearchObj } from "../../../types/others";
 import ProductApiService from "../../apiServices/productApiService";
 import { serverApi } from "../../../lib/config";
-import RestaurantApiService from "../../apiServices/restaurantApiService";
+import ShopApiService from "../../apiServices/shopApiService";
 import { Definer } from "../../../lib/Definer";
 import assert from "assert";
 import MemberApiService from "../../apiServices/memberApiService";
@@ -45,24 +45,24 @@ import { verifiedMemberData } from "../../apiServices/verify";
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
-  setRandomRestaurants: (data: Restaurant[]) =>
-    dispatch(setRandomRestaurants(data)),
-  setChosenRestaurant: (data: Restaurant) =>
-    dispatch(setChosenRestaurant(data)),
+  setRandomShops: (data: Shop[]) =>
+    dispatch(setRandomShops(data)),
+  setChosenShop: (data: Shop) =>
+    dispatch(setChosenShop(data)),
   setTargetProducts: (data: Product[]) => dispatch(setTargetProducts(data)),
 });
 
 /** REDUX SELECTOR */
-const randomRestaurantRetriever = createSelector(
-  retrieveRandomRestaurants,
-  (randomRestaurants) => ({
-    randomRestaurants,
+const randomShopRetriever = createSelector(
+  retrieveRandomShops,
+  (randomShops) => ({
+    randomShops: randomShops,
   })
 );
-const chosenRestaurantRetriever = createSelector(
-  retrieveChosenRestaurant,
-  (chosenRestaurant) => ({
-    chosenRestaurant,
+const chosenShopRetriever = createSelector(
+  retrieveChosenShop,
+  (chosenShop) => ({
+    chosenShop: chosenShop,
   })
 );
 const targetProductsRetriever = createSelector(
@@ -72,41 +72,41 @@ const targetProductsRetriever = createSelector(
   })
 );
 
-export function OneRestaurant(props: any) {
+export function OneShop(props: any) {
   /* INITIALIZATIONS */
   // const refs: any = useRef([]);
   const history = useHistory(); // navigates to different pages within your application.
-  let { restaurant_id } = useParams<{ restaurant_id: string }>(); //  accesses the parameters in the URL of the current route.
-  const { setRandomRestaurants, setChosenRestaurant, setTargetProducts } =
+  let { shop_id: shop_id } = useParams<{ shop_id: string }>(); //  accesses the parameters in the URL of the current route.
+  const { setRandomShops: setRandomShops, setChosenShop: setChosenShop, setTargetProducts } =
     actionDispatch(useDispatch());
-  const { randomRestaurants } = useSelector(randomRestaurantRetriever);
-  const { chosenRestaurant } = useSelector(chosenRestaurantRetriever);
+  const { randomShops: randomShops } = useSelector(randomShopRetriever);
+  const { chosenShop: chosenShop } = useSelector(chosenShopRetriever);
   const { targetProducts } = useSelector(targetProductsRetriever);
-  const [chosenRestaurantId, setChosenRestaurantId] =
-    useState<string>(restaurant_id);
+  const [chosenShopId, setChosenShopId] =
+    useState<string>(shop_id);
 
   const [targetProductSearchObj, setTargetProductSearchObj] =
     useState<ProductSearchObj>({
       page: 1,
       limit: 8,
       order: "createdAt",
-      restaurant_mb_id: restaurant_id,
+      shop_mb_id: shop_id,
       product_collection: "dish",
     });
 
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
 
   useEffect(() => {
-    // RandomRestaurant
-    const restaurantService = new RestaurantApiService();
-    restaurantService
-      .getRestaurants({ page: 1, limit: 10, order: "random" })
-      .then((data) => setRandomRestaurants(data))
+    // RandomShops
+    const shopService = new ShopApiService();
+    shopService
+      .getShops({ page: 1, limit: 10, order: "random" })
+      .then((data) => setRandomShops(data))
       .catch((err) => console.log(err));
 
-    restaurantService
-      .getChosenRestaurant(chosenRestaurantId)
-      .then((data) => setChosenRestaurant(data))
+    shopService
+      .getChosenShop(chosenShopId)
+      .then((data) => setChosenShop(data))
       .catch((err) => console.log(err));
 
     // ChosenProduct
@@ -115,14 +115,14 @@ export function OneRestaurant(props: any) {
       .getTargetProducts(targetProductSearchObj)
       .then((data) => setTargetProducts(data))
       .catch((err) => console.log(err));
-  }, [chosenRestaurantId, targetProductSearchObj, productRebuild]);
+  }, [chosenShopId, targetProductSearchObj, productRebuild]);
 
   /* HANDLERS */
-  const chosenRestaurantHandler = (id: string) => {
-    setChosenRestaurantId(id);
-    targetProductSearchObj.restaurant_mb_id = id;
+  const chosenShopHandler = (id: string) => {
+    setChosenShopId(id);
+    targetProductSearchObj.shop_mb_id = id;
     setTargetProductSearchObj({ ...targetProductSearchObj });
-    history.push(`/restaurant/${id}`);
+    history.push(`/shop/${id}`);
   };
 
   const searchCollectionHandler = (collection: string) => {
@@ -136,7 +136,7 @@ export function OneRestaurant(props: any) {
     setTargetProductSearchObj({ ...targetProductSearchObj });
   };
   const chosenDishHandler = (id: string) => {
-    history.push(`/restaurant/dish/${id}`);
+    history.push(`/shop/dish/${id}`);
   };
 
   // Like handle
@@ -160,12 +160,12 @@ export function OneRestaurant(props: any) {
   };
 
   return (
-    <div className="single_restaurant">
+    <div className="single_shop">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar_big_box">
             <Box className="top_text">
-              <p>Texas De Brazil Restaurant</p>
+              <p>Texas De Brazil Shop</p>
               <Box className="Single_search_big_box">
                 <form className="Single_search_form" action="" method="">
                   <input
@@ -191,31 +191,31 @@ export function OneRestaurant(props: any) {
             flexDirection={"row"}
             sx={{ mt: "35px" }}
           >
-            <Box className="prev_btn restaurant-prev">
+            <Box className="prev_btn shop-prev">
               <ArrowBackIosNewIcon
                 sx={{ fontSize: 40 }}
                 style={{ color: "#fff" }}
               />
             </Box>
             <Swiper
-              className={"restaurant_avatars_wrapper"}
+              className={"shop_avatars_wrapper"}
               slidesPerView={7}
               centeredSlides={false}
               spaceBetween={30}
               // style={{ cursor: "pointer" }}
               navigation={{
-                nextEl: ".restaurant-next",
-                prevEl: ".restaurant-prev",
+                nextEl: ".shop-next",
+                prevEl: ".shop-prev",
               }}
             >
-              {randomRestaurants.map((ele: Restaurant) => {
+              {randomShops.map((ele: Shop) => {
                 const image_path = `${serverApi}/${ele.mb_image}`;
                 return (
                   <SwiperSlide
-                    onClick={() => chosenRestaurantHandler(ele._id)}
+                    onClick={() => chosenShopHandler(ele._id)}
                     style={{ cursor: "pointer" }}
                     key={ele._id}
-                    className="restaurant_avatars"
+                    className="shop_avatars"
                   >
                     <img src={image_path} alt="" />
                     <span>{ele.mb_nick}</span>
@@ -223,7 +223,7 @@ export function OneRestaurant(props: any) {
                 );
               })}
             </Swiper>
-            <Box className="next_btn restaurant-next" style={{ color: "#fff" }}>
+            <Box className="next_btn shop-next" style={{ color: "#fff" }}>
               <ArrowForwardIosIcon sx={{ fontSize: 40 }} />
             </Box>
           </Stack>
@@ -273,41 +273,29 @@ export function OneRestaurant(props: any) {
           >
             <Stack className="dish_category_box">
               <div className="dish_category_main">
+                
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => searchCollectionHandler("etc")}
+                  onClick={() => searchCollectionHandler("bundle")}
                 >
-                  Other
+                  Bundles
                 </Button>
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => searchCollectionHandler("dessert")}
+                  onClick={() => searchCollectionHandler("accessory")}
                 >
-                  Dessert
+                  Accessories
                 </Button>
                 <Button
                   variant="contained"
                   color="secondary"
-                  onClick={() => searchCollectionHandler("beverage")}
+                  onClick={() => searchCollectionHandler("wallet")}
                 >
-                  Beverage
+                  Wallets
                 </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => searchCollectionHandler("salad")}
-                >
-                  Salad
-                </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => searchCollectionHandler("dish")}
-                >
-                  Dishes
-                </Button>
+               
               </div>
             </Stack>
 
@@ -408,7 +396,7 @@ export function OneRestaurant(props: any) {
         </Stack>
       </Container>
 
-      <div className="review_for_restaurant">
+      <div className="review_for_shop">
         <Container
           sx={{ mt: "100px" }}
           style={{
@@ -417,7 +405,7 @@ export function OneRestaurant(props: any) {
             alignItems: "center",
           }}
         >
-          <Box className={"category_title"}>Restaurant reviews</Box>
+          <Box className={"category_title"}>Shop reviews</Box>
           <Stack
             flexDirection={"row"}
             display={"flex"}
@@ -437,7 +425,7 @@ export function OneRestaurant(props: any) {
                   <span className={"review_name"}>Dakota Johnson</span>
                   <span className={"review_prof"}>User</span>
                   <p className={"review_desc"}>
-                    I love the restaurant atmosphere and the service!
+                    I love the shop atmosphere and the service!
                   </p>
                   <div className={"review_stars"}>
                     <StarIcon style={{ color: "#F2BD57" }} />
@@ -454,7 +442,7 @@ export function OneRestaurant(props: any) {
       </div>
 
       <Container className="member_reviews">
-        <Box className={"category_title"}>About the restaurant</Box>
+        <Box className={"category_title"}>About the shop</Box>
         <Stack
           display={"flex"}
           flexDirection={"row"}
@@ -464,12 +452,12 @@ export function OneRestaurant(props: any) {
           <Box
             className={"about_left"}
             sx={{
-              backgroundImage: `url(${serverApi}/${chosenRestaurant?.mb_image})`,
+              backgroundImage: `url(${serverApi}/${chosenShop?.mb_image})`,
             }}
           >
             <div className={"about_left_desc"}>
-              <span>{chosenRestaurant?.mb_nick}</span>
-              <p>{chosenRestaurant?.mb_description}</p>
+              <span>{chosenShop?.mb_nick}</span>
+              <p>{chosenShop?.mb_description}</p>
             </div>
           </Box>
           <Box className={"about_right"}>
