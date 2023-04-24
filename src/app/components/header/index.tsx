@@ -40,7 +40,7 @@ export function NavbarHome(props: any) {
           justifyContent={"space-between"}
         >
           <Box>
-            <img src="/icons/papay.svg" alt="logo" />
+            <img src="/icons/Bitsafe.Store.svg" alt="logo" />
           </Box>
           <Stack
             flexDirection={"row"}
@@ -55,7 +55,7 @@ export function NavbarHome(props: any) {
             </Box>
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/restaurant" activeClassName="underline">
-                Restaurant
+                Store
               </NavLink>
             </Box>
             {verifiedMemberData ? (
@@ -84,7 +84,13 @@ export function NavbarHome(props: any) {
                 Help
               </NavLink>
             </Box>
-
+          </Stack>
+          <Stack
+            flexDirection={"row"}
+            justifyContent={"space-evenly"}
+            alignItems={"center"}
+            className="navbar_icons"
+          >
             <Basket
               cartItems={props.cartItems}
               onAdd={props.onAdd}
@@ -93,6 +99,18 @@ export function NavbarHome(props: any) {
               onDeleteAll={props.onDeleteAll}
               setOrderRebuild={props.setOrderRebuild}
             />
+            {!verifiedMemberData ? (
+              <Box>
+                <Button
+                  variant="contained"
+                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  onClick={props.handleSignUpOpen}
+                >
+                  Sign up
+                </Button>
+              </Box>
+            ) : null}
+
             {!verifiedMemberData ? (
               <Box>
                 <Button
@@ -164,29 +182,8 @@ export function NavbarHome(props: any) {
             <Box>
               <img src="/icons/welcome.svg" alt="welcome" />
             </Box>
-            <Box className="define_restaurant">
-              The Authentic Restaurant & Cafe
-            </Box>
-            <Box className="timeline_service">Open 24 hour(s)</Box>
-            <Box sx={{ mt: "90px" }}>
-              {!verifiedMemberData ? (
-                <Button
-                  variant="contained"
-                  style={{
-                    width: "180px",
-                    height: "60px",
-                    background: "#1976d2",
-                    color: "#ffffff",
-                  }}
-                  // onClick={() => setCount(count + 1)}
-                  // onClick={countHandler}
-                  // onClick={() => setValue(!value)}
-                  onClick={props.handleSignUpOpen}
-                >
-                  Sign up
-                </Button>
-              ) : null}
-            </Box>
+            <Box className="define_restaurant">Own your assets</Box>
+            <Box className="timeline_service">Worldwide shipping</Box>
           </Stack>
 
           <Stack flexDirection={"column"}>
