@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: theme.palette.background.paper,
     border: "2px solid #000",
+    borderRadius: "2%",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 2, 2),
   },
@@ -130,28 +131,28 @@ const [mb_password, set_mb_password] = useState<string>("");
             direction={"row"}
             sx={{ width: "800px" }}
           >
-            <ModalImg src={"/auth/password.jpeg"} alt="camera" />
+            <ModalImg src={"/auth/password.jpg"} alt="camera" />
             <Stack sx={{ marginLeft: "69px", alignItems: "center" }}>
               <h2>SignUp Form</h2>
               <TextField
                 onChange={handleUsername}
                 sx={{ marginTop: "7px" }}
                 id="outlined-basic"
-                label="username"
+                label="Username"
                 variant="outlined"
               />
               <TextField
                 onChange={handleEmail}
                 sx={{ my: "17px" }}
                 id="outlined-basic"
-                label="email"
+                label="Email"
                 variant="outlined"
               />
               <TextField
                 onChange={handlePassword}
                 onKeyDown={passwordKeyPressHandler}
                 id="outlined-basic"
-                label="password"
+                label="Password"
                 variant="outlined"
               />
               <Fab
@@ -187,8 +188,8 @@ const [mb_password, set_mb_password] = useState<string>("");
             direction={"row"}
             sx={{ width: "700px" }}
           >
-            <ModalImg src={"/auth/password.jpeg"} alt="camera" />
-            <Stack
+            <ModalImg src={"/auth/password.jpg"} alt="camera" />
+            <Stack 
               sx={{
                 marginLeft: "65px",
                 marginTop: "25px",
@@ -199,7 +200,7 @@ const [mb_password, set_mb_password] = useState<string>("");
               <TextField
                 onChange={handleUsername}
                 id="outlined-basic"
-                label="username"
+                label="Username"
                 variant="outlined"
                 sx={{ my: "10px" }}
               />
@@ -207,7 +208,7 @@ const [mb_password, set_mb_password] = useState<string>("");
                 onChange={handlePassword}
                 onKeyDown={passwordKeyPressHandler}
                 id="outlined-basic"
-                label="password"
+                label="Password"
                 variant="outlined"
               />
               <Fab
