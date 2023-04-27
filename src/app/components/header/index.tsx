@@ -16,23 +16,33 @@ import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
 
 export function NavbarHome(props: any) {
+  const [isHovered1, setIsHovered1] = useState(false);
+
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
+
+  const [isHovered2, setIsHovered2] = useState(false);
+
+  const handleMouseEnter2 = () => {
+    setIsHovered2(true);
+  };
+
+  const handleMouseLeave2 = () => {
+    setIsHovered2(false);
+  };
   return (
     <div className="format home_navbar">
       <Container>
-        <Stack
-          flexDirection={"row"}
-          className="navbar_config"
-          justifyContent={"space-between"}
-        >
+        <Stack className="navbar_config">
           <Box>
             <img src="/icons/Logo.svg" alt="logo" />
           </Box>
-          <Stack
-            flexDirection={"row"}
-            justifyContent={"space-evenly"}
-            alignItems={"center"}
-            className="navbar_links"
-          >
+          <Stack className="navbar_links">
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/" activeClassName="underline">
                 Home
@@ -70,12 +80,7 @@ export function NavbarHome(props: any) {
               </NavLink>
             </Box>
           </Stack>
-          <Stack
-            flexDirection={"row"}
-            justifyContent={"space-evenly"}
-            alignItems={"center"}
-            className="navbar_icons"
-          >
+          <Stack className="navbar_icons">
             <Basket
               cartItems={props.cartItems}
               onAdd={props.onAdd}
@@ -87,8 +92,15 @@ export function NavbarHome(props: any) {
             {!verifiedMemberData ? (
               <Box>
                 <Button
+                  className="nav_button"
                   variant="contained"
-                  style={{ color: "#000", background: "#E3C08D" }}
+                  style={{
+                    color: isHovered1 ? "#fff" : "#000",
+                    opacity: isHovered1 ? 0.7 : 1,
+                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                  }}
+                  onMouseEnter={handleMouseEnter1}
+                  onMouseLeave={handleMouseLeave1}
                   onClick={props.handleSignUpOpen}
                 >
                   Sign up
@@ -100,7 +112,13 @@ export function NavbarHome(props: any) {
               <Box>
                 <Button
                   variant="contained"
-                  style={{ color: "#000", background: "#E3C08D" }}
+                  style={{
+                    color: isHovered2 ? "#fff" : "#000",
+                    opacity: isHovered2 ? 0.7 : 1,
+                    backgroundColor: isHovered2 ? "#000000d0" : "#d7b686",
+                  }}
+                  onMouseEnter={handleMouseEnter2}
+                  onMouseLeave={handleMouseLeave2}
                   onClick={props.handleLoginOpen}
                 >
                   Log in

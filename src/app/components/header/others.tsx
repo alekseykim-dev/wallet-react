@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   Badge,
   Box,
@@ -9,18 +10,33 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-
 import { NavLink } from "react-router-dom";
-
-import React from "react";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
 
 export function NavbarOthers(props: any) {
+  const [isHovered1, setIsHovered1] = useState(false);
+
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
+
+  const [isHovered2, setIsHovered2] = useState(false);
+
+  const handleMouseEnter2 = () => {
+    setIsHovered2(true);
+  };
+
+  const handleMouseLeave2 = () => {
+    setIsHovered2(false);
+  };
   return (
-    <div className="format_shop home_navbar">
-      ;
+    <div className="format_others home_navbar">
       <Container>
         <Stack
           flexDirection={"row"}
@@ -31,13 +47,15 @@ export function NavbarOthers(props: any) {
             <img src="/icons/Logo.svg" alt="logo" />
           </Box>
           <Stack
-            flexDirection={"row"}
-            justifyContent={"space-evenly"}
-            alignItems={"center"}
+            // flexDirection={"row"}
+            // justifyContent={"space-evenly"}
+            // alignItems={"center"}
             className="navbar_links"
           >
             <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/">Home</NavLink>
+              <NavLink to="/">
+                Home
+              </NavLink>
             </Box>
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/shop" activeClassName="underline">
@@ -88,7 +106,13 @@ export function NavbarOthers(props: any) {
               <Box>
                 <Button
                   variant="contained"
-                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  style={{
+                    color: isHovered1 ? "#fff" : "#000",
+                    opacity: isHovered1 ? 0.7 : 1,
+                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                  }}
+                  onMouseEnter={handleMouseEnter1}
+                  onMouseLeave={handleMouseLeave1}
                   onClick={props.handleSignUpOpen}
                 >
                   Sign up
@@ -100,7 +124,13 @@ export function NavbarOthers(props: any) {
               <Box>
                 <Button
                   variant="contained"
-                  style={{ color: "#ffffff", background: "#1976d2" }}
+                  style={{
+                    color: isHovered2 ? "#fff" : "#000",
+                    opacity: isHovered2 ? 0.7 : 1,
+                    backgroundColor: isHovered2 ? "#000000d0" : "#d7b686",
+                  }}
+                  onMouseEnter={handleMouseEnter2}
+                  onMouseLeave={handleMouseLeave2}
                   onClick={props.handleLoginOpen}
                 >
                   Log in
@@ -159,7 +189,6 @@ export function NavbarOthers(props: any) {
           </Stack>
         </Stack>
       </Container>
-      ;
     </div>
   );
 }
