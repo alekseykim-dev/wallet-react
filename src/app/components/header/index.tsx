@@ -1,4 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import Typed from 'typed.js';
+
 import {
   Badge,
   Box,
@@ -35,6 +37,27 @@ export function NavbarHome(props: any) {
   const handleMouseLeave2 = () => {
     setIsHovered2(false);
   };
+
+  // Create ref element
+  const textRef = useRef(null);
+  
+    useEffect(() => {
+      const options = {
+        strings: ["your crypto", "your money", "your life"],
+        startDelay: 300,
+        typeSpeed: 100,
+        backSpeed: 50,
+        backDelay: 150,
+        smartBackspace: true,
+        showCursor: false,
+        loop: true,
+      };
+      const typed = new Typed(textRef.current, options);
+      return () => {
+        typed.destroy();
+      };
+    }, []);
+  
   return (
     <div className="format home_navbar">
       <Container>
@@ -186,7 +209,8 @@ export function NavbarHome(props: any) {
               <img src="/icons/welcome.svg" alt="welcome" />
             </Box>
             <Box className="define_shop">
-              The ₿est place to find your next cold wallet
+              Say <span className="crossed">NO</span> to hackers, own {" "}
+              <span ref={textRef}></span>
             </Box>
             <Box className="timeline_service">Worldwide shipping</Box>
           </Stack>

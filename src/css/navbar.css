@@ -131,6 +131,14 @@ content: "";
     color: #ffffff;
 }
 
+.home_navbar .crossed {
+    text-decoration: line-through;
+    text-decoration-color: #dd462f;
+    text-decoration-style: solid;
+    text-decoration-thickness: 0.1em;
+    color: #fff;
+    font-family: "Montserrat", sans-serif;
+}
 .home_navbar .timeline_service {
     position: relative;
     width: 466px;
