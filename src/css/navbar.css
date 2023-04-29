@@ -1,7 +1,7 @@
 
 .format.home_navbar{
     width: 100%;
-    height: 770px;
+    height: 700px;
     display: flex;
     background: url("/public/store/header_store_main.jpg");
     background-size: cover;
@@ -17,7 +17,7 @@
 
 .format_others.home_navbar {
     width: 100%;
-        height: 770px;
+        height: 700px;
         display: flex;
         background: url("/public/store/header_store_main.jpg");
         background-size: cover;
@@ -120,13 +120,13 @@ content: "";
 
 .home_navbar .define_shop {
     position: relative;
-    width: 484px;
-    height: 143px;
-    margin-top: 40px;
+    width: 550px;
+    height: auto;
+    margin-top: 80px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 40px;
+    font-size: 45px;
     line-height: 55px;
     color: #ffffff;
 }
@@ -135,10 +135,14 @@ content: "";
     text-decoration: line-through;
     text-decoration-color: #dd462f;
     text-decoration-style: solid;
-    text-decoration-thickness: 0.1em;
+    text-decoration-thickness: 3px;
     color: #fff;
     font-family: "Montserrat", sans-serif;
 }
+
+/* .home_navbar .crossed_under{
+    color: #fff;
+} */
 .home_navbar .timeline_service {
     position: relative;
     width: 466px;

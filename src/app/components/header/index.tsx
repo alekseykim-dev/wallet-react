@@ -43,9 +43,9 @@ export function NavbarHome(props: any) {
   
     useEffect(() => {
       const options = {
-        strings: ["your crypto", "your money", "your life"],
+        strings: ["money.", "crypto.", "assets."],
         startDelay: 300,
-        typeSpeed: 100,
+        typeSpeed: 130,
         backSpeed: 50,
         backDelay: 150,
         smartBackspace: true,
@@ -209,10 +209,13 @@ export function NavbarHome(props: any) {
               <img src="/icons/welcome.svg" alt="welcome" />
             </Box>
             <Box className="define_shop">
-              Say <span className="crossed">NO</span> to hackers, own {" "}
-              <span ref={textRef}></span>
+              Easy solution for a complex{" "}
+              <span className="crossed">problem</span>.
+              <div className="crossed_under">
+                {" "}
+                Save your <span ref={textRef}></span>
+              </div>
             </Box>
-            <Box className="timeline_service">Worldwide shipping</Box>
           </Stack>
 
           <Stack flexDirection={"column"}>
