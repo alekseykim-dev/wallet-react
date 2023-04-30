@@ -1,6 +1,6 @@
 import React from "react";
 import { Route, Switch, useRouteMatch } from "react-router-dom";
-import { ChosenDish } from "./chosenProduct";
+import { ChosenProduct } from "./chosenProduct";
 import { OneShop } from "./oneShop";
 import { AllShops } from "./allShops";
 import "../../../css/shop.css"
@@ -11,8 +11,8 @@ export function ShopPage(props: any) {
   return (
     <div className="shop_page">
       <Switch>
-        <Route path={`${shop.path}/dish/:dish_id`}>
-          <ChosenDish onAdd={props.onAdd} />
+        <Route path={`${shop.path}/products/:product_id`}>
+          <ChosenProduct onAdd={props.onAdd} />
         </Route>
         <Route path={`${shop.path}/:shop_id`}>
           <OneShop onAdd={props.onAdd} />

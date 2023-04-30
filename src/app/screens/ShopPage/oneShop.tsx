@@ -91,7 +91,7 @@ export function OneShop(props: any) {
       limit: 8,
       order: "createdAt",
       shop_mb_id: shop_id,
-      product_collection: "dish",
+      product_collection: "wallet",
     });
 
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
@@ -135,8 +135,8 @@ export function OneShop(props: any) {
     targetProductSearchObj.order = order;
     setTargetProductSearchObj({ ...targetProductSearchObj });
   };
-  const chosenDishHandler = (id: string) => {
-    history.push(`/shop/dish/${id}`);
+  const chosenProductHandler = (id: string) => {
+    history.push(`/shop/products/${id}`);
   };
 
   // Like handle
@@ -311,7 +311,7 @@ export function OneShop(props: any) {
                   <Box
                     className={"dish_box"}
                     key={`${product._id}`}
-                    onClick={() => chosenDishHandler(product._id)}
+                    onClick={() => chosenProductHandler(product._id)}
                   >
                     <Box
                       className="dish_img"

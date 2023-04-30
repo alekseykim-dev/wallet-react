@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Statistics } from "./statistics";
 import { TopShops } from "./topShops";
 import { BestShops } from "./bestShops";
-import { BestDishes } from "./bestProducts";
+import { BestProducts } from "./bestProducts";
 import { Advertisements } from "./advertisements";
 import { Events } from "./events";
 import { Recommendations } from "./recommendations";
@@ -65,9 +65,9 @@ export function HomePage() {
       <Advertisements />
       <TopShops />
       <BestShops />
-      <BestDishes />
+      <BestProducts />
       <Events />
-      <Recommendations />
+      {/* <Recommendations /> */}
     </div>
   );
 }

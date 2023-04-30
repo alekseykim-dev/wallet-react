@@ -11,7 +11,7 @@ export function Footer() {
           <Stack flexDirection={"row"} style={{ height: "242px" }}>
             <Stack className="info" flexDirection={"column"}>
               <Box>
-                <img src="/papay_footer.svg" alt="papay"></img>
+                <img src="/icons/Logo.svg" alt="logo"></img>
               </Box>
               <Box className="main_text">
                 Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
@@ -44,24 +44,16 @@ export function Footer() {
               <Box className="part_subject">Content</Box>
               <Box className="divider"></Box>
               <Box className="targets target" sx={{ mt: "5px" }}>
-                <NavLink to="/" >
-                  Home
-                </NavLink>
+                <NavLink to="/">Home</NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/shop">
-                  Stores
-                </NavLink>
+                <NavLink to="/shop">Stores</NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/community" >
-                  Community
-                </NavLink>
+                <NavLink to="/community">Community</NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/help">
-                  Help
-                </NavLink>
+                <NavLink to="/help">Help</NavLink>
               </Box>
             </Stack>
             <Stack className="find_us">

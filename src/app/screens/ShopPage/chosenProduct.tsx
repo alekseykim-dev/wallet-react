@@ -59,9 +59,9 @@ const chosenShopRetriever = createSelector(
   })
 );
 
-export function ChosenDish(props: any) {
+export function ChosenProduct(props: any) {
   /** INITIALIZATIONS */
-  let { dish_id } = useParams<{ dish_id: string }>();
+  let { product_id: product_id } = useParams<{ product_id: string }>();
   const { setChosenProduct, setChosenShop: setChosenShop } = actionDispatch(
     useDispatch() // needs to update the state after user interaction
   ); // useState ids functional component. useDispatch is a global component for store from redux. // reducer takes initial state and action.
@@ -72,11 +72,11 @@ export function ChosenDish(props: any) {
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
   // Date force re-rendering of the state and updates the app
 
-  // dishRelatedProcess updates the chosenProduct and chosenShop in the Redux store
-  const dishRelatedProcess = async () => {
+  // ProductRelatedProcess updates the chosenProduct and chosenShop in the Redux store
+  const productRelatedProcess = async () => {
     try {
       const productService = new ProductApiService();
-      const product: Product = await productService.getChosenDish(dish_id);
+      const product: Product = await productService.getChosenProduct(product_id);
       setChosenProduct(product);
 
       const shopService = new ShopApiService();
@@ -84,16 +84,16 @@ export function ChosenDish(props: any) {
         await shopService.getChosenShop(product.shop_mb_id);
       setChosenShop(shop);
     } catch (err) {
-      console.log(`dishRelatedProcess, ERROR:`, err);
+      console.log(`ProductRelatedProcess, ERROR:`, err);
     }
   };
 
   // retrieve da ta from backend
   useEffect(() => {
-    dishRelatedProcess().then(); //  prevents a warning from React about an unhandled promise rejection
+    productRelatedProcess().then(); //  prevents a warning from React about an unhandled promise rejection
   }, [productRebuild]);
 
-  // calls the dishRelatedProcess function whenever the productRebuild state is updated.
+  // calls the ProductRelatedProcess function whenever the productRebuild state is updated.
 
   /*** HANDLERS*/
   const targetLikeProduct = async (e: any) => {

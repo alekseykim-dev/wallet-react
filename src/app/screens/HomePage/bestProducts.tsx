@@ -27,7 +27,7 @@ const trendProductsRetriever = createSelector(
   })
 );
 
-export function BestDishes() {
+export function BestProducts() {
   /** INITIALIZATION */
   const history = useHistory()
   const { setTrendProducts } = actionDispatch(useDispatch());
@@ -43,15 +43,15 @@ export function BestDishes() {
   }, []);
 
   /** HANDLERS  */
-  const chosenDishHandler = (id: string) => {
-    history.push(`/shop/dish/${id}`);
+  const chosenProductHandler = (id: string) => {
+    history.push(`/shop/products/${id}`);
   }
 
   return (
     <div className="best_dishes_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">Recommended Dishes</Box>
+          <Box className="category_title">Recommended Products</Box>
           <Stack sx={{ mt: "43px" }} flexDirection={"row"}>
             {trendProducts.map((product: Product, index: number) => {
             const image_path = `${serverApi}/${product.product_images}`;
@@ -70,7 +70,7 @@ export function BestDishes() {
                     }}
                   >
                     <div className="dish_sale">{size_volume}</div>
-                    <div className="view_btn" onClick={() => chosenDishHandler(product._id)}>
+                    <div className="view_btn" onClick={() => chosenProductHandler(product._id)}>
                       See more
                       <img
                         src="/icons/arrow.svg"

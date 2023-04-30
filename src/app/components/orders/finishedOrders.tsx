@@ -41,7 +41,7 @@ export default function FinishedOrders(props: any) {
                       <img
                         src={image_path}
                         className={"orderDishImg"}
-                        alt="dish"
+                        alt="product"
                       />
                       <p className="titleDish">{product.product_name}</p>
                       <Box className={"priceBox"}>
