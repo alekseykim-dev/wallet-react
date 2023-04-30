@@ -294,11 +294,12 @@
 
 .framer-motion-wrapper {
     position: absolute;
-    bottom: 7rem;
+    top: 35rem;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
 .framer-motion-container {

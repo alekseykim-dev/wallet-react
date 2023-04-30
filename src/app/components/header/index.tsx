@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Typed from 'typed.js';
 import { motion } from "framer-motion";
-import { TopShops } from "../../screens/HomePage/topShops";
+import { Advertisements } from "../../screens/HomePage/advertisements";
 
 import {
   Badge,
@@ -40,6 +40,13 @@ export function NavbarHome(props: any) {
     setIsHovered2(false);
   };
 
+  const handleClick = () => {
+    const element = document.getElementById("video");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   // Create ref element
   const textRef = useRef(null);
   
@@ -60,6 +67,10 @@ export function NavbarHome(props: any) {
       };
     }, []);
   
+
+  
+
+    
   return (
     <div className="format home_navbar">
       <Container>
@@ -222,21 +233,19 @@ export function NavbarHome(props: any) {
         </Stack>
       </Container>
       <div className="framer-motion-wrapper">
-
-          <div className="framer-motion-container">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="framer-motion-element"
-            />
-          </div>
-
+        <div onClick={handleClick}  className="framer-motion-container">
+          <motion.div
+            animate={{
+              y: [0, 24, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              repeatType: "loop",
+            }}
+            className="framer-motion-element"
+          />
+        </div>
       </div>
     </div>
   );
