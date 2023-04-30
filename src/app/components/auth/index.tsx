@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     backgroundColor: "transparent",
     backdropFilter: "blur(10px)",
-    border: "2px solid #000",
     borderRadius: "2%",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 2, 2),
@@ -135,7 +134,7 @@ const [mb_password, set_mb_password] = useState<string>("");
             <ModalImg />
             <Stack sx={{ alignItems: "center" }}>
               <h2>Welcome to ₿itsafe</h2>
-              <h1>Sign up</h1>
+              <h2>Sign up</h2>
               <TextField
                 onChange={handleUsername}
                 sx={{
@@ -143,10 +142,16 @@ const [mb_password, set_mb_password] = useState<string>("");
                   width: "280px",
                   background: "#fff",
                   borderRadius: "10px",
+                  
                 }}
                 id="outlined-basic"
                 label="Username"
                 variant="outlined"
+                inputProps={{
+                  style: {
+                    color: "black",
+                  },
+                }}
               />
               <TextField
                 onChange={handleEmail}
@@ -159,6 +164,11 @@ const [mb_password, set_mb_password] = useState<string>("");
                 id="outlined-basic"
                 label="Email"
                 variant="outlined"
+                inputProps={{
+                  style: {
+                    color: "black",
+                  },
+                }}
               />
               <TextField
                 onChange={handlePassword}
@@ -172,6 +182,11 @@ const [mb_password, set_mb_password] = useState<string>("");
                 id="outlined-basic"
                 label="Password"
                 variant="outlined"
+                inputProps={{
+                  style: {
+                    color: "black",
+                  },
+                }}
               />
               <Fab
                 onClick={handleSignupRequest}
@@ -213,7 +228,7 @@ const [mb_password, set_mb_password] = useState<string>("");
                 alignItems: "center",
               }}
             >
-              <h2>Login</h2>
+              <h2>Log in</h2>
               <TextField
                 onChange={handleUsername}
                 id="outlined-basic"
@@ -224,6 +239,11 @@ const [mb_password, set_mb_password] = useState<string>("");
                   width: "280px",
                   background: "#fff",
                   borderRadius: "10px",
+                }}
+                inputProps={{
+                  style: {
+                    color: "black",
+                  },
                 }}
               />
               <TextField
@@ -238,6 +258,11 @@ const [mb_password, set_mb_password] = useState<string>("");
                 id="outlined-basic"
                 label="Password"
                 variant="outlined"
+                inputProps={{
+                  style: {
+                    color: "black",
+                  },
+                }}
               />
               <Fab
                 onClick={handleLoginRequest}
@@ -246,7 +271,7 @@ const [mb_password, set_mb_password] = useState<string>("");
                 color="primary"
               >
                 <LoginIcon sx={{ mr: 1 }} />
-                Login
+                Log in
               </Fab>
             </Stack>
           </Stack>

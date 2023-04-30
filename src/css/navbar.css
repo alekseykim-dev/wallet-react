@@ -1,7 +1,6 @@
-
-.format.home_navbar{
+.format.home_navbar {
     width: 100%;
-    height: 700px;
+    height: 750px;
     display: flex;
     background: url("/public/store/header_store_main.jpg");
     background-size: cover;
@@ -17,13 +16,13 @@
 
 .format_others.home_navbar {
     width: 100%;
-        height: 700px;
-        display: flex;
-        background: url("/public/store/header_store_main.jpg");
-        background-size: cover;
+    height: 700px;
+    display: flex;
+    background: url("/public/store/header_store_main.jpg");
+    background-size: cover;
 }
 
-.home_navbar .navbar_config{
+.home_navbar .navbar_config {
     flex-direction: row;
     justify-content: space-between;
     width: 1244.69px;
@@ -32,7 +31,7 @@
     margin-top: 55px;
 }
 
-.home_navbar .navbar_icons{
+.home_navbar .navbar_icons {
     width: 250px;
     height: 46px;
     display: flex;
@@ -54,17 +53,18 @@
 
 .home_navbar a {
     display: block;
-        color: white;
-        text-decoration: none;
-        position: relative;
+    color: white;
+    text-decoration: none;
+    position: relative;
 }
+
 .home_navbar .hover-line a {
     color: #FFFFFF;
-    
+
 }
 
 .home_navbar .hover-line a::after {
-content: "";
+    content: "";
     background: #606060d0;
     border-radius: 10px;
     mix-blend-mode: color;
@@ -82,8 +82,8 @@ content: "";
 
 .home_navbar .hover-line a::after:hover::after {
     right: 0;
-        left: 0;
-        height: 100%;
+    left: 0;
+    height: 100%;
 }
 
 .home_navbar .underline {
@@ -126,7 +126,7 @@ content: "";
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 50px;
     line-height: 55px;
     color: #ffffff;
 }
@@ -156,18 +156,7 @@ content: "";
     color: #d5d5d5;
 }
 
-.home_navbar .big_img {
-    position: relative;
-    width: 277px;
-    height: 277px;
-    margin-top: 41px;
-    margin-left: 494px;
-    /* background: url("/public/home/blister5.png"); */
-    border-radius: 90px 0 0 0;
-    filter: invert(46%) blur(1px);
-    background-size: cover;
 
-}
 
 
 /* START BASKET */
@@ -302,3 +291,33 @@ content: "";
 }
 
 /* END BASKET */
+
+.framer-motion-wrapper {
+    position: absolute;
+    bottom: 7rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.framer-motion-container {
+    width: 35px;
+    height: 64px;
+    border-radius: 1.5rem;
+    border-width: 4px;
+    border-color: #ccc;
+    border-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0.5rem;
+}
+
+.framer-motion-element {
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin-bottom: 0.25rem;
+}

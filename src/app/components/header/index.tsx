@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Typed from 'typed.js';
+import { motion } from "framer-motion";
+import { TopShops } from "../../screens/HomePage/topShops";
 
 import {
   Badge,
@@ -12,7 +14,7 @@ import {
   MenuItem,
   Stack,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
@@ -206,23 +208,36 @@ export function NavbarHome(props: any) {
             style={{ marginTop: "86px", marginLeft: "24px" }}
           >
             <Box>
-              <img src="/icons/welcome.svg" alt="welcome" />
+              <img src="/icons/Welcome.svg" alt="welcome" />
             </Box>
             <Box className="define_shop">
-              Easy solution for a complex{" "}
-              <span className="crossed">problem</span>.
+              Easy solution for complex{" "}
+              <span className="crossed">problems</span>.
               <div className="crossed_under">
                 {" "}
                 Save your <span ref={textRef}></span>
               </div>
             </Box>
           </Stack>
-
-          <Stack flexDirection={"column"}>
-            <Box className="big_img"></Box>
-          </Stack>
         </Stack>
       </Container>
+      <div className="framer-motion-wrapper">
+
+          <div className="framer-motion-container">
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="framer-motion-element"
+            />
+          </div>
+
+      </div>
     </div>
   );
 }

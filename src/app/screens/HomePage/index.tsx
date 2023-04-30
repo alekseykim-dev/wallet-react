@@ -62,10 +62,10 @@ export function HomePage() {
   return (
     <div className="homepage">
       <Statistics />
+      <Advertisements />
       <TopShops />
       <BestShops />
       <BestDishes />
-      <Advertisements />
       <Events />
       <Recommendations />
     </div>
