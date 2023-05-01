@@ -80,10 +80,11 @@ font-style: normal;
 
 .homepage .top_shop_frame {
     width: 100%;
-    height: 640px;
+    height: 700px;
     display: flex;
     background: #d7d7d8;
 }
+
 
 .homepage .category_title {
 
@@ -301,7 +302,16 @@ font-style: normal;
     margin-left: 901px;
     margin-top: 19px;
 }
+.prev_next_frame1 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 24px;
 
+    margin-bottom: 20px;
+}
 
 .homepage .dot_frame_pagination {
     position: relative;

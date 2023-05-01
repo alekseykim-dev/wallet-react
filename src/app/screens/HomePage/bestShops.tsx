@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { Favorite, Visibility } from "@mui/icons-material";
 import { AspectRatio,Card ,CardOverflow, CssVarsProvider, IconButton, Link } from "@mui/joy";
 import { Box, Button, Container, Stack } from "@mui/material";
@@ -30,6 +30,18 @@ const bestShopRetriever = createSelector(
 );
 
 export function BestShops() {
+
+  const [isHovered1, setIsHovered1] = useState(false);
+
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
+
+
 
   /** INITIALIZATION */
   const history = useHistory();
@@ -210,7 +222,15 @@ export function BestShops() {
             sx={{ width: "100%", marginTop: "16px" }}
           >
             <Button
-              style={{ background: "#1976d2", color: "#fff" }}
+              className="nav_button"
+              variant="contained"
+              style={{
+                color: isHovered1 ? "#fff" : "#000",
+                opacity: isHovered1 ? 0.7 : 1,
+                backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+              }}
+              onMouseEnter={handleMouseEnter1}
+              onMouseLeave={handleMouseLeave1}
               onClick={goShopHandler}
             >
               See All

@@ -66,7 +66,7 @@ export function HomePage() {
       <TopShops />
       <BestShops />
       <BestProducts />
-      <Events />
+      {/* <Events /> */}
       {/* <Recommendations /> */}
     </div>
   );
