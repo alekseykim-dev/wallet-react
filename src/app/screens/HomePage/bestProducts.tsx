@@ -71,7 +71,7 @@ export function BestProducts() {
                   >
                     <div className="dish_sale">{size_volume}</div>
                     <div className="view_btn" onClick={() => chosenProductHandler(product._id)}>
-                      See more
+                      hjbkh
                       <img
                         src="/icons/arrow.svg"
                         alt="arrow"

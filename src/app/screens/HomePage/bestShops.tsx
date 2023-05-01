@@ -72,15 +72,14 @@ export function BestShops() {
 
   return (
     <div className="best_shop_frame">
-      <img
-        src={"/icons/line.svg"}
-        alt="line"
-        style={{ position: "absolute", left: "6%", transform: " rotate(90%)" }}
-      />
-      <Container sx={{ paddingTop: "153px" }}>
+      <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">Best Shops</Box>
-          <Stack flexDirection={"row"} sx={{ mt: "43px" }}>
+          <Box className="category_title">
+            Popular Shops
+            <img className="back2" src="/icons/bit_back3.svg" alt="" />
+            <img className="back3" src="/icons/bit_back4.svg" alt="" />
+          </Box>
+          <Stack flexDirection={"row"} sx={{ mt: "10px" }}>
             {bestShops.map((ele: Shop) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               return (

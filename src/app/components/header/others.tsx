@@ -44,7 +44,7 @@ export function NavbarOthers(props: any) {
           justifyContent={"space-between"}
         >
           <Box>
-            <img src="/icons/Logo.svg" alt="logo" />
+            <img src="/icons/Bitsafe.svg" alt="logo" />
           </Box>
           <Stack
             // flexDirection={"row"}

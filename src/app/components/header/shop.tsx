@@ -41,7 +41,7 @@ export function NavbarShop(props: any) {
       <Container>
         <Stack className="navbar_config">
           <Box>
-            <img src="/icons/Logo.svg" alt="logo" />
+            <img src="/icons/Bitsafe.svg" alt="logo" />
           </Box>
           <Stack className="navbar_links">
             <Box className="hover-line" onClick={props.setPath}>

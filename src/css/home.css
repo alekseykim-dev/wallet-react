@@ -80,7 +80,7 @@ font-style: normal;
 
 .homepage .top_shop_frame {
     width: 100%;
-    height: 505px;
+    height: 640px;
     display: flex;
     background: #d7d7d8;
 }
@@ -92,9 +92,44 @@ font-style: normal;
         font-weight: 700;
         font-size: 30px;
         line-height: 37px;
-    margin-bottom: 15px;
+    margin-bottom: 55px;
+    margin-top: 100px;
 
     color: #1f1f1f;
+}
+
+.back{
+
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 1830px;
+}
+
+.back1 {
+
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 2000px;
+}
+
+.back2 {
+
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 326px;
+    top: 2400px;
+  
+}
+
+.back3 {
+
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 300px;
+    top: 3080px;
+  
 }
 
 .homepage .best_shop_frame {
@@ -180,6 +215,12 @@ font-style: normal;
     opacity: 1;
 }
 
+.card_style{
+    justify-content: flex-start;
+    position: absolute;
+    top: 20px;
+}
+
 .homepage .dish_box .dish_desc {
     width: 90%;
     display: flex;
@@ -212,8 +253,8 @@ font-style: normal;
     width: 100%;
     display: flex;
     overflow: hidden;
-    /* box-shadow: 0px -62px 60px 20px rgb(217 217 217/40%); */
-    /* margin-top: 186px; */
+    /* box-shadow: 0px -62px 60px 20px #f8be69; */
+    /* margin-top: 100px; */
     /* background-color: #956dd3; */
 }
 
