@@ -75,7 +75,7 @@ export function TopShops() {
           <Swiper
             className={"events_info swiper-wrapper"}
             slidesPerView={3}
-            spaceBetween={30} // space between sliders
+            spaceBetween={10} // space between sliders
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",
@@ -95,12 +95,8 @@ export function TopShops() {
                 <SwiperSlide key={ele._id}>
                   <CssVarsProvider>
                     <Card
+                      className={"swiper-width"}
                       onClick={() => chosenShopHandler(ele._id)}
-                      sx={{
-                        minHeight: "340px",
-                        minWidth: 315,
-                        cursor: "pointer",
-                      }}
                       ref={(ref) => (refs.current[index] = ref)}
                     >
                       <CardCover>

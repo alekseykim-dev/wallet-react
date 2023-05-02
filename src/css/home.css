@@ -143,7 +143,7 @@ font-style: normal;
 .homepage .best_dishes_frame {
     margin-top: 72px;
     width: 100%;
-    height: 462px;
+    height: 662px;
     display: flex;
     background: #d7d7d8;
 }
@@ -382,6 +382,7 @@ font-style: normal;
 .homepage .event_title_speaker .event_organizator {
     display: flex;
     align-items: center;
+
 }
 
 .homepage .event_organizator .spec_text_author {
@@ -425,6 +426,9 @@ font-style: normal;
 }
 
 .homepage .swiper-wrapper {
+    width: 100%;
+
+    /* padding-right: 100%; */
     display: flex;
     flex-direction: row;
 }
@@ -442,6 +446,13 @@ font-style: normal;
 .homepage .swiper-pagination-bullet-active {
     background: #007aff;
     border-radius: 50%;
+}
+
+.swiper-width {
+    height: 300px;
+    width: 275px;
+    cursor: pointer;
+
 }
 
 .homepage .top_article_frame {
@@ -564,11 +575,18 @@ font-style: normal;
 }
 
 
-
+.coin-wrapper{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+}
 .coins-table {
     width: 100%;
     border-collapse: collapse;
     border: 1px solid #ccc;
+    color: #000000;
+    background-color: #f1f1f1;
 }
 
 .coins-table th,
@@ -576,23 +594,29 @@ font-style: normal;
     padding: 8px;
     text-align: left;
     border-bottom: 1px solid #ccc;
+    /* vertical-align: middle; */
 }
 
 .coins-table th {
-    background-color: #f8f8f8;
+    /* background-color: #000000d0; */
 }
 
 .coins-table tr:nth-child(even) {
-    background-color: #f2f2f2;
+    background-color: #c2c2c2;
+}
+
+.coins-table tr:nth-child(odd) {
+    background-color: #b3b3b3;
 }
 
 .coins-table tr:hover {
-    background-color: #e2e2e2;
+    background-color: #c4c4c4;
+    color: #fff
 }
 
-.coins-table td:last-child {
+/* .coins-table td:last-child {
     text-align: right;
-}
+} */
 
 .green {
     color: green;
@@ -601,3 +625,14 @@ font-style: normal;
 .red {
     color: red;
 }
+.coin-img {
+    margin-right: 10px;
+}
+
+.coin-img-wrapper {
+    display: flex;
+        align-items: center;
+}
+/* .coins-table .coins-right {
+    text-align: right !important;
+} */
