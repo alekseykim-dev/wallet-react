@@ -14,7 +14,7 @@ class ShopApiService {
 
   async getTopShops(): Promise<Shop[]> {
     try {
-      const url = "/shops?order=top&page=1&limit=4",
+      const url = "/shops?order=top&page=1&limit=10",
         result = await axios.get(this.path + url, { withCredentials: true });
       assert.ok(result?.data, Definer.general_err1);
       assert.ok(result?.data?.state !== "Failed", result?.data?.message);

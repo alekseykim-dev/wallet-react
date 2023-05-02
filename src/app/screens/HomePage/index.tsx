@@ -20,6 +20,8 @@ import {
 import { Shop } from "../../../types/user";
 import ShopApiService from "../../apiServices/shopApiService";
 
+import Coins from "./coins";
+
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
   // from reduxToolkit sends actions to redux store
@@ -66,6 +68,7 @@ export function HomePage() {
       <TopShops />
       <BestShops />
       <BestProducts />
+      <Coins/>
       {/* <Events /> */}
       {/* <Recommendations /> */}
     </div>

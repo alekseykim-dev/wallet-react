@@ -563,3 +563,41 @@ font-style: normal;
     color: #808080;
 }
 
+
+
+.coins-table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+}
+
+.coins-table th,
+.coins-table td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ccc;
+}
+
+.coins-table th {
+    background-color: #f8f8f8;
+}
+
+.coins-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.coins-table tr:hover {
+    background-color: #e2e2e2;
+}
+
+.coins-table td:last-child {
+    text-align: right;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}

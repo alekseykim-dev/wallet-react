@@ -48,7 +48,7 @@ export function NavbarHome(props: any) {
   };
 
   // Create ref element
-  const textRef = useRef(null);
+  const textRef = useRef<HTMLSpanElement>(null);
   
     useEffect(() => {
       const options = {
@@ -62,12 +62,20 @@ export function NavbarHome(props: any) {
         loop: true,
       };
       const typed = new Typed(textRef.current, options);
+ if (textRef.current) {
+   textRef.current.classList.add("color");
+ }
       return () => {
         typed.destroy();
       };
     }, []);
   
 
+  const styles = `
+  .color {
+    color: #fff;
+  }
+`;
   
 
     
@@ -222,18 +230,17 @@ export function NavbarHome(props: any) {
               <img src="/icons/Welcome.svg" alt="welcome" />
             </Box>
             <Box className="define_shop">
-              Easy solution for complex{" "}
+              We provide easy solution for complex{" "}
               <span className="crossed">problems</span>.
               <div className="crossed_under">
-                {" "}
-                Save your <span ref={textRef}></span>
+                Save your <style>{styles} </style> <span ref={textRef}></span>
               </div>
             </Box>
           </Stack>
         </Stack>
       </Container>
       <div className="framer-motion-wrapper">
-        <div onClick={handleClick}  className="framer-motion-container">
+        <div onClick={handleClick} className="framer-motion-container">
           <motion.div
             animate={{
               y: [0, 24, 0],

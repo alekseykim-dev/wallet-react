@@ -43,15 +43,6 @@ export function TopShops() {
     history.push(`/shop/${id}`);
   };
 
-  const swiperOptions = {
-    loop: true,
-    slidesPerView: 2,
-    spaceBetween: 30,
-    autoplay: {
-      delay: 2500,
-      disableOnInteraction: false,
-    },
-  };
 
   return (
     <div className="top_shop_frame">
@@ -97,7 +88,6 @@ export function TopShops() {
               delay: 2000,
               disableOnInteraction: true, //slider stops when touch it
             }}
-            
           >
             {topShops.map((ele: Shop, index: number) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
@@ -107,8 +97,8 @@ export function TopShops() {
                     <Card
                       onClick={() => chosenShopHandler(ele._id)}
                       sx={{
-                        minHeight: "350px",
-                        minWidth: 325,
+                        minHeight: "340px",
+                        minWidth: 315,
                         cursor: "pointer",
                       }}
                       ref={(ref) => (refs.current[index] = ref)}

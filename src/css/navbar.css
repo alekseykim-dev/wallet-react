@@ -113,6 +113,7 @@
     flex-direction: row;
     width: 1290px;
     height: 477px;
+
 }
 
 
@@ -126,7 +127,7 @@
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 50px;
+    font-size: 40px;
     line-height: 55px;
     color: #ffffff;
 }
@@ -139,6 +140,8 @@
     color: #fff;
     font-family: "Montserrat", sans-serif;
 }
+
+
 
 /* .home_navbar .crossed_under{
     color: #fff;
