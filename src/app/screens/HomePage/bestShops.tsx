@@ -86,8 +86,8 @@ export function BestShops() {
     <div className="best_shop_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">
-            Popular Shops
+          <Box className="category_title_shop">
+            Customer Favorites
             <img className="back2" src="/icons/bit_back3.svg" alt="" />
             <img className="back3" src="/icons/bit_back4.svg" alt="" />
           </Box>

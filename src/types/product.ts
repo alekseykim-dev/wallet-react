@@ -16,6 +16,7 @@ export interface Product {
   product_discount: number;
   product_left_cnt: number;
   product_size: string;
+  product_country: string;
   product_volume: number;
   product_description: string;
   product_images: string[];

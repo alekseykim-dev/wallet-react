@@ -14,8 +14,7 @@ export function Footer() {
                 <img src="/icons/Bitsafe.svg" alt="logo"></img>
               </Box>
               <Box className="main_text">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Et,
-                corrupti quis. Quidem voluptatum temporibus.
+                Experience peace of mind knowing that your digital assets are always secure with our reliable and easy-to-use cold wallets.
               </Box>
               <Stack className="contact_links">
                 <Box>
@@ -61,15 +60,15 @@ export function Footer() {
               <Box className="divider"></Box>
               <Stack className="details" sx={{ mt: "19px" }}>
                 <Box className="detail_first">L.</Box>
-                <Box className="detail_second">Uzbekistan</Box>
+                <Box className="detail_second">South Korea</Box>
               </Stack>
               <Stack className="details" sx={{ mt: "42px" }}>
                 <Box className="detail_first">P.</Box>
-                <Box className="detail_second">+998 - 99 266 25 62</Box>
+                <Box className="detail_second">+82 10 5851 5310</Box>
               </Stack>
               <Stack className="details" sx={{ mt: "9px" }}>
                 <Box className="detail_first">E.</Box>
-                <Box className="detail_second">Bit.Safe@gmail.com</Box>
+                <Box className="detail_second">Bitsafe@gmail.com</Box>
               </Stack>
             </Stack>
           </Stack>

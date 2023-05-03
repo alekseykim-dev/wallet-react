@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Statistics } from "./statistics";
+import { Statistics } from "./shopInfo";
 import { TopShops } from "./RecommendedShops";
 import { BestShops } from "./bestShops";
 import { BestProducts } from "./bestProducts";
@@ -21,6 +21,7 @@ import { Shop } from "../../../types/user";
 import ShopApiService from "../../apiServices/shopApiService";
 
 import Coins from "./coins";
+
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -68,7 +69,7 @@ export function HomePage() {
       <TopShops />
       <BestShops />
       <BestProducts />
-      <Coins/>
+      <Coins />
       {/* <Events /> */}
       {/* <Recommendations /> */}
     </div>

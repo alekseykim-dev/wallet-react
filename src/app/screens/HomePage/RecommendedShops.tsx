@@ -46,14 +46,14 @@ export function TopShops() {
 
   return (
     <div className="top_shop_frame">
-      <Container>
+      <Container style={{ marginLeft: "50px" }}>
         <Stack
           flexDirection={"column"}
           alignItems={"center"}
           sx={{ mt: "45px" }}
         >
           <Box className="category_title">
-            Recommended Shops
+            Trending Now
             <img className="back" src="/icons/bit_back1.svg" alt="" />
             <img className="back1" src="/icons/bit_back2.svg" alt="" />
           </Box>
@@ -74,8 +74,8 @@ export function TopShops() {
           </Box>
           <Swiper
             className={"events_info swiper-wrapper"}
-            slidesPerView={3}
-            spaceBetween={10} // space between sliders
+            slidesPerView={4}
+            spaceBetween={20} // space between sliders
             navigation={{
               nextEl: ".swiper-button-next",
               prevEl: ".swiper-button-prev",

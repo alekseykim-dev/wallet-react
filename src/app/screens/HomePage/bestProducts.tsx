@@ -51,15 +51,11 @@ export function BestProducts() {
     <div className="best_dishes_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">Recommended Products</Box>
+          <Box className="category_title">Best Value</Box>
           <Stack sx={{ mt: "43px" }} flexDirection={"row"}>
             {trendProducts.map((product: Product, index: number) => {
-            const image_path = `${serverApi}/${product.product_images}`;
-              console.log('product', product)
-              const size_volume =
-                product.product_collection === "beverage"
-                  ? product.product_volume + "L"
-                  : "Size: " + product.product_size;
+              const image_path = `${serverApi}/${product.product_images[0]}`;
+              console.log("product", product);
 
               return (
                 <Box key={index} className="dish_box">
@@ -69,9 +65,12 @@ export function BestProducts() {
                       backgroundImage: `url(${image_path})`,
                     }}
                   >
-                    <div className="dish_sale">{size_volume}</div>
-                    <div className="view_btn" onClick={() => chosenProductHandler(product._id)}>
-                      See More
+                 
+                    <div
+                      className="view_btn"
+                      onClick={() => chosenProductHandler(product._id)}
+                    >
+                      Take a look
                       <img
                         src="/icons/arrow.svg"
                         alt="arrow"
@@ -82,6 +81,8 @@ export function BestProducts() {
                   <Stack className="dish_desc">
                     <span className="dish_title_text">
                       {product.product_name}
+                    </span>
+                    <span className="product_country_text">Ships from {product.product_country}
                     </span>
                     <span className="dish_desc_text">
                       <span className="price"> ${product.product_price} </span>
