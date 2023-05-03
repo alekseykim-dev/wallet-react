@@ -51,8 +51,12 @@ export function BestProducts() {
     <div className="best_dishes_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title">Best Value</Box>
-          <Stack sx={{ mt: "43px" }} flexDirection={"row"}>
+          <Box className="category_title">
+            Best Value
+            <img className="back4" src="/icons/bit_back5.svg" alt="" />
+            <img className="back5" src="/icons/bit_back6.svg" alt="" />
+          </Box>
+          <Stack sx={{ mt: "23px", zIndex: "1"}} flexDirection={"row"}>
             {trendProducts.map((product: Product, index: number) => {
               const image_path = `${serverApi}/${product.product_images[0]}`;
               console.log("product", product);
@@ -65,7 +69,6 @@ export function BestProducts() {
                       backgroundImage: `url(${image_path})`,
                     }}
                   >
-                 
                     <div
                       className="view_btn"
                       onClick={() => chosenProductHandler(product._id)}
@@ -82,7 +85,8 @@ export function BestProducts() {
                     <span className="dish_title_text">
                       {product.product_name}
                     </span>
-                    <span className="product_country_text">Ships from {product.product_country}
+                    <span className="product_country_text">
+                      Ships from {product.product_country}
                     </span>
                     <span className="dish_desc_text">
                       <span className="price"> ${product.product_price} </span>

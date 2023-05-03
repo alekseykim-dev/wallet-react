@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Button, Container, Stack } from "@mui/material";
+import zIndex from "@mui/material/styles/zIndex";
 
 const Coins = () => {
   const [cryptoData, setCryptoData] = useState([]);
@@ -34,12 +35,17 @@ const Coins = () => {
   };
   return (
     <div className="coin_frame">
+      
       <Stack flexDirection={"column"} alignItems={"center"}>
         <Box className="category_title_coin">Real-time Crypto Updates</Box>
 
-        <Container style={{
-          maxWidth: "1250px", margin: "60px"
-        }}>
+        <Container
+          style={{
+            maxWidth: "1250px",
+            margin: "40px",
+            zIndex: "1"
+          }}
+        >
           <div className="coin-wrapper">
             <div className="coin-container">
               <table className="coins-table">

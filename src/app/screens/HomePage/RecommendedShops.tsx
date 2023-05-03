@@ -56,6 +56,9 @@ export function TopShops() {
             Trending Now
             <img className="back" src="/icons/bit_back1.svg" alt="" />
             <img className="back1" src="/icons/bit_back2.svg" alt="" />
+            <img className="back2" src="/icons/bit_back3.svg" alt="" />
+            <img className="back3" src="/icons/bit_back4.svg" alt="" />
+            <img className="back6" src="/icons/bit_back4.svg" alt="" />
           </Box>
           <Box className={"prev_next_frame1"}>
             <img

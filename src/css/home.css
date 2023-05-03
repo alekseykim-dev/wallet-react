@@ -94,7 +94,7 @@ font-style: normal;
         font-size: 30px;
         line-height: 37px;
     margin-bottom: 35px;
-    margin-top: 70px;
+    margin-top: 90px;
 
     color: #1f1f1f;
 }
@@ -107,7 +107,8 @@ font-style: normal;
     font-size: 30px;
     line-height: 37px;
     margin-bottom: 45px;
-    margin-top: 70px;
+    margin-top: 90px;
+    z-index: 1;
 
     color: #1f1f1f;
 }
@@ -132,8 +133,8 @@ font-style: normal;
 
     background-repeat: no-repeat;
     position: absolute;
-    left: 326px;
-    top: 2400px;
+    left: 300px;
+    top: 2350px;
   
 }
 
@@ -146,6 +147,26 @@ font-style: normal;
   
 }
 
+.back4 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 0px;
+    top: 3180px;
+}
+
+.back5 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 3520px;
+}
+
+.back6 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 300px;
+    top: 3680px;
+}
 .homepage .best_shop_frame {
     width: 100%;
     height: 675px;
@@ -162,6 +183,7 @@ font-style: normal;
 
 .homepage .dish_box {
     margin-right: 26px;
+    border-radius: 30px;
     width: 273px;
     height: 376px;
     display: flex;
@@ -258,6 +280,7 @@ font-style: normal;
 }
 .homepage .dish_desc .dish_desc_text {
     margin-top: 15px;
+    margin-bottom: 5px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -675,10 +698,11 @@ font-style: normal;
 }
 
 .homepage .coin_frame {
-    margin-top: 72px;
+    margin-top: 90px;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     background: #d7d7d8;
+    z-index: 1;
 }
