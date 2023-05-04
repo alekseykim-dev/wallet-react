@@ -121,9 +121,7 @@ export function TopShops() {
                         >
                           {ele.mb_nick}
                         </Typography>
-                        <Typography textColor="neutral.300">
-                          {ele.mb_address}
-                        </Typography>
+                        
                       </CardContent>
                     </Card>
                   </CssVarsProvider>

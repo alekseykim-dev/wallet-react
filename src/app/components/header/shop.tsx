@@ -40,13 +40,12 @@ export function NavbarShop(props: any) {
     <div className="format_shop home_navbar">
       <Container>
         <Stack className="navbar_config">
-          <Box>
-            <img src="/icons/Bitsafe.svg" alt="logo" />
+          <Box onClick={props.setPath}>
+            <NavLink to="/">
+              <img src="/icons/Bitsafe.svg" alt="logo" />
+            </NavLink>
           </Box>
           <Stack className="navbar_links">
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/">Home</NavLink>
-            </Box>
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/shop" activeClassName="underline">
                 Shops

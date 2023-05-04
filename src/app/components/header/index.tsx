@@ -52,7 +52,7 @@ export function NavbarHome(props: any) {
   
     useEffect(() => {
       const options = {
-        strings: ["money.", "crypto.", "assets."],
+        strings: ["Save your money.", "Save your crypto.", "Save your assets."],
         startDelay: 300,
         typeSpeed: 130,
         backSpeed: 50,
@@ -83,15 +83,12 @@ export function NavbarHome(props: any) {
     <div className="format home_navbar">
       <Container>
         <Stack className="navbar_config">
-          <Box>
-            <img src="/icons/Bitsafe.svg" alt="logo" />
+          <Box onClick={props.setPath}>
+            <NavLink to="/">
+              <img src="/icons/Bitsafe.svg" alt="logo" />
+            </NavLink>
           </Box>
           <Stack className="navbar_links">
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/" activeClassName="underline">
-                Home
-              </NavLink>
-            </Box>
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/shop" activeClassName="underline">
                 Shops
@@ -233,7 +230,7 @@ export function NavbarHome(props: any) {
               We provide easy solution for complex{" "}
               <span className="crossed">problems</span>.
               <div className="crossed_under">
-                Save your <style>{styles} </style> <span ref={textRef}></span>
+               <style>{styles} </style> <span ref={textRef}></span>
               </div>
             </Box>
           </Stack>

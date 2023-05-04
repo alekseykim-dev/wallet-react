@@ -43,8 +43,10 @@ export function NavbarOthers(props: any) {
           className="navbar_config"
           justifyContent={"space-between"}
         >
-          <Box>
-            <img src="/icons/Bitsafe.svg" alt="logo" />
+          <Box onClick={props.setPath}>
+            <NavLink to="/" >
+              <img src="/icons/Bitsafe.svg" alt="logo" />
+            </NavLink>
           </Box>
           <Stack
             // flexDirection={"row"}
@@ -52,11 +54,6 @@ export function NavbarOthers(props: any) {
             // alignItems={"center"}
             className="navbar_links"
           >
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/">
-                Home
-              </NavLink>
-            </Box>
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/shop" activeClassName="underline">
                 Shops

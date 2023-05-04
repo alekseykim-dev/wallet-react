@@ -6,15 +6,20 @@ import { NavLink } from "react-router-dom";
 export function Footer() {
   return (
     <div className="footer_config">
-      <Container>
+      <Container className="footer_cont">
         <Stack flexDirection={"column"} className="main_footer_container">
-          <Stack flexDirection={"row"} style={{ height: "242px" }}>
+          <Stack
+            justifyContent={"space-between"}
+            flexDirection={"row"}
+            style={{ height: "242px" }}
+          >
             <Stack className="info" flexDirection={"column"}>
               <Box>
                 <img src="/icons/Bitsafe.svg" alt="logo"></img>
               </Box>
               <Box className="main_text">
-                Experience peace of mind knowing that your digital assets are always secure with our reliable and easy-to-use cold wallets.
+                Experience peace of mind knowing that your digital assets are
+                always secure with our reliable and easy-to-use cold wallets.
               </Box>
               <Stack className="contact_links">
                 <Box>
@@ -72,7 +77,7 @@ export function Footer() {
               </Stack>
             </Stack>
           </Stack>
-          <Box className="liner" sx={{ mt: "86px" }}></Box>
+          <Box className="liner"></Box>
           <Box className="copyrights" sx={{ mt: "15px" }}>
             {" "}
             Copyrights BitSafe 2023. All rights reserved

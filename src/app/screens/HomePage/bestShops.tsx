@@ -163,6 +163,7 @@ export function BestShops() {
                       variant="soft"
                       sx={{
                         display: "flex",
+                        justifyContent: "flex-end",
                         gap: 1.5,
                         py: 1.5,
                         px: "var(--Card-padding)",
@@ -210,8 +211,8 @@ export function BestShops() {
 
           <Stack
             flexDirection={"row"}
-            justifyContent={"flex-end"}
-            sx={{ width: "100%", marginTop: "16px" }}
+            justifyContent={"center"}
+            sx={{ width: "100%", marginTop: "20px" }}
           >
             <Button
               className="nav_button"
@@ -225,7 +226,7 @@ export function BestShops() {
               onMouseLeave={handleMouseLeave1}
               onClick={goShopHandler}
             >
-              See All
+              See All Shops
             </Button>
           </Stack>
         </Stack>

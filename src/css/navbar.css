@@ -44,6 +44,7 @@
     flex-direction: row;
     justify-content: space-evenly;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
     width: 550px;
     height: 46px;
     backdrop-filter: blur(10px);
@@ -133,10 +134,10 @@
 }
 
 .home_navbar .crossed {
-    text-decoration: line-through;
+    /* text-decoration: line-through;
     text-decoration-color: #dd462f;
     text-decoration-style: solid;
-    text-decoration-thickness: 3px;
+    text-decoration-thickness: 3px; */
     color: #fff;
     font-family: "Montserrat", sans-serif;
 }
