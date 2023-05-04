@@ -49,7 +49,7 @@ export function HomePage() {
       .catch((err) => console.log(err));
 
     shopService
-      .getShops({ page: 1, limit: 4, order: "mb_point" })
+      .getShops({ page: 1, limit: 4, order: "mb_likes" })
       .then((data) => {
         setBestShops(data)
       })

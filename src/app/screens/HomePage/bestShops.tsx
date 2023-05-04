@@ -96,17 +96,10 @@ export function BestShops() {
               return (
                 <CssVarsProvider key={ele._id}>
                   <Card
+                    className="customer_card"
                     onClick={() => chosenShopHandler(ele._id)}
                     variant="outlined"
-                    sx={{
-                      minHeight: 483,
-                      minWidth: 320,
-                      mr: "15px",
-                      ml: "15px",
-                      background: "white",
-                      borderRadius: "10px",
-                      cursor: "pointer",
-                    }}
+                    
                   >
                     <CardOverflow>
                       <AspectRatio ratio="1">
