@@ -1,12 +1,11 @@
 import React, { useRef, useState } from "react";
 import { Favorite, Visibility } from "@mui/icons-material";
-import { AspectRatio,Card ,CardOverflow, CssVarsProvider, IconButton, Link } from "@mui/joy";
-import { Box, Button, Container, Stack } from "@mui/material";
+import { AspectRatio,Card ,CardOverflow, CssVarsProvider, Link } from "@mui/joy";
+import { Box, Button, CardActions, Container, Stack } from "@mui/material";
 import Typography from "@mui/joy/Typography";
-import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
-import CallIcon from "@mui/icons-material/Call";
-
-
+import AttachEmailRoundedIcon from "@mui/icons-material/AttachEmailRounded";
+import ApartmentRoundedIcon from "@mui/icons-material/ApartmentRounded";
+import BrandingWatermarkRoundedIcon from "@mui/icons-material/BrandingWatermarkRounded";
 // REDUX
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -45,7 +44,7 @@ export function BestShops() {
 
   /** INITIALIZATION */
   const history = useHistory();
-  const { bestShops: bestShops } = useSelector(bestShopRetriever);
+  const { bestShops } = useSelector(bestShopRetriever);
   // selector : takes data from store
   console.log("bestShops:::", bestShops);
   const refs: any = useRef([]);
@@ -71,7 +70,7 @@ export function BestShops() {
         e.target.style.fill = "red";
         refs.current[like_result.like_ref_id].innerHTML++;
       } else {
-        e.target.style.fill = "white";
+        e.target.style.fill = "#5a5a72";
         refs.current[like_result.like_ref_id].innerHTML--;
       }
       await sweetTopSmallSuccessAlert("Success", 700, false);
@@ -99,78 +98,52 @@ export function BestShops() {
                     className="customer_card"
                     onClick={() => chosenShopHandler(ele._id)}
                     variant="outlined"
-                    
+                    sx={{paddingBottom: "5px"}}
                   >
                     <CardOverflow>
                       <AspectRatio ratio="1">
                         <img src={image_path} alt="best" />
                       </AspectRatio>
-                      <IconButton
-                        onClick={(e) => {
-                          e.stopPropagation();
-                        }}
-                        aria-labelledby="like minimal photography"
-                        size="md"
-                        variant="solid"
-                        color="neutral"
-                        sx={{
-                          position: "absolute",
-                          zIndex: 2,
-                          borderRadius: "50%",
-                          right: "1rem",
-                          bottom: 0,
-                          transform: "translateY(50%)",
-                          color: "rgba(0,0,0,.4)",
-                        }}
-                      >
-                        <Favorite
-                          onClick={(e) => targetLikeBest(e, ele._id)}
-                          style={{
-                            fill:
-                              ele?.me_liked && ele?.me_liked[0]?.my_favorite
-                                ? "red"
-                                : "white",
-                          }}
-                        />
-                      </IconButton>
                     </CardOverflow>
                     <Typography
                       level="h2"
-                      sx={{ fontSize: "md", mt: 2, ml: 2 }}
+                      sx={{ fontSize: "15px", mt: 1, ml: 1 }}
+                      startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
-                      {ele.mb_nick}
+                      Brand: <i> {ele.mb_nick} </i>{" "}
                     </Typography>
-                    <Typography level="body2" sx={{ mt: 0.5, mb: 2, ml: 2 }}>
+                    <Typography
+                      level="body2"
+                      sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
+                    >
                       <Link
                         href="#"
-                        startDecorator={<LocationOnRoundedIcon />}
+                        startDecorator={<ApartmentRoundedIcon />}
                         textColor="neutral.700"
                       >
-                        {ele.mb_address}
+                        Manufacturer: <i> {ele.mb_address}</i>
                       </Link>
                     </Typography>
-                    <Typography level="body2" sx={{ mt: 0.5, mb: 2, ml: 2 }}>
+                    <Typography
+                      level="body2"
+                      sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
+                    >
                       <Link
                         href="#"
-                        startDecorator={<CallIcon />}
+                        startDecorator={<AttachEmailRoundedIcon />}
                         textColor="neutral.700"
                       >
-                        {ele.mb_email}
+                        Email: <i> {ele.mb_email} </i>
                       </Link>
                     </Typography>
 
-                    <CardOverflow
-                      variant="soft"
+                    <CardActions
                       sx={{
                         display: "flex",
-                        justifyContent: "flex-end",
-                        gap: 1.5,
-                        py: 1.5,
-                        px: "var(--Card-padding)",
-                        borderTop: "1px solid",
-                        borderColor: "neutral.outlinedBorder",
-                        bgcolor: "background.level1",
+                        justifyContent: "space-evenly", paddingLeft: "80px",
+                        paddingRight: "80px"
                       }}
+                      onClick={(e) => e.stopPropagation()}
                     >
                       <Typography
                         level="body3"
@@ -179,30 +152,48 @@ export function BestShops() {
                           color: "text.secondary",
                           alignItems: "center",
                           display: "flex",
-                          marginLeft: "10px",
+                          fontSize: "15px"
                         }}
                       >
                         {ele.mb_views}
-                        <Visibility sx={{ fontSize: 20, marginLeft: "5px" }} />
+                        <Visibility
+                          sx={{ fontSize: "25px", marginLeft: "5px" }}
+                        />
                       </Typography>
                       <Box sx={{ width: 2, bgcolor: "divider" }} />
                       <Typography
                         level="body3"
                         sx={{
                           fontWeight: "md",
-                          color: "text.secondary",
+                          color: "#5a5a72",
                           alignItems: "center",
                           display: "flex",
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
                         }}
                       >
-                        <div
+                        <span
                           ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
                         >
                           {ele.mb_likes}
-                        </div>
-                        <Favorite sx={{ fontSize: 20, marginLeft: "5px" }} />
+                        </span>
+                        <Favorite
+                          onClick={(e) => {
+                            targetLikeBest(e, ele._id);
+                          }}
+                          style={{
+                            fontSize: "25px",
+                            marginRight: "10px",
+                            fill:
+                              ele?.me_liked && ele?.me_liked[0]?.my_favorite
+                                ? "red"
+                                : "#5a5a72",
+                          }}
+                        />
                       </Typography>
-                    </CardOverflow>
+                    </CardActions>
                   </Card>
                 </CssVarsProvider>
               );
