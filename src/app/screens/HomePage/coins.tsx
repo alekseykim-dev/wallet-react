@@ -42,8 +42,9 @@ const Coins = () => {
         <Container
           style={{
             maxWidth: "1250px",
-            margin: "40px",
-            zIndex: "1"
+            marginTop: "40px",
+            zIndex: "1",
+            marginBottom: "20px"
           }}
         >
           <div className="coin-wrapper">
@@ -120,7 +121,7 @@ const Coins = () => {
                 </tbody>
               </table>
               {cryptoData.length > 10 && (
-                <Box style={{ textAlign: "center", marginTop: "16px" }}>
+                <Box style={{ textAlign: "center", marginTop: "30px" }}>
                   <Button
                     className="nav_button"
                     variant="contained"

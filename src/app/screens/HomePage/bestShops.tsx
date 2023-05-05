@@ -110,7 +110,7 @@ export function BestShops() {
                       sx={{ fontSize: "15px", mt: 1, ml: 1 }}
                       startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
-                      Brand: <i> {ele.mb_nick} </i>{" "}
+                      Brand: {ele.mb_nick} {" "}
                     </Typography>
                     <Typography
                       level="body2"
@@ -121,7 +121,7 @@ export function BestShops() {
                         startDecorator={<ApartmentRoundedIcon />}
                         textColor="neutral.700"
                       >
-                        Manufacturer: <i> {ele.mb_address}</i>
+                        Manufactured in {ele.mb_address}
                       </Link>
                     </Typography>
                     <Typography
@@ -132,9 +132,7 @@ export function BestShops() {
                         href="#"
                         startDecorator={<AttachEmailRoundedIcon />}
                         textColor="neutral.700"
-                      >
-                        Email: <i> {ele.mb_email} </i>
-                      </Link>
+                      >  Email:  {ele.mb_email} </Link>
                     </Typography>
 
                     <CardActions
@@ -203,7 +201,7 @@ export function BestShops() {
           <Stack
             flexDirection={"row"}
             justifyContent={"center"}
-            sx={{ width: "100%", marginTop: "20px" }}
+            sx={{ width: "100%", marginTop: "40px" }}
           >
             <Button
               className="nav_button"
