@@ -22,6 +22,7 @@ import OrderApiService from "../../apiServices/orderApiService";
 
 import { Member } from "../../../types/user";
 import { verifiedMemberData } from "../../apiServices/verify";
+import { sweetFailureProvider } from "../../../lib/sweetAlert";
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -39,6 +40,9 @@ export function OrdersPage(props: any) {
 
 
   useEffect(() => {
+    if (!verifiedMemberData) {
+      sweetFailureProvider("Please login first!", true, true);
+    }
     const orderService = new OrderApiService();
     orderService
       .getMyOrders("paused")

@@ -94,26 +94,26 @@ export function NavbarHome(props: any) {
                 Shops
               </NavLink>
             </Box>
-            {verifiedMemberData ? (
+
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to={"/orders"} activeClassName="underline">
                   Orders
                 </NavLink>
               </Box>
-            ) : null}
+
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/community" activeClassName="underline">
                 Community
               </NavLink>
             </Box>
 
-            {verifiedMemberData ? (
+
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/member-page" activeClassName="underline">
                   My Page
                 </NavLink>
               </Box>
-            ) : null}
+
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/help" activeClassName="underline">
@@ -221,7 +221,7 @@ export function NavbarHome(props: any) {
         <Stack className="head_information" justifyContent={"row"}>
           <Stack
             justifyContent={"column"}
-            style={{ marginTop: "86px", marginLeft: "24px" }}
+            style={{ marginTop: "120px"}}
           >
             <Box>
               <img src="/icons/Welcome.svg" alt="welcome" />
