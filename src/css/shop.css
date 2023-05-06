@@ -23,7 +23,7 @@
 
 .shop_page .all_shops .fill_box {
     position: relative;
-    width: 550px;
+    width: 600px;
     height: 45px;
     display: flex;
     margin-top: 10px;
@@ -34,21 +34,24 @@
 
 .shop_page .all_shops .fill_box a {
     position: relative;
-
-    display: flex;
-    font-family: "Quicksand", sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
+    font-size: 19px;
     line-height: 25px;
-    color: #ffffff;
+    text-decoration: none;
+    color: #1f1f1f;
+    font-weight: 500;      
+    vertical-align: top;
+        padding: 2px 9px;
+  
 }
 
-.shop_page .all_shops .fill_box a {
-    overflow: hidden;
-    position: relative;
-    display: inline-block;
+.all_shops .fill_box a:hover{
+    background-color: #606060d0;
+    color: white;
+        border-radius: 10px;
+        scale: 1.05;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
+
 
 .shop_page .all_shops .fill_box a::before,
 .fill_box a::after {
@@ -59,7 +62,6 @@
 }
 
 .shop_page .all_shops .fill_box a::before {
-    background-color: #d7b686;
     height: 2px;
     bottom: 0;
     transform-origin: 100% 50%;
@@ -95,12 +97,7 @@
     transform: translate3d(-200%, 0, 0);
 }
 
-.shop_page .all_shops .fill_box a {
-    text-decoration: none;
-    color: #1f1f1f;
-    font-weight: 700;
-    vertical-align: top;
-}
+
 
 .shop_page .all_shops .search_big_box {
     position: relative;
@@ -149,7 +146,6 @@
     display: flex;
 
     border-radius: 18.5px;
-    background: #f8be69;
 }
 
 .shop_page .all_shops .all_res_box {

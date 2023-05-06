@@ -42,7 +42,6 @@ const actionDispatch = (dispatch: Dispatch) => ({
 
 // const order_list = Array.from(Array(8).keys());
 
-
 /** REDUX SELECTOR */
 const targetShopsRetriever = createSelector(
   retrieveTargetShops,
@@ -54,14 +53,26 @@ const targetShopsRetriever = createSelector(
 export function AllShops() {
   /* INITIALIZATIONS */
   const history = useHistory(); // react router-dom
-  const { setTargetShops: setTargetShops } = actionDispatch(useDispatch());
-  const { targetShops: targetShops } = useSelector(targetShopsRetriever);
+  const { setTargetShops } = actionDispatch(useDispatch());
+  const { targetShops } = useSelector(targetShopsRetriever);
   const [targetSearchObject, setTargetSearchObject] = useState<SearchObj>({
     page: 1,
     limit: 8,
     order: "mb_point",
   });
   const refs: any = useRef([]);
+
+
+   const [isHovered1, setIsHovered1] = useState(false);
+
+   const handleMouseEnter1 = () => {
+     setIsHovered1(true);
+   };
+
+   const handleMouseLeave1 = () => {
+     setIsHovered1(false);
+   };
+
 
 
   // best => mb_point
@@ -107,7 +118,7 @@ export function AllShops() {
          e.target.style.fill = "red";
          refs.current[like_result.like_ref_id].innerHTML++;
        } else {
-         e.target.style.fill = "white";
+         e.target.style.fill = "#5a5a72";
          refs.current[like_result.like_ref_id].innerHTML--;
        }
        await sweetTopSmallSuccessAlert("Success", 900, false);
@@ -134,6 +145,14 @@ export function AllShops() {
                   className="button_search"
                   variant="contained"
                   endIcon={<SearchIcon />}
+                  style={{
+                    color: isHovered1 ? "#fff" : "#000",
+                    opacity: isHovered1 ? 0.7 : 1,
+                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                  }}
+                  onMouseEnter={handleMouseEnter1}
+                  onMouseLeave={handleMouseLeave1}
+
                 >
                   Search
                 </Button>
@@ -148,146 +167,145 @@ export function AllShops() {
           </Box>
 
           <Stack className="all_res_box">
-              {targetShops.map((ele: Shop) => {
-                const image_path = `${serverApi}/${ele.mb_image}`;
-                // map 8
-                return (
-                  <CssVarsProvider key={ele._id}>
-                    <Card
-                      className="customer_card1"
-                      onClick={() => chosenShopHandler(ele._id)}
-                      variant="outlined"
-                      sx={{ paddingBottom: "5px" }}
+            {targetShops.map((ele: Shop) => {
+              const image_path = `${serverApi}/${ele.mb_image}`;
+              // map 8
+              return (
+                <CssVarsProvider key={ele._id}>
+                  <Card
+                    className="customer_card1"
+                    onClick={() => chosenShopHandler(ele._id)}
+                    variant="outlined"
+                    sx={{ paddingBottom: "5px" }}
+                  >
+                    <CardOverflow>
+                      <AspectRatio ratio="1">
+                        <img src={image_path} alt="best" />
+                      </AspectRatio>
+                    </CardOverflow>
+                    <Typography
+                      level="h2"
+                      sx={{ fontSize: "15px", mt: 1, ml: 1 }}
+                      startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
-                      <CardOverflow>
-                        <AspectRatio ratio="1">
-                          <img src={image_path} alt="best" />
-                        </AspectRatio>
-                      </CardOverflow>
-                      <Typography
-                        level="h2"
-                        sx={{ fontSize: "15px", mt: 1, ml: 1 }}
-                        startDecorator={<BrandingWatermarkRoundedIcon />}
+                      Brand: {ele.mb_nick}{" "}
+                    </Typography>
+                    <Typography
+                      level="body2"
+                      sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
+                    >
+                      <Link
+                        href="#"
+                        startDecorator={<ApartmentRoundedIcon />}
+                        textColor="neutral.700"
                       >
-                        Brand: {ele.mb_nick}{" "}
-                      </Typography>
-                      <Typography
-                        level="body2"
-                        sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
+                        Manufactured in {ele.mb_address}
+                      </Link>
+                    </Typography>
+                    <Typography
+                      level="body2"
+                      sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
+                    >
+                      <Link
+                        href="#"
+                        startDecorator={<AttachEmailRoundedIcon />}
+                        textColor="neutral.700"
                       >
-                        <Link
-                          href="#"
-                          startDecorator={<ApartmentRoundedIcon />}
-                          textColor="neutral.700"
-                        >
-                          Manufactured in {ele.mb_address}
-                        </Link>
-                      </Typography>
-                      <Typography
-                        level="body2"
-                        sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
-                      >
-                        <Link
-                          href="#"
-                          startDecorator={<AttachEmailRoundedIcon />}
-                          textColor="neutral.700"
-                        >
-                          {" "}
-                          Email: {ele.mb_email}{" "}
-                        </Link>
-                      </Typography>
+                        {" "}
+                        Email: {ele.mb_email}{" "}
+                      </Link>
+                    </Typography>
 
-                      <CardActions
+                    <CardActions
+                      sx={{
+                        display: "flex",
+                        justifyContent: "space-evenly",
+                        padding: "4px 4px 0px 4px",
+                      }}
+                      onClick={(e) => e.stopPropagation()}
+                    >
+                      <Typography
+                        level="body3"
                         sx={{
+                          fontWeight: "md",
+                          color: "#5a5a72",
+                          alignItems: "center",
                           display: "flex",
-                          justifyContent: "space-evenly",
-                          padding: "4px 4px 0px 4px"
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
                         }}
-                        onClick={(e) => e.stopPropagation()}
                       >
-                        <Typography
-                          level="body3"
-                          sx={{
-                            fontWeight: "md",
-                            color: "#5a5a72",
-                            alignItems: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                            width: "30px",
-                            height: "auto",
-                          }}
+                        <span
+                          ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
                         >
-                          <span
-                            ref={(element) => (refs.current[ele._id] = element)}
-                            style={{ fontSize: "15px" }}
-                          >
-                            {ele.mb_views}
-                          </span>
-                          <Visibility
-                            sx={{ fontSize: "23px", marginLeft: "5px" }}
-                          />
-                        </Typography>
-                        <Typography
-                          level="body3"
-                          sx={{
-                            fontWeight: "md",
-                            color: "#5a5a72",
-                            alignItems: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                            width: "30px",
-                            height: "auto",
-                          }}
+                          {ele.mb_views}
+                        </span>
+                        <Visibility
+                          sx={{ fontSize: "23px", marginLeft: "5px" }}
+                        />
+                      </Typography>
+                      <Typography
+                        level="body3"
+                        sx={{
+                          fontWeight: "md",
+                          color: "#5a5a72",
+                          alignItems: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
+                        }}
+                      >
+                        <span
+                          ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
                         >
-                          <span
-                            ref={(element) => (refs.current[ele._id] = element)}
-                            style={{ fontSize: "15px" }}
-                          >
-                            {ele.mb_point}
-                          </span>
-                          <CurrencyRubleIcon
-                            sx={{ fontSize: "23px", marginLeft: "5px" }}
-                          />
-                        </Typography>
-                        <Typography
-                          level="body3"
-                          sx={{
-                            fontWeight: "md",
-                            color: "#5a5a72",
-                            alignItems: "center",
-                            display: "flex",
-                            justifyContent: "center",
-                            width: "30px",
-                            height: "auto",
-                          }}
+                          {ele.mb_point}
+                        </span>
+                        <CurrencyRubleIcon
+                          sx={{ fontSize: "23px", marginLeft: "5px" }}
+                        />
+                      </Typography>
+                      <Typography
+                        level="body3"
+                        sx={{
+                          fontWeight: "md",
+                          color: "#5a5a72",
+                          alignItems: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
+                        }}
+                      >
+                        <span
+                          ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
                         >
-                          <span
-                            ref={(element) => (refs.current[ele._id] = element)}
-                            style={{ fontSize: "15px" }}
-                          >
-                            {ele.mb_likes}
-                          </span>
-                          <Favorite
-                            onClick={(e) => {
-                              targetLikeHandler(e, ele._id);
-                            }}
-                            style={{
-                              fontSize: "25px",
-                              fill:
-                                ele?.me_liked && ele?.me_liked[0]?.my_favorite
-                                  ? "red"
-                                  : "#5a5a72",
-                            }}
-                          />
-                        </Typography>
-                      </CardActions>
-                    </Card>
-                  </CssVarsProvider>
-                );
-              })}
+                          {ele.mb_likes}
+                        </span>
+                        <Favorite
+                          onClick={(e) => {
+                            targetLikeHandler(e, ele._id);
+                          }}
+                          style={{
+                            fontSize: "25px",
+                            fill:
+                              ele?.me_liked && ele?.me_liked[0]?.my_favorite
+                                ? "red"
+                                : "#5a5a72",
+                          }}
+                        />
+                      </Typography>
+                    </CardActions>
+                  </Card>
+                </CssVarsProvider>
+              );
+            })}
           </Stack>
           <Stack className="bottom_box">
-          
             <Pagination
               count={
                 targetSearchObject.page >= 3 ? targetSearchObject.page + 1 : 3
@@ -305,7 +323,6 @@ export function AllShops() {
               )}
               onChange={handlePaginationChange}
             />
-        
           </Stack>
         </Stack>
       </Container>

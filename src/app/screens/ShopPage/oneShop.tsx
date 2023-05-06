@@ -165,7 +165,7 @@ export function OneShop(props: any) {
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar_big_box">
             <Box className="top_text">
-              <p>Texas De Brazil Shop</p>
+              <p>{chosenShop?.mb_nick}</p>
               <Box className="Single_search_big_box">
                 <form className="Single_search_form" action="" method="">
                   <input
@@ -273,7 +273,6 @@ export function OneShop(props: any) {
           >
             <Stack className="dish_category_box">
               <div className="dish_category_main">
-                
                 <Button
                   variant="contained"
                   color="secondary"
@@ -295,7 +294,6 @@ export function OneShop(props: any) {
                 >
                   Wallets
                 </Button>
-               
               </div>
             </Stack>
 
