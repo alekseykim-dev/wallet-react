@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    background: #0b0e11;
+    background: #d7d7d8;
 }
 
 
@@ -11,21 +11,22 @@
 
 .shop_page .all_shops .fill_search_box {
     position: relative;
-    width: 100%;
-    height: 33px;
-    margin-top: 33px;
+    width: 700px;
+    height: auto;
+    margin-top: 50px;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+
 }
 
 .shop_page .all_shops .fill_box {
     position: relative;
-    width: 420px;
+    width: 550px;
     height: 45px;
     display: flex;
+    margin-top: 10px;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -96,22 +97,22 @@
 
 .shop_page .all_shops .fill_box a {
     text-decoration: none;
-    color: #ffffff;
+    color: #1f1f1f;
     font-weight: 700;
     vertical-align: top;
 }
 
 .shop_page .all_shops .search_big_box {
     position: relative;
-    width: 360px;
-    height: 33px;
+    width: 700px;
+    height: 40px;
 
     display: flex;
     align-items: center;
     background: #fffcfc;
-    border: 1px solid #ffffff;
     box-shadow: 0px 4px 4px rgba(213, 213, 213, 0.25);
     border-radius: 18.5px;
+    margin-bottom: 20px;
     box-sizing: border-box;
 }
 
@@ -127,7 +128,7 @@
 .shop_page .all_shops .searchInput {
     position: relative;
     width: 245px;
-    height: 29px;
+    height: 40px;
     margin-left: 10px;
 
     display: flex;
@@ -136,15 +137,15 @@
     font-family: "GT Walsheim Pro", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 26px;
     color: #4f547b;
 }
 
 .shop_page .all_shops .button_search {
     position: relative;
-    width: 100px;
-    height: 33px;
+    width: 125px;
+    height: 40px;
     display: flex;
 
     border-radius: 18.5px;
@@ -153,10 +154,9 @@
 
 .shop_page .all_shops .all_res_box {
     position: relative;
-    width: 1305px;
+    width: 1320px;
     height: auto;
-    margin-top: 70px;
-
+    margin-top: 50px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -214,13 +214,13 @@
 .shop_page .all_shops .bottom_box {
     position: relative;
     width: 100%;
-    height: 168px;
-    margin-top: 100px;
+    height: 150px;
+
 
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .bottom_box .line_img {

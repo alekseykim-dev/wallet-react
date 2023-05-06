@@ -60,6 +60,7 @@ export function TopShops() {
             <img className="back3" src="/icons/bit_back4.svg" alt="" />
             <img className="back6" src="/icons/bit_back4.svg" alt="" />
             <img className="back7" src="/icons/bit_back4.svg" alt="" />
+          
           </Box>
           <Box className={"prev_next_frame1"}>
             <img
@@ -121,7 +122,6 @@ export function TopShops() {
                         >
                           {ele.mb_nick}
                         </Typography>
-                        
                       </CardContent>
                     </Card>
                   </CssVarsProvider>

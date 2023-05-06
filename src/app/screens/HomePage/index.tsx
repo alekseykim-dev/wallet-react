@@ -71,7 +71,7 @@ export function HomePage() {
       <BestProducts />
       <Coins />
       {/* <Events /> */}
-      {/* <Recommendations /> */}
+      <Recommendations />
     </div>
   );
 }

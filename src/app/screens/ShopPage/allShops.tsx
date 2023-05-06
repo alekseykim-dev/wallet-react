@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Box, Button, Container, Stack } from "@mui/material";
+import { Box, Button, CardActions, Container, Stack } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import Pagination from "@mui/material/Pagination";
 import PaginationItem from "@mui/material/PaginationItem";
@@ -9,15 +9,13 @@ import { CssVarsProvider } from "@mui/joy/styles";
 import Card from "@mui/joy/Card";
 import CardOverflow from "@mui/joy/CardOverflow";
 import AspectRatio from "@mui/joy/AspectRatio";
-import IconButton from "@mui/joy/IconButton";
 import Favorite from "@mui/icons-material/Favorite";
 import Typography from "@mui/joy/Typography";
 import Link from "@mui/joy/Link";
-import LocationOnRoundedIcon from "@mui/icons-material/LocationOnRounded";
-import CallIcon from "@mui/icons-material/Call";
-import VisibilityIcon from "@mui/icons-material/Visibility";
-import FavoriteIcon from "@mui/icons-material/Favorite";
-
+import AttachEmailRoundedIcon from "@mui/icons-material/AttachEmailRounded";
+import ApartmentRoundedIcon from "@mui/icons-material/ApartmentRounded";
+import BrandingWatermarkRoundedIcon from "@mui/icons-material/BrandingWatermarkRounded";
+import CurrencyRubleIcon from "@mui/icons-material/CurrencyRuble";
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -28,7 +26,7 @@ import { setTargetShops } from "./slice";
 import ShopApiService from "../../apiServices/shopApiService";
 import { SearchObj } from "../../../types/others";
 import { serverApi } from "../../../lib/config";
-import { Category } from "@mui/icons-material";
+import { Visibility } from "@mui/icons-material";
 import assert from "assert";
 import MemberApiService from "../../apiServices/memberApiService";
 import { Definer } from "../../../lib/Definer";
@@ -124,13 +122,6 @@ export function AllShops() {
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Box className="fill_search_box">
-            <Box className="fill_box" style={{ cursor: "pointer"}}>
-              <a onClick={() => searchHandler("mb_point")}>Best</a>
-              <a onClick={() => searchHandler("mb_views")}>Popular</a>
-              <a onClick={() => searchHandler("mb_likes")}>Trending</a>
-              <a onClick={() => searchHandler("createdAt")}>New</a>
-              
-            </Box>
             <Box className="search_big_box">
               <form className="search_form" action="" method="">
                 <input
@@ -148,139 +139,159 @@ export function AllShops() {
                 </Button>
               </form>
             </Box>
+            <Box className="fill_box" style={{ cursor: "pointer" }}>
+              <a onClick={() => searchHandler("mb_point")}>Top picks</a>
+              <a onClick={() => searchHandler("mb_views")}>Bestsellers</a>
+              <a onClick={() => searchHandler("mb_likes")}>Trending</a>
+              <a onClick={() => searchHandler("createdAt")}>Newly added</a>
+            </Box>
           </Box>
 
           <Stack className="all_res_box">
-            <CssVarsProvider>
               {targetShops.map((ele: Shop) => {
                 const image_path = `${serverApi}/${ele.mb_image}`;
                 // map 8
                 return (
-                  <Card
-                    onClick={() => chosenShopHandler(ele._id)}
-                    key={ele._id}
-                    variant="outlined"
-                    sx={{
-                      minHeight: 410,
-                      minWidth: 290,
-                      mx: "17px",
-                      my: "20px",
-                      cursor: "pointer"
-                    }}
-                  >
-                    <CardOverflow>
-                      <AspectRatio ratio="1">
-                        <img src={image_path} alt="" />
-                      </AspectRatio>
-                      <IconButton
-                        aria-labelledby="Like minimal photography"
-                        size="md"
-                        variant="solid"
-                        color="neutral"
-                        onClick={(e) => {
-                          e.stopPropagation(); // prevents propagation on parent element
-                        }}
-                        sx={{
-                          position: "absolute",
-                          zIndex: 2,
-                          borderRadius: "50%",
-                          right: "1rem",
-                          bottom: 0,
-                          transform: "translateY(50%)",
-                          color: "rgba(0,0,0,.4)",
-                        }}
-                      >
-                        <Favorite
-                          onClick={(e) => targetLikeHandler(e, ele._id)}
-                          style={{
-                            fill:
-                              ele?.me_liked && ele?.me_liked[0]?.my_favorite
-                                ? "red"
-                                : "white",
-                          }}
-                        />
-                      </IconButton>
-                    </CardOverflow>
-                    <Typography level="h2" sx={{ fontSize: "md", mt: 2 }}>
-                      {ele.mb_nick} Shop
-                    </Typography>
-                    <Typography level="body2" sx={{ mt: 0.5, mb: 2 }}>
-                      <Link
-                        href=""
-                        startDecorator={<LocationOnRoundedIcon />}
-                        textColor="neutral.700"
-                      >
-                        {ele.mb_address}
-                      </Link>
-                    </Typography>
-                    <Typography level="body2" sx={{ mt: 0.5, mb: 2 }}>
-                      <Link
-                        href=""
-                        startDecorator={<CallIcon />}
-                        textColor="neutral.700"
-                      >
-                        {ele.mb_email}
-                      </Link>
-                    </Typography>
-                    <CardOverflow
-                      variant="soft"
-                      sx={{
-                        display: "flex",
-                        gap: 1.5,
-                        py: 1.5,
-                        px: "var(--Card-padding)",
-                        borderTop: "1px solid",
-                        borderColor: "neutral.outlinedBorder",
-                        bgcolor: "background.level1",
-                      }}
+                  <CssVarsProvider key={ele._id}>
+                    <Card
+                      className="customer_card1"
+                      onClick={() => chosenShopHandler(ele._id)}
+                      variant="outlined"
+                      sx={{ paddingBottom: "5px" }}
                     >
+                      <CardOverflow>
+                        <AspectRatio ratio="1">
+                          <img src={image_path} alt="best" />
+                        </AspectRatio>
+                      </CardOverflow>
                       <Typography
-                        level="body3"
-                        sx={{
-                          fontWeight: "md",
-                          color: "text.secondary",
-                          alignItems: "center",
-                          display: "flex",
-                        }}
+                        level="h2"
+                        sx={{ fontSize: "15px", mt: 1, ml: 1 }}
+                        startDecorator={<BrandingWatermarkRoundedIcon />}
                       >
-                        {ele.mb_views}
-                        <VisibilityIcon
-                          sx={{ fontSize: 20, marginLeft: "5px" }}
-                        />
+                        Brand: {ele.mb_nick}{" "}
                       </Typography>
-                      <Box sx={{ width: 2, bgcolor: "divider" }} />
                       <Typography
-                        level="body3"
-                        sx={{
-                          fontWeight: "md",
-                          color: "text.secondary",
-                          alignItems: "center",
-                          display: "flex",
-                        }}
+                        level="body2"
+                        sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
                       >
-                        <div
-                          ref={(element) => (refs.current[ele._id] = element)}
+                        <Link
+                          href="#"
+                          startDecorator={<ApartmentRoundedIcon />}
+                          textColor="neutral.700"
                         >
-                          {ele.mb_likes}
-                        </div>
-                        <FavoriteIcon
-                          sx={{ fontSize: 20, marginLeft: "5px" }}
-                        />
+                          Manufactured in {ele.mb_address}
+                        </Link>
                       </Typography>
-                    </CardOverflow>
-                  </Card>
+                      <Typography
+                        level="body2"
+                        sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
+                      >
+                        <Link
+                          href="#"
+                          startDecorator={<AttachEmailRoundedIcon />}
+                          textColor="neutral.700"
+                        >
+                          {" "}
+                          Email: {ele.mb_email}{" "}
+                        </Link>
+                      </Typography>
+
+                      <CardActions
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                          padding: "4px 4px 0px 4px"
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_views}
+                          </span>
+                          <Visibility
+                            sx={{ fontSize: "23px", marginLeft: "5px" }}
+                          />
+                        </Typography>
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_point}
+                          </span>
+                          <CurrencyRubleIcon
+                            sx={{ fontSize: "23px", marginLeft: "5px" }}
+                          />
+                        </Typography>
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_likes}
+                          </span>
+                          <Favorite
+                            onClick={(e) => {
+                              targetLikeHandler(e, ele._id);
+                            }}
+                            style={{
+                              fontSize: "25px",
+                              fill:
+                                ele?.me_liked && ele?.me_liked[0]?.my_favorite
+                                  ? "red"
+                                  : "#5a5a72",
+                            }}
+                          />
+                        </Typography>
+                      </CardActions>
+                    </Card>
+                  </CssVarsProvider>
                 );
               })}
-            </CssVarsProvider>
           </Stack>
           <Stack className="bottom_box">
-            <img
-              className="line_img"
-              src="/restaurant/line_two.svg"
-              alt="lines"
-            ></img>
+          
             <Pagination
-              count={targetSearchObject.page >= 3 ? targetSearchObject.page + 1 : 3} // can do it manually through backend
+              count={
+                targetSearchObject.page >= 3 ? targetSearchObject.page + 1 : 3
+              } // can do it manually through backend
               page={targetSearchObject.page}
               renderItem={(item) => (
                 <PaginationItem
@@ -289,16 +300,12 @@ export function AllShops() {
                     next: ArrowForwardIcon,
                   }}
                   {...item}
-                  color="secondary"
+                  color="primary"
                 />
               )}
               onChange={handlePaginationChange}
             />
-            <img
-              className="line_img_two"
-              src="/restaurant/line_two.svg"
-              alt="lines"
-            ></img>
+        
           </Stack>
         </Stack>
       </Container>

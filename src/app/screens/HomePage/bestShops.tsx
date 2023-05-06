@@ -6,6 +6,7 @@ import Typography from "@mui/joy/Typography";
 import AttachEmailRoundedIcon from "@mui/icons-material/AttachEmailRounded";
 import ApartmentRoundedIcon from "@mui/icons-material/ApartmentRounded";
 import BrandingWatermarkRoundedIcon from "@mui/icons-material/BrandingWatermarkRounded";
+import CurrencyRubleIcon from "@mui/icons-material/CurrencyRuble";
 // REDUX
 import { useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -95,10 +96,10 @@ export function BestShops() {
               return (
                 <CssVarsProvider key={ele._id}>
                   <Card
-                    className="customer_card"
+                    className="customer_card1"
                     onClick={() => chosenShopHandler(ele._id)}
                     variant="outlined"
-                    sx={{paddingBottom: "5px"}}
+                    sx={{ paddingBottom: "5px" }}
                   >
                     <CardOverflow>
                       <AspectRatio ratio="1">
@@ -110,7 +111,7 @@ export function BestShops() {
                       sx={{ fontSize: "15px", mt: 1, ml: 1 }}
                       startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
-                      Brand: {ele.mb_nick} {" "}
+                      Brand: {ele.mb_nick}{" "}
                     </Typography>
                     <Typography
                       level="body2"
@@ -132,14 +133,16 @@ export function BestShops() {
                         href="#"
                         startDecorator={<AttachEmailRoundedIcon />}
                         textColor="neutral.700"
-                      >  Email:  {ele.mb_email} </Link>
+                      >
+                        {" "}
+                        Email: {ele.mb_email}{" "}
+                      </Link>
                     </Typography>
 
                     <CardActions
                       sx={{
                         display: "flex",
-                        justifyContent: "space-evenly", paddingLeft: "80px",
-                        paddingRight: "80px"
+                        justifyContent: "space-evenly",
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >
@@ -147,18 +150,46 @@ export function BestShops() {
                         level="body3"
                         sx={{
                           fontWeight: "md",
-                          color: "text.secondary",
+                          color: "#5a5a72",
                           alignItems: "center",
                           display: "flex",
-                          fontSize: "15px"
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
                         }}
                       >
-                        {ele.mb_views}
+                        <span
+                          ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
+                        >
+                          {ele.mb_views}
+                        </span>
                         <Visibility
-                          sx={{ fontSize: "25px", marginLeft: "5px" }}
+                          sx={{ fontSize: "23px", marginLeft: "5px" }}
                         />
                       </Typography>
-                      <Box sx={{ width: 2, bgcolor: "divider" }} />
+                      <Typography
+                        level="body3"
+                        sx={{
+                          fontWeight: "md",
+                          color: "#5a5a72",
+                          alignItems: "center",
+                          display: "flex",
+                          justifyContent: "center",
+                          width: "30px",
+                          height: "auto",
+                        }}
+                      >
+                        <span
+                          ref={(element) => (refs.current[ele._id] = element)}
+                          style={{ fontSize: "15px" }}
+                        >
+                          {ele.mb_point}
+                        </span>
+                        <CurrencyRubleIcon
+                          sx={{ fontSize: "23px", marginLeft: "5px" }}
+                        />
+                      </Typography>
                       <Typography
                         level="body3"
                         sx={{
@@ -183,7 +214,6 @@ export function BestShops() {
                           }}
                           style={{
                             fontSize: "25px",
-                            marginRight: "10px",
                             fill:
                               ele?.me_liked && ele?.me_liked[0]?.my_favorite
                                 ? "red"
