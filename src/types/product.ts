@@ -13,6 +13,7 @@ export interface Product {
   product_collection: string;
   product_status: string;
   product_price: number;
+  product_color: string;
   product_discount: number;
   product_left_cnt: number;
   product_size: string;

@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Container, Box, Button, Stack } from "@mui/material";
+import { Container, Box, Button, Stack, Popover, List, ListItem, ListItemText, ListItemButton } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
@@ -72,6 +72,8 @@ const targetProductsRetriever = createSelector(
   })
 );
 
+
+
 export function OneShop(props: any) {
   /* INITIALIZATIONS */
   // const refs: any = useRef([]);
@@ -93,6 +95,7 @@ export function OneShop(props: any) {
       shop_mb_id: shop_id,
       product_collection: "wallet",
     });
+
 
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
 
@@ -117,6 +120,7 @@ export function OneShop(props: any) {
       .catch((err) => console.log(err));
   }, [chosenShopId, targetProductSearchObj, productRebuild]);
 
+ 
   /* HANDLERS */
   const chosenShopHandler = (id: string) => {
     setChosenShopId(id);
@@ -125,6 +129,15 @@ export function OneShop(props: any) {
     history.push(`/shop/${id}`);
   };
 
+
+  /** Enabling search */
+  const [query, setQuery] = useState("");
+
+  const filteredProducts = targetProducts.filter((product) =>
+    product.product_name.toLowerCase().includes(query.toLowerCase())
+  );
+
+  /**  Enabling search */
   const searchCollectionHandler = (collection: string) => {
     targetProductSearchObj.page = 1;
     targetProductSearchObj.product_collection = collection;
@@ -172,138 +185,59 @@ export function OneShop(props: any) {
                     type="search"
                     className="Single_searchInput"
                     name="Single_resSearch"
-                    placeholder="Search"
+                    placeholder="What are you looking for today?"
+                    onChange={(e) => setQuery(e.target.value)}
                   />
-                  <Button
+                  {/* <Button
                     className="Single_button_search"
                     variant="contained"
                     endIcon={<SearchIcon />}
                   >
                     Search
-                  </Button>
+                  </Button> */}
                 </form>
               </Box>
+            </Box>
+          </Stack>
+
+          <Stack className="filter_cont" flexDirection={"row"}>
+            <Box className={"dropup"}>
+              <button className="dropbtn">Filter</button>
+              <div className="dropup-content">
+                <a onClick={() => searchCollectionHandler("wallet")}>Wallets</a>
+                <a onClick={() => searchCollectionHandler("accessory")}>
+                  Accessories
+                </a>
+                <a onClick={() => searchCollectionHandler("bundle")}>Bundles</a>
+              </div>
+            </Box>
+
+            <Box className={"dropup1"}>
+              <button className="dropbtn1">Sort by</button>
+              <div className="dropup-content1">
+                <a onClick={() => searchOrderHandler("createdAt")}>
+                  Newly Added
+                </a>
+                <a onClick={() => searchOrderHandler("product_price")}>
+                  Price: Ascending
+                </a>
+                <a onClick={() => searchOrderHandler("product_likes")}>
+                  Most Liked
+                </a>
+                <a onClick={() => searchOrderHandler("product_views")}>
+                  Most Viewed
+                </a>
+              </div>
             </Box>
           </Stack>
 
           <Stack
             style={{ width: "100%", display: "flex" }}
             flexDirection={"row"}
-            sx={{ mt: "35px" }}
           >
-            <Box className="prev_btn shop-prev">
-              <ArrowBackIosNewIcon
-                sx={{ fontSize: 40 }}
-                style={{ color: "#fff" }}
-              />
-            </Box>
-            <Swiper
-              className={"shop_avatars_wrapper"}
-              slidesPerView={7}
-              centeredSlides={false}
-              spaceBetween={30}
-              // style={{ cursor: "pointer" }}
-              navigation={{
-                nextEl: ".shop-next",
-                prevEl: ".shop-prev",
-              }}
-            >
-              {randomShops.map((ele: Shop) => {
-                const image_path = `${serverApi}/${ele.mb_image}`;
-                return (
-                  <SwiperSlide
-                    onClick={() => chosenShopHandler(ele._id)}
-                    style={{ cursor: "pointer" }}
-                    key={ele._id}
-                    className="shop_avatars"
-                  >
-                    <img src={image_path} alt="" />
-                    <span>{ele.mb_nick}</span>
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-            <Box className="next_btn shop-next" style={{ color: "#fff" }}>
-              <ArrowForwardIosIcon sx={{ fontSize: 40 }} />
-            </Box>
-          </Stack>
-
-          <Stack
-            display={"flex"}
-            flexDirection={"row"}
-            justifyContent={"flex-end"}
-            width={"90%"}
-            sx={{ mt: "65px" }}
-          >
-            <Box className="dishes_filter_box">
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => searchOrderHandler("createdAt")}
-              >
-                Newly Added
-              </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => searchOrderHandler("product_price")}
-              >
-                Price
-              </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => searchOrderHandler("product_likes")}
-              >
-                Likes
-              </Button>
-              <Button
-                variant="contained"
-                color="secondary"
-                onClick={() => searchOrderHandler("product_views")}
-              >
-                Views
-              </Button>
-            </Box>
-          </Stack>
-
-          <Stack
-            style={{ width: "100%", display: "flex", minHeight: "600px" }}
-            flexDirection={"row"}
-          >
-            <Stack className="dish_category_box">
-              <div className="dish_category_main">
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => searchCollectionHandler("bundle")}
-                >
-                  Bundles
-                </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => searchCollectionHandler("accessory")}
-                >
-                  Accessories
-                </Button>
-                <Button
-                  variant="contained"
-                  color="secondary"
-                  onClick={() => searchCollectionHandler("wallet")}
-                >
-                  Wallets
-                </Button>
-              </div>
-            </Stack>
-
             <Stack className={"dish_wrapper"}>
-              {targetProducts.map((product: Product) => {
+              {filteredProducts.map((product: Product) => {
                 const image_path = `${serverApi}/${product.product_images[0]}`;
-                const size_volume =
-                  product.product_collection === "beverage"
-                    ? product.product_volume + "l"
-                    : "size: " + product.product_size;
 
                 return (
                   <Box
@@ -318,7 +252,6 @@ export function OneShop(props: any) {
                       }}
                       key={product._id}
                     >
-                      <div className={"dish_sale"}>{size_volume}</div>
                       <Button
                         className={"like_view_btn"}
                         style={{ left: "36px" }}
@@ -381,15 +314,64 @@ export function OneShop(props: any) {
                       <span className={"dish_title_text"}>
                         {product.product_name}
                       </span>
+                      <span className={"dish_title_text"}>
+                        {product.product_country}
+                      </span>
+                      <span className={"dish_title_text"}>
+                        {product.product_color}
+                      </span>
                       <span className={"dish_desc_text"}>
-                        <MonetizationOnIcon />
-                        {product.product_price}
+                        $ {product.product_price}
                       </span>
                     </Box>
                   </Box>
                 );
               })}
             </Stack>
+          </Stack>
+          <div className="other_shop_see">See also</div>
+
+          <Stack
+            style={{ width: "100%", display: "flex" }}
+            flexDirection={"row"}
+            sx={{ mt: "35px" }}
+          >
+            <Box className="prev_btn shop-prev">
+              <ArrowBackIosNewIcon
+                sx={{ fontSize: 40, color: "#575656", cursor: "pointer" }}
+              />
+            </Box>
+            <Swiper
+              className={"shop_avatars_wrapper"}
+              slidesPerView={7}
+              centeredSlides={false}
+              spaceBetween={30}
+              // style={{ cursor: "pointer" }}
+              navigation={{
+                nextEl: ".shop-next",
+                prevEl: ".shop-prev",
+              }}
+            >
+              {randomShops.map((ele: Shop) => {
+                const image_path = `${serverApi}/${ele.mb_image}`;
+                return (
+                  <SwiperSlide
+                    onClick={() => chosenShopHandler(ele._id)}
+                    style={{ cursor: "pointer" }}
+                    key={ele._id}
+                    className="shop_avatars"
+                  >
+                    <img src={image_path} alt="" />
+                    <span>{ele.mb_nick}</span>
+                  </SwiperSlide>
+                );
+              })}
+            </Swiper>
+            <Box className="next_btn shop-next" style={{ color: "#fff" }}>
+              <ArrowForwardIosIcon
+                sx={{ fontSize: 40, color: "#575656", cursor: "pointer" }}
+              />
+            </Box>
           </Stack>
         </Stack>
       </Container>
