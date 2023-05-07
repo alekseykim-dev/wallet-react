@@ -62,18 +62,15 @@ export function AllShops() {
   });
   const refs: any = useRef([]);
 
+  const [isHovered1, setIsHovered1] = useState(false);
 
-   const [isHovered1, setIsHovered1] = useState(false);
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
 
-   const handleMouseEnter1 = () => {
-     setIsHovered1(true);
-   };
-
-   const handleMouseLeave1 = () => {
-     setIsHovered1(false);
-   };
-
-
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
 
   // best => mb_point
   // popular => mb_view
@@ -89,44 +86,53 @@ export function AllShops() {
   }, [targetSearchObject]); // updates after data is changed
 
   /** HANDLERS */
-    const chosenShopHandler = (id: string) => {
-      history.push(`/shop/${id}`);
-    };
+  const chosenShopHandler = (id: string) => {
+    history.push(`/shop/${id}`);
+  };
   const searchHandler = (category: string) => {
     targetSearchObject.page = 1;
     targetSearchObject.order = category;
-    setTargetSearchObject({...targetSearchObject}) // creates with new reference (spread operator) because useState is array // ref = accessing underlying component in DOM. // address in memory
-  }
+    setTargetSearchObject({ ...targetSearchObject }); // creates with new reference (spread operator) because useState is array // ref = accessing underlying component in DOM. // address in memory
+  };
+
+  /** Enabling search */
+  const [query, setQuery] = useState("");
+
+  const filteredShops = targetShops.filter((product) =>
+    product.mb_nick.toLowerCase().includes(query.toLowerCase())
+  );
+
+  /**  Enabling search */
 
   const handlePaginationChange = (event: any, value: number) => {
     targetSearchObject.page = value;
-    setTargetSearchObject({...targetSearchObject}) // if value changes updates
-  }
+    setTargetSearchObject({ ...targetSearchObject }); // if value changes updates
+  };
 
-   const targetLikeHandler = async (e: any, id: string) => {
-     try {
-       assert.ok(verifiedMemberData, Definer.auth_err1);
+  const targetLikeHandler = async (e: any, id: string) => {
+    try {
+      assert.ok(verifiedMemberData, Definer.auth_err1);
 
-       const memberService = new MemberApiService(),
-         like_result: any = await memberService.memberLikeTarget({
-           like_ref_id: id,
-           group_type: "member",
-         });
-       assert.ok(like_result, Definer.general_err1);
+      const memberService = new MemberApiService(),
+        like_result: any = await memberService.memberLikeTarget({
+          like_ref_id: id,
+          group_type: "member",
+        });
+      assert.ok(like_result, Definer.general_err1);
 
-       if (like_result.like_status > 0) {
-         e.target.style.fill = "red";
-         refs.current[like_result.like_ref_id].innerHTML++;
-       } else {
-         e.target.style.fill = "#5a5a72";
-         refs.current[like_result.like_ref_id].innerHTML--;
-       }
-       await sweetTopSmallSuccessAlert("Success", 900, false);
-     } catch (err: any) {
-       console.log("targetLikeTop, ERROR:", err);
-       auth_err1(err).then();
-     }
-   };
+      if (like_result.like_status > 0) {
+        e.target.style.fill = "red";
+        refs.current[like_result.like_ref_id].innerHTML++;
+      } else {
+        e.target.style.fill = "#5a5a72";
+        refs.current[like_result.like_ref_id].innerHTML--;
+      }
+      await sweetTopSmallSuccessAlert("Success", 900, false);
+    } catch (err: any) {
+      console.log("targetLikeTop, ERROR:", err);
+      auth_err1(err).then();
+    }
+  };
 
   return (
     <div className="all_shops">
@@ -139,23 +145,9 @@ export function AllShops() {
                   type="text"
                   className="searchInput"
                   name="reSearch"
-                  placeholder="Search"
+                  placeholder="What are you looking for today?"
+                  onChange={(e) => setQuery(e.target.value)}
                 />
-                <Button
-                  className="button_search"
-                  variant="contained"
-                  endIcon={<SearchIcon />}
-                  style={{
-                    color: isHovered1 ? "#fff" : "#000",
-                    opacity: isHovered1 ? 0.7 : 1,
-                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
-                  }}
-                  onMouseEnter={handleMouseEnter1}
-                  onMouseLeave={handleMouseLeave1}
-
-                >
-                  Search
-                </Button>
               </form>
             </Box>
             <Box className="fill_box" style={{ cursor: "pointer" }}>
@@ -167,7 +159,7 @@ export function AllShops() {
           </Box>
 
           <Stack className="all_res_box">
-            {targetShops.map((ele: Shop) => {
+            {filteredShops.map((ele: Shop) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               // map 8
               return (
@@ -185,14 +177,14 @@ export function AllShops() {
                     </CardOverflow>
                     <Typography
                       level="h2"
-                      sx={{ fontSize: "15px", mt: 1, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: "10px", ml: 1 }}
                       startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
                       Brand: {ele.mb_nick}{" "}
                     </Typography>
                     <Typography
                       level="body2"
-                      sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: "8px", mb: 0.2, ml: 1 }}
                     >
                       <Link
                         href="#"
@@ -204,7 +196,7 @@ export function AllShops() {
                     </Typography>
                     <Typography
                       level="body2"
-                      sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: "2px", ml: 1 }}
                     >
                       <Link
                         href="#"
@@ -221,6 +213,7 @@ export function AllShops() {
                         display: "flex",
                         justifyContent: "space-evenly",
                         padding: "4px 4px 0px 4px",
+                        margin: "10px 0px"
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >

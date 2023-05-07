@@ -261,6 +261,4 @@ export function ChosenProduct(props: any) {
     </div>
   );
 }
-function setProductRebuild(arg0: Date) {
-  throw new Error("Function not implemented.");
-}
+

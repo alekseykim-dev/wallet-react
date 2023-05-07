@@ -88,6 +88,9 @@ export function BestProducts() {
                     <span className="product_country_text">
                       Ships from {product.product_country}
                     </span>
+                    <span className={"dish_color_text"}>
+                      Color: {product.product_color}
+                    </span>
                     <span className="dish_desc_text">
                       <span className="price"> ${product.product_price} </span>
                     </span>

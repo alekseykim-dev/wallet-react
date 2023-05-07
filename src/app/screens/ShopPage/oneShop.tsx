@@ -8,11 +8,12 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import Checkbox from "@mui/material/Checkbox";
 import FavoriteBorder from "@mui/icons-material/FavoriteBorder";
 import Favorite from "@mui/icons-material/Favorite";
-import MonetizationOnIcon from "@mui/icons-material/MonetizationOn";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
 import Badge from "@mui/material/Badge";
 import { useHistory, useParams } from "react-router-dom";
-
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
+import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
@@ -314,13 +315,13 @@ export function OneShop(props: any) {
                       <span className={"dish_title_text"}>
                         {product.product_name}
                       </span>
-                      <span className={"dish_title_text"}>
-                        {product.product_country}
+                      <span className={"dish_country_text"}>
+                        Ships from {product.product_country}
                       </span>
-                      <span className={"dish_title_text"}>
-                        {product.product_color}
+                      <span className={"dish_color_text"}>
+                        Color: {product.product_color}
                       </span>
-                      <span className={"dish_desc_text"}>
+                      <span className={"dish_price_text"}>
                         $ {product.product_price}
                       </span>
                     </Box>
@@ -378,50 +379,199 @@ export function OneShop(props: any) {
 
       <div className="review_for_shop">
         <Container
-          sx={{ mt: "100px" }}
+          sx={{ mt: "70px" }}
           style={{
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
+            width: "1100px",
           }}
         >
-          <Box className={"category_title"}>Shop reviews</Box>
+          <Box className={"category_title_review"}>Shop reviews</Box>
           <Stack
             flexDirection={"row"}
             display={"flex"}
-            justifyContent={"space-between"}
+            width={"100%"}
+            className="review_wrapper"
+          >
+            <Box className="review_left">
+              <Box className="img_wrapper">
+                <img src="/community/michael.jpg" className="review_img" />
+              </Box>
+            </Box>
+            <Stack className="review_right">
+              <Box>
+                <p className="review_title">
+                  I am satisfied with the products but could be better
+                </p>
+                <div className={"review_stars"}>
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                </div>
+              </Box>
+              <Box className="review_text">
+                I am overall satisfied with the functionality of the products,
+                they almost do what I want and need for work. But some of the
+                products feel kind plasticy and low quality. But the product
+                works just fine if you are not obsessed with the build quality
+                like me. Lorem ipsum dolor sit amet consectetur adipisicing
+                elit. Deserunt, explicabo, sint, debitis quasi voluptatibus
+                voluptatem aspernatur dicta itaque enim facilis et incidunt
+                molestias ea at excepturi maxime dolore. Cupiditate, rem.
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"row"}
+                sx={{ mt: "20px", mb: "20px" }}
+              >
+                <FavoriteIcon
+                  className="review_icons"
+                  style={{ color: "red" }}
+                />
+                <ChatBubbleIcon className="review_icons" />
+                <MoreHorizIcon className="review_icons" />
+              </Box>
+            </Stack>
+          </Stack>
+
+          <Stack
+            className="review_wrapper"
+            flexDirection={"row"}
+            display={"flex"}
             width={"100%"}
           >
-            {Array.from(Array(4).keys()).map((ele, index) => {
-              return (
-                <Box className={"review_box"} key={index}>
-                  <Box display={"flex"} justifyContent={"center"}>
-                    <img
-                      src={"/community/cute_girl.jpg"}
-                      className={"review_img"}
-                      alt=""
-                    />
-                  </Box>
-                  <span className={"review_name"}>Dakota Johnson</span>
-                  <span className={"review_prof"}>User</span>
-                  <p className={"review_desc"}>
-                    I love the shop atmosphere and the service!
-                  </p>
-                  <div className={"review_stars"}>
-                    <StarIcon style={{ color: "#F2BD57" }} />
-                    <StarIcon style={{ color: "#F2BD57" }} />
-                    <StarIcon style={{ color: "#F2BD57" }} />
-                    <StarIcon style={{ color: "#F2BD57" }} />
-                    <StarIcon style={{ color: "whitesmoke" }} />
-                  </div>
-                </Box>
-              );
-            })}
+            <Box className="review_left">
+              <Box className="img_wrapper">
+                <img src="/community/elon.jpeg" className="review_img" />
+              </Box>
+            </Box>
+            <Stack className="review_right">
+              <Box>
+                <p className="review_title">I just love the design</p>
+                <div className={"review_stars"}>
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                </div>
+              </Box>
+              <Box className="review_text">
+                Smart illumination, fast charging, and recycled materials makes
+                for some tempting peripherals. A mechanical keyboard for the
+                TikTok generation, Logitech's POP Keys Mechanical Wireless
+                Keyboard has a lively look and unique emoji-specific keys,
+                though we wish it were a bit easier to type on.
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"row"}
+                sx={{ mt: "20px", mb: "20px" }}
+              >
+                <FavoriteIcon
+                  className="review_icons"
+                  style={{ color: "red" }}
+                />
+                <ChatBubbleIcon className="review_icons" />
+                <MoreHorizIcon className="review_icons" />
+              </Box>
+            </Stack>
+          </Stack>
+
+          <Stack
+            flexDirection={"row"}
+            display={"flex"}
+            width={"100%"}
+            className="review_wrapper"
+          >
+            <Box className="review_left">
+              <Box className="img_wrapper">
+                <img src="/community/powell.png" className="review_img" />
+              </Box>
+            </Box>
+            <Stack className="review_right">
+              <Box>
+                <p className="review_title">I was expecting more</p>
+                <div className={"review_stars"}>
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                </div>
+              </Box>
+              <Box className="review_text">
+                Qaulity and the design is a not for me I guess. If you love high
+                quality and comfortable products maybe you should go for another
+                one. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deserunt, explicabo, sint, debitis quasi voluptatibus voluptatem
+                aspernatur dicta itaque enim facilis et incidunt molestias ea at
+                excepturi maxime dolore. Cupiditate, rem.
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"row"}
+                sx={{ mt: "20px", mb: "20px" }}
+              >
+                <FavoriteIcon
+                  className="review_icons"
+                  style={{ color: "red" }}
+                />
+                <ChatBubbleIcon className="review_icons" />
+                <MoreHorizIcon className="review_icons" />
+              </Box>
+            </Stack>
+          </Stack>
+          <Stack
+            flexDirection={"row"}
+            display={"flex"}
+            width={"100%"}
+            className="review_wrapper"
+          >
+            <Box className="review_left">
+              <Box className="img_wrapper">
+                <img src="/community/planb.jpg" className="review_img" />
+              </Box>
+            </Box>
+            <Stack className="review_right">
+              <Box>
+                <p className="review_title">I just love the design</p>
+                <div className={"review_stars"}>
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "#F2BD57" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                  <StarIcon style={{ color: "whitesmoke" }} />
+                </div>
+              </Box>
+              <Box className="review_text">
+                Smart illumination, fast charging, and recycled materials makes
+                for some tempting peripherals. A mechanical keyboard for the
+                TikTok generation, Logitech's POP Keys Mechanical Wireless
+                Keyboard has a lively look and unique emoji-specific keys,
+                though we wish it were a bit easier to type on.
+              </Box>
+              <Box
+                display={"flex"}
+                flexDirection={"row"}
+                sx={{ mt: "20px", mb: "20px" }}
+              >
+                <FavoriteIcon
+                  className="review_icons"
+                  style={{ color: "red" }}
+                />
+                <ChatBubbleIcon className="review_icons" />
+                <MoreHorizIcon className="review_icons" />
+              </Box>
+            </Stack>
           </Stack>
         </Container>
       </div>
 
-      <Container className="member_reviews">
+      {/* <Container className="member_reviews">
         <Box className={"category_title"}>About the shop</Box>
         <Stack
           display={"flex"}
@@ -473,7 +623,7 @@ export function OneShop(props: any) {
             referrerPolicy="no-referrer-when-downgrade"
           ></iframe>
         </Stack>
-      </Container>
+      </Container> */}
     </div>
   );
 }
