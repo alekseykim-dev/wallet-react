@@ -1,11 +1,38 @@
 .order_page {
     width: 100%;
     height: auto;
-    background: #0b0e11;
+    background: #d7d7d8;
 
     display: flex;
 }
 
+.back20 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -50px;
+    top: 550px;
+}
+
+.back21 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 30px;
+    top: 700px;
+}
+
+.back22 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 220px;
+    top: 1100px;
+}
+
+.back23 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 1150px;
+}
 .order_page .order_left {
     width: 70%;
     height: auto;
@@ -25,14 +52,12 @@
     padding: 20px;
     width: 100%;
     height: auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
+    /* background: #ffffff; */
+    backdrop-filter: blur(3px);
+    border: 1px solid #1f1f1f;
     border-radius: 16px;
 }
 
@@ -78,12 +103,11 @@
 }
 
 .order_page .order_info_box .order_user_prof {
-    font-family: "Commissioner",
-        sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 36px;
+        font-family: "Commissioner", sans-serif;
+            font-style: italic;
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 36px;
     color: #a1a1a1;
 }
 
@@ -101,7 +125,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: #616164;
+    color: #1f1f1f;
     
 }
 
@@ -143,6 +167,38 @@
     color: #434141;
 }
 
+.order_page .card_num {
+    width: 100%;
+    background: transparent;
+    border: 1px solid #1f1f1f;
+    border-radius: 5px;
+    /* border: none; */
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.order_page .card_date {
+    width: 48%;
+    background: transparent;
+    border-radius: 5px;
+    border: 1px solid #1f1f1f;
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 16px;
+}
+.order_page .card_name {
+    width: 100%;
+    border: 1px solid black;
+    background: transparent;
+    border-radius: 5px;
+    /* border: none; */
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 16px;
+    margin-top: 20px;
+}
 .order_page .order_info_box .cards_box {
     margin-top: 35px;
     width: 80%;
@@ -162,7 +218,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border-bottom: 1px solid #ffffff;
+    border-bottom: 1px solid #1f1f1f;
 }
 
 .order_page .css-1gsv261 {
@@ -185,13 +241,11 @@
 .order_page .order_main_content .order_main_box {
     position: relative;
     width: 100%;
-    max-height: 284px;
+    height: auto;
     margin-bottom: 25px;
-
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
+    background: transparent;
+    backdrop-filter: blur(3px);
+    border: 1px solid #1f1f1f;
     border-radius: 16px;
 }
 
@@ -199,7 +253,6 @@
     position: relative;
     overflow: hidden;
     width: 100%;
-    max-height: 203px;
     margin-top: 15px;
 
     display: flex;
@@ -218,14 +271,15 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-size: 18px;
 }
 
 .order_page .order_box_scroll .ordersName_price .orderDishImg {
     position: relative;
     width: 50px;
     height: 47px;
-
-    border-radius: 29px;
+    border-radius: 10px;
     background-size: cover;
 }
 
@@ -233,16 +287,12 @@
     position: relative;
     width: 260px;
     height: 36px;
-    margin-left: 20px;
-
-    font-family: "Commissioner",
-        sans-serif;
+    margin-left: 25px;
+    font-family: "Commissioner", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 18px;
     line-height: 36px;
-    /* identical to box height, or 164% */
-
     color: #000000;
 }
 
@@ -275,57 +325,69 @@
     width: 100%;
     height: 41px;
     margin-top: 15px;
-
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
     box-sizing: border-box;
     border-radius: 5px;
 }
 
 .black_solid {
-    border-width: 1px 0px;
-    border-style: solid;
-    border-color: #000000;
-    background: #d9d9d9;
+    border-top: 1px solid black;
 }
 
 .blue_solid {
-    border-width: 1px 0px;
-    border-style: solid;
-    border-color: #00a9ff;
-    background: rgb(140 102 242 / 81%);
+    border-top: 1px solid #1f1f1f;
 }
 
 .red_solid {
     border-width: 1px 0px;
-    border-style: solid;
-    border-color: #ff5757;
-    background: rgb(255 52 52);
+    border-top: 1px solid #1f1f1f;
+    border-color: #1f1f1f;
 }
 
 .order_page .order_main_content .order_main_box .total_price_box .boxTotal {
     position: relative;
-    max-width: 535px;
     height: 100%;
-
+    margin-rght: 90px;
+    width: 50%;
     display: flex;
+    color: #1f1f1f;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
+.order_page .order_main_content .order_main_box .total_price_box .boxTotal1 {
+    position: relative;
+    height: 100%;
+    width: 60%;
+    display: flex;
+    color: #1f1f1f;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.order_main_content .order_main_box .total_price_box .boxTotal2 {
+    position: relative;
+    height: 100%;
+    width: 85%;
+    display: flex;
+    color: #1f1f1f;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+}
 
 .order_page .total_price_box .boxTotal p {
-    margin-left: 20px;
-    font-family: "Commissioner",
-        sans-serif;
+    font-family: "Commissioner", sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 36px;
-    color: #000000;
+    color: #1f1f1f;
 }
 
 .order_page .total_price_box .boxTotal .data_compl {

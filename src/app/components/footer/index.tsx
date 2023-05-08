@@ -1,4 +1,5 @@
 import { Box, Container, Stack } from "@mui/material";
+import moment from "moment";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
@@ -80,7 +81,9 @@ export function Footer() {
           <Box className="liner"></Box>
           <Box className="copyrights" sx={{ mt: "15px" }}>
             {" "}
-            Copyrights BitSafe 2023. All rights reserved
+            Copyrights BitSafe{" "}
+            {moment().format("YYYY")}. All rights
+            reserved
           </Box>
         </Stack>
       </Container>

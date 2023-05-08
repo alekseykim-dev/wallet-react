@@ -4,7 +4,7 @@ import "../../../css/order.css";
 import Tab from "@mui/material/Tab";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import PausedOrders from "../../components/orders/pausedOrders";
 import ProcessOrders from "../../components/orders/processOrders";
 import FinishedOrders from "../../components/orders/finishedOrders";
@@ -70,9 +70,17 @@ export function OrdersPage(props: any) {
 
   return (
     <div className="order_page">
+      <img className="back20" src="/icons/bit_back3.svg" alt="" />
+      <img className="back21" src="/icons/bit_back4.svg" alt="" />
+      <img className="back22" src="/icons/bit_back4.svg" alt="" />
+      <img className="back23" src="/icons/bit_back3.svg" alt="" />
+
       <Container
         maxWidth="lg"
-        style={{ display: "flex", flexDirection: "row" }}
+        style={{
+          display: "flex",
+          flexDirection: "row-reverse",
+        }}
         sx={{ mt: "50px", mb: "50px" }}
       >
         <Stack className={"order_left"}>
@@ -86,7 +94,10 @@ export function OrdersPage(props: any) {
                   onChange={handleChange}
                   value={value}
                   aria-labelledby="my-tablist-id"
-                  style={{ width: "800px", justifyContent: "space-between" }}
+                  style={{
+                    width: "800px",
+                    justifyContent: "space-between",
+                  }}
                 >
                   <Tab
                     label="My orders"
@@ -94,17 +105,18 @@ export function OrdersPage(props: any) {
                     style={{
                       marginRight: "150px",
                       marginLeft: "115px",
+                      color: "#1f1f1f",
                     }}
                   />
                   <Tab
                     label="In process"
                     value={"2"}
-                    style={{ marginRight: "150px" }}
+                    style={{ marginRight: "150px", color: "#1f1f1f" }}
                   />
                   <Tab
                     label="Processed"
                     value={"3"}
-                    style={{ marginRight: "150px" }}
+                    style={{ marginRight: "150px", color: "#1f1f1f" }}
                   />
                 </TabList>
               </Box>
@@ -152,10 +164,10 @@ export function OrdersPage(props: any) {
             ></Box>
             <Box className={"order_user_address"}>
               <div style={{ marginRight: "5px" }}>
-                <LocationOnIcon />
+                <LocationOnOutlinedIcon />
               </div>
               <div className="spec_address_txt">
-                {verifiedMemberData?.mb_address ?? "No address"}
+                {verifiedMemberData?.mb_address ?? "South Korea🇰🇷"}
               </div>
             </Box>
           </Box>
@@ -163,17 +175,8 @@ export function OrdersPage(props: any) {
             <input
               type="text"
               name={"card_number"}
-              style={{
-                width: "100%",
-                background: "#F5F5F5",
-                borderRadius: "5px",
-                border: "none",
-                height: "40px",
-                padding: "0 10px",
-                fontSize: "16px",
-                marginTop: "20px",
-              }}
-              placeholder="Card number : 1234 5678 8765 4321"
+              className="card_num"
+              placeholder="Input your card information here"
             />
             <Box
               flexDirection={"row"}
@@ -185,45 +188,21 @@ export function OrdersPage(props: any) {
               <input
                 type="text"
                 name={"card_date"}
-                placeholder="05 / 27"
-                style={{
-                  width: "48%",
-                  background: "#F5F5F5",
-                  borderRadius: "5px",
-                  border: "none",
-                  height: "40px",
-                  padding: "0 10px",
-                  fontSize: "16px",
-                }}
+                placeholder="MM / YYYY"
+                className="card_date"
               />
               <input
                 type="text"
                 name={"card_cvv"}
-                placeholder="CVV : 777"
-                style={{
-                  width: "48%",
-                  background: "#F5F5F5",
-                  borderRadius: "5px",
-                  border: "none",
-                  height: "40px",
-                  padding: "0 10px",
-                  fontSize: "16px",
-                }}
+                placeholder="CVV : ###"
+                className="card_date"
               />
             </Box>
             <input
               type="text"
-              name={"card_number"}
-              style={{
-                width: "100%",
-                background: "#F5F5F5",
-                borderRadius: "5px",
-                border: "none",
-                height: "40px",
-                padding: "0 10px",
-                fontSize: "16px",
-              }}
-              placeholder="Mr. Cat"
+              name={"card_name"}
+              className="card_name"
+              placeholder={verifiedMemberData?.mb_nick}
             />
             <Box flexDirection={"row"} className={"cards_box"}>
               <img src="/icons/visa.svg" alt="visa" />

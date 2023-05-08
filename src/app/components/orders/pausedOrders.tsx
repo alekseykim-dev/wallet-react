@@ -109,25 +109,23 @@ export default function PausedOrders(props: any) {
 
               <Box className={"total_price_box black_solid"}>
                 <Box className={"boxTotal"}>
-                  <p>Price</p>
+                  <p>Price:</p>
                   <p style={{ fontWeight: "400" }}>
                     ${order.order_total_amount - order.order_delivery_cost}
                   </p>
                   <img
                     src={"/icons/plus.svg"}
-                    style={{ marginLeft: "20px" }}
                     alt="plus"
                   />
-                  <p>Delivery fee</p>
+                  <p>Delivery fee:</p>
                   <p style={{ fontWeight: "400" }}>
                     ${order.order_delivery_cost}
                   </p>
                   <img
                     src={"/icons/Pause.svg"}
-                    style={{ marginLeft: "20px" }}
                     alt="equals"
                   />
-                  <p>Total</p>
+                  <p>Total:</p>
                   <p style={{ fontWeight: "400" }}>
                     ${order.order_total_amount}
                   </p>

@@ -92,14 +92,13 @@ export default function ProcessOrders(props: any) {
               </Box>
 
               <Box className={"total_price_box blue_solid"}>
-                <Box className={"boxTotal"}>
+                <Box className={"boxTotal1"}>
                   <p>Price</p>
                   <p style={{ fontWeight: "400" }}>
                     ${order.order_total_amount - order.order_delivery_cost}
                   </p>
                   <img
                     src={"/icons/plus.svg"}
-                    style={{ marginLeft: "20px" }}
                     alt="plus"
                   />
                   <p>Delivery fee</p>
@@ -108,7 +107,6 @@ export default function ProcessOrders(props: any) {
                   </p>
                   <img
                     src={"/icons/Pause.svg"}
-                    style={{ marginLeft: "20px" }}
                     alt="equals"
                   />
                   <p>Total</p>
@@ -116,15 +114,15 @@ export default function ProcessOrders(props: any) {
                     ${order.order_total_amount}
                   </p>
                 </Box>
-                <p style={{ fontSize: "16px", fontWeight: "600" }}>
+                <p style={{ fontSize: "16px", fontWeight: "400", color: "#1f1f1f" }}>
                   {moment(order.createdAt).format("YY-MM-DD hh:mm")}
                 </p>
                 <Button
                   variant="contained"
                   style={{
-                    background: "#0288D1",
-                    color: "#FFFFFF",
-                    borderRadius: "10px",
+                    background: "primary",
+                    color: "#1f1f1f",
+                    borderRadius: "4px",
                     boxShadow:
                       "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);",
                   }}
