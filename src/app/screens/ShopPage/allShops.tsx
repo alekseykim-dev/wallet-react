@@ -136,6 +136,9 @@ export function AllShops() {
 
   return (
     <div className="all_shops">
+      <img className="back10" src="/icons/bit_back3.svg" alt="" />
+      <img className="back11" src="/icons/bit_back4.svg" alt="" />
+
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Box className="fill_search_box">
@@ -213,7 +216,7 @@ export function AllShops() {
                         display: "flex",
                         justifyContent: "space-evenly",
                         padding: "4px 4px 0px 4px",
-                        margin: "10px 0px"
+                        margin: "10px 0px",
                       }}
                       onClick={(e) => e.stopPropagation()}
                     >

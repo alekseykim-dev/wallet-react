@@ -175,6 +175,13 @@ export function OneShop(props: any) {
 
   return (
     <div className="single_shop">
+      <img className="back12" src="/icons/bit_back4.svg" alt="" />
+      <img className="back13" src="/icons/bit_back3.svg" alt="" />
+      <img className="back14" src="/icons/bit_back4.svg" alt="" />
+      <img className="back15" src="/icons/bit_back3.svg" alt="" />
+      <img className="back16" src="/icons/bit_back4.svg" alt="" />
+      <img className="back17" src="/icons/bit_back4.svg" alt="" />
+      <img className="back18" src="/icons/bit_back3.svg" alt="" />
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar_big_box">
@@ -378,22 +385,9 @@ export function OneShop(props: any) {
       </Container>
 
       <div className="review_for_shop">
-        <Container
-          sx={{ mt: "70px" }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            width: "1100px",
-          }}
-        >
-          <Box className={"category_title_review"}>Shop reviews</Box>
-          <Stack
-            flexDirection={"row"}
-            display={"flex"}
-            width={"100%"}
-            className="review_wrapper"
-          >
+        <Container className="review_container">
+          <Box className={"category_title_review"}>Experts' opinion</Box>
+          <Stack className="review_wrapper">
             <Box className="review_left">
               <Box className="img_wrapper">
                 <img src="/community/michael.jpg" className="review_img" />
@@ -401,136 +395,63 @@ export function OneShop(props: any) {
             </Box>
             <Stack className="review_right">
               <Box>
-                <p className="review_title">
-                  I am satisfied with the products but could be better
-                </p>
-                <div className={"review_stars"}>
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                </div>
+                <p className="review_title">Michael Saylor</p>
+                <p className="review_title_p">CEO of Microstrategy</p>
               </Box>
               <Box className="review_text">
-                I am overall satisfied with the functionality of the products,
-                they almost do what I want and need for work. But some of the
-                products feel kind plasticy and low quality. But the product
-                works just fine if you are not obsessed with the build quality
-                like me. Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Deserunt, explicabo, sint, debitis quasi voluptatibus
-                voluptatem aspernatur dicta itaque enim facilis et incidunt
-                molestias ea at excepturi maxime dolore. Cupiditate, rem.
+                "The most secure way to store your bitcoin is in a cold storage
+                wallet. A cold storage wallet is a device that is not connected
+                to the internet, which means it's not vulnerable to online
+                hacks."
+              </Box>
+              <Box className="review_text_auth">
+                -Michael Saylor in an interview with CNBC on February 24, 2021.
               </Box>
               <Box
                 display={"flex"}
                 flexDirection={"row"}
-                sx={{ mt: "20px", mb: "20px" }}
+                sx={{ mb: "20px" }}
+                justifyContent={"flex-end"}
               >
-                <FavoriteIcon
-                  className="review_icons"
-                  style={{ color: "red" }}
-                />
-                <ChatBubbleIcon className="review_icons" />
-                <MoreHorizIcon className="review_icons" />
+                <FavoriteIcon className="review_icons" /> 999+
+                <ChatBubbleIcon className="review_icons" /> 999+
               </Box>
             </Stack>
           </Stack>
 
-          <Stack
-            className="review_wrapper"
-            flexDirection={"row"}
-            display={"flex"}
-            width={"100%"}
-          >
+          <Stack className="review_wrapper">
             <Box className="review_left">
               <Box className="img_wrapper">
-                <img src="/community/elon.jpeg" className="review_img" />
+                <img src="/community/buterin.jpg" className="review_img" />
               </Box>
             </Box>
             <Stack className="review_right">
               <Box>
-                <p className="review_title">I just love the design</p>
-                <div className={"review_stars"}>
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                </div>
+                <p className="review_title">Vitalik Buterin</p>
+                <p className="review_title_p">Co-founder of Ethereum</p>
               </Box>
               <Box className="review_text">
-                Smart illumination, fast charging, and recycled materials makes
-                for some tempting peripherals. A mechanical keyboard for the
-                TikTok generation, Logitech's POP Keys Mechanical Wireless
-                Keyboard has a lively look and unique emoji-specific keys,
-                though we wish it were a bit easier to type on.
+                "The main advantage of cold storage is that it makes it much
+                harder for hackers to steal your assets. With a cold wallet,
+                your private keys are stored offline, making them much less
+                vulnerable to attacks"
+              </Box>
+              <Box className="review_text_auth">
+                - Vitalik Buterin, in an interview with Decrypt in 2021.
               </Box>
               <Box
                 display={"flex"}
                 flexDirection={"row"}
-                sx={{ mt: "20px", mb: "20px" }}
+                sx={{ mb: "20px" }}
+                justifyContent={"flex-end"}
               >
-                <FavoriteIcon
-                  className="review_icons"
-                  style={{ color: "red" }}
-                />
-                <ChatBubbleIcon className="review_icons" />
-                <MoreHorizIcon className="review_icons" />
+                <FavoriteIcon className="review_icons" /> 999+
+                <ChatBubbleIcon className="review_icons" /> 999+
               </Box>
             </Stack>
           </Stack>
 
-          <Stack
-            flexDirection={"row"}
-            display={"flex"}
-            width={"100%"}
-            className="review_wrapper"
-          >
-            <Box className="review_left">
-              <Box className="img_wrapper">
-                <img src="/community/powell.png" className="review_img" />
-              </Box>
-            </Box>
-            <Stack className="review_right">
-              <Box>
-                <p className="review_title">I was expecting more</p>
-                <div className={"review_stars"}>
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                </div>
-              </Box>
-              <Box className="review_text">
-                Qaulity and the design is a not for me I guess. If you love high
-                quality and comfortable products maybe you should go for another
-                one. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt, explicabo, sint, debitis quasi voluptatibus voluptatem
-                aspernatur dicta itaque enim facilis et incidunt molestias ea at
-                excepturi maxime dolore. Cupiditate, rem.
-              </Box>
-              <Box
-                display={"flex"}
-                flexDirection={"row"}
-                sx={{ mt: "20px", mb: "20px" }}
-              >
-                <FavoriteIcon
-                  className="review_icons"
-                  style={{ color: "red" }}
-                />
-                <ChatBubbleIcon className="review_icons" />
-                <MoreHorizIcon className="review_icons" />
-              </Box>
-            </Stack>
-          </Stack>
-          <Stack
-            flexDirection={"row"}
-            display={"flex"}
-            width={"100%"}
-            className="review_wrapper"
-          >
+          <Stack className="review_wrapper">
             <Box className="review_left">
               <Box className="img_wrapper">
                 <img src="/community/planb.jpg" className="review_img" />
@@ -538,33 +459,29 @@ export function OneShop(props: any) {
             </Box>
             <Stack className="review_right">
               <Box>
-                <p className="review_title">I just love the design</p>
-                <div className={"review_stars"}>
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "#F2BD57" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                  <StarIcon style={{ color: "whitesmoke" }} />
-                </div>
+                <p className="review_title">Plan B</p>
+                <p className="review_title_p">
+                  Crypto analyst, creator of stock-to-flow (S2F) model
+                </p>
               </Box>
               <Box className="review_text">
-                Smart illumination, fast charging, and recycled materials makes
-                for some tempting peripherals. A mechanical keyboard for the
-                TikTok generation, Logitech's POP Keys Mechanical Wireless
-                Keyboard has a lively look and unique emoji-specific keys,
-                though we wish it were a bit easier to type on.
+                "Investors are finally recognizing that bitcoin is not just a
+                high-risk, speculative asset, but an investable, safe-haven
+                asset that belongs in any diversified portfolio. However, you
+                need to take your own responsibility and custody your bitcoin,
+                preferably in a cold wallet."
+              </Box>
+              <Box className="review_text_auth">
+                - Plan B in an interview with Kitco News on December 17, 2020.
               </Box>
               <Box
                 display={"flex"}
                 flexDirection={"row"}
-                sx={{ mt: "20px", mb: "20px" }}
+                sx={{ mb: "20px" }}
+                justifyContent={"flex-end"}
               >
-                <FavoriteIcon
-                  className="review_icons"
-                  style={{ color: "red" }}
-                />
-                <ChatBubbleIcon className="review_icons" />
-                <MoreHorizIcon className="review_icons" />
+                <FavoriteIcon className="review_icons" /> 999+
+                <ChatBubbleIcon className="review_icons" /> 999+
               </Box>
             </Stack>
           </Stack>

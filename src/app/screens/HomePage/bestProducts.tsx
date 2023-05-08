@@ -1,7 +1,5 @@
 import { Box, Container, Stack } from "@mui/material";
 import React, { useEffect } from "react";
-
-// REDUX
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";

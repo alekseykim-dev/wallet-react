@@ -8,6 +8,19 @@
 
 /** ALL SHOPS*/
 
+.back10 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 50px;
+}
+
+.back11 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -50px;
+    top: 400px;
+}
 
 .shop_page .all_shops .fill_search_box {
     position: relative;
@@ -223,10 +236,57 @@
 
 /** SINGLE SHOP*/
 
+.back12 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    top: 250px;
+}
+
+.back13 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 300px;
+    top: 570px;
+}
+
+.back14 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -50px;
+    top: 50px;
+}
+
+.back15 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 100px;
+    top: 1050px;
+}
+
+.back16 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 100px;
+    top: 1500px;
+}
+
+.back17 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 20px;
+    top: 1860px;
+}
+
+.back18 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -90px;
+    top: 2150px;
+}
 .shop_page .single_shop {
     width: 100%;
     height: auto;
-
     display: flex;
     flex-direction: column;
     background: #d7d7d8;
@@ -524,6 +584,7 @@
     align-items: center;
     background-color: #fff;
     border-radius: 10px;
+    z-index: 1;
 }
 
 .shop_page .single_shop .dish_box .dish_img {
@@ -714,11 +775,18 @@
 .shop_page .single_shop .review_for_shop {
     margin-top: 60px;
     width: auto;
-    height: 1200px;
+    height: 1300px;
     display: flex;
     background: #d7d7d8;
 }
 
+.shop_page .review_container {
+    margin-top: 70;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1100px;
+}
 .shop_page .single_shop .category_title {
     font-family: "Dancing Script",
         sans-serif;
@@ -750,7 +818,7 @@
     height: 130px;
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 37px;
-    margin-left: 40px;
+    margin: 20px 20px 0 20px;
 }
 
 .shop_page .single_shop .review_name {
@@ -1123,11 +1191,15 @@
 /** review*/
 
 .review_wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     margin-top: 20px;
     border-bottom: 0.5px solid gray;
-    background: #fff;
+    background: #ffffffd0;
     border-radius: 10px;
     color: #000;
+    z-index: 1;
 }
 
 .img_wrapper {
@@ -1137,43 +1209,68 @@
     justify-content: center;
 }
 .review_left {
-    width: 15%;
+    width: 100%;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
 }
 
 .review_right {
     height: auto;
-    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-left: 80px;
+    margin: 0px 40px;
 }
 
 .review_title {
     font-family: Arial, Helvetica, sans-serif;
     font-weight: 600;
     font-size: 16px;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0 0 0;
+}
+
+.review_title_p {
+    font-style: italic;
+    color: #a1a1a1;
+    display: flex;
+    justify-content: center;
+    margin: 0;
 }
 
 .review_right .review_icons {
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 .review_right .review_text {
     display: flex;
-    width: 755px;
+    width: 100%;
+    text-indent: 5%;
+    border-left: 5px solid #ccc;
+    margin: 0;
+    padding: 10px 20px;
+    font-style: italic;
+}
+
+.review_text_auth {
+    display: inline-block;
+    width: 100%;
+    text-indent: 5%;
+    border-left: 5px solid #ccc;
+    margin: 0;
+    padding: 10px 20px;
+    font-style: italic;
 }
 
 
 .category_title_review {
-    font-family: "Dancing Script",
-            sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 36px;
-        line-height: 43px;
-        color: #1f1f1f;
-        margin-bottom: 40px;
+    font-family: "Dancing Script", sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    color: #1f1f1f;
+    margin-bottom: 20px;
+    margin-top: 40px;
 }
