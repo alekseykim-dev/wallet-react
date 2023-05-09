@@ -7,9 +7,7 @@ export const sweetErrorHandling = async (
   err: any,
   sweet_off: boolean = false
 ) => {
-  let error_message = err.message.includes("att:")
-    ? err.message
-    : Definer.general_err1;
+  let error_message = err.message
 
   if (sweet_off) {
     alert(error_message);
@@ -23,9 +21,7 @@ export const sweetErrorHandling = async (
 };
 
 export const auth_err1 = async (err: any, sweet_off: boolean = false) => {
-  let error_message = err.message.includes("att:")
-    ? err.message
-    : Definer.auth_err1;
+  let error_message = err.message
 
   if (sweet_off) {
     alert(error_message);

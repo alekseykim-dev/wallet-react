@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
 import { Container, Box, Button, Stack, Popover, List, ListItem, ListItemText, ListItemButton } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import StarIcon from "@mui/icons-material/Star";
@@ -13,7 +12,6 @@ import Badge from "@mui/material/Badge";
 import { useHistory, useParams } from "react-router-dom";
 import FavoriteIcon from "@mui/icons-material/Favorite";
 import ChatBubbleIcon from "@mui/icons-material/ChatBubble";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { createSelector } from "reselect";
