@@ -1,10 +1,8 @@
 import React, { useState } from "react";
 import {
-  Badge,
   Box,
   Button,
   Container,
-  IconButton,
   ListItemIcon,
   Menu,
   MenuItem,
@@ -52,11 +50,11 @@ export function NavbarShop(props: any) {
               </NavLink>
             </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to={"/orders"} activeClassName="underline">
+                Orders
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/community" activeClassName="underline">
@@ -64,12 +62,11 @@ export function NavbarShop(props: any) {
               </NavLink>
             </Box>
 
-
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  My Page
-                </NavLink>
-              </Box>
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to="/member-page" activeClassName="underline">
+                My Page
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/help" activeClassName="underline">
@@ -165,9 +162,12 @@ export function NavbarShop(props: any) {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem onClick={props.handleLogOutRequest}>
+              <MenuItem
+                onClick={props.handleLogOutRequest}
+                style={{ color: "#1f1f1f" }}
+              >
                 <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "blue" }} />
+                  <Logout fontSize="small" style={{ color: "#d7b686" }} />
                 </ListItemIcon>
                 Log out
               </MenuItem>

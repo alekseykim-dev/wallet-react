@@ -193,7 +193,7 @@ export function OneShop(props: any) {
                     type="search"
                     className="Single_searchInput"
                     name="Single_resSearch"
-                    placeholder="What are you looking for today?"
+                    placeholder="What are you searching for today?"
                     onChange={(e) => setQuery(e.target.value)}
                   />
                   {/* <Button
@@ -209,9 +209,9 @@ export function OneShop(props: any) {
           </Stack>
 
           <Stack className="filter_cont" flexDirection={"row"}>
-            <Box className={"dropup"}>
+            <Box className={"drop_down"}>
               <button className="dropbtn">Filter</button>
-              <div className="dropup-content">
+              <div className="drop_down_content">
                 <a onClick={() => searchCollectionHandler("wallet")}>Wallets</a>
                 <a onClick={() => searchCollectionHandler("accessory")}>
                   Accessories
@@ -220,9 +220,9 @@ export function OneShop(props: any) {
               </div>
             </Box>
 
-            <Box className={"dropup1"}>
-              <button className="dropbtn1">Sort by</button>
-              <div className="dropup-content1">
+            <Box className={"drop_down_right"}>
+              <button className="dropbtn_right">Sort by</button>
+              <div className="drop_down_cont_right">
                 <a onClick={() => searchOrderHandler("createdAt")}>
                   Newly Added
                 </a>
@@ -243,18 +243,18 @@ export function OneShop(props: any) {
             style={{ width: "100%", display: "flex" }}
             flexDirection={"row"}
           >
-            <Stack className={"dish_wrapper"}>
+            <Stack className={"product_wrapper"}>
               {filteredProducts.map((product: Product) => {
                 const image_path = `${serverApi}/${product.product_images[0]}`;
 
                 return (
                   <Box
-                    className={"dish_box"}
+                    className={"product_box"}
                     key={`${product._id}`}
                     onClick={() => chosenProductHandler(product._id)}
                   >
                     <Box
-                      className="dish_img"
+                      className="product_img"
                       sx={{
                         backgroundImage: `url(${image_path})`,
                       }}
@@ -318,17 +318,17 @@ export function OneShop(props: any) {
                       </Button>
                     </Box>
 
-                    <Box className={"dish_desc"}>
-                      <span className={"dish_title_text"}>
+                    <Box className={"product_desc"}>
+                      <span className={"product_title_text"}>
                         {product.product_name}
                       </span>
-                      <span className={"dish_country_text"}>
+                      <span className={"product_country_text"}>
                         Ships from {product.product_country}
                       </span>
-                      <span className={"dish_color_text"}>
+                      <span className={"product_color_text"}>
                         Color: {product.product_color}
                       </span>
-                      <span className={"dish_price_text"}>
+                      <span className={"product_price_text"}>
                         $ {product.product_price}
                       </span>
                     </Box>
@@ -487,60 +487,6 @@ export function OneShop(props: any) {
           </Stack>
         </Container>
       </div>
-
-      {/* <Container className="member_reviews">
-        <Box className={"category_title"}>About the shop</Box>
-        <Stack
-          display={"flex"}
-          flexDirection={"row"}
-          width={"90%"}
-          sx={{ mt: "70px" }}
-        >
-          <Box
-            className={"about_left"}
-            sx={{
-              backgroundImage: `url(${serverApi}/${chosenShop?.mb_image})`,
-            }}
-          >
-            <div className={"about_left_desc"}>
-              <span>{chosenShop?.mb_nick}</span>
-              <p>{chosenShop?.mb_description}</p>
-            </div>
-          </Box>
-          <Box className={"about_right"}>
-            {Array.from(Array(3).keys()).map((ele, index) => {
-              return (
-                <Box display={"flex"} flexDirection={"row"} key={index}>
-                  <div className={"about_right_img"}></div>
-                  <div className={"about_right_desc"}>
-                    <span>Our Chefs</span>
-                    <p>We invite the best chefs to cook for our customers!</p>
-                  </div>
-                </Box>
-              );
-            })}
-          </Box>
-        </Stack>
-
-        <Stack
-          sx={{ mt: "60px" }}
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-          }}
-        >
-          <Box className={"category_title"}>Our Address</Box>
-          <iframe
-            style={{ marginTop: "60px" }}
-            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=%20%20Busan%20Citizens%20Park+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-            width="1320"
-            height="500"
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-          ></iframe>
-        </Stack>
-      </Container> */}
     </div>
   );
 }

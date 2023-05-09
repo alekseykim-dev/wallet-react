@@ -116,11 +116,11 @@ export function ChosenProduct(props: any) {
   };
 
   return (
-    <div className="chosen_dish_page">
-      <Container className="dish_container">
-        <Stack className="chosen_dish_slider">
+    <div className="chosen_product_page">
+      <Container className="product_container">
+        <Stack className="chosen_product_slider">
           <Swiper
-            className="dish_swiper"
+            className="product_swiper"
             loop={true}
             mousewheel={true}
             direction="vertical"
@@ -149,7 +149,7 @@ export function ChosenProduct(props: any) {
 
           <Stack>
             <Swiper
-              className={"dish_swiper_mini"}
+              className={"product_swiper_mini"}
               loop={true}
               // thumbs={{ swiper: thumbsSwiper }}
               spaceBetween={20}
@@ -184,10 +184,12 @@ export function ChosenProduct(props: any) {
           </Stack>
         </Stack>
 
-        <Stack className="chosen_dish_info_container">
-          <Box className="chosen_dish_info_box">
-            <strong className="dish_txt">{chosenProduct?.product_name}</strong>
-            <span className="resto_name">{chosenShop?.mb_nick}</span>
+        <Stack className="chosen_product_info_container">
+          <Box className="chosen_product_info_box">
+            <strong className="product_txt">
+              {chosenProduct?.product_name}
+            </strong>
+            <span className="shop_name">{chosenShop?.mb_nick}</span>
             <Box className="rating_box">
               <Rating
                 name="half-rating"

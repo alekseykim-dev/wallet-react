@@ -95,11 +95,11 @@ export function NavbarHome(props: any) {
               </NavLink>
             </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to={"/orders"} activeClassName="underline">
+                Orders
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/community" activeClassName="underline">
@@ -107,13 +107,11 @@ export function NavbarHome(props: any) {
               </NavLink>
             </Box>
 
-
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  My Page
-                </NavLink>
-              </Box>
-
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to="/member-page" activeClassName="underline">
+                My Page
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/help" activeClassName="underline">
@@ -208,21 +206,21 @@ export function NavbarHome(props: any) {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem onClick={props.handleLogOutRequest}>
-                <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "blue" }} />
+              <MenuItem
+                onClick={props.handleLogOutRequest}
+                style={{ color: "#1f1f1f" }}
+              >
+                <ListItemIcon >
+                  <Logout fontSize="small" style={{ color: "#d7b686" }} />
                 </ListItemIcon>
-                Logout
+                Log out
               </MenuItem>
             </Menu>
           </Stack>
         </Stack>
 
         <Stack className="head_information" justifyContent={"row"}>
-          <Stack
-            justifyContent={"column"}
-            style={{ marginTop: "120px"}}
-          >
+          <Stack justifyContent={"column"} style={{ marginTop: "120px" }}>
             <Box>
               <img src="/icons/Welcome.svg" alt="welcome" />
             </Box>
@@ -230,7 +228,7 @@ export function NavbarHome(props: any) {
               We provide easy solution for complex{" "}
               <span className="crossed">problems</span>.
               <div className="crossed_under">
-               <style>{styles} </style> <span ref={textRef}></span>
+                <style>{styles} </style> <span ref={textRef}></span>
               </div>
             </Box>
           </Stack>

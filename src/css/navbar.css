@@ -49,7 +49,6 @@
     width: 600px;
     margin-left: 70px;
     height: 46px;
-    backdrop-filter: blur(10px);
     z-index: 1;
 
 }

@@ -148,7 +148,7 @@ export function AllShops() {
                   type="text"
                   className="searchInput"
                   name="reSearch"
-                  placeholder="What are you looking for today?"
+                  placeholder="What are you searching for today?"
                   onChange={(e) => setQuery(e.target.value)}
                 />
               </form>

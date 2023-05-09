@@ -89,10 +89,10 @@ export default function PausedOrders(props: any) {
                     <Box className={"ordersName_price"} key={item._id}>
                       <img
                         src={image_path}
-                        className={"orderDishImg"}
+                        className={"order_product_img"}
                         alt="product"
                       />
-                      <p className={"titleDish"}>{product.product_name}</p>
+                      <p className={"title_product"}>{product.product_name}</p>
                       <Box className={"priceBox"}>
                         <p>${item.item_price}</p>
                         <img src={"/icons/Close.svg"} alt="multiply" />

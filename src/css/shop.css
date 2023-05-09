@@ -402,14 +402,13 @@
     background-color: rgb(215, 182, 134);
 }
 
-/* The container <div> - needed to position the dropup content */
-.dropup {
+
+.drop_down {
     position: relative;
     display: inline-block;
 }
 
-/* Dropup content (Hidden by Default) */
-.dropup-content {
+.drop_down_content {
     display: none;
     position: absolute;
     bottom: -300%;
@@ -422,8 +421,7 @@
 }
 
 
-/* Links inside the dropup */
-.dropup-content a {
+.drop_down_content a {
     color: #1f1f1f;
     padding: 9px 10px;
     text-decoration: none;
@@ -431,28 +429,24 @@
     font-size: 15px;
 }
 
-/* Change color of dropup links on hover */
-.dropup-content a:hover {
+.drop_down_content a:hover {
     background-color: #ddd;
         border-radius: 10px;
 }
 
-/* Show the dropup menu on hover */
-.dropup:hover .dropup-content {
+
+.drop_down:hover .drop_down_content {
     display: block;
         border-radius: 10px;
 }
 
-/* Change the background color of the dropup button when the dropup content is shown */
-.dropup:hover .dropbtn {
+.drop_down:hover .dropbtn {
     background-color: #e3c08d;
         border-radius: 10px;
 }
-/* ccc */
 
 
-/* Dropup Button */
-.dropbtn1 {
+.dropbtn_right {
     padding: 10px 15px;
     font-size: 17px;
     border: none;
@@ -466,14 +460,13 @@
     background-color: rgb(215, 182, 134);
 }
 
-/* The container <div> - needed to position the dropup content */
-.dropup1 {
+
+.drop_down_right {
     position: relative;
     display: inline-block;
 }
 
-/* Dropup content (Hidden by Default) */
-.dropup-content1 {
+.drop_down_cont_right {
     display: none;
     position: absolute;
     bottom: -405%;
@@ -487,8 +480,7 @@
 }
 
 
-/* Links inside the dropup */
-.dropup-content1 a {
+.drop_down_cont_right a {
     color: #1f1f1f;
     padding: 9px 10px;
     text-decoration: none;
@@ -496,20 +488,19 @@
     font-size: 15px;
 }
 
-/* Change color of dropup links on hover */
-.dropup-content1 a:hover {
+.drop_down_cont_right a:hover {
     background-color: #ddd;
     border-radius: 10px;
 }
 
 /* Show the dropup menu on hover */
-.dropup1:hover .dropup-content1 {
+.drop_down_right:hover .drop_down_cont_right {
     display: block;
     border-radius: 10px;
 }
 
 /* Change the background color of the dropup button when the dropup content is shown */
-.dropup1:hover .dropbtn1 {
+.drop_down_right:hover .dropbtn_right {
     background-color: #e3c08d;
     border-radius: 10px;
 }
@@ -517,7 +508,6 @@
 .single_shop .next_btn {
     width: 10%;
     height: 147px;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -526,7 +516,6 @@
 .shop_page .single_shop .shop_avatars_wrapper {
     width: 90%;
     height: 147px;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -562,7 +551,7 @@
     color: #1f1f1f;
 }
 
-.shop_page .single_shop .dish_wrapper {
+.shop_page .single_shop .product_wrapper {
     margin-left: 30px;
     margin-right: 30px;
     width: 100%;
@@ -573,7 +562,7 @@
     flex-wrap: wrap;
 }
 
-.shop_page .single_shop .dish_box {
+.shop_page .single_shop .product_box {
     margin-top: 60px;
     margin-right: 15px;
     margin-left: 15px;
@@ -587,7 +576,7 @@
     z-index: 1;
 }
 
-.shop_page .single_shop .dish_box .dish_img {
+.shop_page .single_shop .product_box .product_img {
     position: relative;
     width: 273px;
     height: 250px;
@@ -596,26 +585,7 @@
     border-radius: 10px 10px 0px 0px;
 }
 
-.shop_page .single_shop .dish_img .dish_sale {
-    margin-top: 43px;
-    width: 84px;
-    height: 39px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #d1f4d9;
-    box-shadow: 4px 6px 20px rgb(0 0 0 / 10%);
-
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 21px;
-    color: #c50a09;
-}
-
-.shop_page .single_shop .dish_box .dish_desc {
+.shop_page .single_shop .product_box .product_desc {
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -623,7 +593,7 @@
     cursor: pointer;
 }
 
-.shop_page .single_shop .dish_desc .dish_title_text {
+.shop_page .single_shop .product_desc .product_title_text {
     margin-top: 10px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
@@ -633,17 +603,17 @@
     color: #757575;
 }
 
-.shop_page .single_shop .dish_desc .dish_country_text {
+.shop_page .single_shop .product_desc .product_country_text {
     margin-top: 10px;
     color: #1f1f1f;
 }
 
-.shop_page .single_shop .dish_desc .dish_color_text {
+.shop_page .single_shop .product_desc .product_color_text {
     margin-top: 5px;
     color: #1f1f1f;
 }
 
-.shop_page .single_shop .dish_desc .dish_price_text {
+.shop_page .single_shop .product_desc .product_price_text {
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
@@ -654,22 +624,9 @@
     color: #1f1f1f;
 
 }
-.shop_page .single_shop .dish_desc .dish_desc_text {
-    margin-top: 10px;
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    color: #e3c08d;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
 
-.shop_page .single_shop .dish_img:before {
+
+.shop_page .single_shop .product_img:before {
     content: "";
     opacity: 0;
     transition: opacity 0.5s ease;
@@ -683,12 +640,12 @@
     border-radius: 10px 10px 0px 0px;
 }
 
-.shop_page .single_shop .dish_img:hover:before {
+.shop_page .single_shop .product_img:hover:before {
     border-radius: 10px 10px 0px 0px;
     opacity: 1;
 }
 
-.shop_page .single_shop .dish_img img {
+.shop_page .single_shop .product_img img {
     position: absolute;
     display: block;
     max-width: 100%;
@@ -725,7 +682,7 @@
     color: #ffffff;
 }
 
-.shop_page .single_shop .dish_img:hover .view_btn {
+.shop_page .single_shop .product_img:hover .view_btn {
     opacity: 1;
 }
 
@@ -748,7 +705,7 @@
     border-radius: 50%;
 }
 
-.shop_page .single_shop .dish_img:hover .like_view_btn {
+.shop_page .single_shop .product_img:hover .like_view_btn {
     opacity: 1;
 }
 
@@ -797,21 +754,7 @@
     color: #1f1f1f;
 }
 
-.shop_page .single_shop .review_box {
-    margin-top: 40px;
-    padding: 20px;
-    width: 249px;
-    height: 360px;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
-    border-radius: 16px;
-}
 
 .shop_page .single_shop .review_img {
     width: 130px;
@@ -821,142 +764,7 @@
     margin: 20px 20px 0 20px;
 }
 
-.shop_page .single_shop .review_name {
-    margin-top: 10px;
-    font-family: "Commissioner",
-        sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 25px;
-    line-height: 36px;
-    color: #08090d;
-}
 
-.shop_page .single_shop .review_stars {
-    margin-top: 10px;
-    width: 149px;
-    height: 24px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.shop_page .single_shop .review_prof {
-    font-family: "Commissioner",
-        sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    line-height: 36px;
-    color: #a1a1a1;
-}
-
-.shop_page .single_shop .review_desc {
-    margin-top: 10px;
-    font-family: "DM Sans",
-        sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 24px;
-    color: #616164;
-}
-
-.shop_page .single_shop .about_left {
-    width: 50%;
-    height: auto;
-
-    display: flex;
-    align-items: flex-end;
-
-    background-size: cover;
-    background-position: center;
-}
-
-.shop_page .single_shop .about_left .about_left_desc {
-    padding: 20px;
-    width: 100%;
-    height: 329px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background: linear-gradient(0deg, #000000 0%, rgba(0, 0, 0, 0) 90.88%);
-}
-
-.shop_page .single_shop .about_left_desc span {
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 28px;
-    line-height: 42px;
-    color: #ffffff;
-}
-
-.shop_page .single_shop .about_right {
-    margin-left: 20px;
-    width: 50%;
-    height: 480px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.shop_page .single_shop .about_left_desc p {
-    margin-top: 10px;
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    color: #d4d4d4;
-}
-
-.shop_page .single_shop .about_right .about_right_img {
-    width: 160px;
-    height: 140px;
-    left: 763px;
-    top: 3653px;
-
-    display: flex;
-
-    background: url("../../public/others/subtract.png");
-    background-size: cover;
-    background-position: center;
-}
-
-.shop_page .single_shop .about_right .about_right_desc {
-    padding-bottom: 5px;
-    margin-left: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-}
-
-.shop_page .single_shop .about_right_desc span {
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 30px;
-    color: #ffffff;
-}
-
-.shop_page .single_shop .about_right_desc p {
-    margin-top: 10px;
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 26px;
-    color: #d4d4d4;
-}
 
 .shop_page .single_shop .swiper-wrapper {
     display: flex;
@@ -964,126 +772,10 @@
     justify-content: space-between;
 }
 
-.single_shop .dishes_filter_box {
-    width: 35%;
-    height: auto;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-.single_shop .dish_category_box {
-    margin-top: 60px;
-    width: 50px;
-    height: auto;
-
-    display: flex;
-    flex-direction: column;
-}
-
-.single_shop .dish_detail_box {
-    width: 418px;
-    height: auto;
-
-    background: #ffffff;
-    border: none;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
-    border-radius: 16px;
-}
-
-.single_shop .dish_detail_box .modal_dish_info {
-    width: 100%;
-    height: 112px;
-
-    display: flex;
-    flex-direction: row;
-}
-
-.single_shop .dish_detail_box .modal_dish_info .modal_dish_img {
-    width: 115px;
-
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 37px;
-}
-
-.single_shop .dish_detail_box .modal_dish_info .modal_dish_name {
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    color: #000000;
-}
-
-.single_shop .dish_detail_box .modal_dish_info .modal_dish_price {
-    margin-top: 10px;
-    font-family: "Poppins",
-        sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 24px;
-    line-height: 36px;
-    color: #ae0000;
-}
-
-.single_shop .dish_detail_box .modal_dish_desc {
-    margin-top: 20px;
-    font-family: "Poppins", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 22px;
-    color: #000000;
-}
-
-.single_shop .dish_detail_box .dish_create_dt {
-    font-style: normal;
-    font-weight: 600;
-    font-size: 15px;
-    color: #000000;
-}
-
-.single_shop .dish_detail_box .to_basket_box {
-    margin-top: 10px;
-    width: 100%;
-    height: 64px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    border-top: 1px solid rgba(0, 0, 0, 0.5);
-}
-
-.single_shop .dish_detail_box .to_basket_box .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
-    padding: 6.5px 14px;
-}
-
-.single_shop .dish_category_box .dish_category_main {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-
-}
-
-.single_shop .dish_category_box .dish_category_main button {
-    min-width: auto;
-    margin-right: 10px;
-}
-
-.single_shop .css-1p7b7rs-MuiBadge-badge {
-    position: absolute;
-    top: 26%;
-    right: 15%;
-}
-
-
 
 /** CHOSEN DISH PAGE*/
 
-.shop_page .chosen_dish_page {
+.shop_page .chosen_product_page {
     position: relative;
     width: 100%;
     height: auto;
@@ -1092,28 +784,28 @@
     background: #0b0e11;
 }
 
-.chosen_dish_page .dish_container {
+.chosen_product_page .product_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 60px 0;
 }
 
-.chosen_dish_page .chosen_dish_slider {
+.chosen_product_page .chosen_product_slider {
     width: 48%;
     height: 550px;
 
 }
 
 
-.chosen_dish_page .dish_swiper {
+.chosen_product_page .product_swiper {
     --swiper-navigation-color: #fff;
     --swiper-pagination-color: #fff;
     width: 100%;
     height: 1020px;
 }
 
-.chosen_dish_page .chosen_dish_info_container {
+.chosen_product_page .chosen_product_info_container {
     padding: 30px 40px;
     width: 49%;
     height: 410px;
@@ -1124,13 +816,13 @@
     border-radius: 12px;
 }
 
-.chosen_dish_page .dish_swiper_mini {
+.chosen_product_page .product_swiper_mini {
     margin-top: 20px;
     width: 500px;
 
 }
 
-.chosen_dish_page .chosen_dish_info_container .chosen_dish_info_box {
+.chosen_product_page .chosen_product_info_container .chosen_product_info_box {
     width: 100%;
     height: auto;
     font-weight: 600px;
@@ -1140,14 +832,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.chosen_dish_page .chosen_dish_info_box .dish_txt {
+.chosen_product_page .chosen_product_info_box .product_txt {
     font-size: 30px;
     line-height: 36px;
 
 
 }
 
-.chosen_dish_page .chosen_dish_info_box .resto_name {
+.chosen_product_page .chosen_product_info_box .shop_name {
     margin-top: 16px;
     font-size: 17px;
     line-height: 15px;
@@ -1155,25 +847,25 @@
     font-style: italic;
 }
 
-.chosen_dish_page .chosen_dish_info_box .rating_box {
+.chosen_product_page .chosen_product_info_box .rating_box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-top: 20px;
 }
 
-.chosen_dish_page .chosen_dish_info_box .evaluation_box {
+.chosen_product_page .chosen_product_info_box .evaluation_box {
     display: flex;
 }
 
-.chosen_dish_page .chosen_dish_info_box .dish_desc_info {
+.chosen_product_page .chosen_product_info_box .dish_desc_info {
     height: 115px;
     font-size: 18px;
     line-height: 22px;
    
 }
 
-.chosen_dish_page .chosen_dish_info_box .dish_price_box {
+.chosen_product_page .chosen_product_info_box .dish_price_box {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
@@ -1181,7 +873,7 @@
     margin-top: 15px;
 }
 
-.chosen_dish_page .chosen_dish_info_box .button_box {
+.chosen_product_page .chosen_product_info_box .button_box {
     display: flex;
     justify-content: center;
 }

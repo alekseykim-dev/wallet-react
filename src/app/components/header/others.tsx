@@ -44,7 +44,7 @@ export function NavbarOthers(props: any) {
           justifyContent={"space-between"}
         >
           <Box onClick={props.setPath}>
-            <NavLink to="/" >
+            <NavLink to="/">
               <img src="/icons/Bitsafe.svg" alt="logo" />
             </NavLink>
           </Box>
@@ -60,11 +60,11 @@ export function NavbarOthers(props: any) {
               </NavLink>
             </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to={"/orders"} activeClassName="underline">
+                Orders
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/community" activeClassName="underline">
@@ -72,12 +72,11 @@ export function NavbarOthers(props: any) {
               </NavLink>
             </Box>
 
-
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  My Page
-                </NavLink>
-              </Box>
+            <Box className="hover-line" onClick={props.setPath}>
+              <NavLink to="/member-page" activeClassName="underline">
+                My Page
+              </NavLink>
+            </Box>
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/help" activeClassName="underline">
@@ -176,11 +175,14 @@ export function NavbarOthers(props: any) {
               transformOrigin={{ horizontal: "right", vertical: "top" }}
               anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
             >
-              <MenuItem onClick={props.handleLogOutRequest}>
+              <MenuItem
+                onClick={props.handleLogOutRequest}
+                style={{ color: "#1f1f1f" }}
+              >
                 <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "blue" }} />
+                  <Logout fontSize="small" style={{ color: "#d7b686" }} />
                 </ListItemIcon>
-                Logout
+                Log out
               </MenuItem>
             </Menu>
           </Stack>

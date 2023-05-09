@@ -163,7 +163,7 @@ export function OrdersPage(props: any) {
               sx={{ mt: "40px", mb: "8px" }}
             ></Box>
             <Box className={"order_user_address"}>
-              <div style={{ marginRight: "5px" }}>
+              <div>
                 <LocationOnOutlinedIcon />
               </div>
               <div className="spec_address_txt">

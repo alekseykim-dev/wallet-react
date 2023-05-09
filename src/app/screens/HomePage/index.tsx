@@ -4,19 +4,14 @@ import { TopShops } from "./RecommendedShops";
 import { BestShops } from "./bestShops";
 import { BestProducts } from "./bestProducts";
 import { Advertisements } from "./advertisements";
-import { Events } from "./events";
 import { Recommendations } from "./recommendations";
 import "../../../css/home.css";
 
 // REDUX
 import { useDispatch, useSelector } from "react-redux";
 import { Dispatch } from "@reduxjs/toolkit";
-import { createSelector } from "reselect";
 import { setBestShops, setTopShops } from "../../screens/HomePage/slice";
-import {
-  retrieveBestShops,
-  retrieveTopShops,
-} from "../../screens/HomePage/selector";
+
 import { Shop } from "../../../types/user";
 import ShopApiService from "../../apiServices/shopApiService";
 
@@ -70,7 +65,6 @@ export function HomePage() {
       <BestShops />
       <BestProducts />
       <Coins />
-      {/* <Events /> */}
       <Recommendations />
     </div>
   );

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Box, Button, Container, Stack } from "@mui/material";
-import zIndex from "@mui/material/styles/zIndex";
 
 const Coins = () => {
   const [cryptoData, setCryptoData] = useState([]);

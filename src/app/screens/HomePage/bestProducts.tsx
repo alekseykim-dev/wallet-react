@@ -60,9 +60,9 @@ export function BestProducts() {
               console.log("product", product);
 
               return (
-                <Box key={index} className="dish_box">
+                <Box key={index} className="product_box">
                   <Stack
-                    className="dish_img"
+                    className="products_img"
                     sx={{
                       backgroundImage: `url(${image_path})`,
                     }}
@@ -79,17 +79,17 @@ export function BestProducts() {
                       />
                     </div>
                   </Stack>
-                  <Stack className="dish_desc">
-                    <span className="dish_title_text">
+                  <Stack className="products_desc">
+                    <span className="products_title_text">
                       {product.product_name}
                     </span>
                     <span className="product_country_text">
                       Ships from {product.product_country}
                     </span>
-                    <span className={"dish_color_text"}>
+                    <span className={"products_color_text"}>
                       Color: {product.product_color}
                     </span>
-                    <span className="dish_desc_text">
+                    <span className="products_desc_text">
                       <span className="price"> ${product.product_price} </span>
                     </span>
                   </Stack>
