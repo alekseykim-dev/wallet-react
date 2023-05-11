@@ -81,11 +81,11 @@ export function NavbarHome(props: any) {
     
   return (
     <div className="format home_navbar">
-      <Container>
-        <Stack className="navbar_config">
+      <div className="navbar_block">
+        <div className="navbar_config">
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/Bitsafe.svg" alt="logo" />
+              <img src="/icons/Logo_b.svg" alt="logo" />
             </NavLink>
           </Box>
           <Stack className="navbar_links">
@@ -97,7 +97,7 @@ export function NavbarHome(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to={"/orders"} activeClassName="underline">
-                Orders
+                My Orders
               </NavLink>
             </Box>
 
@@ -134,9 +134,9 @@ export function NavbarHome(props: any) {
                   className="nav_button"
                   variant="contained"
                   style={{
-                    color: isHovered1 ? "#fff" : "#000",
+                    color: isHovered1 ? "#fff" : "#FFFFFF",
                     opacity: isHovered1 ? 0.7 : 1,
-                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                    backgroundColor: isHovered1 ? "#0056b3" : "#007BFF",
                   }}
                   onMouseEnter={handleMouseEnter1}
                   onMouseLeave={handleMouseLeave1}
@@ -152,9 +152,9 @@ export function NavbarHome(props: any) {
                 <Button
                   variant="contained"
                   style={{
-                    color: isHovered2 ? "#fff" : "#000",
+                    color: isHovered2 ? "#fff" : "#FFFFFF",
                     opacity: isHovered2 ? 0.7 : 1,
-                    backgroundColor: isHovered2 ? "#000000d0" : "#d7b686",
+                    backgroundColor: isHovered2 ? "#0056b3" : "#007BFF",
                   }}
                   onMouseEnter={handleMouseEnter2}
                   onMouseLeave={handleMouseLeave2}
@@ -210,14 +210,14 @@ export function NavbarHome(props: any) {
                 onClick={props.handleLogOutRequest}
                 style={{ color: "#1f1f1f" }}
               >
-                <ListItemIcon >
+                <ListItemIcon>
                   <Logout fontSize="small" style={{ color: "#d7b686" }} />
                 </ListItemIcon>
                 Log out
               </MenuItem>
             </Menu>
           </Stack>
-        </Stack>
+        </div>
 
         <Stack className="head_information" justifyContent={"row"}>
           <Stack justifyContent={"column"} style={{ marginTop: "120px" }}>
@@ -225,15 +225,14 @@ export function NavbarHome(props: any) {
               <img src="/icons/Welcome.svg" alt="welcome" />
             </Box>
             <Box className="define_shop">
-              We provide easy solution for complex{" "}
-              <span className="crossed">problems</span>.
+              We provide easy solution for complex problems.
               <div className="crossed_under">
                 <style>{styles} </style> <span ref={textRef}></span>
               </div>
             </Box>
           </Stack>
         </Stack>
-      </Container>
+      </div>
       <div className="framer-motion-wrapper">
         <div onClick={handleClick} className="framer-motion-container">
           <motion.div

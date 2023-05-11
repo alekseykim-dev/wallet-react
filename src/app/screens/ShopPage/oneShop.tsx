@@ -132,8 +132,13 @@ export function OneShop(props: any) {
   /** Enabling search */
   const [query, setQuery] = useState("");
 
-  const filteredProducts = targetProducts.filter((product) =>
-    product.product_name.toLowerCase().includes(query.toLowerCase())
+  const filteredProducts = targetProducts.filter(
+    (product) =>
+      product.product_name.toLowerCase().includes(query.toLowerCase()) ||
+      product.product_country.toLowerCase().includes(query.toLowerCase()) ||
+      product.product_color.toLowerCase().includes(query.toLowerCase()) ||
+      product.product_description.toLowerCase().includes(query.toLowerCase()) ||
+      product.product_collection.toLowerCase().includes(query.toLowerCase())
   );
 
   /**  Enabling search */
@@ -142,6 +147,7 @@ export function OneShop(props: any) {
     targetProductSearchObj.product_collection = collection;
     setTargetProductSearchObj({ ...targetProductSearchObj });
   };
+  
   const searchOrderHandler = (order: string) => {
     targetProductSearchObj.page = 1;
     targetProductSearchObj.order = order;
@@ -150,6 +156,24 @@ export function OneShop(props: any) {
   const chosenProductHandler = (id: string) => {
     history.push(`/shop/products/${id}`);
   };
+
+  
+const handleSingleSelection = (groupName: string, selectedValue: string) => {
+  const checkboxes = document.querySelectorAll(
+    `input[name=${groupName}]`
+  ) as NodeListOf<HTMLInputElement>;
+  checkboxes.forEach((checkbox: HTMLInputElement) => {
+    checkbox.checked = checkbox.value === selectedValue;
+  });
+
+  // Call the appropriate handler function based on the selected value
+  if (groupName === "filter") {
+    searchCollectionHandler(selectedValue);
+  } else if (groupName === "sort") {
+    searchOrderHandler(selectedValue);
+  }
+};
+
 
   // Like handle
   const targetLikeProduct = async (e: any) => {
@@ -186,54 +210,113 @@ export function OneShop(props: any) {
             <Box className="top_text">
               <p>{chosenShop?.mb_nick}</p>
               <Box className="Single_search_big_box">
+                <div className="search_title">Search box</div>
                 <form className="Single_search_form" action="" method="">
                   <input
                     type="search"
                     className="Single_searchInput"
                     name="Single_resSearch"
-                    placeholder="What are you searching for today?"
+                    placeholder="Input product name, country, color or description here"
                     onChange={(e) => setQuery(e.target.value)}
                   />
-                  {/* <Button
-                    className="Single_button_search"
-                    variant="contained"
-                    endIcon={<SearchIcon />}
-                  >
-                    Search
-                  </Button> */}
                 </form>
+
+                <Box className={"drop_down"}>
+                  <div>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="filter"
+                        value="wallet"
+                        defaultChecked
+                        onChange={() =>
+                          handleSingleSelection("filter", "wallet")
+                        }
+                      />
+                      Wallets
+                    </label>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="filter"
+                        value="accessory"
+                        onChange={() =>
+                          handleSingleSelection("filter", "accessory")
+                        }
+                      />
+                      Accessories
+                    </label>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="filter"
+                        value="bundle"
+                        onChange={() =>
+                          handleSingleSelection("filter", "bundle")
+                        }
+                      />
+                      Bundles
+                    </label>
+                  </div>
+                </Box>
+
+                <Box className={"drop_down_right"}>
+                  <div className="checkbox_list">
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="sort"
+                        value="createdAt"
+                        defaultChecked
+                        onChange={() =>
+                          handleSingleSelection("sort", "createdAt")
+                        }
+                      />
+                      Newly Added
+                    </label>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="sort"
+                        value="product_price"
+                        onChange={() =>
+                          handleSingleSelection("sort", "product_price")
+                        }
+                      />
+                      Price: Ascending
+                    </label>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="sort"
+                        value="product_likes"
+                        onChange={() =>
+                          handleSingleSelection("sort", "product_likes")
+                        }
+                      />
+                      Most Liked
+                    </label>
+                    <label className="checkbox_list">
+                      <input
+                        className="checkbox_list_input"
+                        type="checkbox"
+                        name="sort"
+                        value="product_views"
+                        onChange={() =>
+                          handleSingleSelection("sort", "product_views")
+                        }
+                      />
+                      Most Viewed
+                    </label>
+                  </div>
+                </Box>
               </Box>
-            </Box>
-          </Stack>
-
-          <Stack className="filter_cont" flexDirection={"row"}>
-            <Box className={"drop_down"}>
-              <button className="dropbtn">Filter</button>
-              <div className="drop_down_content">
-                <a onClick={() => searchCollectionHandler("wallet")}>Wallets</a>
-                <a onClick={() => searchCollectionHandler("accessory")}>
-                  Accessories
-                </a>
-                <a onClick={() => searchCollectionHandler("bundle")}>Bundles</a>
-              </div>
-            </Box>
-
-            <Box className={"drop_down_right"}>
-              <button className="dropbtn_right">Sort by</button>
-              <div className="drop_down_cont_right">
-                <a onClick={() => searchOrderHandler("createdAt")}>
-                  Newly Added
-                </a>
-                <a onClick={() => searchOrderHandler("product_price")}>
-                  Price: Ascending
-                </a>
-                <a onClick={() => searchOrderHandler("product_likes")}>
-                  Most Liked
-                </a>
-                <a onClick={() => searchOrderHandler("product_views")}>
-                  Most Viewed
-                </a>
-              </div>
             </Box>
           </Stack>
 

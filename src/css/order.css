@@ -103,12 +103,11 @@
 }
 
 .order_page .order_info_box .order_user_prof {
-        font-family: "Commissioner", sans-serif;
-            font-style: italic;
-            font-weight: 500;
-            font-size: 20px;
-            line-height: 36px;
-    color: #a1a1a1;
+    font-family: "Commissioner", sans-serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: 17px;
+    color: #1f1f1f;
 }
 
 .order_page .order_info_box .order_user_address {

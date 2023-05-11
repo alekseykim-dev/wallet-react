@@ -37,7 +37,7 @@ export function NavbarOthers(props: any) {
   };
   return (
     <div className="format_others home_navbar">
-      <Container>
+      <div className="navbar_block">
         <Stack
           flexDirection={"row"}
           className="navbar_config"
@@ -45,7 +45,7 @@ export function NavbarOthers(props: any) {
         >
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/Bitsafe.svg" alt="logo" />
+              <img src="/icons/Logo_b.svg" alt="logo" />
             </NavLink>
           </Box>
           <Stack
@@ -62,7 +62,7 @@ export function NavbarOthers(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to={"/orders"} activeClassName="underline">
-                Orders
+                My Orders
               </NavLink>
             </Box>
 
@@ -187,7 +187,7 @@ export function NavbarOthers(props: any) {
             </Menu>
           </Stack>
         </Stack>
-      </Container>
+      </div>
     </div>
   );
 }

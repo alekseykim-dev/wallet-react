@@ -36,11 +36,11 @@ export function NavbarShop(props: any) {
   };
   return (
     <div className="format_shop home_navbar">
-      <Container>
+      <div className="navbar_block">
         <Stack className="navbar_config">
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/Bitsafe.svg" alt="logo" />
+              <img src="/icons/Logo_b.svg" alt="logo" />
             </NavLink>
           </Box>
           <Stack className="navbar_links">
@@ -52,7 +52,7 @@ export function NavbarShop(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to={"/orders"} activeClassName="underline">
-                Orders
+                My Orders
               </NavLink>
             </Box>
 
@@ -90,9 +90,9 @@ export function NavbarShop(props: any) {
                   className="nav_button"
                   variant="contained"
                   style={{
-                    color: isHovered1 ? "#fff" : "#000",
+                    color: isHovered1 ? "#fff" : "#FFFFFF",
                     opacity: isHovered1 ? 0.7 : 1,
-                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                    backgroundColor: isHovered1 ? "#0056b3" : "#007BFF",
                   }}
                   onMouseEnter={handleMouseEnter1}
                   onMouseLeave={handleMouseLeave1}
@@ -108,9 +108,9 @@ export function NavbarShop(props: any) {
                 <Button
                   variant="contained"
                   style={{
-                    color: isHovered2 ? "#fff" : "#000",
-                    opacity: isHovered2 ? 0.7 : 1,
-                    backgroundColor: isHovered2 ? "#000000d0" : "#d7b686",
+                    color: isHovered1 ? "#fff" : "#FFFFFF",
+                    opacity: isHovered1 ? 0.7 : 1,
+                    backgroundColor: isHovered1 ? "#0056b3" : "#007BFF",
                   }}
                   onMouseEnter={handleMouseEnter2}
                   onMouseLeave={handleMouseLeave2}
@@ -174,7 +174,7 @@ export function NavbarShop(props: any) {
             </Menu>
           </Stack>
         </Stack>
-      </Container>
+      </div>
     </div>
   );
 }

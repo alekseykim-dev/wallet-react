@@ -1,9 +1,11 @@
 .homepage {
-    background: #d7d7d8;
+    background: #f5f5f5;
+
 }
+
 .homepage .static_frame {
-    width: 1440px;
-    background: #d7d7d8;
+    width: 100%;
+    background: #f5f5f5;
     height: 190px;
     /* background-size: cover; */
 }
@@ -14,31 +16,33 @@
     align-items: center;
     height: 190px;
 }
+
 .homepage .character_img.left {
     /* position: absolute; */
     width: 65px;
     height: 65px;
     background: url('/public/home/truck.svg');
     background-repeat: no-repeat;
-        background-size: cover;
+    background-size: cover;
     /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 }
 
 .homepage .character_img.middle {
     /* position: absolute; */
     width: 65px;
-        height: 65px;
+    height: 65px;
     background-repeat: no-repeat;
-        background-size: cover;
+    background-size: cover;
     background: url('/public/home/phone.svg');
     /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 }
+
 .homepage .character_img.right {
     /* position: absolute; */
     width: 65px;
     height: 61px;
     background-repeat: no-repeat;
-        background-size: cover;
+    background-size: cover;
     background: url('/public/home/rotate.svg');
     /* transform: matrix(-1, 0, 0, 1, 0, 0); */
 }
@@ -56,7 +60,7 @@
 
 .homepage .static_box .static_num {
     font-family: 'Montserrat', sans-serif;
-font-style: normal;
+    font-style: normal;
     font-weight: 700;
     font-size: 20px;
     line-height: 30px;
@@ -67,10 +71,10 @@ font-style: normal;
 
 .homepage .static_box .static_text {
     font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        font-size: 18px;
-        line-height: 24px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
     /* identical to box height */
 
     text-align: center;
@@ -79,24 +83,24 @@ font-style: normal;
 }
 
 .homepage .top_shop_frame {
-    width: 1440px;
-    height: 620px;
+    width: 100%;
+    height: 700px;
     display: flex;
-    background: #d7d7d8;
+    background: #f5f5f5;
 }
 
 
 .homepage .category_title {
 
     font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 30px;
-        line-height: 37px;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
     margin-bottom: 35px;
     margin-top: 90px;
 
-    color: #1f1f1f;
+    color: #222222;
 }
 
 .homepage .category_title_shop {
@@ -132,8 +136,10 @@ font-style: normal;
     border-radius: 10px;
     cursor: pointer;
     margin-bottom: 40px;
+    z-index: 1;
 }
-.back{
+
+.back {
 
     background-repeat: no-repeat;
     position: absolute;
@@ -155,7 +161,7 @@ font-style: normal;
     position: absolute;
     left: 300px;
     top: 2350px;
-  
+
 }
 
 
@@ -165,7 +171,7 @@ font-style: normal;
     position: absolute;
     right: 300px;
     top: 3080px;
-  
+
 }
 
 .back4 {
@@ -202,14 +208,14 @@ font-style: normal;
     width: 100%;
     height: 710px;
     display: flex;
-    background: #d7d7d8;
+    background: #f5f5f5;
 }
 
 .homepage .best_dishes_frame {
-    width: auto;
-    height: 580px;
+    width: 100%;
+    height: 690px;
     display: flex;
-    background: #d7d7d8;
+    background: #f5f5f5;
 
 }
 
@@ -260,14 +266,14 @@ font-style: normal;
     font-weight: 600;
     font-size: 13px;
     line-height: 20px;
-    color: #ffffff;
+    color: #f5f5f5;
 }
 
 .homepage .products_img:hover .view_btn {
     opacity: 1;
 }
 
-.card_style{
+.card_style {
     justify-content: flex-start;
     position: absolute;
     top: 20px;
@@ -294,6 +300,7 @@ font-style: normal;
     margin-top: 10px;
     color: #1f1f1f;
 }
+
 .homepage .products_desc .products_desc_text {
     margin-top: 15px;
     margin-bottom: 5px;
@@ -304,6 +311,7 @@ font-style: normal;
     line-height: 36px;
     color: #1f1f1f;
 }
+
 .products_color_text {
     margin-top: 5px;
     color: #1f1f1f;
@@ -312,6 +320,7 @@ font-style: normal;
 
 .homepage .ads_shop_frame {
     width: 100%;
+    height: 810px;
     display: flex;
     overflow: hidden;
     /* box-shadow: 0px -62px 60px 20px #f8be69; */
@@ -359,6 +368,7 @@ font-style: normal;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    
 }
 
 .homepage .swiper-pagination-bullet {
@@ -367,12 +377,12 @@ font-style: normal;
     height: 8px;
     text-align: center;
     opacity: 1;
-    background: #ffffff;
+    background: white;
     border-radius: 50%;
 }
 
 .homepage .swiper-pagination-bullet-active {
-    background: #e3c08d;
+    background: #007bff;
     border-radius: 50%;
 }
 
@@ -380,7 +390,11 @@ font-style: normal;
     height: 300px;
     width: 275px;
     cursor: pointer;
+    border-radius: 0px 10px 10px 0px
+}
 
+.card_desc {
+    font-style: italic;
 }
 
 .homepage .top_article_frame {
@@ -512,20 +526,22 @@ font-style: normal;
 
 .coin-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     align-items: center;
     margin-bottom: 16px;
-  
+
 }
 
 .coins-table {
     width: 100%;
-        border-collapse: collapse;
-        border: 1px solid #ccc;
-        color: #000000;
-        background-color: #f1f1f1;
-        overflow: hidden;
-        transition: max-height 0.3s ease-in-out;
+    border-collapse: collapse;
+    border: 1px solid #ccc;
+    color: #333333;
+    background-color: #FAFAFA;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .coins-table th,
@@ -538,16 +554,16 @@ font-style: normal;
 
 
 .coins-table tr:nth-child(even) {
-    background-color: #c2c2c2;
+    background-color: #F9F9F9;
 }
 
 .coins-table tr:nth-child(odd) {
-    background-color: #b3b3b3;
+    background-color: #FFFFFF;
 }
 
 .coins-table tr:hover {
-    background-color: #c4c4c4;
-    color: #fff;
+    background-color: #ECECEC;
+    color: #333333;
 }
 
 .green {
@@ -569,7 +585,7 @@ font-style: normal;
 
 .coin-button {
     margin-top: 16px;
- 
+
 }
 
 
@@ -583,15 +599,128 @@ font-style: normal;
 
 
 
-    color: #1f1f1f;
+    color: #222222;
 }
 
 .homepage .coin_frame {
-    margin-top: 90px;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
-    background: #d7d7d8;
+
     z-index: 1;
+}
+
+.category_title_sec {
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 37px;
+    margin-bottom: 35px;
+    color: #222222;
+    height: auto;
+    text-align: center;
+}
+
+.homepage .static_frame_att {
+    width: 1440px;
+    position: relative;
+    height: 190px;
+    z-index: 2;
+    height: 400px;
+
+}
+
+.homepage .basic_frame {
+    flex-direction: row;
+    border-radius: 10px;
+    justify-content: space-around;
+    align-items: center;
+    height: auto;
+    display: flex;
+    background: white;
+    z-index: 2;
+    margin-top: 35px;
+    box-shadow: 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.static_box_att_left {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+
+}
+
+.static_box_att_right {
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    justify-content: center;
+    width: 600px;
+    height: 300px;
+  
+
+}
+
+.homepage .attention_img.left {
+    width: 65px;
+    height: 65px;
+    background: url('/public/home/error.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+
+}
+
+
+.homepage .lock_img.right {
+    /* position: absolute; */
+    width: 65px;
+    height: 65px;
+    background: url('/public/home/lock.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 30px;
+    /* transform: matrix(-1, 0, 0, 1, 0, 0); */
+}
+
+.static_info_left {
+    margin-bottom: 15px;
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: -1px;
+    color: rgb(27, 26, 25);
+}
+
+.static_info_right {
+    margin-bottom: 15px;
+    font-size: 27px;
+    line-height: 38px;
+    letter-spacing: -1px;
+    color: rgb(27, 26, 25);
+}
+
+.static_text_left {
+    font-size: 1.1rem;
+    line-height: 26px;
+    color: #1f1f1f;
+    text-align: center;
+    padding: 0px 80px;
+}
+
+.static_text_right {
+    font-size: 1.1rem;
+    line-height: 26px;
+    color: #1f1f1f;
+    text-align: center;
+    padding: 0px 80px;
 }

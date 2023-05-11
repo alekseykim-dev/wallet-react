@@ -9,7 +9,7 @@ import LoginIcon from "@mui/icons-material/Login";
 import assert from "assert";
 import { Definer } from "../../../lib/Definer";
 import MemberApiService from "../../apiServices/memberApiService";
-import { sweetErrorHandling } from "../../../lib/sweetAlert";
+import { sweetErrorHandling, sweetTopSmallSuccessAlert } from "../../../lib/sweetAlert";
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -69,6 +69,7 @@ const [mb_password, set_mb_password] = useState<string>("");
 
         const memberApiService = new MemberApiService();
         await memberApiService.signupRequest(signup_data);
+        await sweetTopSmallSuccessAlert("Congratulations on signing up!🎉", 1000, true); // reload
 
         props.handleSignUpClose();
         window.location.reload();
@@ -89,9 +90,10 @@ const [mb_password, set_mb_password] = useState<string>("");
         mb_password: mb_password,
       };
 
-   const memberApiService = new MemberApiService();
-   await memberApiService.loginRequest(login_data);
-
+      const memberApiService = new MemberApiService();
+      await memberApiService.loginRequest(login_data);
+      await sweetTopSmallSuccessAlert("Welcome back!👋", 1000, true); // reload
+ 
       props.handleLoginClose();
       window.location.reload();
     } catch (err) {

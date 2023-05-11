@@ -5,6 +5,8 @@ import CardCover from "@mui/joy/CardCover";
 import CardContent from "@mui/joy/CardContent";
 import Typography from "@mui/joy/Typography";
 import { Swiper, SwiperSlide } from "swiper/react";
+import Rating from "@mui/material/Rating";
+import StarIcon from "@mui/icons-material/Star";
 
 
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
@@ -46,14 +48,14 @@ export function TopShops() {
 
   return (
     <div className="top_shop_frame">
-      <Container style={{ marginLeft: "50px" }}>
+      <Container>
         <Stack
           flexDirection={"column"}
           alignItems={"center"}
           sx={{ mt: "45px" }}
         >
           <Box className="category_title">
-            Trending Now
+            Find your perfect wallet
             <img className="back" src="/icons/bit_back3.svg" alt="" />
             <img className="back1" src="/icons/bit_back4.svg" alt="" />
             <img className="back2" src="/icons/bit_back3.svg" alt="" />
@@ -78,7 +80,7 @@ export function TopShops() {
           </Box>
           <Swiper
             className={"events_info swiper-wrapper"}
-            slidesPerView={4}
+            slidesPerView={2}
             spaceBetween={20} // space between sliders
             navigation={{
               nextEl: ".swiper-button-next",
@@ -89,25 +91,34 @@ export function TopShops() {
               clickable: true,
             }}
             autoplay={{
-              delay: 2000,
+              delay: 3000,
               disableOnInteraction: true, //slider stops when touch it
             }}
           >
             {topShops.map((ele: Shop, index: number) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
               return (
-                <SwiperSlide key={ele._id}>
+                <SwiperSlide
+                  key={ele._id}
+                  style={{
+                    display: "flex",
+                    flexDirection: "row",
+                  }}
+                >
                   <CssVarsProvider>
                     <Card
                       className={"swiper-width"}
+                      style={{borderRadius: "10px 0px 0px 10px"}}
                       onClick={() => chosenShopHandler(ele._id)}
                       ref={(ref) => (refs.current[index] = ref)}
                     >
-                      <CardCover>
-                        <img src={image_path} loading="lazy" alt="store" />
+                      <CardCover style={{borderRadius: "10px 0px 0px 10px"}}>
+                        <img style={{
+                          borderRadius: "10px 0px 0px 10px"
+                        }} src={image_path} loading="lazy" alt="store" />
                       </CardCover>
                       <CardCover
-                        sx={{
+                        sx={{ borderRadius: "10px 0px 0px 10px",
                           background:
                             "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px)",
                         }}
@@ -121,7 +132,28 @@ export function TopShops() {
                         >
                           {ele.mb_nick}
                         </Typography>
+                        <Typography></Typography>
                       </CardContent>
+                    </Card>
+                    <Card
+                      className="card_desc"
+                      style={{
+                        width: "270px",
+                        background: "#000000d0",
+                        color: "white",
+                        borderRadius: "0px 10px 10px 0px"
+                      }}
+                    >
+                      <h2>Brand info:</h2>
+                      {ele.mb_description}
+                      <p>
+                        <StarIcon style={{ color: "#F2BD57" }} />
+                        <StarIcon style={{ color: "#F2BD57" }} />
+                        <StarIcon style={{ color: "#F2BD57" }} />
+                        <StarIcon style={{ color: "#F2BD57" }} />
+                        <StarIcon style={{ color: "#F2BD57" }} />
+                      </p>
+                      <p style={{padding: "0px", margin: "0px"}}>Production of {ele.mb_address}</p>
                     </Card>
                   </CssVarsProvider>
                 </SwiperSlide>

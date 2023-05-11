@@ -56,6 +56,8 @@ export const sweetTopSmallSuccessAlert = async (
   const Toast = Swal.mixin({
     toast: true,
     position: "top-end",
+    // background: "#e3c08d",
+    // color: "#1f1f1f",
     showConfirmButton: false,
     timer: duration,
     timerProgressBar: true,

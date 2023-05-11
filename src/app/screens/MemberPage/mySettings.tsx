@@ -65,7 +65,7 @@ export function MySettings(props: any) {
 
       assert.ok(result, Definer.general_err1);
       await sweetTopSmallSuccessAlert(
-        "Information modified successfully!",
+        "Information has been updated!",
         700,
         false
       );

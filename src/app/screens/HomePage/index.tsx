@@ -16,6 +16,7 @@ import { Shop } from "../../../types/user";
 import ShopApiService from "../../apiServices/shopApiService";
 
 import Coins from "./coins";
+import { Introduction } from "./basic_info";
 
 
 /** REDUX SLICE */
@@ -62,6 +63,7 @@ export function HomePage() {
       <Statistics />
       <Advertisements />
       <TopShops />
+      <Introduction/>
       <BestShops />
       <BestProducts />
       <Coins />

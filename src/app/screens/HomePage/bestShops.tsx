@@ -74,7 +74,7 @@ export function BestShops() {
         e.target.style.fill = "#5a5a72";
         refs.current[like_result.like_ref_id].innerHTML--;
       }
-      await sweetTopSmallSuccessAlert("Success", 700, false);
+      await sweetTopSmallSuccessAlert("Success!", 700, false);
 
     } catch (err: any) {
       console.log("targetLikeBest, ERROR:", err);
@@ -86,10 +86,7 @@ export function BestShops() {
     <div className="best_shop_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className="category_title_shop">
-            Customer Favorites
-            
-          </Box>
+          <Box className="category_title_shop">Customer Favorites</Box>
           <Stack flexDirection={"row"} sx={{ mt: "10px" }}>
             {bestShops.map((ele: Shop) => {
               const image_path = `${serverApi}/${ele.mb_image}`;
@@ -231,15 +228,15 @@ export function BestShops() {
           <Stack
             flexDirection={"row"}
             justifyContent={"center"}
-            sx={{ width: "100%", marginTop: "40px" }}
+            sx={{ width: "100%" }}
           >
             <Button
               className="nav_button"
-              variant="contained"
+              variant="outlined"
               style={{
-                color: isHovered1 ? "#fff" : "#000",
+                color: isHovered1 ? "#fff" : "#FFFFFF",
                 opacity: isHovered1 ? 0.7 : 1,
-                backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                backgroundColor: isHovered1 ? "#0056b3" : "#007BFF",
               }}
               onMouseEnter={handleMouseEnter1}
               onMouseLeave={handleMouseLeave1}

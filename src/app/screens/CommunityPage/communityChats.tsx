@@ -117,7 +117,7 @@ export function CommunityChats() {
     try {
       if (!verifiedMemberData) {
         textInput.current.value = "";
-        sweetFailureProvider("Please login first", true);
+        sweetFailureProvider("Please login first!", true);
         return false;
       }
 

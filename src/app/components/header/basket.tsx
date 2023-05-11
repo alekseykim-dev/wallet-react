@@ -27,7 +27,7 @@ export default function Basket(props: any) {
     0
   );
   //   console.log("itemsPrice:", itemsPrice);
-  const shippingPrice = itemsPrice > 100 ? 0 : 2;
+  const shippingPrice = itemsPrice > 200 ? 0 : 10;
   const totalPrice = itemsPrice + shippingPrice;
 
   /** HANDLERS **/

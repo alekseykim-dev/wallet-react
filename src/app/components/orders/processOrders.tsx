@@ -40,7 +40,7 @@ export default function ProcessOrders(props: any) {
       const data = { order_id: order_id, order_status: "FINISHED" };
 
       if (!verifiedMemberData) {
-        sweetFailureProvider("Please login first", true);
+        sweetFailureProvider("Please login first!", true);
       }
 
       let confirmation = window.confirm(

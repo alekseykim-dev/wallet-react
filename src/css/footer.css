@@ -45,13 +45,13 @@
 
 
 .main_footer_container .contact_links {
-    width: 125.28px;
-    height: 15.14px;
+    width: 180px;
+    height: 19.14px;
     position: relative;
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 11.3px;
+    margin-top: 11.3px
 }
 
 .main_footer_container .parts {

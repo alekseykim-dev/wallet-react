@@ -98,8 +98,11 @@ export function AllShops() {
   /** Enabling search */
   const [query, setQuery] = useState("");
 
-  const filteredShops = targetShops.filter((product) =>
-    product.mb_nick.toLowerCase().includes(query.toLowerCase())
+  const filteredShops = targetShops.filter(
+    (product) =>
+      product.mb_nick.toLowerCase().includes(query.toLowerCase()) ||
+      product.mb_address.toLowerCase().includes(query.toLowerCase()) ||
+      product.mb_email.toLowerCase().includes(query.toLowerCase())
   );
 
   /**  Enabling search */
@@ -127,7 +130,7 @@ export function AllShops() {
         e.target.style.fill = "#5a5a72";
         refs.current[like_result.like_ref_id].innerHTML--;
       }
-      await sweetTopSmallSuccessAlert("Success", 900, false);
+      await sweetTopSmallSuccessAlert("Success!", 900, false);
     } catch (err: any) {
       console.log("targetLikeTop, ERROR:", err);
       auth_err1(err).then();
@@ -148,9 +151,10 @@ export function AllShops() {
                   type="text"
                   className="searchInput"
                   name="reSearch"
-                  placeholder="What are you searching for today?"
+                  placeholder="Input brand name, country or email here"
                   onChange={(e) => setQuery(e.target.value)}
                 />
+                
               </form>
             </Box>
             <Box className="fill_box" style={{ cursor: "pointer" }}>

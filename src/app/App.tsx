@@ -66,7 +66,7 @@ function App() {
     try {
       const memberApiService = new MemberApiService();
       await memberApiService.logOutRequest();
-      await sweetTopSmallSuccessAlert("Success!", 700, true); // reload
+      await sweetTopSmallSuccessAlert("Get back soon!👋", 1000, true); // reload
     } catch (err: any) {
       console.log(err);
       sweetFailureProvider(Definer.general_err1);

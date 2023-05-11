@@ -120,7 +120,7 @@ const Coins = () => {
                 </tbody>
               </table>
               {cryptoData.length > 10 && (
-                <Box style={{ textAlign: "center", marginTop: "30px" }}>
+                <Box style={{ textAlign: "center", marginBottom: "30px" }}>
                   <Button
                     className="nav_button"
                     variant="contained"
