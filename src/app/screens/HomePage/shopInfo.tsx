@@ -9,22 +9,26 @@ export function Statistics() {
         <Stack className="static_frame_static_frame">
           <Stack className="static_box">
             <div className="character_img left"></div>
-            <Box className="static_num">Free Shipping </Box>
-            <Box className="static_text">When order over $100</Box>
+            <div className="character_text">
+              <Box className="static_num">Free Shipping </Box>
+              <Box className="static_text">When order over $100</Box>
+            </div>
           </Stack>
 
           <Stack className="static_box">
             <div className="character_img middle"></div>
-
-            <Box className="static_num">24/7 Support </Box>
-            <Box className="static_text">Get support all day</Box>
+            <div className="character_text">
+              <Box className="static_num">24/7 Support </Box>
+              <Box className="static_text">Get support all day</Box>
+            </div>
           </Stack>
 
           <Stack className="static_box">
             <div className="character_img right"></div>
-
-            <Box className="static_num">Refund</Box>
-            <Box className="static_text">Get refund within 3 days</Box>
+            <div className="character_text">
+              <Box className="static_num">Refund</Box>
+              <Box className="static_text">Get refund within 3 days</Box>
+            </div>
           </Stack>
           {/* <div className="character_img right"></div> */}
         </Stack>
