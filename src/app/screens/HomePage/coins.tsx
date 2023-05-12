@@ -34,7 +34,6 @@ const Coins = () => {
   };
   return (
     <div className="coin_frame">
-      
       <div className="coin_frame_width">
         <Box className="category_title_coin">Real-time Crypto Updates</Box>
 
@@ -43,7 +42,7 @@ const Coins = () => {
             maxWidth: "1250px",
             marginTop: "40px",
             zIndex: "1",
-            marginBottom: "20px"
+            marginBottom: "20px",
           }}
         >
           <div className="coin-wrapper">
@@ -125,9 +124,9 @@ const Coins = () => {
                     className="nav_button"
                     variant="contained"
                     style={{
-                      color: isHovered1 ? "#fff" : "#000",
+                      color: isHovered1 ? "#f5f5f5" : "#f5f5f5",
                       opacity: isHovered1 ? 0.7 : 1,
-                      backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                      backgroundColor: isHovered1 ? "#808080" : "#4c4c4c",
                     }}
                     onClick={handleShowAllCoins}
                     onMouseEnter={handleMouseEnter1}

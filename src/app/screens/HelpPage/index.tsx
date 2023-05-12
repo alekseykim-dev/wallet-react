@@ -21,90 +21,124 @@ export function HelpPage() {
   const [value, setValue] = React.useState("1");
   const faq = [
     {
-      question: "Tolov qanday amalga oshiriladi?",
+      num: "1.",
+      question: "What is a crypto wallet?",
       answer:
-        "To'lovni Payme, click ilovalari orqali amalga oshirishingiz mumkin!",
+        "Thinking about buying crypto or NFTs? You’ll need a crypto wallet. When you create a wallet, two keys are generated: a private and a public key. The wallet stores your keys and allows you to sign transactions, generate new addresses, initiate transfers, track portfolio balances, manage your crypto, and interact with dApps. Crypto wallets come in many forms, from hardware wallets like Ledger to mobile apps that you can download on your phone or tablet.",
     },
     {
-      question: "Buyurtmalar qancha vagtda yetib keladi?",
+      num: "2.",
+      question: "How do crypto wallets work?",
       answer:
-        "Buyurtmalar harid qilgan narsangizga qarab har xil vaqtda yetkazilishi mumkin. Maximum 1 soat ichida!",
+        "When you buy crypto like Bitcoin and Ethereum, you’re issued with two keys: the public and private keys. The public key can be compared to a bank account number that you can share with third parties to receive crypto without worrying that your assets will be compromised. The private key signs transactions and allows you to send and receive crypto. It's crucial to keep your private keys secure and secret. If anyone has access to them, they will also have access to any crypto assets associated with those keys. A crypto wallet stores your private keys and gives you access to your assets.",
     },
     {
+      num: "3.",
+      question: "What are the different types of crypto wallets?",
+      answer:
+        "There are different types of crypto wallets, each with its own benefits and drawbacks. Hot wallets are connected to the internet and usually convenient to use, however, they are also vulnerable to online attacks. Examples include web-based, mobile, and desktop wallets. With cold wallets, your private keys are stored offline and out of reach of online threats. Examples include paper and hardware wallets. Wallets can also be categorized as custodial or non-custodial, depending on who holds the private keys. Storing your crypto in a custodial wallet means that a third party controls your private keys and, therefore, your assets. In contrast, a non-custodial wallet allows you to fully own and control your crypto.",
+    },
+    {
+      num: "4.",
+      question: "Why do I need a hardware wallet?",
+      answer:
+        "Hot wallets store private keys on systems connected to the internet, which makes them susceptible to online attacks. Keeping your crypto on an exchange means you have no true ownership or control over it. If the exchange files for bankruptcy or pauses withdrawals, you lose access to your funds. Hardware wallets store your private keys offline, giving you full control and enhanced security. Even if you misplace or lose your hardware wallet, you can get a new one and use your Secret Recovery Phrase to access your assets.",
+    },
+    {
+      num: "5.",
+      question: "How to get a crypto wallet?",
+      answer:
+        "Ready to get started? Here are the steps for getting your crypto wallet: Get a hardware wallet. It stores your private keys in a secure, offline environment giving you peace of mind and complete control over your assets. All wallets are powered by an industry-leading Secure Element chip, together with's proprietary OS that protects your crypto & NFTs from sophisticated hacks. Pair your wallet with the Live app to easily send, receive and grow crypto, keep track of your portfolio, and securely access a range of dApps and Web3 services. All in one place. Add crypto to your wallet. Wallets have partnered with leading third-party providers so that you can securely buy, swap, and grow your crypto through the Live app. Your crypto will be sent to the safety of your hardware wallet.",
+    },
+    {
+       num: "6.",
       question:
-        "saytdan foydalansam ma'lumotlarim havfsizligiga kafolat bormi?",
+        "Is it possible to restore all cryptocurrencies with a hardware wallet backup?",
       answer:
-        "albatta, bizning dasturchilamiz sizning ma'lumotlaringiz havfsizligiga kafolat berishadi",
+        "Most wallets support more than just one cryptocurrency, but only generate one backup. Nevertheless, this one backup is sufficient to restore all cryptocurrencies as all private keys of the different wallets result from the seed that is backed up as a backup during setup.",
     },
     {
-      question: "saytda muammo yuzaga kelsa kimga murojaat gilaman?",
-      answer:
-        "Hurmatli mijoz, iltimos adminga xat yo'llash bo'limidan foydalaning",
-    },
-    {
-      question:
-        "Men foydalanuvchi emas Biznesmen sifatida faoliyat yuritmoqchiman. Nima qilishim kerak?",
-      answer:
-        "Hurmatli mijoz, saytda ko'rsatilgan telefon raqamlarga qo'ng'iroq qilishingizni so'rab qolamiz!",
-    },
-    {
-      question:
-        "Men Korea davlatidaman. O'zbekistondagi oilam uchun Ovgat buyurtma qilmoqchiman. Visa yoki master kartasidan foydalana olamanmi?",
-      answer:
-        "Albatta, chet eldan turib nafaqat visa va master balkim paypal dasturidan foydalangan holda buyurtma qilishingiz mumkin!",
-    },
-    {
+       num: "7.",
       question:
         "buyurtmani bekor qilmoqchiman lekin buni qanday gilishni bilmayman",
       answer:
         "Buyurtmani bekor qilish uchun Avvalo login qiling va buyurtmalarim bo'limidan kerakli bo'lgan buyurtmangizni bekor qilish tugmasi orqali bekor qilsangiz bo'ladi!",
     },
     {
-      question: "Buyurtmani To'lov qilish uchun nima gilishim kerak?",
+       num: "8.",
+      question: "Are cold wallets safer than online wallets?",
       answer:
-        "Buyurtma uchun to'lovni amalga oshirish uchun login qilishingiz va buyurtmalarim sahifasiga o'tishingiz lozim. Ochilgan sahifadan to'lov qilish tugmasi orqali to'lovni amalga oshira olasiz",
+        "Yes, cold wallets are generally considered safer than online wallets. By keeping the private keys offline, cold wallets protect against remote hacking attempts and malware attacks that often target online wallets. This offline storage significantly reduces the risk of unauthorized access to your funds.",
     },
     {
-      question: "karta ma'lumotlarimni gayerga kiritaman?",
+       num: "9.",
+      question: "Can I lose my funds if I lose my crypto cold wallet?",
       answer:
-        "Karta ma'lumotlarini Buyurtmalarim sahifasining o'ng tomonida joylashgan maxsus joyga kiritishingiz darkor",
+        "No, you won't lose your funds if you lose your cold wallet. Most cold wallets have a recovery process using a recovery phrase or seed phrase. This phrase allows you to restore your wallet on a new device or replacement hardware wallet. It's crucial to keep your recovery phrase in a secure and separate location from your cold wallet.",
     },
     {
+       num: "10.",
+      question: "Can I store multiple cryptocurrencies in a cold wallet?",
+      answer:
+        "Yes, most cold wallets support multiple cryptocurrencies. However, the specific cryptocurrencies supported may vary depending on the wallet manufacturer and the wallet's software. It's essential to check the wallet's compatibility with the cryptocurrencies you intend to store.",
+    },
+    {
+       num: "11.",
+      question: "How can I ensure the authenticity of a crypto cold wallet?",
+      answer:
+        "To ensure authenticity, it's crucial to purchase your cold wallet directly from the manufacturer or authorized resellers. Be cautious of third-party sellers or resellers on online marketplaces, as they may sell counterfeit or tampered devices. Always verify the security features and packaging before using a newly purchased cold wallet.",
+    },
+    {
+       num: "12.",
+      question: "Can I use a cold wallet with a mobile device?",
+      answer:
+        "Yes, many cold wallets offer compatibility with mobile devices. They often provide companion apps for smartphones, allowing you to manage and monitor your funds conveniently. However, it's important to ensure that the mobile device itself is secure and free from malware or unauthorized access.",
+    },
+    {
+       num: "13.",
+      question: "Can I use a crypto cold wallet for everyday transactions?",
+      answer:
+        "While crypto cold wallets are primarily designed for long-term storage and security, they may not be as convenient for frequent or everyday transactions. Cold wallets require a connection to an online device to broadcast transactions, which can be a bit more time-consuming compared to using a hot wallet or online wallet. However, some cold wallets offer limited functionality for quick transactions while still maintaining the overall security of your funds.",
+    },
+    {
+       num: "14.",
       question:
-        "Buyurtmani yakunlagandan so'ng o'zimni fikrimni yozib qoldirishim shartmi?",
+        "What if my crypto cold wallet becomes obsolete or unsupported?",
       answer:
-        "Hurmatli mijoz, sizni fikr qoldirishga majburlamaymiz, lekin fikringiz biz uchun juda qadrli hisoblanadi!",
+        "Technology evolves rapidly, and it's possible for a cold wallet to become outdated or unsupported in the future. In such cases, it's important to stay informed about firmware updates and compatibility with newer operating systems. If your cold wallet becomes obsolete, you may need to transfer your funds to a newer, supported wallet. Keeping up with the latest developments in the crypto industry and regularly checking for updates from the wallet manufacturer will help you stay prepared.",
     },
     {
-      question: "Maqola yozishni xohlayman",
-      answer:
-        "Maqola yozish uchun sahifam bo'limidan maqola yozish tugmasini bossangiz kifoya!",
-    },
-    {
-      question: "Jonli mulogatga men ham gatnasha olamanmi?",
-      answer:
-        "albatta buning uchun saytimizdan ro'yhatdan o'ting va Jamiyat bo'limidan bemalol foydalanishingiz va o'z fikrlaringizni yozib qoldirishingiz mumkin!",
-    },
-    {
+       num: "15.",
       question:
-        "Biror bir sahifani ko'p kuzatsam uni o' zimni sahifamdan tezda topib olishim uchun nima gilishim kerak?",
+        "Can I inherit or pass on my crypto cold wallet to someone else?",
       answer:
-        "Buning uchun siz kuzatmoqchi bo'lgan foydalanuvchingizda follow bo'lishingiz kifoya qiladi!",
-    },
-    {
-      question: "Sayt rivoji uchun o'z hissamni qo'shmoqchiman",
-      answer:
-        "Albatta buning uchun adminga xat qoldirishigniz yoki berilgan telefon raqamlariga bog'lansangiz to'liqroq ma'lumot beriladi!",
+        "Yes, you can pass on or inherit a crypto cold wallet. However, it's essential to educate your intended recipient about how to use and secure the wallet properly. It's recommended to transfer the ownership of the cold wallet along with clear instructions, including the recovery phrase, PIN codes, and any other necessary information. By doing so, you can ensure a smooth transition of ownership without the risk of losing access to the funds stored in the wallet.",
     },
   ];
 
   const rules = [
-    `Saytdan to'laqonli yani buyurtmalar qilish, jonli muloqotlardan foydalanishingiz uchun ro'yxatdan o'tishingiz shart.`,
-    `Buyurtmalaringizga to'lovni amalga oshirganingizdan so'ng bekor qilishning imkoni yo'q shu sababli to'lovlarni amalga oshirishdan avval tekshirib oling.`,
-    `Jonli muloqot vaqtida bexayo so'zlarni ishlatish mutlaqo taqiqlanadi.`,
-    `Shaxsiy reklamalarni adminning ruxsatisiz yozish va tarqatish mumkun emas.`,
-    `Maqolalaringiz odob doirasidan chiqib ketmasligi shart.`,
-    `Barcha xarakatlaringiz adminlarimiz nazorati ostida bo'lani sabab iltimos talablarimizni xurmat qiling.`,
+    `Welcome to Bitsafe! These rules govern your use of our website and the purchase of cold wallet products and related services from our website. By accessing or using our website and purchasing Products, you agree to be bound by these Rules`,
+    `1. Product Information and Availability`,
+
+    `1.1 We strive to provide accurate and up-to-date information about our Products, including descriptions, specifications, and pricing. However, we do not guarantee the accuracy, completeness, or availability of the information on our website. We reserve the right to modify or discontinue any Product without prior notice.`,
+    `1.2 The availability of Products may vary and is subject to change. We cannot guarantee the availability of any specific Product or guarantee that a Product will be in stock at the time of your purchase.`,
+
+    `Ordering and Payment.`,
+    `2.1 By placing an order on our website, you agree to provide accurate and complete information required for the purchase. You are responsible for ensuring that the information provided is correct and up to date.`,
+    `2.2 All orders are subject to acceptance and availability. We reserve the right to refuse or cancel any order for any reason at our discretion. In such cases, we will provide a refund for any payment received.`,
+    `2.3 Payment for Products must be made in full at the time of purchase, unless otherwise specified. We accept payment through the methods specified on our website. All payments are subject to the terms and conditions of the respective payment processors.`,
+    `3. Shipping and Delivery`,
+    `3.1 We will make reasonable efforts to process and ship your order in a timely manner. However, we cannot guarantee specific delivery times and are not liable for any delays caused by shipping carriers or other factors beyond our control.`,
+    `3.2 Shipping costs and delivery options will be displayed during the checkout process. You are responsible for providing accurate shipping information, and any additional costs or charges incurred due to incorrect or incomplete information will be your responsibility.`,
+    `4. Returns and Refunds.`,
+    `4.1 We strive to provide high-quality Products, but if you are not satisfied with your purchase, you may be eligible for a return or refund in accordance with our Return and Refund Policy, which is available on our website.`,
+    `4.2 Please review our Return and Refund Policy carefully for information on eligibility, procedures, and any applicable fees or restrictions.`,
+    `5. Intellectual Property`,
+    `5.1 All intellectual property rights related to our website and the content displayed on it, including trademarks, logos, and copyrights, belong to Bitsafe or their respective owners. You may not use our intellectual property without our prior written consent.`,
+    `6. Privacy.`,
+    `6.1 We collect and process personal information in accordance with our Privacy Policy, which is available on our website. By using our website and purchasing Products, you consent to the collection, storage, and use of your personal information as described in our Privacy Policy.`,
+    `7. Governing Law and Jurisdiction`,
+    `7.1 These Rules shall be governed by and construed in accordance with the laws of South Korea. Any disputes arising out of or in connection with these Rules shall be subject to the exclusive jurisdiction of the courts of South Korea.`,
   ];
 
   /* HANDLES */
@@ -147,13 +181,13 @@ export function HelpPage() {
                 <Stack className="accordion_menu">
                   {faq.map((ele, index) => {
                     return (
-                      <Accordion key={index}>
+                      <Accordion className="accordion" key={index}>
                         <AccordionSummary
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panelia-content"
                           id="panella-header"
                         >
-                          <Typography>{ele.question}</Typography>
+                          <Typography>{ele.num} {ele.question}</Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                           <Typography>{ele.answer}</Typography>

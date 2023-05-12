@@ -79,7 +79,7 @@ export function NavbarOthers(props: any) {
         >
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/logo1.svg" alt="logo" className="logo"/>
+              <img src="/icons/logo1.svg" alt="logo" className="logo" />
             </NavLink>
           </Box>
           <Stack
@@ -137,9 +137,9 @@ export function NavbarOthers(props: any) {
                 <Button
                   variant="contained"
                   style={{
-                    color: isHovered1 ? "#fff" : "#000",
+                    color: isHovered1 ? "#282828" : "#f5f5f5",
                     opacity: isHovered1 ? 0.7 : 1,
-                    backgroundColor: isHovered1 ? "#000000d0" : "#d7b686",
+                    backgroundColor: isHovered1 ? "#f5f5f5" : "#282828",
                   }}
                   onMouseEnter={handleMouseEnter1}
                   onMouseLeave={handleMouseLeave1}
@@ -155,9 +155,9 @@ export function NavbarOthers(props: any) {
                 <Button
                   variant="contained"
                   style={{
-                    color: isHovered2 ? "#fff" : "#000",
+                    color: isHovered2 ? "#282828" : "#f5f5f5",
                     opacity: isHovered2 ? 0.7 : 1,
-                    backgroundColor: isHovered2 ? "#000000d0" : "#d7b686",
+                    backgroundColor: isHovered2 ? "#f5f5f5" : "#282828",
                   }}
                   onMouseEnter={handleMouseEnter2}
                   onMouseLeave={handleMouseLeave2}
