@@ -104,21 +104,28 @@ export function TopShops() {
                     display: "flex",
                     flexDirection: "row",
                   }}
+                  className="card"
                 >
                   <CssVarsProvider>
                     <Card
                       className={"swiper-width"}
-                      style={{borderRadius: "10px 0px 0px 10px"}}
+                      style={{ borderRadius: "10px 0px 0px 10px" }}
                       onClick={() => chosenShopHandler(ele._id)}
                       ref={(ref) => (refs.current[index] = ref)}
                     >
-                      <CardCover style={{borderRadius: "10px 0px 0px 10px"}}>
-                        <img style={{
-                          borderRadius: "10px 0px 0px 10px"
-                        }} src={image_path} loading="lazy" alt="store" />
+                      <CardCover style={{ borderRadius: "10px 0px 0px 10px" }}>
+                        <img
+                          style={{
+                            borderRadius: "10px 0px 0px 10px",
+                          }}
+                          src={image_path}
+                          loading="lazy"
+                          alt="store"
+                        />
                       </CardCover>
                       <CardCover
-                        sx={{ borderRadius: "10px 0px 0px 10px",
+                        sx={{
+                          borderRadius: "10px 0px 0px 10px",
                           background:
                             "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px)",
                         }}
@@ -141,10 +148,13 @@ export function TopShops() {
                         width: "270px",
                         background: "#000000d0",
                         color: "white",
-                        borderRadius: "0px 10px 10px 0px"
+                        borderRadius: "0px 10px 10px 0px",
+                        cursor: "pointer"
                       }}
+                      onClick={() => chosenShopHandler(ele._id)}
+                      ref={(ref) => (refs.current[index] = ref)}
                     >
-                      <h2>Brand info:</h2>
+                      <h2 style={{marginTop: "3px"}}>Brand info:</h2>
                       {ele.mb_description}
                       <p>
                         <StarIcon style={{ color: "#F2BD57" }} />
@@ -153,7 +163,9 @@ export function TopShops() {
                         <StarIcon style={{ color: "#F2BD57" }} />
                         <StarIcon style={{ color: "#F2BD57" }} />
                       </p>
-                      <p style={{padding: "0px", margin: "0px"}}>Production of {ele.mb_address}</p>
+                      <p style={{ padding: "0px", margin: "0px" }}>
+                        Production of {ele.mb_address}
+                      </p>
                     </Card>
                   </CssVarsProvider>
                 </SwiperSlide>

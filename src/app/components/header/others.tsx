@@ -35,8 +35,41 @@ export function NavbarOthers(props: any) {
   const handleMouseLeave2 = () => {
     setIsHovered2(false);
   };
+
+   const handleClickOther = () => {
+     const element = document.getElementById("other");
+     if (element) {
+       element.scrollIntoView({ behavior: "smooth" });
+     }
+   };
+  
+  const styles = `
+  .color {
+    color: #fff;
+  }
+  
+  .scroll-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 1px 3px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .scroll-button:hover {
+background-color: rgba(0, 0, 0, 0.1); 
+  }
+`;
+  
   return (
-    <div className="format_others home_navbar">
+    <div className="format_others home_navbar" id="other">
       <div className="navbar_block">
         <Stack
           flexDirection={"row"}
@@ -187,6 +220,13 @@ export function NavbarOthers(props: any) {
             </Menu>
           </Stack>
         </Stack>
+      </div>
+      <style>{styles}</style>
+
+      <div className="scroll-button">
+        <Button style={{ color: "black" }} onClick={handleClickOther}>
+          Back to Top
+        </Button>
       </div>
     </div>
   );

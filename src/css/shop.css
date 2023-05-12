@@ -2,7 +2,7 @@
     position: relative;
     width: 100%;
     height: auto;
-    background: #d7d7d8;
+    background: #f5f5f5;
 }
 
 
@@ -122,6 +122,7 @@
     box-shadow: 0px 4px 4px rgba(213, 213, 213, 0.25);
     border-radius: 18.5px;
     box-sizing: border-box;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 }
 
 .shop_page .all_shops .search_form {
@@ -289,7 +290,7 @@
     height: auto;
     display: flex;
     flex-direction: column;
-    background: #d7d7d8;
+    background: #f5f5f5;
 
 }
 
@@ -340,6 +341,7 @@
     box-sizing: border-box;
     flex-direction: column;
     justify-content: center;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 }
 
 .shop_page .single_shop .Single_search_form {
@@ -557,6 +559,12 @@
     justify-content: center;
 }
 
+ 
+
+.shop_avatars:hover {
+    transform: scale(1.05);
+        transition: transform 0.3s ease-in-out;
+}
 .shop_page .single_shop .shop_avatars img {
     width: 108px;
     height: 108px;
@@ -597,6 +605,7 @@
     background-color: #fff;
     border-radius: 10px;
     z-index: 1;
+    box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 }
 
 .shop_page .single_shop .product_box .product_img {
@@ -757,7 +766,7 @@
     width: auto;
     height: 1300px;
     display: flex;
-    background: #d7d7d8;
+    background: #f5f5f5;
 }
 
 .shop_page .review_container {

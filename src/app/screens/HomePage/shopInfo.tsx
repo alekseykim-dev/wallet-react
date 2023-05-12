@@ -5,7 +5,7 @@ import Marginer from "../../components/marginer";
 export function Statistics() {
   return (
     <div className="static_frame">
-      <Container>
+      <Container className="static_width">
         <Stack className="static_frame_static_frame">
           <Stack className="static_box">
             <div className="character_img left"></div>

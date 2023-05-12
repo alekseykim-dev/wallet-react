@@ -35,7 +35,7 @@ const Coins = () => {
   return (
     <div className="coin_frame">
       
-      <Stack flexDirection={"column"} alignItems={"center"}>
+      <div className="coin_frame_width">
         <Box className="category_title_coin">Real-time Crypto Updates</Box>
 
         <Container
@@ -140,7 +140,7 @@ const Coins = () => {
             </div>
           </div>
         </Container>
-      </Stack>
+      </div>
     </div>
   );
 };

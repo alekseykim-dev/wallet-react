@@ -48,6 +48,10 @@
 }
 
 
+.static_frame .static_width {
+    width: 1320px
+}
+
 
 .homepage .static_box {
 
@@ -145,6 +149,20 @@
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 }
 
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.customer_card1:hover {
+    animation: moveUp 0.3s ease-in-out forwards;
+}
+
 .back {
 
     background-repeat: no-repeat;
@@ -239,6 +257,20 @@
     box-shadow: 0px 4px 40px rgba(0, 0, 0, 0.25);
 }
 
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-10px);
+    }
+}
+
+.product_box:hover {
+    animation: moveUp 0.3s ease-in-out forwards;
+}
+
 .homepage .product_box .products_img {
     position: relative;
     width: 273px;
@@ -327,7 +359,7 @@
 
 .homepage .ads_shop_frame {
     width: 100%;
-    height: 810px;
+    /* height: 810px; */
     display: flex;
     overflow: hidden;
     box-shadow: 0px -22px 40px rgba(0, 0, 0, 0.25)
@@ -397,9 +429,12 @@
     height: 300px;
     width: 275px;
     cursor: pointer;
-    border-radius: 0px 10px 10px 0px
+    border-radius: 0px 10px 10px 0px;
 }
-
+.card:hover {
+    transform: scale(1.01);
+    transition: transform 0.3s ease-in-out;
+}
 .card_desc {
     font-style: italic;
 }
@@ -603,6 +638,7 @@
     font-weight: 700;
     font-size: 30px;
     line-height: 37px;
+    text-align: center;
 
 
 
@@ -616,6 +652,12 @@
     justify-content: center;
 
     z-index: 1;
+}
+
+.coin_frame_width{
+    width: 1320px;
+    flex-direction: column;
+    align-items: center;
 }
 
 .category_title_sec {
@@ -722,6 +764,7 @@
     color: #1f1f1f;
     text-align: center;
     padding: 0px 80px;
+    font-weight: 500;
 }
 
 .static_text_right {
@@ -730,4 +773,52 @@
     color: #1f1f1f;
     text-align: center;
     padding: 0px 80px;
+    font-weight: 500;
+}
+
+.static_box_att_left,
+.static_box_att_right {
+    /* Add your static box styles here */
+    transition: transform 0.3s ease;
+    /* Apply a transition to the transform property */
+}
+
+.static_box_att_left:hover,
+.static_box_att_right:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    /* Apply a scale transformation when hovering */
+}
+
+.attention_img.left,
+.lock_img.right {
+    /* Add your attention and lock image styles here */
+    transition: opacity 0.3s ease;
+    /* Apply a transition to the opacity property */
+}
+
+.attention_img.left:hover,
+.lock_img.right:hover {
+    opacity: 0.8;
+    /* Reduce opacity when hovering */
+}
+.attention_img.left,
+.lock_img.right {
+    /* Add your attention and lock image styles here */
+    animation: rotateIcon 4s infinite;
+    /* Apply the animation with 4 seconds duration */
+    transform-origin: center;
+    /* Set the rotation origin to the center of the icon */
+}
+
+@keyframes rotateIcon {
+    0% {
+        transform: rotate(0deg);
+        /* Start position */
+    }
+
+    100% {
+        transform: rotate(360deg);
+        /* End position */
+    }
 }

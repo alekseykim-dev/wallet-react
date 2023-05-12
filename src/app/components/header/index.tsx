@@ -8,7 +8,6 @@ import {
   Box,
   Button,
   Container,
-  IconButton,
   ListItemIcon,
   Menu,
   MenuItem,
@@ -46,6 +45,12 @@ export function NavbarHome(props: any) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
+   const handleClickHome = () => {
+     const element = document.getElementById("home");
+     if (element) {
+       element.scrollIntoView({ behavior: "smooth" });
+     }
+   };
 
   // Create ref element
   const textRef = useRef<HTMLSpanElement>(null);
@@ -71,21 +76,40 @@ export function NavbarHome(props: any) {
     }, []);
   
 
-  const styles = `
+ const styles = `
   .color {
     color: #fff;
+  }
+  
+  .scroll-button {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    padding: 1px 3px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  
+  .scroll-button:hover {
+background-color: rgba(0, 0, 0, 0.1); 
   }
 `;
   
 
     
   return (
-    <div className="format home_navbar">
+    <div className="format home_navbar" id="home">
       <div className="navbar_block">
         <div className="navbar_config">
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/Logo_b.svg" alt="logo" />
+              <img src="/icons/Logo_b.svg" alt="logo" className="logo" />
             </NavLink>
           </Box>
           <Stack className="navbar_links">
@@ -247,6 +271,13 @@ export function NavbarHome(props: any) {
             className="framer-motion-element"
           />
         </div>
+      </div>
+      <style>{styles}</style>
+
+      <div className="scroll-button">
+        <Button style={{ color: "black" }} onClick={handleClickHome}>
+          Back to Top
+        </Button>
       </div>
     </div>
   );
