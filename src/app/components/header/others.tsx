@@ -50,21 +50,22 @@ export function NavbarOthers(props: any) {
   
   .scroll-button {
     position: fixed;
-    bottom: 30px;
-    left: 30px;
-    z-index: 999;
-    background-color: transparent;
-    backdrop-filter: blur(10px);
-    padding: 1px 3px;
-    border: 1px solid #000;
-    border-radius: 4px;
-    font-size: 12px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  bottom: 30px;
+  left: 30px;
+  z-index: 999;
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  padding: 6px 10px;
+  border: 1px solid #000;
+  border-radius: 3px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
   }
   
   .scroll-button:hover {
-background-color: rgba(0, 0, 0, 0.1); 
+ background-color: rgba(0, 0, 0, 0.1);
+    color: #000; 
   }
 `;
   
@@ -78,7 +79,7 @@ background-color: rgba(0, 0, 0, 0.1);
         >
           <Box onClick={props.setPath}>
             <NavLink to="/">
-              <img src="/icons/Logo_b.svg" alt="logo" />
+              <img src="/icons/logo1.svg" alt="logo" className="logo"/>
             </NavLink>
           </Box>
           <Stack

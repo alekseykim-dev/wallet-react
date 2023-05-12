@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import { Statistics } from "./shopInfo";
-import { TopShops } from "./RecommendedShops";
+import { TopShops } from "./recommendedShops";
 import { BestShops } from "./bestShops";
 import { BestProducts } from "./bestProducts";
 import { Advertisements } from "./advertisements";
 import { Recommendations } from "./recommendations";
+import { Experts } from "./review";
 import "../../../css/home.css";
 
 // REDUX
@@ -63,9 +64,10 @@ export function HomePage() {
       <Statistics />
       <Advertisements />
       <TopShops />
-      <Introduction/>
+      <Experts/>
       <BestShops />
       <BestProducts />
+      <Introduction/>
       <Coins />
       <Recommendations />
     </div>

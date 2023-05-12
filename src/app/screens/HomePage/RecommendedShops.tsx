@@ -18,6 +18,7 @@ import { retrieveTopShops } from "./selector";
 import { Shop } from "../../../types/user";
 import { serverApi } from "../../../lib/config";
 import { useHistory } from "react-router-dom";
+import { color } from "framer-motion";
 
 /** REDUX SELECTOR */
 
@@ -65,21 +66,25 @@ export function TopShops() {
           </Box>
           <Box className={"prev_next_frame1"}>
             <img
-              src={"/icons/arrow-left.svg"}
+              src={"/icons/left_arrow.svg"}
               className={"swiper-button-prev"}
-              style={{ cursor: "pointer" }}
+              style={{ cursor: "pointer", color: "black" }}
               alt="arrow"
             />
             <div className={"dot_frame_pagination swiper-pagination"}></div>
             <img
-              src={"/icons/arrow-left.svg"}
+              src={"/icons/left_arrow.svg"}
               className={"swiper-button-next"}
-              style={{ transform: "rotate(-180deg)", cursor: "pointer" }}
+              style={{
+                transform: "rotate(-180deg)",
+                cursor: "pointer",
+                color: "black",
+              }}
               alt="arrow"
             />
           </Box>
           <Swiper
-            className={"events_info swiper-wrapper"}
+            className={"swiper-wrapper"}
             slidesPerView={2}
             spaceBetween={20} // space between sliders
             navigation={{
@@ -149,12 +154,12 @@ export function TopShops() {
                         background: "#000000d0",
                         color: "white",
                         borderRadius: "0px 10px 10px 0px",
-                        cursor: "pointer"
+                        cursor: "pointer",
                       }}
                       onClick={() => chosenShopHandler(ele._id)}
                       ref={(ref) => (refs.current[index] = ref)}
                     >
-                      <h2 style={{marginTop: "3px"}}>Brand info:</h2>
+                      <h2 style={{ marginTop: "3px" }}>Brand info:</h2>
                       {ele.mb_description}
                       <p>
                         <StarIcon style={{ color: "#F2BD57" }} />

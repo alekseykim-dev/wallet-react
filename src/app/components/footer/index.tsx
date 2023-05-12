@@ -81,8 +81,7 @@ export function Footer() {
           <Box className="liner"></Box>
           <Box className="copyrights" sx={{ mt: "15px" }}>
             {" "}
-            Copyrights BitSafe{" "}
-            {moment().format("YYYY")}. All rights
+            Copyrights BitSafe{" "}2022 - {moment().format("YYYY")}. All rights
             reserved
           </Box>
         </Stack>
