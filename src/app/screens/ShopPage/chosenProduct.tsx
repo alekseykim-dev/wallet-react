@@ -203,6 +203,10 @@ export function ChosenProduct(props: any) {
                     alignItems: "center",
                     marginRight: "20px",
                   }}
+                  onClick={(e) => {
+                    props.onAddFav(chosenProduct);
+                    e.stopPropagation();
+                  }}
                 >
                   <Checkbox
                     {...label} // inputProps={label.inputProps}

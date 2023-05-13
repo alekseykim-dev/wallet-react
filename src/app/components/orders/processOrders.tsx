@@ -121,7 +121,7 @@ export default function ProcessOrders(props: any) {
                   variant="contained"
                   style={{
                     background: "primary",
-                    color: "#1f1f1f",
+                    color: "#f5f5f5",
                     borderRadius: "4px",
                     boxShadow:
                       "0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25);",
