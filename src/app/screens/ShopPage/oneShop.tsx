@@ -208,7 +208,6 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
             <Box className="top_text">
               <p>{chosenShop?.mb_nick}</p>
               <Box className="Single_search_big_box">
-                <div className="search_title">Search box</div>
                 <form className="Single_search_form" action="" method="">
                   <input
                     type="search"

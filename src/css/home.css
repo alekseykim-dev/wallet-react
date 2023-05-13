@@ -285,10 +285,10 @@
 
 
 .homepage .view_btn {
-    width: 150px;
-    height: 50px;
-    margin-top: 100px;
-    margin-left: 60px;
+    width: 100%;
+    height: 100%;
+    /* margin-top: 100px; */
+    /* margin-left: 60px; */
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -298,14 +298,16 @@
     opacity: 0;
     transition: opacity 0.5s ease;
     background: rgba(28, 23, 23, 0.59);
-    border: 2px solid #b48b50;
+    /* border: 2px solid #b48b50; */
     border-radius: 10px;
     font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 600;
+    backdrop-filter: blur(1px);
     font-size: 13px;
     line-height: 20px;
     color: #f5f5f5;
+    filter: grayscale(1);
 }
 
 .homepage .products_img:hover .view_btn {
@@ -611,6 +613,9 @@
 .coins-table tr:hover {
     background-color: #ECECEC;
     color: #333333;
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
 }
 
 .green {
@@ -808,24 +813,33 @@
 }
 .attention_img.left,
 .lock_img.right {
-    /* Add your attention and lock image styles here */
-    animation: rotateIcon 4s infinite;
-    /* Apply the animation with 4 seconds duration */
-    transform-origin: center;
-    /* Set the rotation origin to the center of the icon */
+     /* Add your attention and lock image styles here */
+  animation: shakeIcon 5s ease infinite; /* Apply the animation with 0.4 seconds duration */
+  transform-origin: center; /* Set the rotation origin to the center of the icon */
 }
+        @keyframes shakeIcon {
+            0% {
+                transform: translateX(0);
+                /* Start position */
+            }
+    
+            25% {
+                transform: translateX(-5px) rotate(-5deg);
+                /* Shake to the left */
+            }
+    
+            75% {
+                transform: translateX(5px) rotate(5deg);
+                /* Shake to the right */
+            }
+    
+            100% {
+                transform: translateX(0);
+                /* End position */
+            }
+        }
 
-@keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg);
-        /* Start position */
-    }
 
-    100% {
-        transform: rotate(360deg);
-        /* End position */
-    }
-}
 
 /** review*/
 .review_container {

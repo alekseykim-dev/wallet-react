@@ -122,11 +122,11 @@ const Coins = () => {
                 <Box style={{ textAlign: "center", marginBottom: "30px" }}>
                   <Button
                     className="nav_button"
-                    variant="contained"
+                    variant="outlined"
                     style={{
-                      color: isHovered1 ? "#f5f5f5" : "#f5f5f5",
+                      color: isHovered1 ? "#ffffff" : "#000000",
                       opacity: isHovered1 ? 0.7 : 1,
-                      backgroundColor: isHovered1 ? "#808080" : "#4c4c4c",
+                      backgroundColor: isHovered1 ? "#000000" : "transparent",
                     }}
                     onClick={handleShowAllCoins}
                     onMouseEnter={handleMouseEnter1}

@@ -234,9 +234,9 @@ export function BestShops() {
               className="nav_button"
               variant="outlined"
               style={{
-                color: isHovered1 ? "#f5f5f5" : "#f5f5f5",
+                color: isHovered1 ? "#ffffff" : "#000000",
                 opacity: isHovered1 ? 0.7 : 1,
-                backgroundColor: isHovered1 ? "#808080" : "#4c4c4c",
+                backgroundColor: isHovered1 ? "#000000" : "transparent",
               }}
               onMouseEnter={handleMouseEnter1}
               onMouseLeave={handleMouseLeave1}
