@@ -12,6 +12,8 @@ import { NavLink } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
+import Favorites from "./favorites";
+
 
 export function NavbarShop(props: any) {
 
@@ -108,6 +110,10 @@ export function NavbarShop(props: any) {
             </Box>
           </Stack>
           <Stack className="navbar_icons">
+            <Favorites
+              favItems={props.favItems}
+              onDeleteFav={props.onDeleteFav}
+            />
             <Basket
               cartItems={props.cartItems}
               onAdd={props.onAdd}
@@ -169,9 +175,10 @@ export function NavbarShop(props: any) {
               PaperProps={{
                 elevation: 0,
                 sx: {
-                  overflow: "visible",
-                  filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
-                  mt: 1.5,
+                  overflow: "hidden",
+                  backdropFilter: "blur(10px)", // Apply blur effect to the background
+                  backgroundColor: "transparent", // Set the background color to transparent
+                  mt: "20px",
                   "& .MuiAvatar-root": {
                     width: 32,
                     height: 32,
@@ -179,7 +186,6 @@ export function NavbarShop(props: any) {
                     mr: 1,
                   },
                   "&:before": {
-                    content: '""',
                     display: "block",
                     position: "absolute",
                     top: 0,
@@ -200,9 +206,12 @@ export function NavbarShop(props: any) {
                 style={{ color: "#1f1f1f" }}
               >
                 <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "#d7b686" }} />
+                  <Logout fontSize="small" style={{ color: "#f5f5f5" }} />
                 </ListItemIcon>
-                Log out
+                <span style={{ color: "#f5f5f5", fontWeight: "600" }}>
+                  {" "}
+                  Log out
+                </span>
               </MenuItem>
             </Menu>
           </Stack>

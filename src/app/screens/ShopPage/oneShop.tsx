@@ -347,7 +347,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                           badgeContent={product.product_likes}
                           color={"primary"}
                           onClick={(e) => {
-                            props.onAdd(product);
+                            props.onAddFav(product);
                             e.stopPropagation();
                           }}
                         >

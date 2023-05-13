@@ -134,7 +134,7 @@ const [mb_password, set_mb_password] = useState<string>("");
             sx={{ width: "550px", height: "auto" }}
           >
             <ModalImg />
-            <Stack sx={{ alignItems: "center" }}>
+            <Stack sx={{ alignItems: "center", color: "#f5f5f5" }}>
               <h2>Welcome to ₿itsafe</h2>
               <h2>Sign up</h2>
               <TextField
@@ -144,7 +144,6 @@ const [mb_password, set_mb_password] = useState<string>("");
                   width: "280px",
                   background: "#fff",
                   borderRadius: "10px",
-                  
                 }}
                 id="outlined-basic"
                 label="Username"
@@ -228,6 +227,7 @@ const [mb_password, set_mb_password] = useState<string>("");
             <Stack
               sx={{
                 alignItems: "center",
+                color: "#f5f5f5",
               }}
             >
               <h2>Log in</h2>

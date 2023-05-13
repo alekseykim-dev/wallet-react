@@ -3,7 +3,7 @@ import axios from "axios";
 import { serverApi } from "../../lib/config";
 import { Definer } from "../../lib/Definer";
 import { Order } from "../../types/order";
-import { CartItem } from "../../types/others";
+import { CartItem, FavItem } from "../../types/others";
 
 class OrderApiService {
   private readonly path: string;
@@ -32,6 +32,7 @@ class OrderApiService {
       throw err;
     }
   }
+
   async getMyOrders(order_status: string): Promise<Order[]> {
     try {
       const url = `/orders?status=${order_status}`,

@@ -26,6 +26,14 @@ export interface CartItem {
   image: string;
 }
 
+export interface FavItem {
+  _id: string;
+  quantity: number;
+  name: string;
+  price: number;
+  image: string;
+}
+
 export interface ChatMessage {
   msg: string;
   mb_id: string;

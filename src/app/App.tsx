@@ -27,7 +27,7 @@ import MemberApiService from "./apiServices/memberApiService";
 import { Definer } from "../lib/Definer";
 
 import "../app/apiServices/verify";
-import { CartItem } from "../types/others";
+import { CartItem, FavItem } from "../types/others";
 import { Product } from "../types/product";
 
 function App() {
@@ -47,6 +47,9 @@ function App() {
   const current_cart: CartItem[] = JSON.parse(cartJson) ?? []; // if TRUE cartJson, if FALSE  array
   const [cartItems, setCartItems] = useState<CartItem[]>(current_cart);
 
+  const favJson: any = localStorage.getItem("fav_data");
+  const current_fav: FavItem[] = JSON.parse(favJson) ?? []; // if TRUE cartJson, if FALSE  array
+  const [favItems, setFavItems] = useState<FavItem[]>(current_fav);
 
 
   /** HANDLERS */
@@ -132,6 +135,49 @@ function App() {
     localStorage.removeItem("cart_data");
   };
 
+
+  /** Favorites */
+
+   const onAddFav = (product: Product) => {
+     // console.log("product:::", product)  => check if the click works
+     const exist: any = favItems.find(
+       (item: FavItem) => item._id === product._id
+     );
+     if (exist) {
+       const fav_updated = favItems.map((item: FavItem) =>
+         item._id === product._id
+           ? { ...exist, quantity: exist.quantity + 1 }
+           : item
+       );
+       setFavItems(fav_updated);
+       localStorage.setItem("fav_data", JSON.stringify(fav_updated));
+     } else {
+       const new_item: FavItem = {
+         _id: product._id,
+         quantity: 1,
+         name: product.product_name,
+         price: product.product_price,
+         image: product.product_images[0],
+       };
+       const fav_updated = [...favItems, { ...new_item }];
+       setFavItems(fav_updated);
+       localStorage.setItem("fav_data", JSON.stringify(fav_updated));
+     }
+   };
+
+   const onDeleteFav = (item: FavItem) => {
+     const fav_updated = favItems.filter(
+       (ele: FavItem) => ele._id !== item._id
+     );
+     setFavItems(fav_updated);
+     localStorage.setItem("fav_data", JSON.stringify(fav_updated));
+   };
+  
+    const onDeleteAllFav = () => {
+      setFavItems([]);
+      localStorage.removeItem("fav_data");
+    };
+  
   return (
     <Router>
       {main_path === "/" ? (
@@ -149,6 +195,10 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          favItems={favItems}
+          onAddFav={onAddFav}
+          onDeleteFav={onDeleteFav}
+          onDeleteAllFav={onDeleteAllFav}
           setOrderRebuild={setOrderRebuild}
         />
       ) : main_path.includes("/shop") ? (
@@ -166,6 +216,10 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          favItems={favItems}
+          onAddFav={onAddFav}
+          onDeleteFav={onDeleteFav}
+          onDeleteAllFav={onDeleteAllFav}
           setOrderRebuild={setOrderRebuild}
         />
       ) : (
@@ -183,6 +237,10 @@ function App() {
           onRemove={onRemove}
           onDelete={onDelete}
           onDeleteAll={onDeleteAll}
+          favItems={favItems}
+          onAddFav={onAddFav}
+          onDeleteFav={onDeleteFav}
+          onDeleteAllFav={onDeleteAllFav}
           setOrderRebuild={setOrderRebuild}
         />
       )}
@@ -191,7 +249,7 @@ function App() {
             renders the first one that matches the current URL. */}
       <Switch>
         <Route path="/shop">
-          <ShopPage onAdd={onAdd} />
+          <ShopPage onAdd={onAdd} onAddFav={onAddFav} />
         </Route>
         <Route path="/community">
           <CommunityPage />

@@ -12,10 +12,16 @@ export function ShopPage(props: any) {
     <div className="shop_page">
       <Switch>
         <Route path={`${shop.path}/products/:product_id`}>
-          <ChosenProduct onAdd={props.onAdd} />
+          <ChosenProduct
+            onAdd={props.onAdd}
+            onAddFav={props.onAddFav}
+          />
         </Route>
         <Route path={`${shop.path}/:shop_id`}>
-          <OneShop onAdd={props.onAdd} />
+          <OneShop
+            onAdd={props.onAdd}
+            onAddFav={props.onAddFav}
+          />
         </Route>
         <Route path={`${shop.path}`}>
           <AllShops />
