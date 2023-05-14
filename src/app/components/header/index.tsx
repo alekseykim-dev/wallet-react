@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Typed from 'typed.js';
 import { motion } from "framer-motion";
 import { Advertisements } from "../../screens/HomePage/advertisements";
+import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 
 import {
   Badge,
@@ -84,17 +85,21 @@ export function NavbarHome(props: any) {
   
   .scroll-button {
     position: fixed;
-  bottom: 30px;
-  left: 30px;
-  z-index: 999;
-  background-color: transparent;
-  backdrop-filter: blur(10px);
-  padding: 6px 10px;
-  border: 1px solid #000;
-  border-radius: 3px;
-  font-size: 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease;
+    bottom: 80px;
+    left: 20px;
+    z-index: 999;
+    background-color: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    border-radius: 33%;
+    width: 55px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
   }
   
   .scroll-button:hover {
@@ -284,7 +289,7 @@ export function NavbarHome(props: any) {
 
       <div className="scroll-button">
         <Button style={{ color: "black" }} onClick={handleClickHome}>
-          Back to Top
+         <ArrowUpwardIcon/>
         </Button>
       </div>
     </div>

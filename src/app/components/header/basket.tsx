@@ -79,7 +79,7 @@ export default function Basket(props: any) {
           elevation: 0,
           sx: {
             overflow: "hidden",
-            backdropFilter: "blur(10px)", // Apply blur effect to the background
+            backdropFilter: "blur(20px)", // Apply blur effect to the background
             backgroundColor: "transparent", // Set the background color to transparent
             mt: "20px",
             "& .MuiAvatar-root": {

@@ -51,64 +51,64 @@ export function HelpPage() {
         "Ready to get started? Here are the steps for getting your crypto wallet: Get a hardware wallet. It stores your private keys in a secure, offline environment giving you peace of mind and complete control over your assets. All wallets are powered by an industry-leading Secure Element chip, together with's proprietary OS that protects your crypto & NFTs from sophisticated hacks. Pair your wallet with the Live app to easily send, receive and grow crypto, keep track of your portfolio, and securely access a range of dApps and Web3 services. All in one place. Add crypto to your wallet. Wallets have partnered with leading third-party providers so that you can securely buy, swap, and grow your crypto through the Live app. Your crypto will be sent to the safety of your hardware wallet.",
     },
     {
-       num: "6.",
+      num: "6.",
       question:
         "Is it possible to restore all cryptocurrencies with a hardware wallet backup?",
       answer:
         "Most wallets support more than just one cryptocurrency, but only generate one backup. Nevertheless, this one backup is sufficient to restore all cryptocurrencies as all private keys of the different wallets result from the seed that is backed up as a backup during setup.",
     },
     {
-       num: "7.",
+      num: "7.",
       question:
-        "buyurtmani bekor qilmoqchiman lekin buni qanday gilishni bilmayman",
+        "Are there any warranties or guarantees for the cold wallets purchased?",
       answer:
-        "Buyurtmani bekor qilish uchun Avvalo login qiling va buyurtmalarim bo'limidan kerakli bo'lgan buyurtmangizni bekor qilish tugmasi orqali bekor qilsangiz bo'ladi!",
+        "Yes, we offer warranties or guarantees for the cold wallets purchased from our website. The specific warranty details, including the duration and coverage, may vary depending on the manufacturer and the particular cold wallet model. We recommend reviewing the product description or contacting our customer support for more information about the warranty or guarantee associated with your chosen cold wallet.",
     },
     {
-       num: "8.",
+      num: "8.",
       question: "Are cold wallets safer than online wallets?",
       answer:
         "Yes, cold wallets are generally considered safer than online wallets. By keeping the private keys offline, cold wallets protect against remote hacking attempts and malware attacks that often target online wallets. This offline storage significantly reduces the risk of unauthorized access to your funds.",
     },
     {
-       num: "9.",
+      num: "9.",
       question: "Can I lose my funds if I lose my crypto cold wallet?",
       answer:
         "No, you won't lose your funds if you lose your cold wallet. Most cold wallets have a recovery process using a recovery phrase or seed phrase. This phrase allows you to restore your wallet on a new device or replacement hardware wallet. It's crucial to keep your recovery phrase in a secure and separate location from your cold wallet.",
     },
     {
-       num: "10.",
+      num: "10.",
       question: "Can I store multiple cryptocurrencies in a cold wallet?",
       answer:
         "Yes, most cold wallets support multiple cryptocurrencies. However, the specific cryptocurrencies supported may vary depending on the wallet manufacturer and the wallet's software. It's essential to check the wallet's compatibility with the cryptocurrencies you intend to store.",
     },
     {
-       num: "11.",
+      num: "11.",
       question: "How can I ensure the authenticity of a crypto cold wallet?",
       answer:
         "To ensure authenticity, it's crucial to purchase your cold wallet directly from the manufacturer or authorized resellers. Be cautious of third-party sellers or resellers on online marketplaces, as they may sell counterfeit or tampered devices. Always verify the security features and packaging before using a newly purchased cold wallet.",
     },
     {
-       num: "12.",
+      num: "12.",
       question: "Can I use a cold wallet with a mobile device?",
       answer:
         "Yes, many cold wallets offer compatibility with mobile devices. They often provide companion apps for smartphones, allowing you to manage and monitor your funds conveniently. However, it's important to ensure that the mobile device itself is secure and free from malware or unauthorized access.",
     },
     {
-       num: "13.",
+      num: "13.",
       question: "Can I use a crypto cold wallet for everyday transactions?",
       answer:
         "While crypto cold wallets are primarily designed for long-term storage and security, they may not be as convenient for frequent or everyday transactions. Cold wallets require a connection to an online device to broadcast transactions, which can be a bit more time-consuming compared to using a hot wallet or online wallet. However, some cold wallets offer limited functionality for quick transactions while still maintaining the overall security of your funds.",
     },
     {
-       num: "14.",
+      num: "14.",
       question:
         "What if my crypto cold wallet becomes obsolete or unsupported?",
       answer:
         "Technology evolves rapidly, and it's possible for a cold wallet to become outdated or unsupported in the future. In such cases, it's important to stay informed about firmware updates and compatibility with newer operating systems. If your cold wallet becomes obsolete, you may need to transfer your funds to a newer, supported wallet. Keeping up with the latest developments in the crypto industry and regularly checking for updates from the wallet manufacturer will help you stay prepared.",
     },
     {
-       num: "15.",
+      num: "15.",
       question:
         "Can I inherit or pass on my crypto cold wallet to someone else?",
       answer:

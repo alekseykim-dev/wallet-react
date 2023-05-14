@@ -6,6 +6,7 @@ import { BestProducts } from "./bestProducts";
 import { Advertisements } from "./advertisements";
 import { Recommendations } from "./recommendations";
 import { Experts } from "./review";
+import { CommunityChats } from "../../components/header/communityChats";
 import "../../../css/home.css";
 
 // REDUX

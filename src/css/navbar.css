@@ -63,7 +63,7 @@
     align-items: center;
     font-family: 'Montserrat', sans-serif;
     width: 600px;
-    margin-left: 2%;
+    margin-left: 8%;
     height: 46px;
     z-index: 1;
 
@@ -432,4 +432,13 @@
     border-radius: 50%;
     background-color: #ccc;
     margin-bottom: 0.25rem;
+}
+
+.scroll-button:hover {
+    bottom: 80px;
+    cursor: pointer;
+    transform: scale(1.03);
+    background-color: #EAEAEA;
+    color: #333333;
+    border: 1px solid #999999;
 }

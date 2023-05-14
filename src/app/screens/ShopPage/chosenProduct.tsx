@@ -123,11 +123,16 @@ export function ChosenProduct(props: any) {
             className="product_swiper"
             loop={true}
             mousewheel={true}
-            direction="vertical"
+            direction="horizontal"
             spaceBetween={10}
             navigation={true}
             // thumbs={{ swiper: thumbsSwiper }}
             modules={[FreeMode, Navigation, Thumbs]}
+            pagination={{
+              clickable: true,
+              type: "bullets",
+              el: ".swiper-pagination",
+            }}
           >
             {chosenProduct?.product_images?.map((ele: string) => {
               const image_path = `${serverApi}/${ele}`;
@@ -138,7 +143,7 @@ export function ChosenProduct(props: any) {
                     alt="food"
                     style={{
                       width: "100%",
-                      height: "100%",
+                      height: "500px",
                       borderRadius: "10px",
                     }}
                   />
@@ -146,42 +151,6 @@ export function ChosenProduct(props: any) {
               );
             })}
           </Swiper>
-
-          <Stack>
-            <Swiper
-              className={"product_swiper_mini"}
-              loop={true}
-              // thumbs={{ swiper: thumbsSwiper }}
-              spaceBetween={20}
-              slidesPerView={3}
-              freeMode={true}
-              watchSlidesProgress={true}
-              modules={[FreeMode, Navigation, Thumbs]}
-              navigation={true}
-              style={{
-                width: "350px",
-                height: "100px",
-                marginTop: "20px",
-              }}
-            >
-              {chosenProduct?.product_images?.map((ele: string) => {
-                const image_path = `${serverApi}/${ele}`;
-                return (
-                  <SwiperSlide>
-                    <img
-                      style={{
-                        width: "100%",
-                        height: "100%",
-                        borderRadius: "15px",
-                      }}
-                      src={image_path}
-                      alt="food"
-                    />
-                  </SwiperSlide>
-                );
-              })}
-            </Swiper>
-          </Stack>
         </Stack>
 
         <Stack className="chosen_product_info_container">
@@ -253,10 +222,11 @@ export function ChosenProduct(props: any) {
             </div>
             <div className="button_box">
               <Button
-                variant="contained"
+                variant="outlined"
                 onClick={() => {
                   props.onAdd(chosenProduct);
                 }}
+                style={{ color: "#faaf00" }}
               >
                 Add to cart
               </Button>

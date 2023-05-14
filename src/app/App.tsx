@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/App.css";
 import "../css/navbar.css";
 import "../css/footer.css";
+import "../css/communityChat.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { ShopPage } from "./screens/ShopPage";
@@ -29,6 +30,7 @@ import { Definer } from "../lib/Definer";
 import "../app/apiServices/verify";
 import { CartItem, FavItem } from "../types/others";
 import { Product } from "../types/product";
+import { CommunityChats } from "./components/header/communityChats";
 
 function App() {
   /** INITIALIZATION */
@@ -76,7 +78,7 @@ function App() {
     }
   };
 
-  const onAdd = (product: Product) => {
+  const onAdd = async (product: Product) => {
     // console.log("product:::", product)  => check if the click works
     const exist: any = cartItems.find(
       (item: CartItem) => item._id === product._id
@@ -89,6 +91,7 @@ function App() {
       );
       setCartItems(cart_updated);
       localStorage.setItem("cart_data", JSON.stringify(cart_updated));
+      await sweetTopSmallSuccessAlert("Added to cart", 1000, false); // reload
     } else {
       const new_item: CartItem = {
         _id: product._id,
@@ -276,6 +279,7 @@ function App() {
       </Switch>
 
       <Footer />
+      <CommunityChats />
       <AuthenticationModal
         loginOpen={loginOpen}
         handleLoginOpen={handleLoginOpen}

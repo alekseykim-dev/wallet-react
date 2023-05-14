@@ -4,7 +4,6 @@ import "../../../css/community.css";
 import Tab from "@mui/material/Tab";
 import Pagination from "@mui/material/Pagination";
 import { TargetArticles } from "./targetArticles";
-import { CommunityChats } from "./communityChats";
 import TabContext from "@mui/lab/TabContext";
 import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
@@ -86,11 +85,10 @@ export function CommunityPage(props: any) {
       <div className="community_frame">
         <Container sx={{ mt: "50px", mb: "50px" }}>
           <Stack flexDirection={"row"} justifyContent={"space-between"}>
-            <CommunityChats />
             <Stack
               className="community_all_frame"
               inputMode={"text"}
-              style={{ border: "1px solid #fff" }}
+              style={{ border: "1px solid #fff", width: "100%" }}
             >
               <TabContext value={value}>
                 <Box className="article_tabs">
