@@ -1,9 +1,11 @@
 import React from "react";
-import { Box, Container, Stack } from "@mui/material";
+import { Box, Container, Button, Stack } from "@mui/material";
 import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
+import { useHistory } from "react-router-dom";
+
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 
@@ -42,6 +44,14 @@ export function Experts() {
       img: "/community/planb.jpg",
     },
   ];
+  
+
+  const history = useHistory();
+
+  const handleContainerClick = () => {
+    history.push("/community");
+  };
+  
 
   return (
     <div className="review_for_shop">
@@ -69,21 +79,23 @@ export function Experts() {
           {events_list.map((value, number) => {
             return (
               <SwiperSlide key={number}>
-                <Stack className="review_wrapper">
-                  <Box className="review_left">
-                    <Box className="img_wrapper">
-                      <img src={value.img} className="review_img" />
+                <div onClick={handleContainerClick}>
+                  <Stack className="review_wrapper">
+                    <Box className="review_left">
+                      <Box className="img_wrapper">
+                        <img src={value.img} className="review_img" />
+                      </Box>
                     </Box>
-                  </Box>
-                  <Stack className="review_right">
-                    <Box>
-                      <p className="review_title">{value.author}</p>
-                      <p className="review_title_p">{value.job}</p>
-                    </Box>
-                    <Box className="review_text">{value.desc}</Box>
-                    <Box className="review_text_auth">{value.article}</Box>
+                    <Stack className="review_right">
+                      <Box>
+                        <p className="review_title">{value.author}</p>
+                        <p className="review_title_p">{value.job}</p>
+                      </Box>
+                      <Box className="review_text">{value.desc}</Box>
+                      <Box className="review_text_auth">{value.article}</Box>
+                    </Stack>
                   </Stack>
-                </Stack>
+                </div>
               </SwiperSlide>
             );
           })}

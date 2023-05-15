@@ -1,6 +1,6 @@
 .format.home_navbar {
     width: 100%;
-    height: 790px;
+    height: 640px;
     display: flex;
     background: url("/public/store/fc.jpg");
     background-size: cover;
@@ -39,6 +39,7 @@
 }
 .home_navbar .navbar_config {
     display: flex;
+    position: fixed;
     flex-direction: row;
     justify-content: space-evenly;
     width: auto;
@@ -46,6 +47,9 @@
     background-color: #282828;
     align-items: center;
     width: 100%;
+    z-index: 9999;
+    transition: top 0.3s ease;
+    
 }
 
 .home_navbar .navbar_icons {
@@ -405,7 +409,7 @@
 
 .framer-motion-wrapper {
     position: absolute;
-    top: 42rem;
+    top: 34rem;
     width: 100%;
     display: flex;
     justify-content: center;

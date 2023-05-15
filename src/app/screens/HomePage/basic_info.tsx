@@ -1,11 +1,21 @@
 import { Box, Container, Stack } from "@mui/material";
 import React from "react";
 import Marginer from "../../components/marginer";
+import { useHistory } from "react-router-dom";
+
 
 export function Introduction() {
+
+   const history = useHistory();
+
+   const handleContainerClick = () => {
+     history.push("/help");
+   };
+  
   return (
     <Container className="static_frame_att">
-          <Container>
+      <Container>
+        <div onClick={handleContainerClick}>
               <Box className="category_title_sec">Reduce your risk
         <Stack className="basic_frame">
           <Stack className="static_box_att_left">
@@ -30,7 +40,8 @@ export function Introduction() {
             </Stack>
                       
         </Stack>
-            </Box>
+        </Box>
+          </div>
       </Container>
     </Container>
   );

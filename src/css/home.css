@@ -168,7 +168,7 @@
     background-repeat: no-repeat;
     position: absolute;
     right: 0px;
-    top: 1830px;
+    top: 2300px;
 }
 
 .back1 {
@@ -176,7 +176,7 @@
     background-repeat: no-repeat;
     position: absolute;
     left: -50px;
-    top: 1950px;
+    top: 2500px;
 }
 
 .back2 {
@@ -184,7 +184,7 @@
     background-repeat: no-repeat;
     position: absolute;
     left: 300px;
-    top: 2350px;
+    top: 3200px;
 
 }
 
@@ -193,8 +193,8 @@
 
     background-repeat: no-repeat;
     position: absolute;
-    right: 300px;
-    top: 3080px;
+    right: 50px;
+    top: 3600px;
 
 }
 
@@ -202,28 +202,28 @@
     background-repeat: no-repeat;
     position: absolute;
     left: -100px;
-    top: 3180px;
+    top: 3880px;
 }
 
 .back5 {
     background-repeat: no-repeat;
     position: absolute;
     right: 0px;
-    top: 3470px;
+    top: 4350px;
 }
 
 .back6 {
     background-repeat: no-repeat;
     position: absolute;
     left: 70px;
-    top: 3880px;
+    top: 4650px;
 }
 
 .back7 {
     background-repeat: no-repeat;
     position: absolute;
     right: 50px;
-    top: 4160px;
+    top: 5150px;
 }
 
 
@@ -565,11 +565,13 @@
 }
 
 .coin-wrapper {
+    position: relative;
     width: 100%;
     height: auto;
     display: flex;
     justify-content: center;
     flex-direction: column;
+    z-index: 1;
     
 }
 

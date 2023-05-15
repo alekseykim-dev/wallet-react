@@ -18,6 +18,7 @@ import OrderApiService from "../../apiServices/orderApiService";
 import {
   sweetErrorHandling,
   sweetFailureProvider,
+  sweetTopSmallSuccessAlert,
 } from "../../../lib/sweetAlert";
 import { verifiedMemberData } from "../../apiServices/verify";
 
@@ -49,6 +50,11 @@ export default function ProcessOrders(props: any) {
       if (confirmation) {
         const orderService = new OrderApiService();
         await orderService.updateOrderStatus(data);
+        await sweetTopSmallSuccessAlert(
+          "Payment has been confirmed!🥳",
+          1800,
+          false
+        ); // reload
         props.setOrderRebuild(new Date());
       }
     } catch (err) {

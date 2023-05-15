@@ -158,8 +158,8 @@ export function HelpPage() {
                 aria-label="lab API tabs example"
                 style={{ display: "flex", justifyContent: "space-between" }}
               >
-                <Tab label="Rules" value={"1"} />
-                <Tab label="FAQ" value={"2"} />
+                <Tab label="FAQ" value={"1"} />
+                <Tab label="Rules" value={"2"} />
                 <Tab label="Send an email" value={"3"} />
               </TabList>
             </Box>
@@ -167,7 +167,7 @@ export function HelpPage() {
 
           <Stack>
             <Stack className="help_main_content">
-              <TabPanel value="1">
+              <TabPanel value="2">
                 <Stack className="theRules_box">
                   <Box className="theRulesFrame">
                     {rules.map((ele) => {
@@ -177,7 +177,7 @@ export function HelpPage() {
                 </Stack>
               </TabPanel>
 
-              <TabPanel value="2">
+              <TabPanel value="1">
                 <Stack className="accordion_menu">
                   {faq.map((ele, index) => {
                     return (

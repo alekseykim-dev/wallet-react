@@ -54,6 +54,7 @@ export function NavbarHome(props: any) {
      }
    };
 
+  
   // Create ref element
   const textRef = useRef<HTMLSpanElement>(null);
   
@@ -77,7 +78,7 @@ export function NavbarHome(props: any) {
       };
     }, []);
   
-
+  
  const styles = `
   .color {
     color: #fff;
@@ -90,7 +91,7 @@ export function NavbarHome(props: any) {
     z-index: 999;
     background-color: transparent;
     backdrop-filter: blur(20px);
-    border: 1px solid #000;
+    border: 1px solid #cccccc;
     border-radius: 3px;
     font-size: 12px;
     cursor: pointer;
@@ -100,6 +101,7 @@ export function NavbarHome(props: any) {
     height: 50px;
     display: flex;
     justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
   }
   
   .scroll-button:hover {
@@ -108,12 +110,32 @@ export function NavbarHome(props: any) {
   }
 `;
   
+   useEffect(() => {
+     const handleScroll = () => {
+       const scrollTop =
+         window.scrollY || document.documentElement.scrollTop;
+       const navbar = document.getElementById("navbar");
 
-    
+       if (scrollTop > lastScrollTop) {
+         navbar!.style.top = "-80px";
+       } else {
+         navbar!.style.top = "0";
+       }
+
+       lastScrollTop = scrollTop;
+     };
+
+     let lastScrollTop = 0;
+     window.addEventListener("scroll", handleScroll);
+
+     return () => {
+       window.removeEventListener("scroll", handleScroll);
+     };
+   }, []);
   return (
     <div className="format home_navbar" id="home">
       <div className="navbar_block">
-        <div className="navbar_config">
+        <div className="navbar_config" id="navbar">
           <Box onClick={props.setPath}>
             <NavLink to="/">
               <img src="/icons/logo1.svg" alt="logo" className="logo" />
@@ -219,7 +241,7 @@ export function NavbarHome(props: any) {
                 sx: {
                   overflow: "hidden",
                   backdropFilter: "blur(10px)", // Apply blur effect to the background
-                   backgroundColor: "transparent", // Set the background color to transparent
+                  backgroundColor: "transparent", // Set the background color to transparent
                   mt: "20px",
                   "& .MuiAvatar-root": {
                     width: 32,
@@ -250,14 +272,17 @@ export function NavbarHome(props: any) {
                 <ListItemIcon>
                   <Logout fontSize="small" style={{ color: "#f5f5f5" }} />
                 </ListItemIcon>
-               <span style={{color: "#f5f5f5", fontWeight: "600"}}> Log out</span>
+                <span style={{ color: "#f5f5f5", fontWeight: "600" }}>
+                  {" "}
+                  Log out
+                </span>
               </MenuItem>
             </Menu>
           </Stack>
         </div>
 
         <Stack className="head_information" justifyContent={"row"}>
-          <Stack justifyContent={"column"} style={{ marginTop: "120px" }}>
+          <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
             <Box>
               <img src="/icons/Welcome.svg" alt="welcome" />
             </Box>
@@ -289,7 +314,7 @@ export function NavbarHome(props: any) {
 
       <div className="scroll-button">
         <Button style={{ color: "black" }} onClick={handleClickHome}>
-         <ArrowUpwardIcon/>
+          <ArrowUpwardIcon />
         </Button>
       </div>
     </div>

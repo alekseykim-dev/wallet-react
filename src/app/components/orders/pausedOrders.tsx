@@ -14,6 +14,7 @@ import { serverApi } from "../../../lib/config";
 import {
   sweetErrorHandling,
   sweetFailureProvider,
+  sweetTopSmallSuccessAlert,
 } from "../../../lib/sweetAlert";
 import OrderApiService from "../../apiServices/orderApiService";
 import { verifiedMemberData } from "../../apiServices/verify";
@@ -65,6 +66,7 @@ export default function PausedOrders(props: any) {
       if (confirmation) {
         const orderService = new OrderApiService();
         await orderService.updateOrderStatus(data);
+        await sweetTopSmallSuccessAlert("Your order is being processed", 1800, false); // reload
         props.setOrderRebuild(new Date());
       }
     } catch (err) {
@@ -144,7 +146,7 @@ export default function PausedOrders(props: any) {
                   value={order._id}
                   onClick={processOrderHandler}
                 >
-                  Pay
+                  Confirm
                 </Button>
               </Box>
             </Box>

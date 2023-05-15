@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Badge,
   Box,
@@ -76,14 +76,33 @@ export function NavbarOthers(props: any) {
   }
 `;
   
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+        const navbar = document.getElementById("navbar");
+
+        if (scrollTop > lastScrollTop) {
+          navbar!.style.top = "-80px";
+        } else {
+          navbar!.style.top = "0";
+        }
+
+        lastScrollTop = scrollTop;
+      };
+
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }, []);
+  
   return (
     <div className="format_others home_navbar" id="other">
       <div className="navbar_block">
-        <Stack
-          flexDirection={"row"}
-          className="navbar_config"
-          justifyContent={"space-between"}
-        >
+        <Stack flexDirection={"row"} className="navbar_config" id="navbar">
           <Box onClick={props.setPath}>
             <NavLink to="/">
               <img src="/icons/logo1.svg" alt="logo" className="logo" />
