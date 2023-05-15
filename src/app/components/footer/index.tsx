@@ -3,7 +3,26 @@ import moment from "moment";
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+ const handleClickHome = () => {
+   const element = document.getElementById("home");
+   if (element) {
+     element.scrollIntoView({ behavior: "smooth" });
+   }
+ };
 
+  const handleClickOther = () => {
+    const element = document.getElementById("other");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+  
+  const handleClickShop = () => {
+    const element = document.getElementById("shop");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 export function Footer() {
   return (
     <div className="footer_config">
@@ -16,7 +35,7 @@ export function Footer() {
           >
             <Stack className="info" flexDirection={"column"}>
               <Box>
-                <img src="/icons/Bitsafe.svg" alt="logo"></img>
+                <img src="/icons/Bitsafe_footer.svg" alt="logo"></img>
               </Box>
               <Box className="main_text">
                 Experience peace of mind knowing that your digital assets are
@@ -25,22 +44,22 @@ export function Footer() {
               <Stack className="contact_links">
                 <Box>
                   <a href="https://youtu.be/EOK6_cX35QM">
-                    <img src="/icons/facebook.svg" alt="facebook" />
+                    <img src="/icons/facebook1.svg" alt="facebook" />
                   </a>
                 </Box>
                 <Box>
                   <a href="https://youtu.be/EOK6_cX35QM">
-                    <img src="/icons/twitter.svg" alt="twitter" />
+                    <img src="/icons/twitter1.svg" alt="twitter" />
                   </a>
                 </Box>
                 <Box>
                   <a href="https://youtu.be/cU0Wz1ez3J0">
-                    <img src="/icons/instagram.svg" alt="instagram" />
+                    <img src="/icons/instagram1.svg" alt="instagram" />
                   </a>
                 </Box>
                 <Box>
                   <a href="https://youtu.be/cU0Wz1ez3J0">
-                    <img src="/icons/youtube.svg" alt="youtube" />
+                    <img src="/icons/youtube1.svg" alt="youtube" />
                   </a>
                 </Box>
               </Stack>
@@ -49,16 +68,24 @@ export function Footer() {
               <Box className="part_subject">Content</Box>
               <Box className="divider"></Box>
               <Box className="targets target" sx={{ mt: "5px" }}>
-                <NavLink to="/">Home</NavLink>
+                <NavLink to="/" onClick={handleClickHome}>
+                  Home
+                </NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/shop">Stores</NavLink>
+                <NavLink to="/shop" onClick={handleClickShop}>
+                  Stores
+                </NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/community">Community</NavLink>
+                <NavLink to="/community" onClick={handleClickOther}>
+                  Community
+                </NavLink>
               </Box>
               <Box className="targets">
-                <NavLink to="/help">Help</NavLink>
+                <NavLink to="/help" onClick={handleClickOther}>
+                  Help
+                </NavLink>
               </Box>
             </Stack>
             <Stack className="find_us">
@@ -81,7 +108,7 @@ export function Footer() {
           <Box className="liner"></Box>
           <Box className="copyrights" sx={{ mt: "15px" }}>
             {" "}
-            Copyrights BitSafe{" "}2022 - {moment().format("YYYY")}. All rights
+            Copyrights BitSafe 2022 - {moment().format("YYYY")}. All rights
             reserved
           </Box>
         </Stack>

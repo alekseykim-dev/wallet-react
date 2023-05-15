@@ -316,9 +316,7 @@ export function VisitOtherPage(props: any) {
                   </p>
                 </Box>
                 <p className="user_desc">
-                  {" "}
-                  {chosenMember?.mb_description ??
-                    "This user has no description"}
+                  Hey! I'm {chosenMember?.mb_nick}. Let's be friends!
                 </p>
 
                 <Box
@@ -383,10 +381,7 @@ export function VisitOtherPage(props: any) {
                     style={{ flexDirection: "column" }}
                     value={"1"}
                     component={(e) => (
-                      <div
-                        className={`menu_box`}
-                        onClick={() => setValue("1")}
-                      >
+                      <div className={`menu_box`} onClick={() => setValue("1")}>
                         <img src="/icons/post.svg" />
                         <span>Comments</span>
                       </div>
@@ -396,10 +391,7 @@ export function VisitOtherPage(props: any) {
                     style={{ flexDirection: "column" }}
                     value={"2"}
                     component={() => (
-                      <div
-                        className={`menu_box`}
-                        onClick={() => setValue("2")}
-                      >
+                      <div className={`menu_box`} onClick={() => setValue("2")}>
                         <img src="/icons/followers.svg" />
                         <span>Followers</span>
                       </div>
@@ -409,10 +401,7 @@ export function VisitOtherPage(props: any) {
                     style={{ flexDirection: "column" }}
                     value={"3"}
                     component={() => (
-                      <div
-                        className={`menu_box`}
-                        onClick={() => setValue("3")}
-                      >
+                      <div className={`menu_box`} onClick={() => setValue("3")}>
                         <img src="/icons/following.svg" />
                         <span>Following</span>
                       </div>

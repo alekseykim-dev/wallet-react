@@ -198,10 +198,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
       <img className="back12" src="/icons/bit_back4.svg" alt="" />
       <img className="back13" src="/icons/bit_back3.svg" alt="" />
       <img className="back14" src="/icons/bit_back4.svg" alt="" />
-      <img className="back15" src="/icons/bit_back3.svg" alt="" />
-      <img className="back16" src="/icons/bit_back4.svg" alt="" />
-      <img className="back17" src="/icons/bit_back4.svg" alt="" />
-      <img className="back18" src="/icons/bit_back3.svg" alt="" />
+     
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar_big_box">
@@ -418,7 +415,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
           <div className="other_shop_see">See also</div>
 
           <Stack
-            style={{ width: "100%", display: "flex" }}
+            style={{ width: "100%", display: "flex", height: "300px" }}
             flexDirection={"row"}
             sx={{ mt: "35px" }}
           >

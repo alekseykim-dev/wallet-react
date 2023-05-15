@@ -12,7 +12,7 @@
     width: 100%;
     height: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: row-reverse;
     justify-content: space-between;
 }
 
@@ -23,7 +23,6 @@
 .my_page .my_page_frame .my_page_right {
     width: 30%;
     height: auto;
-    margin-left: 55px;
     display: flex;
     flex-direction: column;
     gap: 40px;
@@ -34,14 +33,13 @@
     padding: 20px;
     width: 100%;
     height: auto;
-
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid black;
+    /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 16px rgba(242, 189, 87, 0.04); */
     border-radius: 16px;
 }
 
@@ -90,13 +88,12 @@
 }
 
 .my_page .my_page_right .order_info_box .order_user_prof {
-    font-family: "Commissioner",
-        sans-serif;
-    font-style: normal;
+    font-family: "Commissioner", sans-serif;
+    font-style: italic;
     font-weight: 500;
-    font-size: 24px;
+    font-size: 17px;
     line-height: 36px;
-    color: #a1a1a1;
+    color: #1f1f1f;
 }
 
 .my_page .order_info_box .user_media_box {
@@ -123,6 +120,7 @@
     font-size: 18px;
     line-height: 24px;
     color: #0d263b;
+    text-align: center;
 }
 
 /* ********************************************************** */
@@ -137,27 +135,26 @@
 .my_page .my_page_right .my_page_menu .menu_box {
     position: relative;
     padding: 6px;
-    width: 300px;
+    width: 250px;
     height: 50%;
     gap: 32px;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     background: #ffffff;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25%),
-        inset 0px 4px 4px rgba(0, 0, 0, 0.25%),
-        inset 0px 4px 16px rgba(242, 189, 87, 0.04);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25%), inset 0px 4px 4px rgba(0, 0, 0, 0.25%), inset 0px 4px 16px rgba(242, 189, 87, 0.04);
     border-radius: 10px;
     margin-bottom: 10px;
+    align-content: center;
+    align-items: center;
 }
 
 .my_page .my_page_right .my_page_menu .menu_box span {
     font-family: "Poppins",
         sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 500;
+    font-size: 20px;
     line-height: 38px;
     color: #000000;
 }
@@ -167,12 +164,11 @@
         sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 45px;
+    font-size: 40px;
     line-height: 68px;
     text-align: center;
-    color: #ffffff;
-
-    border-bottom: 1px solid #ffffff;
+    color: #000;
+    border-bottom: 1px solid #000;
 }
 
 .my_page .my_page_frame .menu_content {
@@ -188,8 +184,9 @@
     flex-direction: row;
     align-items: center;
     gap: 15px;
-
-    background: #182226;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border: 1px solid black;
     border-radius: 30px;
     margin-bottom: 10px;
     padding: 8px 0px;
@@ -199,11 +196,12 @@
     width: 155px;
     height: 155px;
     background-size: cover;
-    border-radius: 30px 0px 0px 30px;
+    border-radius: 30px;
+    margin-left: 10px;
 }
 
 .my_page .my_page_frame .all_article_container {
-    width: 75%;
+    width: 79%;
     height: 155px;
     display: flex;
     flex-direction: row;
@@ -217,7 +215,7 @@
     font-size: 16px;
     line-height: 26px;
     margin-left: 10px;
-    color: #ffffff;
+    color: #000;
 }
 
 .my_page .my_page_frame .all_article_container .all_article_title {
@@ -227,7 +225,7 @@
     font-weight: 600;
     font-size: 22px;
     line-height: 33px;
-    color: #e3c08d;
+    color: #686868;
 }
 
 .my_page .my_page_frame .all_article_container .all_article_desc {
@@ -237,7 +235,7 @@
     font-weight: 600;
     font-size: 18px;
     line-height: 33px;
-    color: #9c9999;
+    color: #000;
 }
 
 .my_page .my_page_frame .all_article_container .article_time_desc {
@@ -247,7 +245,7 @@
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
-    color: #ffffff;
+    color: #282828;
 }
 
 /* Member Followers page */

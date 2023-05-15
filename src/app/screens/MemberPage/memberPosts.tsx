@@ -108,7 +108,7 @@ export function MemberPosts(props: any) {
                       }}
                     >
                       <CheckBox
-                        icon={<FavoriteBorder style={{ color: "white" }} />}
+                        icon={<FavoriteBorder style={{ color: "#5a5a72" }} />}
                         checkedIcon={<Favorite style={{ color: "red" }} />}
                         id={article?._id}
                         checked={
@@ -126,7 +126,7 @@ export function MemberPosts(props: any) {
                     </div>
                     <div style={{ display: "flex", alignItems: "center" }}>
                       <RemoveRedEyeIcon
-                        style={{ color: "white" }}
+                        style={{ color: "#5a5a72" }}
                         sx={{ mr: "10px" }}
                       />
                       <span className="article_time_desc">

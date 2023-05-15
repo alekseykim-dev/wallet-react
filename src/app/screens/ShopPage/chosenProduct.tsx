@@ -60,6 +60,19 @@ const chosenShopRetriever = createSelector(
 );
 
 export function ChosenProduct(props: any) {
+
+   const [isHovered1, setIsHovered1] = useState(false);
+
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
+
+
+
   /** INITIALIZATIONS */
   let { product_id: product_id } = useParams<{ product_id: string }>();
   const { setChosenProduct, setChosenShop: setChosenShop } = actionDispatch(
@@ -222,11 +235,17 @@ export function ChosenProduct(props: any) {
             </div>
             <div className="button_box">
               <Button
-                variant="outlined"
+                variant="contained"
                 onClick={() => {
                   props.onAdd(chosenProduct);
                 }}
-                style={{ color: "#faaf00" }}
+                style={{
+                  color: isHovered1 ? "#ffffff" : "#ffffff",
+                  opacity: isHovered1 ? 0.6 : 1,
+                  backgroundColor: isHovered1 ? "#4d94ff" : "#007bff",
+                }}
+                onMouseEnter={handleMouseEnter1}
+                onMouseLeave={handleMouseLeave1}
               >
                 Add to cart
               </Button>

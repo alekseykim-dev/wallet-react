@@ -62,15 +62,6 @@ export function AllShops() {
   });
   const refs: any = useRef([]);
 
-  const [isHovered1, setIsHovered1] = useState(false);
-
-  const handleMouseEnter1 = () => {
-    setIsHovered1(true);
-  };
-
-  const handleMouseLeave1 = () => {
-    setIsHovered1(false);
-  };
 
   // best => mb_point
   // popular => mb_view
@@ -141,6 +132,7 @@ export function AllShops() {
     <div className="all_shops">
       <img className="back10" src="/icons/bit_back3.svg" alt="" />
       <img className="back11" src="/icons/bit_back4.svg" alt="" />
+      <img className="back111" src="/icons/bit_back4.svg" alt="" />
 
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
@@ -154,7 +146,6 @@ export function AllShops() {
                   placeholder="Input brand name, country or email here"
                   onChange={(e) => setQuery(e.target.value)}
                 />
-                
               </form>
             </Box>
             <Box className="fill_box" style={{ cursor: "pointer" }}>

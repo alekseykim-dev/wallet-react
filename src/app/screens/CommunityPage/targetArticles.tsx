@@ -73,12 +73,11 @@ export function TargetArticles(props: any) {
                 <Box
                   className={"article_share"}
                   style={{ width: "100%", height: "auto" }}
-                  sx={{ mb: "10px" }}
                 >
                   <Box
                     className={"article_share_main"}
                     style={{
-                      color: "#fff",
+                      color: "#1f1f1f",
                       marginLeft: "150px",
                       display: "flex",
                       alignItems: "center",
@@ -86,7 +85,7 @@ export function TargetArticles(props: any) {
                   >
                     <span>{moment().format("YY-MM-DD HH:mm")}</span>
                     <Checkbox
-                      sx={{ ml: "40px" }}
+                      sx={{ ml: "40px", padding: "0px" }}
                       icon={<FavoriteBorder />}
                       checkedIcon={<Favorite style={{ color: "red" }} />}
                       id={article?._id}
@@ -101,8 +100,8 @@ export function TargetArticles(props: any) {
                       {article?.art_likes}{" "}
                     </span>
                     <RemoveRedEyeIcon
-                      style={{ color: "white" }}
-                      sx={{ mr: "10px" }}
+                      style={{ color: "5a5a72" }}
+                      
                     />
                     <span className="article_time_desc">
                       {article?.art_views}

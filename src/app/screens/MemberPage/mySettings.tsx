@@ -147,7 +147,7 @@ export function MySettings(props: any) {
           <textarea
             className="spec_textarea mb_description"
             placeholder={
-              verifiedMemberData?.mb_description ?? "Not available😵‍💫"
+              verifiedMemberData?.mb_description ?? "No description"
             }
             name="mb_description"
             onChange={changeMemberDescriptionHandler}
@@ -157,7 +157,7 @@ export function MySettings(props: any) {
 
       <Box display={"flex"} justifyContent={"flex-end"} sx={{ mt: "25px" }}>
         <Button variant="contained" onClick={handleSubmitButton}>
-          Save✔️
+          Save
         </Button>
       </Box>
     </Stack>

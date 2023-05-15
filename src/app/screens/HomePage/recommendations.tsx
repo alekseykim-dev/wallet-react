@@ -27,12 +27,6 @@ const actionDispatch = (dispach: Dispatch) => ({
   setNewsBoArticles: (data: BoArticle[]) => dispach(setNewsBoArticles(data)),
 });
 /** REDUX SELECTOR */
-const bestBoArticlesRetriever = createSelector(
-  retrieveBestBoArticles,
-  (bestBoArticles) => ({
-    bestBoArticles,
-  })
-);
 const trendBoArticlesRetriever = createSelector(
   retrieveTrendBoArticles,
   (trendBoArticles) => ({
@@ -48,9 +42,9 @@ const newsBoArticlesRetriever = createSelector(
 
 export function Recommendations() {
   /** INITIALIZATIONS */
-  const { setBestBoArticles, setNewsBoArticles, setTrendBoArticles } =
+  const { setNewsBoArticles, setTrendBoArticles } =
     actionDispatch(useDispatch());
-  const { bestBoArticles } = useSelector(bestBoArticlesRetriever);
+ 
   const { trendBoArticles } = useSelector(trendBoArticlesRetriever);
   const { newsBoArticles } = useSelector(newsBoArticlesRetriever);
 
@@ -58,17 +52,7 @@ export function Recommendations() {
     const communityService = new CommunityApiService();
     communityService
       .getTargetArticles({
-        bo_id: "all",
-        page: 1,
-        limit: 2,
-        order: "art_views",
-      })
-      .then((data) => setBestBoArticles(data))
-      .catch((err) => console.log(err));
-
-    communityService
-      .getTargetArticles({
-        bo_id: "all",
+        bo_id: "Security",
         page: 1,
         limit: 2,
         order: "art_likes",
@@ -78,7 +62,7 @@ export function Recommendations() {
 
     communityService
       .getTargetArticles({
-        bo_id: "celebrity",
+        bo_id: "News",
         page: 1,
         limit: 2,
         order: "art_views",
@@ -91,61 +75,15 @@ export function Recommendations() {
     <div className={"top_article_frame"}>
       <Container
         maxWidth="lg"
-        sx={{ mb: "50px", mt: "60px" }}
+        sx={{ mb: "100px" }}
         style={{ position: "relative" }}
       >
-        <Stack
-          flexDirection={"column"}
-          alignItems={"center"}
-          sx={{ mt: "45px" }}
-        >
-          <Box className={"category_title"}>Recommended articles</Box>
+        <Stack flexDirection={"column"} alignItems={"center"}>
+          <Box className={"category_title"}>Reading Hub</Box>
           <Stack className={"article_main"} flexDirection={"row"}>
             <Stack className={"article_container"}>
-              <Box className={"article_category"}>Most Viewed</Box>
-              {bestBoArticles?.map((article: BoArticle) => {
-                const art_image_url = article?.art_image
-                  ? `${serverApi}/${article?.art_image}`
-                  : "/community/default_article.svg";
-                return (
-                  <Stack className={"article_box"} key={article._id}>
-                    <Box
-                      className={"article_img"}
-                      sx={{
-                        backgroundImage: `url(${art_image_url})`,
-                      }}
-                    ></Box>
-                    <Box className={"article_info"}>
-                      <Box className={"article_main_info"}>
-                        <div className={"article_author"}>
-                          <Avatar
-                            alt="Author_photo"
-                            src={
-                              article?.member_data?.mb_image
-                                ? `${serverApi}/${article?.member_data?.mb_image}`
-                                : "/auth/default_user.svg"
-                            }
-                            sx={{ width: "35px", height: "35px" }}
-                          />
-                          <span className={"author_username"}>
-                            {article?.member_data?.mb_nick}
-                          </span>
-                        </div>
-                        <span className={"article_title"}>
-                          {article?.art_subject}
-                        </span>
-                        <p className={"article_desc"}></p>
-                      </Box>
-                    </Box>
-                  </Stack>
-                );
-              })}
-
-              <Box className={"article_category"} sx={{ marginTop: "10px" }}>
-                Most liked
-              </Box>
-
-              {trendBoArticles?.map((article: BoArticle) => {
+              <Box className={"article_category"}>News</Box>
+              {newsBoArticles?.map((article: BoArticle) => {
                 const art_image_url = article?.art_image
                   ? `${serverApi}/${article?.art_image}`
                   : "/community/default_article.svg";
@@ -185,12 +123,45 @@ export function Recommendations() {
             </Stack>
 
             <Stack className={"article_container"}>
-              <Box className={"article_category"}>Popular</Box>
-              {newsBoArticles?.map((article: BoArticle) => {
+              <Box className={"article_category"} sx={{ marginTop: "10px" }}>
+                Security Tips
+              </Box>
+
+              {trendBoArticles?.map((article: BoArticle) => {
+                const art_image_url = article?.art_image
+                  ? `${serverApi}/${article?.art_image}`
+                  : "/community/default_article.svg";
                 return (
-                  <Box className={"article_news"}>
-                    <TViewer chosenSingleBoArticles={article} />
-                  </Box>
+                  <Stack className={"article_box"} key={article._id}>
+                    <Box
+                      className={"article_img"}
+                      sx={{
+                        backgroundImage: `url(${art_image_url})`,
+                      }}
+                    ></Box>
+                    <Box className={"article_info"}>
+                      <Box className={"article_main_info"}>
+                        <div className={"article_author"}>
+                          <Avatar
+                            alt="Author_photo"
+                            src={
+                              article?.member_data?.mb_image
+                                ? `${serverApi}/${article?.member_data?.mb_image}`
+                                : "/auth/default_user.svg"
+                            }
+                            sx={{ width: "35px", height: "35px" }}
+                          />
+                          <span className={"author_username"}>
+                            {article?.member_data?.mb_nick}
+                          </span>
+                        </div>
+                        <span className={"article_title"}>
+                          {article?.art_subject}
+                        </span>
+                        <p className={"article_desc"}></p>
+                      </Box>
+                    </Box>
+                  </Stack>
                 );
               })}
             </Stack>

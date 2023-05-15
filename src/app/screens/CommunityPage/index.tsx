@@ -62,13 +62,13 @@ export function CommunityPage(props: any) {
         searchArticlesObj.bo_id = "all";
         break;
       case "2":
-        searchArticlesObj.bo_id = "celebrity";
+        searchArticlesObj.bo_id = "News";
         break;
       case "3":
-        searchArticlesObj.bo_id = "evaluation";
+        searchArticlesObj.bo_id = "Evaluation";
         break;
       case "4":
-        searchArticlesObj.bo_id = "story";
+        searchArticlesObj.bo_id = "Security";
         break;
     }
     setSearchArticlesObj({ ...searchArticlesObj });
@@ -84,11 +84,12 @@ export function CommunityPage(props: any) {
     <div className="community_page">
       <div className="community_frame">
         <Container sx={{ mt: "50px", mb: "50px" }}>
-          <Stack flexDirection={"row"} justifyContent={"space-between"}>
+          <div className="category_title">Stay Informed</div>
+
+          <Stack flexDirection={"row"} justifyContent={"center"}>
             <Stack
               className="community_all_frame"
               inputMode={"text"}
-              style={{ border: "1px solid #fff", width: "100%" }}
             >
               <TabContext value={value}>
                 <Box className="article_tabs">
@@ -100,9 +101,9 @@ export function CommunityPage(props: any) {
                       style={{ borderColor: "blue" }}
                     >
                       <Tab label="All Articles" value={"1"} />
-                      <Tab label="Popular" value={"2"} />
+                      <Tab label="News" value={"2"} />
                       <Tab label="Shop review" value={"3"} />
-                      <Tab label="Stories" value={"4"} />
+                      <Tab label="Security" value={"4"} />
                     </TabList>
                   </Box>
                 </Box>

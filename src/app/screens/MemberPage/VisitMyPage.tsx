@@ -72,6 +72,16 @@ const chosenSingleBoArticlesRetriever = createSelector(
 );
 
 export function VisitMyPage(props: any) {
+   const [isHovered1, setIsHovered1] = useState(false);
+
+  const handleMouseEnter1 = () => {
+    setIsHovered1(true);
+  };
+
+  const handleMouseLeave1 = () => {
+    setIsHovered1(false);
+  };
+
   /* INITIALIZATIONS */
   const {
     setChosenMember,
@@ -275,8 +285,7 @@ export function VisitMyPage(props: any) {
                   </p>
                 </Box>
                 <p className="user_desc">
-                  {chosenMember?.mb_description ??
-                    "This user has no description"}
+                  Hey! I'm {chosenMember?.mb_nick}. Let's be friends!
                 </p>
                 <Box
                   display={"flex"}
@@ -294,6 +303,13 @@ export function VisitMyPage(props: any) {
                         <Button
                           variant="contained"
                           onClick={() => setValue("4")}
+                          style={{
+                            color: isHovered1 ? "#ffffff" : "#ffffff",
+                            opacity: isHovered1 ? 0.7 : 1,
+                            backgroundColor: isHovered1 ? "#4d94ff" : "#007bff",
+                          }}
+                          onMouseEnter={handleMouseEnter1}
+                          onMouseLeave={handleMouseLeave1}
                         >
                           Write an article
                         </Button>

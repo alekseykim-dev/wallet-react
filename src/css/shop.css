@@ -19,7 +19,14 @@
     background-repeat: no-repeat;
     position: absolute;
     left: -50px;
-    top: 400px;
+    top: 600px;
+}
+
+.back111{
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 0px;
+    bottom: 50px;
 }
 
 .shop_page .all_shops .fill_search_box {
@@ -258,33 +265,6 @@
     top: 50px;
 }
 
-.back15 {
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 100px;
-    top: 1050px;
-}
-
-.back16 {
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 100px;
-    top: 1500px;
-}
-
-.back17 {
-    background-repeat: no-repeat;
-    position: absolute;
-    right: 20px;
-    top: 1860px;
-}
-
-.back18 {
-    background-repeat: no-repeat;
-    position: absolute;
-    left: -90px;
-    top: 2150px;
-}
 .shop_page .single_shop {
     width: 100%;
     height: auto;

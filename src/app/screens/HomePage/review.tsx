@@ -56,7 +56,7 @@ export function Experts() {
   return (
     <div className="review_for_shop">
       <div className="review_container" style={{display: "flex", width: "100%"}}>
-        <Box className={"category_title_review"}>Experts' opinion</Box>
+        <Box className={"category_title_review"}>Food For Thought</Box>
         
         <Swiper
           className={"swiper-wrapper"}

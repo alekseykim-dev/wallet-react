@@ -118,9 +118,9 @@ export const TuiEditor = (props: any) => {
               <MenuItem value="">
                 <span>Choose category</span>
               </MenuItem>
-              <MenuItem value={"celebrity"}>Celebrity</MenuItem>
-              <MenuItem value={"evaluation"}>Evaluation</MenuItem>
-              <MenuItem value={"story"}>My story</MenuItem>
+              <MenuItem value={"News"}>News</MenuItem>
+              <MenuItem value={"Evaluation"}>Shop Review</MenuItem>
+              <MenuItem value={"Security"}>Security Tips</MenuItem>
             </Select>
           </FormControl>
         </Box>

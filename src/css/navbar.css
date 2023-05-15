@@ -8,17 +8,17 @@
 
 .format_shop.home_navbar {
     width: 100%;
-    height: 540px;
+    height: 535px;
     display: flex;
-    background: url("/public/store/header_store_main.jpg");
+    background: url("/public/store/fc.jpg");
     background-size: cover;
 }
 
 .format_others.home_navbar {
     width: 100%;
-    height: 540px;
+    height: 535px;
     display: flex;
-    background: url("/public/store/header_store_main.jpg");
+    background: url("/public/store/fc.jpg");
     background-size: cover;
 }
 
@@ -47,7 +47,7 @@
     background-color: #282828;
     align-items: center;
     width: 100%;
-    z-index: 9999;
+    z-index: 99;
     transition: top 0.3s ease;
     
 }
