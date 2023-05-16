@@ -19,6 +19,7 @@ import { BoArticle } from "../../../types/boArticle";
 import CommunityApiService from "../../apiServices/communityApiService";
 import { serverApi } from "../../../lib/config";
 import TViewer from "../../components/tuiEditor/TViewer";
+import { useHistory } from "react-router-dom";
 
 /** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
@@ -42,12 +43,18 @@ const newsBoArticlesRetriever = createSelector(
 
 export function Recommendations() {
   /** INITIALIZATIONS */
-  const { setNewsBoArticles, setTrendBoArticles } =
-    actionDispatch(useDispatch());
- 
+  const history = useHistory();
+  const { setNewsBoArticles, setTrendBoArticles } = actionDispatch(
+    useDispatch()
+  );
+
   const { trendBoArticles } = useSelector(trendBoArticlesRetriever);
   const { newsBoArticles } = useSelector(newsBoArticlesRetriever);
 
+  /** HANDLERS */
+  const chosenArticleHandler = () => {
+    history.push(`/community/`);
+  };
   useEffect(() => {
     const communityService = new CommunityApiService();
     communityService
@@ -70,7 +77,7 @@ export function Recommendations() {
       .then((data) => setNewsBoArticles(data))
       .catch((err) => console.log(err));
   }, []);
-  
+
   return (
     <div className={"top_article_frame"}>
       <Container
@@ -82,13 +89,17 @@ export function Recommendations() {
           <Box className={"category_title"}>Reading Hub</Box>
           <Stack className={"article_main"} flexDirection={"row"}>
             <Stack className={"article_container"}>
-              <Box className={"article_category"}>News</Box>
+              <Box className={"article_category"}>Trending News</Box>
               {newsBoArticles?.map((article: BoArticle) => {
                 const art_image_url = article?.art_image
                   ? `${serverApi}/${article?.art_image}`
                   : "/community/default_article.svg";
                 return (
-                  <Stack className={"article_box"} key={article._id}>
+                  <Stack
+                    className={"article_box"}
+                    onClick={chosenArticleHandler}
+                    key={article._id}
+                  >
                     <Box
                       className={"article_img"}
                       sx={{
@@ -123,16 +134,18 @@ export function Recommendations() {
             </Stack>
 
             <Stack className={"article_container"}>
-              <Box className={"article_category"}>
-                Security News
-              </Box>
+              <Box className={"article_category"}>Crypto Security News</Box>
 
               {trendBoArticles?.map((article: BoArticle) => {
                 const art_image_url = article?.art_image
                   ? `${serverApi}/${article?.art_image}`
                   : "/community/default_article.svg";
                 return (
-                  <Stack className={"article_box"} key={article._id}>
+                  <Stack
+                    className={"article_box"}
+                    onClick={chosenArticleHandler}
+                    key={article._id}
+                  >
                     <Box
                       className={"article_img"}
                       sx={{

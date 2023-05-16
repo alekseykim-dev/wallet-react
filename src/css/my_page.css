@@ -37,7 +37,7 @@
     flex-direction: column;
     align-items: center;
     background: transparent;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: 1px solid black;
     /* box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 4px rgba(0, 0, 0, 0.25), inset 0px 4px 16px rgba(242, 189, 87, 0.04); */
     border-radius: 16px;
@@ -121,6 +121,7 @@
     line-height: 24px;
     color: #0d263b;
     text-align: center;
+        border-bottom: 1px solid black;
 }
 
 /* ********************************************************** */
@@ -141,12 +142,18 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background: #ffffff;
+    background: transparent;
+    backdrop-filter: blur(10px);
     box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25%), inset 0px 4px 4px rgba(0, 0, 0, 0.25%), inset 0px 4px 16px rgba(242, 189, 87, 0.04);
     border-radius: 10px;
     margin-bottom: 10px;
     align-content: center;
     align-items: center;
+}
+
+.my_page .my_page_right .my_page_menu .menu_box:hover{
+transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
 }
 
 .my_page .my_page_right .my_page_menu .menu_box span {
@@ -185,7 +192,7 @@
     align-items: center;
     gap: 15px;
     background: transparent;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
     border: 1px solid black;
     border-radius: 30px;
     margin-bottom: 10px;
@@ -232,20 +239,23 @@
     font-family: "Poppins",
         sans-serif;
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 18px;
-    line-height: 33px;
+    line-height: 30px;
     color: #000;
+    width: 450px;
+    margin: 10px 0px;
+    
 }
 
 .my_page .my_page_frame .all_article_container .article_time_desc {
-    font-family: "Poppins",
-        sans-serif;
+    font-family: "Poppins", sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 26px;
     color: #282828;
+    margin: 0px;
 }
 
 /* Member Followers page */
@@ -255,13 +265,12 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    background: linear-gradient(180deg,
-            rgba(38, 112, 129, 0.9) 0%,
-            rgba(21, 61, 70, 0.9) 100%);
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15),
-        inset 3px 2px 9px rgba(255, 255, 255, 0.25);
+    background: transparent;
+    backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15), inset 3px 2px 9px rgba(255, 255, 255, 0.25);
     border-radius: 17px;
     margin-bottom: 15px;
+    z-index: 1;
 }
 
 .my_page .menu_content .follow_box .username_text {
@@ -269,10 +278,11 @@
         sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 16px;
-    line-height: 20px;
+    font-size: 15px;
+        line-height: 19px;
+            font-style: italic;
 
-    color: #ffffff;
+    color: #000;
 }
 
 .my_page .menu_content .follow_box .name_text {
@@ -280,68 +290,64 @@
         sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 26px;
+    font-size: 23px;
     line-height: 32px;
 
-    color: #ffffff;
+    color: #000;
+    text-transform: none;
+
 }
 
 .my_page .menu_content .follow_box .following_already {
     width: 160px;
     height: 50px;
-    background: #68c5cb;
-    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25),
-        inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    background: #d1d1d1;
+    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
     border-radius: 26px;
-
-    font-family: "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 20px;
+    font-size: 16px;
     line-height: 24px;
-    color: #ffffff;
+    color: #000;
+    text-transform: none;
 }
 
 .my_page .menu_content .follow_box .follow_btn {
     width: 160px;
     height: 50px;
-
-    background: #30945e;
-    border: 1px solid #ffffff;
-    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25),
-        inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    background: #d1d1d1;
+    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
     border-radius: 26px;
-
-    font-family: "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    color: #ffffff;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+    text-transform: none;
 }
 
 /* MemberFollowin page */
 
 .my_page .menu_content .follow_box .follow_cancel_btn {
-    width: 185px;
-    height: 57px;
-    background: #e81010;
-    border: 1px solid #ffffff;
-    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25),
-        inset 0px 4px 4px rgba(255, 255, 255, 0.25);
+    width: 160px;
+    height: 50px;
+    background: #d1d1d1;
+    box-shadow: 1px 4px 6px rgba(211, 211, 211, 0.25), inset 0px 4px 4px rgba(255, 255, 255, 0.25);
     border-radius: 26px;
-
-    font-family: "Montserrat",
-        sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 12px;
-    line-height: 15px;
-    text-align: center;
+    font-size: 16px;
+    line-height: 24px;
+    color: #000;
+    text-transform: none;
+}
 
-    color: #ffffff;
+.my_page .menu_content .follow_box .follow_cancel_btn:hover{
+    transform: scale(1.03);
+        transition: transform 0.3s ease-in-out;
 }
 
 /* Mysettings page */
@@ -457,3 +463,24 @@
 }
 
 /* Tui Editor page */
+
+
+.back_mb{
+    background-repeat: no-repeat;
+        position: absolute;
+        left: -50px;
+        top: 200px;
+}
+
+.back_mb1 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 40px;
+    top: 100px;
+}
+.back_mb2 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 370px;
+    top: 600px;
+}

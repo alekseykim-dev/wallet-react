@@ -89,10 +89,13 @@ export function MemberFollowing(props: any) {
   
   return (
     <Stack>
+      <img className="back_mb" src="/icons/bit_back3.svg" alt="" />
+      <img className="back_mb1" src="/icons/bit_back4.svg" alt="" />
+      <img className="back_mb2" src="/icons/bit_back4.svg" alt="" />
       {memberFollowings.map((following: Following) => {
         const image_url = following?.follow_member_data?.mb_image
           ? `${serverApi}/${following.follow_member_data.mb_image}`
-          : "/auth/default_user.svg";
+          : "/auth/user_art.svg";
         return (
           <Box className="follow_box">
             <Avatar
@@ -127,12 +130,6 @@ export function MemberFollowing(props: any) {
             {props.actions_enabled && (
               <Button
                 variant="contained"
-                startIcon={
-                  <img
-                    src="/icons/follow_icon.svg"
-                    style={{ width: "30px", marginLeft: "16px" }}
-                  />
-                }
                 className="follow_cancel_btn"
                 onClick={(e) => unsubscriberHandler(e, following?.follow_id)}
               >

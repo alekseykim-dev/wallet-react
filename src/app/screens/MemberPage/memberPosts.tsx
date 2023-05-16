@@ -46,6 +46,9 @@ export function MemberPosts(props: any) {
   // chosenArticle starting point
   return (
     <Box className="post_content">
+      <img className="back_mb" src="/icons/bit_back3.svg" alt="" />
+      <img className="back_mb1" src="/icons/bit_back4.svg" alt="" />
+      <img className="back_mb2" src="/icons/bit_back4.svg" alt="" />
       {chosenMemberBoArticles.map((article: BoArticle) => {
         const image_path = article.art_image
           ? `${serverApi}/${article.art_image}`
@@ -86,9 +89,9 @@ export function MemberPosts(props: any) {
               </Box>
 
               <Box
-                sx={{ display: "flex" }}
+                sx={{ display: "flex", height: "30px" }}
                 flexDirection={"column"}
-                justifyContent={"flex-end"}
+                justifyContent={"center"}
               >
                 <Box
                   sx={{ display: "flex" }}

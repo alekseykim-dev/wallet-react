@@ -95,10 +95,13 @@ export function MemberFollowers(props: any) {
   
   return (
     <Stack>
+      <img className="back_mb" src="/icons/bit_back3.svg" alt="" />
+      <img className="back_mb1" src="/icons/bit_back4.svg" alt="" />
+      <img className="back_mb2" src="/icons/bit_back4.svg" alt="" />
       {memberFollowers.map((follower: Follower) => {
         const image_url = follower?.subscriber_member_data?.mb_image
           ? `${serverApi}/${follower.subscriber_member_data.mb_image}`
-          : "/auth/default_user.svg";
+          : "/auth/user_art.svg";
         return (
           <Box className="follow_box">
             <Avatar
@@ -141,12 +144,6 @@ export function MemberFollowers(props: any) {
               ) : (
                 <Button
                   variant="contained"
-                  startIcon={
-                    <img
-                      src="/icons/follow_icon.svg"
-                      style={{ width: "28px" }}
-                    />
-                  }
                   className="follow_btn"
                   onClick={(e) => subscriberHandler(e, follower?.subscriber_id)}
                 >

@@ -10,9 +10,9 @@ import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import { Box, Button, Container, Stack } from "@mui/material";
 import SettingsIcon from "@mui/icons-material/Settings";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TelegramIcon from "@mui/icons-material/Telegram";
 import InstagramIcon from "@mui/icons-material/Instagram";
-import YouTubeIcon from "@mui/icons-material/YouTube";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import { MemberPosts } from "./memberPosts";
 import { MemberFollowers } from "./memberFollowers";
 import { MemberFollowing } from "./memberFollowing";
@@ -271,10 +271,18 @@ export function VisitMyPage(props: any) {
                 </Box>
 
                 <Box className="user_media_box">
-                  <FacebookIcon />
-                  <InstagramIcon />
-                  <TelegramIcon />
-                  <YouTubeIcon />
+                  <a href="https://github.com/alekseykim-dev">
+                    <GitHubIcon />
+                  </a>
+                  <a href="https://www.linkedin.com/in/aleksey-kim-61a916195/">
+                    <LinkedInIcon />
+                  </a>
+                  <a href="https://instagram.com">
+                    <InstagramIcon />
+                  </a>
+                  <a href="https://www.facebook.com">
+                    <FacebookIcon />
+                  </a>
                 </Box>
                 <Box className="user_media_box">
                   <p className="follows">

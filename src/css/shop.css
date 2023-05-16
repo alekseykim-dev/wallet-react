@@ -766,7 +766,7 @@
 }
 
 
-/** CHOSEN DISH PAGE*/
+/** CHOSEN PRODUCT PAGE*/
 
 .shop_page .chosen_product_page {
     position: relative;
@@ -775,13 +775,28 @@
     display: flex;
     flex-direction: column;
     background: #f5f5f5;
+    margin: 60px 0px;
+}
+
+.back_product{
+        background-repeat: no-repeat;
+            position: absolute;
+            left: -60px;
+            top: 0px;
+}
+
+.back_product1{
+    background-repeat: no-repeat;
+        position: absolute;
+        right: 0px;
+        top: 400px;
+    
 }
 
 .chosen_product_page .product_container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 60px 0;
 }
 
 .chosen_product_page .chosen_product_slider {

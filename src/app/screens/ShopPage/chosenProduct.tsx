@@ -130,6 +130,8 @@ export function ChosenProduct(props: any) {
 
   return (
     <div className="chosen_product_page">
+      <img className="back_product" src="/icons/bit_back4.svg" alt="" />
+      <img className="back_product1" src="/icons/bit_back3.svg" alt="" />
       <Container className="product_container">
         <Stack className="chosen_product_slider">
           <Swiper

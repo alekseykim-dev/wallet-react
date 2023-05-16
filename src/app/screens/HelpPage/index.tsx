@@ -181,7 +181,7 @@ export function HelpPage() {
                 <Stack className="accordion_menu">
                   {faq.map((ele, index) => {
                     return (
-                      <Accordion className="accordion" key={index}>
+                      <Accordion style={{margin: "0px"}} className="accordion" key={index}>
                         <AccordionSummary
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panelia-content"

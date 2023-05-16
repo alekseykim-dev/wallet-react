@@ -825,8 +825,8 @@
 .attention_img.left,
 .lock_img.right {
      /* Add your attention and lock image styles here */
-  animation: shakeIcon 5s ease infinite; /* Apply the animation with 0.4 seconds duration */
-  transform-origin: center; /* Set the rotation origin to the center of the icon */
+  animation: shakeIcon 5s linear infinite; /* Apply the animation with 0.4 seconds duration */
+  transform-origin: top; /* Set the rotation origin to the center of the icon */
 }
         @keyframes shakeIcon {
             0% {
@@ -834,18 +834,18 @@
                 /* Start position */
             }
     
-            25% {
-                transform: translateX(-5px) rotate(-5deg);
+             25% {
+                transform: translateX(0) rotate(-12deg);
                 /* Shake to the left */
             }
     
             75% {
-                transform: translateX(5px) rotate(5deg);
+                transform: translateX(0) rotate(12deg);
                 /* Shake to the right */
             }
-    
+            
             100% {
-                transform: translateX(0);
+                transform: translateX(0) ;
                 /* End position */
             }
         }
