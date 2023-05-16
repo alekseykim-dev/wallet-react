@@ -42,7 +42,8 @@ export function TargetArticles(props: any) {
           : "/community/default_article.svg";
         return (
           <Link
-            className={"all_article_box"} key={article._id}
+            className={"all_article_box"}
+            key={article._id}
             sx={{ textDecoration: "none" }}
             href={`/member-page/other?mb_id=${article.mb_id}&art_id=${article._id}`}
           >
@@ -53,7 +54,11 @@ export function TargetArticles(props: any) {
             <Box className={"all_article_container"}>
               <Box alignItems={"center"} display={"flex"}>
                 <img
-                  src={verifiedMemberData?.mb_image}
+                  src={
+                    article?.member_data?.mb_image
+                      ? `${serverApi}/${article?.member_data?.mb_image}`
+                      : "/auth/user_art.svg"
+                  }
                   width={"35px"}
                   style={{ borderRadius: "50%", backgroundSize: "cover" }}
                 />
@@ -99,10 +104,7 @@ export function TargetArticles(props: any) {
                     <span className="article_time_desc">
                       {article?.art_likes}{" "}
                     </span>
-                    <RemoveRedEyeIcon
-                      style={{ color: "5a5a72" }}
-                      
-                    />
+                    <RemoveRedEyeIcon style={{ color: "5a5a72" }} />
                     <span className="article_time_desc">
                       {article?.art_views}
                     </span>

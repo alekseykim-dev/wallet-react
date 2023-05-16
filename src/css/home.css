@@ -490,6 +490,11 @@
     cursor: pointer;
 }
 
+.homepage .article_container .article_box:hover{
+    transform: scale(1.03);
+    transition: transform 0.3s ease-in-out;
+}
+
 .homepage .article_container .article_news {
     width: 100%;
     border-radius: 20px;
@@ -513,13 +518,15 @@
 
 .homepage .article_box .article_info {
     padding: 10px 0px;
-    width: 318px;
+    width: 420px;
     height: auto;
 
     display: flex;
     justify-content: center;
     align-items: center;
     background: #ffffff;
+    border-radius: 20px;
+    
 }
 
 .homepage .article_info .article_main_info {
@@ -550,10 +557,10 @@
     display: flex;
     font-family: "Poppins", sans-serif;
     font-style: normal;
-    font-weight: 600;
-    font-size: 20px;
-    line-height: 33px;
-    color: #686868;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
+    color: #000;
 }
 
 .homepage .article_main_info .article_desc {

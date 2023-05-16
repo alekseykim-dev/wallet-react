@@ -120,7 +120,7 @@ export const TuiEditor = (props: any) => {
               </MenuItem>
               <MenuItem value={"News"}>News</MenuItem>
               <MenuItem value={"Evaluation"}>Shop Review</MenuItem>
-              <MenuItem value={"Security"}>Security Tips</MenuItem>
+              <MenuItem value={"Security"}>Security</MenuItem>
             </Select>
           </FormControl>
         </Box>

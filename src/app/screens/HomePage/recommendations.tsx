@@ -123,8 +123,8 @@ export function Recommendations() {
             </Stack>
 
             <Stack className={"article_container"}>
-              <Box className={"article_category"} sx={{ marginTop: "10px" }}>
-                Security Tips
+              <Box className={"article_category"}>
+                Security News
               </Box>
 
               {trendBoArticles?.map((article: BoArticle) => {
@@ -147,7 +147,7 @@ export function Recommendations() {
                             src={
                               article?.member_data?.mb_image
                                 ? `${serverApi}/${article?.member_data?.mb_image}`
-                                : "/auth/default_user.svg"
+                                : "/auth/user_art.svg"
                             }
                             sx={{ width: "35px", height: "35px" }}
                           />
