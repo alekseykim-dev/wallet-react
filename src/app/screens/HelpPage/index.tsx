@@ -17,6 +17,7 @@ import {
 import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { EmailJSResponseStatus } from "emailjs-com";
+import { sweetTopSmallSuccessAlert, sweetTopSuccessAlert } from "../../../lib/sweetAlert";
 
 export function HelpPage() {
   /* INITIALIZATION */
@@ -159,6 +160,7 @@ export function HelpPage() {
         .then(
           (result) => {
             console.log(result.text);
+            sweetTopSmallSuccessAlert("Email sent!📨", 1000, false);
             form.current?.reset();
           },
           (error) => {
