@@ -74,17 +74,17 @@ export function Footer() {
               </Box>
               <Box className="targets">
                 <NavLink to="/shop" onClick={handleClickShop}>
-                  Stores
+                  Brands
                 </NavLink>
               </Box>
               <Box className="targets">
                 <NavLink to="/community" onClick={handleClickOther}>
-                  Community
+                  Articles
                 </NavLink>
               </Box>
               <Box className="targets">
                 <NavLink to="/help" onClick={handleClickOther}>
-                  Help
+                  Send us an email
                 </NavLink>
               </Box>
             </Stack>

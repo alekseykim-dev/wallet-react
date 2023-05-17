@@ -116,7 +116,7 @@ export function NavbarOthers(props: any) {
           >
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/shop" activeClassName="underline">
-                Shops
+                Brands
               </NavLink>
             </Box>
 
@@ -128,7 +128,7 @@ export function NavbarOthers(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/community" activeClassName="underline">
-                Community
+                Articles
               </NavLink>
             </Box>
 
@@ -140,7 +140,7 @@ export function NavbarOthers(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/help" activeClassName="underline">
-                Help
+                FAQ
               </NavLink>
             </Box>
           </Stack>

@@ -75,6 +75,7 @@
     margin-top: 30px;
     display: flex;
     flex-direction: column;
+    align-items: center;    
 }
 
 .help_page .admin_letter_frame span {
@@ -107,8 +108,7 @@
 }
 
 .help_page .admin_letter_frame .admin_input_box label {
-    font-family: "Verdana",
-        sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: 16px;
@@ -127,8 +127,7 @@
     border: 1px solid #dddddd;
     border-radius: 8px;
 
-    font-family: "Verdana",
-        sans-serif;
+        font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -147,8 +146,7 @@
     border: 1px solid #dddddd;
     border-radius: 8px;
 
-    font-family: "Verdana",
-        sans-serif;
+        font-family: 'Montserrat', sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -166,8 +164,8 @@
 .back29 {
     background-repeat: no-repeat;
     position: absolute;
-    left: 350px;
-    top: 600px;
+    left: 300px;
+    top: 670px;
 }
 .back39 {
     background-repeat: no-repeat;

@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useRef } from "react";
 import "../../../css/help.css";
 import { TabContext } from "@mui/lab";
 import Tab from "@mui/material/Tab";
 import TabList from "@mui/lab/TabList";
+import emailjs from 'emailjs-com'
 import TabPanel from "@mui/lab/TabPanel";
 import {
   AccordionDetails,
@@ -15,6 +16,7 @@ import {
 } from "@mui/material";
 import Accordion from "@mui/material/Accordion";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { EmailJSResponseStatus } from "emailjs-com";
 
 export function HelpPage() {
   /* INITIALIZATION */
@@ -141,6 +143,31 @@ export function HelpPage() {
     `7.1 These Rules shall be governed by and construed in accordance with the laws of South Korea. Any disputes arising out of or in connection with these Rules shall be subject to the exclusive jurisdiction of the courts of South Korea.`,
   ];
 
+ const form = useRef<HTMLFormElement | null>(null);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+
+    if (form.current) {
+      emailjs
+        .sendForm(
+          "service_dh84v0r",
+          "template_yax7a3q",
+          form.current as HTMLFormElement,
+          "2ZLiZQsgG39Nwfnd7"
+        )
+        .then(
+          (result) => {
+            console.log(result.text);
+            form.current?.reset();
+          },
+          (error) => {
+            console.log(error.text);
+          }
+        );
+    }
+  };
+
   /* HANDLES */
   const handleChange = (event: any, newValue: string) => {
     setValue(newValue);
@@ -211,15 +238,20 @@ export function HelpPage() {
                 <Stack className="admin_letter_box">
                   <Stack className="admin_letter_container">
                     <Box className="admin_letter_frame">
-                      <span>Send an email to ADMIN</span>
-                      <p>
+                      <span>
+                        Send an email to{" "}
+                    
+                          <u>admin</u>.
+                        
+                      </span>
+                      <p style={{fontSize: "16px"}}>
                         You can fill out the fields and let the admin know your
                         thoughts{" "}
                       </p>
                     </Box>
                     <form
-                      action="#"
-                      method="POST"
+                      onSubmit={sendEmail}
+                      ref={form}
                       className="admin_letter_frame"
                     >
                       <div className="admin_input_box">
@@ -228,6 +260,7 @@ export function HelpPage() {
                           type="text"
                           name="mb_nick"
                           placeholder="Write your name"
+                          required
                         />
                       </div>
                       <div className="admin_input_box">
@@ -236,6 +269,7 @@ export function HelpPage() {
                           type="text"
                           name="mb_email"
                           placeholder="Write your e-mail address"
+                          required
                         />
                       </div>
                       <div className="admin_input_box">
@@ -243,6 +277,7 @@ export function HelpPage() {
                         <textarea
                           name="mb_msg"
                           placeholder="Write your message here"
+                          required
                         ></textarea>
                       </div>
                       <Box
