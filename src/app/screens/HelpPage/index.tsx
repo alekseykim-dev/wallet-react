@@ -266,7 +266,7 @@ export function HelpPage() {
                       <div className="admin_input_box">
                         <label>E-mail address</label>
                         <input
-                          type="text"
+                          type="email"
                           name="mb_email"
                           placeholder="Write your e-mail address"
                           required
