@@ -87,10 +87,10 @@ export function CommunityPage(props: any) {
           <div className="category_title">Stay Informed</div>
 
           <Stack flexDirection={"row"} justifyContent={"center"}>
-            <Stack
-              className="community_all_frame"
-              inputMode={"text"}
-            >
+    
+            <img className="back1001" src="/icons/bit_back4.svg" alt="" />
+            <img className="back10001" src="/icons/bit_back4.svg" alt="" />
+            <Stack className="community_all_frame" inputMode={"text"}>
               <TabContext value={value}>
                 <Box className="article_tabs">
                   <Box sx={{ borderBottom: 1, borderColor: "divider" }}>

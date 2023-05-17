@@ -43,22 +43,22 @@ export function Footer() {
               </Box>
               <Stack className="contact_links">
                 <Box>
-                  <a href="https://youtu.be/EOK6_cX35QM">
+                  <a href="https://github.com/alekseykim-dev">
                     <img src="/icons/facebook1.svg" alt="facebook" />
                   </a>
                 </Box>
                 <Box>
-                  <a href="https://youtu.be/EOK6_cX35QM">
+                  <a href="https://www.linkedin.com/in/aleksey-kim-61a916195/">
                     <img src="/icons/twitter1.svg" alt="twitter" />
                   </a>
                 </Box>
                 <Box>
-                  <a href="https://youtu.be/cU0Wz1ez3J0">
+                  <a href="https://github.com/alekseykim-dev">
                     <img src="/icons/instagram1.svg" alt="instagram" />
                   </a>
                 </Box>
                 <Box>
-                  <a href="https://youtu.be/cU0Wz1ez3J0">
+                  <a href="https://www.linkedin.com/in/aleksey-kim-61a916195/">
                     <img src="/icons/youtube1.svg" alt="youtube" />
                   </a>
                 </Box>

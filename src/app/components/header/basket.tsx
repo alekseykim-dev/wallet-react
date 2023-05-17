@@ -82,6 +82,7 @@ export default function Basket(props: any) {
             backdropFilter: "blur(20px)", // Apply blur effect to the background
             backgroundColor: "transparent", // Set the background color to transparent
             mt: "20px",
+            borderRadius: "0px 0px 15px 15px",
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,
@@ -157,7 +158,7 @@ export default function Basket(props: any) {
                 onClick={processOrderHandler}
                 startIcon={<ShoppingCartIcon />}
                 variant={"outlined"}
-                style={{color: "#f5f5f5"}}
+                style={{ color: "#f5f5f5" }}
               >
                 Place Order
               </Button>

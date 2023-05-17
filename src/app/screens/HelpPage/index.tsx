@@ -148,6 +148,9 @@ export function HelpPage() {
 
   return (
     <div className="help_page">
+      <img className="back19" src="/icons/bit_back3.svg" alt="" />
+      <img className="back29" src="/icons/bit_back4.svg" alt="" />
+      <img className="back39" src="/icons/bit_back4.svg" alt="" />
       <Container sx={{ mt: "50px", mb: "50px" }}>
         <TabContext value={value}>
           <Box className="help_menu">
@@ -181,13 +184,19 @@ export function HelpPage() {
                 <Stack className="accordion_menu">
                   {faq.map((ele, index) => {
                     return (
-                      <Accordion style={{margin: "0px"}} className="accordion" key={index}>
+                      <Accordion
+                        style={{ margin: "0px" }}
+                        className="accordion"
+                        key={index}
+                      >
                         <AccordionSummary
                           expandIcon={<ExpandMoreIcon />}
                           aria-controls="panelia-content"
                           id="panella-header"
                         >
-                          <Typography>{ele.num} {ele.question}</Typography>
+                          <Typography>
+                            {ele.num} {ele.question}
+                          </Typography>
                         </AccordionSummary>
                         <AccordionDetails>
                           <Typography>{ele.answer}</Typography>
@@ -215,7 +224,11 @@ export function HelpPage() {
                     >
                       <div className="admin_input_box">
                         <label>Name</label>
-                        <input type="text" name="mb_nick" placeholder="Write your name" />
+                        <input
+                          type="text"
+                          name="mb_nick"
+                          placeholder="Write your name"
+                        />
                       </div>
                       <div className="admin_input_box">
                         <label>E-mail address</label>
@@ -227,7 +240,10 @@ export function HelpPage() {
                       </div>
                       <div className="admin_input_box">
                         <label>Message</label>
-                        <textarea name="mb_msg" placeholder="Write your message here"></textarea>
+                        <textarea
+                          name="mb_msg"
+                          placeholder="Write your message here"
+                        ></textarea>
                       </div>
                       <Box
                         display={"flex"}

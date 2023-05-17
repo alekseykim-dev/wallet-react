@@ -64,6 +64,7 @@ export default function Favorites(props: any) {
             backdropFilter: "blur(20px)", // Apply blur effect to the background
             backgroundColor: "transparent", // Set the background color to transparent
             mt: "20px",
+            borderRadius: "0px 0px 15px 15px",
             "& .MuiAvatar-root": {
               width: 32,
               height: 32,

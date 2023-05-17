@@ -38,6 +38,16 @@ import {
   sweetTopSmallSuccessAlert,
 } from "../../../lib/sweetAlert";
 import { verifiedMemberData } from "../../apiServices/verify";
+import { Star } from "@mui/icons-material";
+import StarIcon from "@mui/icons-material/Star";
+
+
+interface Comment {
+  id: number;
+  name: string;
+  comment: string;
+  rating: number;
+}
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -71,8 +81,8 @@ export function ChosenProduct(props: any) {
     setIsHovered1(false);
   };
 
-
-
+  
+  
   /** INITIALIZATIONS */
   let { product_id: product_id } = useParams<{ product_id: string }>();
   const { setChosenProduct, setChosenShop: setChosenShop } = actionDispatch(
@@ -128,10 +138,47 @@ export function ChosenProduct(props: any) {
     }
   };
 
+  const [rating, setRating] = useState<number | null>(null);
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  const [comments, setComments] = useState<Comment[]>([]);
+  const [lastCommentId, setLastCommentId] = useState(0);
+  const [ratingError, setRatingError] = useState("");
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+
+    if (!rating) {
+      setRatingError("Rating is required."); // Display an error message
+      return;
+    }
+    const newComment: Comment = {
+      id: lastCommentId + 1,
+      name,
+      comment,
+      rating: rating || 0,
+    };
+
+    // TODO: Implement logic to submit the comment
+    submitCommentToServer(newComment);
+  };
+  const submitCommentToServer = (comment: Comment) => {
+    setTimeout(() => {
+      setComments([...comments, comment]);
+      setName("");
+      setComment("");
+      setRating(null);
+      setLastCommentId(comment.id);
+      sweetTopSmallSuccessAlert("Comment submitted!", 700, false);
+
+    }, 1000);
+  };
+  
   return (
     <div className="chosen_product_page">
       <img className="back_product" src="/icons/bit_back4.svg" alt="" />
       <img className="back_product1" src="/icons/bit_back3.svg" alt="" />
+      <div className="details">Product details:</div>
       <Container className="product_container">
         <Stack className="chosen_product_slider">
           <Swiper
@@ -175,11 +222,13 @@ export function ChosenProduct(props: any) {
             </strong>
             <span className="shop_name">{chosenShop?.mb_nick}</span>
             <Box className="rating_box">
-              <Rating
-                name="half-rating"
-                defaultValue={4.5}
-                precision={0.5}
-              ></Rating>
+              <p>
+                <StarIcon style={{ color: "#F2BD57" }} />
+                <StarIcon style={{ color: "#F2BD57" }} />
+                <StarIcon style={{ color: "#F2BD57" }} />
+                <StarIcon style={{ color: "#F2BD57" }} />
+                <StarIcon style={{ color: "#F2BD57" }} />
+              </p>
               <div className="evaluation_box">
                 <div
                   style={{
@@ -255,6 +304,84 @@ export function ChosenProduct(props: any) {
           </Box>
         </Stack>
       </Container>
+      <div className="details_comments">Write a comment</div>
+      <div className="comment_cont">
+        <form onSubmit={handleSubmit} className="comment_cont_form">
+          <div>
+            <label htmlFor="name" className="comment_cont_label">
+              Name:
+            </label>
+            <input
+              type="text"
+              id="name"
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              required
+              className="comment_cont_input"
+              placeholder="Type your name"
+            />
+          </div>
+          <div>
+            <label
+              htmlFor="comment"
+              className="comment_cont_label_comment"
+            ></label>
+            <textarea
+              id="comment"
+              value={comment}
+              onChange={(event) => setComment(event.target.value)}
+              required
+              className="comment_cont_input"
+              style={{ width: "1000px", height: "200px" }}
+              placeholder="Type your comment here"
+            ></textarea>
+          </div>
+          <div>
+            <label htmlFor="rating" className="comment_cont_label"></label>
+            <Rating
+              name="rating"
+              value={rating || 0}
+              onChange={(event, value) => setRating(value)}
+              className="comment_cont_rating"
+            />
+            {ratingError && <p>{ratingError}</p>} {/* Display error message */}
+          </div>
+          <Button
+            type="submit"
+            className="comment_cont_button"
+            style={{
+              color: isHovered1 ? "#ffffff" : "#ffffff",
+              opacity: isHovered1 ? 0.6 : 1,
+              backgroundColor: isHovered1 ? "#4d94ff" : "#007bff",
+            }}
+            onMouseEnter={handleMouseEnter1}
+            onMouseLeave={handleMouseLeave1}
+          >
+            Publish
+          </Button>
+        </form>
+
+        {comments.length > 0 && (
+          <div style={{ width: "1000px" }}>
+            <h2>Comments:</h2>
+            {comments.map((comment) => (
+              <div key={comment.id} className="submitted_comment">
+                <p className="comment_cont_name">{comment.name}</p>
+                {comment.rating && (
+                  <p className="comment_cont_rating">
+                    {Array(comment.rating)
+                      .fill("")
+                      .map((_, index) => (
+                        <Star key={index} className="star" />
+                      ))}
+                  </p>
+                )}
+                <p className="comment_cont_comment">{comment.comment}</p>
+              </div>
+            ))}
+          </div>
+        )}
+      </div>
     </div>
   );
 }

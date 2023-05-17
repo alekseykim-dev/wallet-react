@@ -18,6 +18,7 @@
 .help_page .help_main_content {
     width: 95%;
     margin: auto;
+    z-index: 1;
 }
 
 .help_page .help_main_content .theRulesFrame {
@@ -153,4 +154,24 @@
     font-size: 15px;
     line-height: 26px;
     color: #4f547b;
+}
+
+.back19{
+        background-repeat: no-repeat;
+            position: absolute;
+            left: -80px;
+            top: 1250px;
+}
+
+.back29 {
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 350px;
+    top: 600px;
+}
+.back39 {
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 50px;
+    top: 950px;
 }

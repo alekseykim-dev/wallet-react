@@ -129,6 +129,7 @@ export function TopShops() {
                         />
                       </CardCover>
                       <CardCover
+                        className="card_swiper"
                         sx={{
                           borderRadius: "10px 0px 0px 10px",
                           background:
