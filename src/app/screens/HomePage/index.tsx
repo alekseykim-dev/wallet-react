@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Statistics } from "./shopInfo";
-import { TopShops } from "./recommendedShops";
+import { TopShops } from "./RecommendedShops";
 import { BestShops } from "./bestShops";
 import { BestProducts } from "./bestProducts";
 import { Advertisements } from "./advertisements";
