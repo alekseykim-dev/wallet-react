@@ -269,7 +269,7 @@ export function ChosenProduct(props: any) {
                 </div>
               </div>
             </Box>
-            <p className="dish_desc_info">
+            <p className="product_desc_info">
               {chosenProduct?.product_description
                 ? chosenProduct?.product_description
                 : "No description"}
@@ -280,7 +280,7 @@ export function ChosenProduct(props: any) {
               width="100%"
               bg="#000000"
             />
-            <div className="dish_price_box">
+            <div className="product_price_box">
               <span>Price:</span>
               <span>${chosenProduct?.product_price}</span>
             </div>

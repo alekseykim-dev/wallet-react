@@ -46,7 +46,7 @@ export function BestProducts() {
   }
 
   return (
-    <div className="best_dishes_frame">
+    <div className="best_shops_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Box className="category_title">

@@ -865,14 +865,14 @@
     display: flex;
 }
 
-.chosen_product_page .chosen_product_info_box .dish_desc_info {
+.chosen_product_page .chosen_product_info_box .product_desc_info {
     height: 115px;
     font-size: 18px;
     line-height: 22px;
    
 }
 
-.chosen_product_page .chosen_product_info_box .dish_price_box {
+.chosen_product_page .chosen_product_info_box .product_price_box {
     display: flex;
     justify-content: space-between;
     font-size: 20px;
