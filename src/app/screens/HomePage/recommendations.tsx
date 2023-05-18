@@ -114,7 +114,7 @@ export function Recommendations() {
                             src={
                               article?.member_data?.mb_image
                                 ? `${serverApi}/${article?.member_data?.mb_image}`
-                                : "/auth/default_user.svg"
+                                : "/auth/user_art.svg"
                             }
                             sx={{ width: "35px", height: "35px" }}
                           />

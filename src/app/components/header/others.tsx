@@ -150,18 +150,6 @@ export function NavbarOthers(props: any) {
             alignItems={"center"}
             className="navbar_icons"
           >
-            <Favorites
-              favItems={props.favItems}
-              onDeleteFav={props.onDeleteFav}
-            />
-            <Basket
-              cartItems={props.cartItems}
-              onAdd={props.onAdd}
-              onRemove={props.onRemove}
-              onDelete={props.onDelete}
-              onDeleteAll={props.onDeleteAll}
-              setOrderRebuild={props.setOrderRebuild}
-            />
             {!verifiedMemberData ? (
               <Box>
                 <Button
@@ -204,6 +192,18 @@ export function NavbarOthers(props: any) {
                 onClick={props.handleLogOutClick}
               />
             )}
+            <Favorites
+              favItems={props.favItems}
+              onDeleteFav={props.onDeleteFav}
+            />
+            <Basket
+              cartItems={props.cartItems}
+              onAdd={props.onAdd}
+              onRemove={props.onRemove}
+              onDelete={props.onDelete}
+              onDeleteAll={props.onDeleteAll}
+              setOrderRebuild={props.setOrderRebuild}
+            />
 
             <Menu
               anchorEl={props.anchorEl}

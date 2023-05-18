@@ -136,6 +136,7 @@ export function AllShops() {
 
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
+          <div className="brand_welcome">Welcome to the candy shop</div>
           <Box className="fill_search_box">
             <Box className="search_big_box">
               <form className="search_form" action="" method="">

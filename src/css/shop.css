@@ -29,6 +29,17 @@
     bottom: 50px;
 }
 
+.brand_welcome{
+    font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 35px;
+        line-height: 37px;
+        /* margin-bottom: 35px; */
+        margin-top: 90px;
+        color: #222222;
+}
+
 .shop_page .all_shops .fill_search_box {
     position: relative;
     width: 700px;
