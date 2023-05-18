@@ -51,7 +51,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "train": "node train.js"
+    "train": "node train.js",
+    "start:prod": "serve -s build"
   },
   "eslintConfig": {
     "extends": [

@@ -2,7 +2,9 @@ import { Box, Container, Stack } from "@mui/material";
 import moment from "moment";
 import React from "react";
 import { NavLink } from "react-router-dom";
-
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import PhoneCallbackIcon from "@mui/icons-material/PhoneCallback";
+import EmailIcon from "@mui/icons-material/Email";
  const handleClickHome = () => {
    const element = document.getElementById("home");
    if (element) {
@@ -92,15 +94,21 @@ export function Footer() {
               <Box className="find">Contact us</Box>
               <Box className="divider"></Box>
               <Stack className="details" sx={{ mt: "19px" }}>
-                <Box className="detail_first">L.</Box>
+                <Box className="detail_first">
+                  <LocationOnIcon />
+                </Box>
                 <Box className="detail_second">South Korea</Box>
               </Stack>
-              <Stack className="details" sx={{ mt: "42px" }}>
-                <Box className="detail_first">P.</Box>
+              <Stack className="details" sx={{ mt: "10px" }}>
+                <Box className="detail_first">
+                  <PhoneCallbackIcon />{" "}
+                </Box>
                 <Box className="detail_second">+82 10 5851 5310</Box>
               </Stack>
               <Stack className="details" sx={{ mt: "9px" }}>
-                <Box className="detail_first">E.</Box>
+                <Box className="detail_first">
+                  <EmailIcon />
+                </Box>
                 <Box className="detail_second">Bitsafe@gmail.com</Box>
               </Stack>
             </Stack>

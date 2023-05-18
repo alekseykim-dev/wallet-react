@@ -300,7 +300,7 @@ export function AllShops() {
           <Stack className="bottom_box">
             <Pagination
               count={
-                targetSearchObject.page >= 3 ? targetSearchObject.page + 1 : 3
+                3
               } // can do it manually through backend
               page={targetSearchObject.page}
               renderItem={(item) => (
