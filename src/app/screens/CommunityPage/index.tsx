@@ -98,7 +98,7 @@ export function CommunityPage(props: any) {
                       value={value}
                       onChange={handleChange}
                       aria-labelledby="lab API tabs example"
-                      style={{ borderColor: "blue" }}
+                      style={{ borderColor: "blue"}}
                     >
                       <Tab label="All Articles" value={"1"} />
                       <Tab label="News" value={"2"} />

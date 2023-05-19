@@ -284,7 +284,7 @@ export function NavbarHome(props: any) {
         <Stack className="head_information" justifyContent={"row"}>
           <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
             <Box>
-              <img src="/icons/Welcome.svg" alt="welcome" />
+              <span>Welcome to ₿itSafe!</span>
             </Box>
             <Box className="define_shop">
               We provide easy solution for complex problems.

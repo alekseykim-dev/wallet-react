@@ -37,7 +37,7 @@ export function Footer() {
           >
             <Stack className="info" flexDirection={"column"}>
               <Box>
-                <img src="/icons/Bitsafe_footer.svg" alt="logo"></img>
+                <img src="/icons/logo1.svg" alt="logo"></img>
               </Box>
               <Box className="main_text">
                 Experience peace of mind knowing that your digital assets are

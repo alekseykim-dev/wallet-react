@@ -141,6 +141,17 @@
 
 }
 
+.head_information span{
+    font-family: 'Quattrocento Sans', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 44px;
+    
+        color: #F1F1F1;
+
+}
+
 
 
 
