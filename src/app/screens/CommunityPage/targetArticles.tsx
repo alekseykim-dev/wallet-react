@@ -83,12 +83,14 @@ export function TargetArticles(props: any) {
                     className={"article_share_main"}
                     style={{
                       color: "#1f1f1f",
-                      marginLeft: "150px",
+                      marginLeft: "540px",
                       display: "flex",
                       alignItems: "center",
                     }}
                   >
-                    <span>{moment().format("YY-MM-DD HH:mm")}</span>
+                    <span>
+                      {moment(article?.createdAt).format("YY-MM-DD hh:mm")}
+                    </span>
                     <Checkbox
                       sx={{ ml: "40px", padding: "0px" }}
                       icon={<FavoriteBorder />}

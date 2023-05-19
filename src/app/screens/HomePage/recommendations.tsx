@@ -20,6 +20,7 @@ import CommunityApiService from "../../apiServices/communityApiService";
 import { serverApi } from "../../../lib/config";
 import TViewer from "../../components/tuiEditor/TViewer";
 import { useHistory } from "react-router-dom";
+import moment from "moment";
 
 /** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
@@ -125,7 +126,9 @@ export function Recommendations() {
                         <span className={"article_title"}>
                           {article?.art_subject}
                         </span>
-                        <p className={"article_desc"}></p>
+                        <p className={"article_desc"}>
+                          {moment(article?.createdAt).format("YY-MM-DD hh:mm")}
+                        </p>
                       </Box>
                     </Box>
                   </Stack>
@@ -171,7 +174,7 @@ export function Recommendations() {
                         <span className={"article_title"}>
                           {article?.art_subject}
                         </span>
-                        <p className={"article_desc"}></p>
+                        <p className={"article_desc"}>   {moment(article?.createdAt).format("YY-MM-DD hh:mm")}</p>
                       </Box>
                     </Box>
                   </Stack>

@@ -205,7 +205,7 @@ export function NavbarShop(props: any) {
                   overflow: "hidden",
                   backdropFilter: "blur(10px)", // Apply blur effect to the background
                   backgroundColor: "transparent", // Set the background color to transparent
-                  mt: "20px",
+                  mt: "15px",
                   "& .MuiAvatar-root": {
                     width: 32,
                     height: 32,

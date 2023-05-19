@@ -19,7 +19,7 @@ export function Statistics() {
             <div className="character_img middle"></div>
             <div className="character_text">
               <Box className="static_num">24/7 Support </Box>
-              <Box className="static_text">Get support all day</Box>
+              <Box className="static_text">Get support any time</Box>
             </div>
           </Stack>
 
