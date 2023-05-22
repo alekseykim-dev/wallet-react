@@ -44,6 +44,7 @@ import FollowApiService from "../../apiServices/followApiService";
 import { Definer } from "../../../lib/Definer";
 import assert from "assert";
 import { verifiedMemberData } from "../../apiServices/verify";
+import { serverApi } from "../../../lib/config";
 
 /** REDUX SLICE */
 const actionDispatch = (dispatch: Dispatch) => ({
@@ -267,7 +268,7 @@ export function VisitOtherPage(props: any) {
                 </TabPanel>
 
                 <TabPanel value="4">
-                  <Box className="menu_name">Chosen Comments</Box>
+                  <Box className="menu_name">Chosen Article</Box>
                   <Box className={"menu_content"}>
                     <TViewer chosenSingleBoArticles={chosenSingleBoArticles} />
                   </Box>
@@ -285,7 +286,11 @@ export function VisitOtherPage(props: any) {
                   <div className="order_user_img">
                     <img
                       alt="profile img"
-                      src="/auth/default_user.svg"
+                      src={
+                       chosenMember?.mb_image
+                          ? `${serverApi}/${chosenMember?.mb_image}`
+                          : "/auth/default_user.svg"
+                      }
                       className="order_user_avatar"
                       style={{ borderRadius: "50%" }}
                     />
