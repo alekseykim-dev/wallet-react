@@ -150,7 +150,7 @@ export function NavbarHome(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to={"/orders"} activeClassName="underline">
-                My Orders
+                Orders
               </NavLink>
             </Box>
 
@@ -162,7 +162,7 @@ export function NavbarHome(props: any) {
 
             <Box className="hover-line" onClick={props.setPath}>
               <NavLink to="/member-page" activeClassName="underline">
-                My Page
+                Profile
               </NavLink>
             </Box>
 
@@ -240,8 +240,7 @@ export function NavbarHome(props: any) {
                 elevation: 0,
                 sx: {
                   overflow: "hidden",
-                  backdropFilter: "blur(10px)", // Apply blur effect to the background
-                  backgroundColor: "transparent", // Set the background color to transparent
+                  backgroundColor: "#fff", // Set the background color to transparent
                   mt: "15px",
                   "& .MuiAvatar-root": {
                     width: 32,
@@ -270,9 +269,9 @@ export function NavbarHome(props: any) {
                 style={{ color: "#1f1f1f" }}
               >
                 <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "#f5f5f5" }} />
+                  <Logout fontSize="small" style={{ color: "#222222" }} />
                 </ListItemIcon>
-                <span style={{ color: "#f5f5f5", fontWeight: "600" }}>
+                <span style={{ color: "#222222", fontWeight: "600" }}>
                   {" "}
                   Log out
                 </span>

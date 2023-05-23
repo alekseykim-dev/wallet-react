@@ -55,10 +55,12 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* background: #ffffff; */
+    background: #ffffff;
+    -webkit-backdrop-filter: blur(3px);
     backdrop-filter: blur(3px);
-    border: 1px solid #1f1f1f;
+    /* border: 1px solid #1f1f1f; */
     border-radius: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .order_page .order_info_box .order_user_img {
@@ -241,10 +243,10 @@
     width: 100%;
     height: auto;
     margin-bottom: 25px;
-    background: transparent;
-    backdrop-filter: blur(3px);
-    border: 1px solid #1f1f1f;
+    background: #fff;
+    -webkit-backdrop-filter: blur(3px);
     border-radius: 16px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 .order_page .order_main_content .order_main_box .order_box_scroll {

@@ -78,9 +78,9 @@ export default function Basket(props: any) {
         PaperProps={{
           elevation: 0,
           sx: {
-            overflow: "hidden",
-            backdropFilter: "blur(20px)", // Apply blur effect to the background
-            backgroundColor: "transparent", // Set the background color to transparent
+            overflow: "visible",
+            filter: "drop-shadow(0px 2px 8px rgba(0,0,0,0.32))",
+            backgroundColor: "#fff",
             mt: "20px",
             borderRadius: "0px 0px 15px 15px",
             "& .MuiAvatar-root": {
@@ -90,6 +90,7 @@ export default function Basket(props: any) {
               mr: 1,
             },
             "&:before": {
+              content: '""',
               display: "block",
               position: "absolute",
               top: 0,
@@ -102,8 +103,8 @@ export default function Basket(props: any) {
             },
           },
         }}
-        transformOrigin={{ horizontal: "center", vertical: "top" }}
-        anchorOrigin={{ horizontal: "center", vertical: "bottom" }}
+        transformOrigin={{ horizontal: "right", vertical: "top" }}
+        anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
       >
         <Stack className={"basket_frame_basket"}>
           <Box className={"all_check_box"}>
@@ -140,7 +141,7 @@ export default function Basket(props: any) {
                     </Box>
                     <div className={"cancel_btn"}>
                       <CancelIcon
-                        style={{ color: "#f5f5f5" }}
+                        style={{ color: "#ec1f1f" }}
                         onClick={() => onDelete(item)}
                       />
                     </div>
@@ -158,7 +159,7 @@ export default function Basket(props: any) {
                 onClick={processOrderHandler}
                 startIcon={<ShoppingCartIcon />}
                 variant={"outlined"}
-                style={{ color: "#f5f5f5" }}
+                style={{ color: "#222222" }}
               >
                 Place Order
               </Button>

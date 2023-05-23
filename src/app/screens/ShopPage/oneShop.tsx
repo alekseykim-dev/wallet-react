@@ -198,7 +198,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
       <img className="back12" src="/icons/bit_back4.svg" alt="" />
       <img className="back13" src="/icons/bit_back3.svg" alt="" />
       <img className="back14" src="/icons/bit_back4.svg" alt="" />
-     
+
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
           <Stack className="avatar_big_box">
@@ -220,7 +220,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="filter"
                         value="wallet"
                         defaultChecked
@@ -233,7 +233,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="filter"
                         value="accessory"
                         onChange={() =>
@@ -245,7 +245,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="filter"
                         value="bundle"
                         onChange={() =>
@@ -262,7 +262,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="sort"
                         value="createdAt"
                         defaultChecked
@@ -275,7 +275,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="sort"
                         value="product_price"
                         onChange={() =>
@@ -287,7 +287,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="sort"
                         value="product_likes"
                         onChange={() =>
@@ -299,7 +299,7 @@ const handleSingleSelection = (groupName: string, selectedValue: string) => {
                     <label className="checkbox_list">
                       <input
                         className="checkbox_list_input"
-                        type="checkbox"
+                        type="radio"
                         name="sort"
                         value="product_views"
                         onChange={() =>

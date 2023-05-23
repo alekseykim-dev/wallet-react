@@ -18,8 +18,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
-    backgroundColor: "transparent",
-    backdropFilter: "blur(10px)",
+    backgroundColor: "#f5f5f5",
     borderRadius: "2%",
     boxShadow: theme.shadows[5],
     padding: theme.spacing(2, 2, 2),
@@ -134,7 +133,7 @@ const [mb_password, set_mb_password] = useState<string>("");
             sx={{ width: "550px", height: "auto" }}
           >
             <ModalImg />
-            <Stack sx={{ alignItems: "center", color: "#f5f5f5" }}>
+            <Stack sx={{ alignItems: "center", color: "#222222" }}>
               <h2>Welcome to ₿itsafe</h2>
               <h2>Sign up</h2>
               <TextField
@@ -227,7 +226,7 @@ const [mb_password, set_mb_password] = useState<string>("");
             <Stack
               sx={{
                 alignItems: "center",
-                color: "#f5f5f5",
+                color: "#222222",
               }}
             >
               <h2>Log in</h2>
