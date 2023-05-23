@@ -47,6 +47,7 @@ interface Comment {
   name: string;
   comment: string;
   rating: number;
+  productId: string;
 }
 
 /** REDUX SLICE */
@@ -93,28 +94,32 @@ export function ChosenProduct(props: any) {
 
   const label = { inputProps: { "aria-label": "Checkbox demo" } };
   const [productRebuild, setProductRebuild] = useState<Date>(new Date());
+  const [productComments, setProductComments] = useState<Comment[]>([]);
+
   // Date force re-rendering of the state and updates the app
 
   // ProductRelatedProcess updates the chosenProduct and chosenShop in the Redux store
-  const productRelatedProcess = async () => {
-    try {
-      const productService = new ProductApiService();
-      const product: Product = await productService.getChosenProduct(product_id);
-      setChosenProduct(product);
+  
+const productRelatedProcess = async () => {
+  try {
+    const productService = new ProductApiService();
+    const product: Product = await productService.getChosenProduct(product_id);
+    setChosenProduct(product);
+    setProductId(product._id); // Update the productId state with the new chosen product ID
 
-      const shopService = new ShopApiService();
-      const shop: Shop =
-        await shopService.getChosenShop(product.shop_mb_id);
-      setChosenShop(shop);
-    } catch (err) {
-      console.log(`ProductRelatedProcess, ERROR:`, err);
-    }
-  };
+    const shopService = new ShopApiService();
+    const shop: Shop = await shopService.getChosenShop(product.shop_mb_id);
+    setChosenShop(shop);
+  } catch (err) {
+    console.log(`ProductRelatedProcess, ERROR:`, err);
+  }
+};
 
   // retrieve da ta from backend
   useEffect(() => {
     productRelatedProcess().then(); //  prevents a warning from React about an unhandled promise rejection
   }, [productRebuild]);
+
 
   // calls the ProductRelatedProcess function whenever the productRebuild state is updated.
 
@@ -141,7 +146,11 @@ export function ChosenProduct(props: any) {
   const [rating, setRating] = useState<number | null>(null);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  const [comments, setComments] = useState<Comment[]>([]);
+const [comments, setComments] = useState<{ [productId: string]: Comment[] }>(
+  {}
+);
+  const [productId, setProductId] = useState<string | undefined>(undefined);
+
   const [lastCommentId, setLastCommentId] = useState(0);
   const [ratingError, setRatingError] = useState("");
 
@@ -157,22 +166,78 @@ export function ChosenProduct(props: any) {
       name,
       comment,
       rating: rating || 0,
+    productId: chosenProduct?._id || "",
+
     };
 
     // TODO: Implement logic to submit the comment
     submitCommentToServer(newComment);
   };
-  const submitCommentToServer = (comment: Comment) => {
-    setTimeout(() => {
-      setComments([...comments, comment]);
-      setName("");
-      setComment("");
-      setRating(null);
-      setLastCommentId(comment.id);
-      sweetTopSmallSuccessAlert("Comment submitted!", 700, false);
 
-    }, 1000);
+
+
+  const submitCommentToServer = async (comment: Comment) => {
+    try {
+      const response = await fetch(`${serverApi}/comments`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(comment),
+      });
+      if (response.ok) {
+        const newComment = await response.json();
+        const productId = chosenProduct?._id;
+        setComments((prevComments) => {
+          if (productId) {
+            const updatedComments = {
+              ...prevComments,
+              [productId]: [...(prevComments[productId] || []), newComment],
+            };
+            return updatedComments;
+          }
+          return prevComments;
+        });
+
+        setName("");
+        setComment("");
+        setRating(null);
+        sweetTopSmallSuccessAlert("Comment submitted!", 700, false);
+      } else {
+        throw new Error("Failed to submit comment");
+      }
+    } catch (error) {
+      console.error(error);
+      sweetErrorHandling(error).then();
+    }
   };
+
+
+useEffect(() => {
+  const fetchComments = async () => {
+    try {
+      if (productId) {
+        const response = await fetch(
+          `${serverApi}/comments?productId=${productId}`
+        );
+        if (response.ok) {
+          const commentsData = await response.json();
+          setComments((prevComments) => ({
+            ...prevComments,
+            [productId]: commentsData,
+          }));
+        } else {
+          throw new Error("Failed to fetch comments");
+        }
+      }
+    } catch (error) {
+      console.error(error);
+      // Handle error
+    }
+  };
+
+  fetchComments();
+}, [productId]);
   
   return (
     <div className="chosen_product_page">
@@ -361,10 +426,10 @@ export function ChosenProduct(props: any) {
           </Button>
         </form>
 
-        {comments.length > 0 && (
+        {comments[chosenProduct?._id ?? ""]?.length > 0 && (
           <div style={{ width: "1000px" }}>
             <h2>Comments:</h2>
-            {comments.map((comment) => (
+            {comments[chosenProduct?._id ?? ""]?.map((comment: Comment) => (
               <div key={comment.id} className="submitted_comment">
                 <p className="comment_cont_name">{comment.name}</p>
                 {comment.rating && (
