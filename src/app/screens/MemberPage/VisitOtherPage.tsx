@@ -294,9 +294,7 @@ export function VisitOtherPage(props: any) {
                       className="order_user_avatar"
                       style={{ borderRadius: "50%" }}
                     />
-                    <div className="order_user_icon_box">
-                      <img src="/auth/default_user.svg" />
-                    </div>
+                
                   </div>
                   <span className="order_user_name">
                     {chosenMember?.mb_nick}
