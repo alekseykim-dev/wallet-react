@@ -287,14 +287,13 @@ export function VisitOtherPage(props: any) {
                     <img
                       alt="profile img"
                       src={
-                       chosenMember?.mb_image
+                        chosenMember?.mb_image
                           ? `${serverApi}/${chosenMember?.mb_image}`
                           : "/auth/default_user.svg"
                       }
                       className="order_user_avatar"
                       style={{ borderRadius: "50%" }}
                     />
-                
                   </div>
                   <span className="order_user_name">
                     {chosenMember?.mb_nick}
@@ -365,52 +364,60 @@ export function VisitOtherPage(props: any) {
                     )}
                   </TabList>
                 </Box>
-              </Box>
-
-              <Box className="my_page_menu">
-                <TabList
-                  orientation="vertical"
-                  variant="scrollable"
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="Vertical tabs example"
-                  sx={{
-                    borderRight: 1,
-                    borderColor: "divider",
-                    cursor: "pointer",
-                  }}
-                >
-                  <Tab
-                    style={{ flexDirection: "column" }}
-                    value={"1"}
-                    component={(e) => (
-                      <div className={`menu_box`} onClick={() => setValue("1")}>
-                        <img src="/icons/post.svg" />
-                        <span>All Articles</span>
-                      </div>
-                    )}
-                  />
-                  <Tab
-                    style={{ flexDirection: "column" }}
-                    value={"2"}
-                    component={() => (
-                      <div className={`menu_box`} onClick={() => setValue("2")}>
-                        <img src="/icons/followers.svg" />
-                        <span>Followers</span>
-                      </div>
-                    )}
-                  />
-                  <Tab
-                    style={{ flexDirection: "column" }}
-                    value={"3"}
-                    component={() => (
-                      <div className={`menu_box`} onClick={() => setValue("3")}>
-                        <img src="/icons/following.svg" />
-                        <span>Following</span>
-                      </div>
-                    )}
-                  />
-                </TabList>
+                <Box className="my_page_menu">
+                  <TabList
+                    orientation="vertical"
+                    variant="scrollable"
+                    value={value}
+                    onChange={handleChange}
+                    aria-label="Vertical tabs example"
+                    sx={{
+                      borderRight: 1,
+                      borderColor: "divider",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Tab
+                      style={{ flexDirection: "column" }}
+                      value={"1"}
+                      component={(e) => (
+                        <div
+                          className={`menu_box`}
+                          onClick={() => setValue("1")}
+                        >
+                          <img src="/icons/post.svg" />
+                          <span>All Articles</span>
+                        </div>
+                      )}
+                    />
+                    <Tab
+                      style={{ flexDirection: "column" }}
+                      value={"2"}
+                      component={() => (
+                        <div
+                          className={`menu_box`}
+                          onClick={() => setValue("2")}
+                        >
+                          <img src="/icons/followers.svg" />
+                          <span>Followers</span>
+                        </div>
+                      )}
+                    />
+                    <Tab
+                      style={{ flexDirection: "column" }}
+                      value={"3"}
+                      component={() => (
+                        <div
+                          className={`menu_box`}
+                          onClick={() => setValue("3")}
+                        >
+                          <img src="/icons/following.svg" />
+                          <span>Following</span>
+                        </div>
+                      )}
+                    />
+                  </TabList>
+                </Box>
               </Box>
             </Stack>
           </TabContext>

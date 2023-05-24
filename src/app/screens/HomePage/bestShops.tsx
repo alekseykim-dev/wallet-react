@@ -105,14 +105,14 @@ export function BestShops() {
                     </CardOverflow>
                     <Typography
                       level="h2"
-                      sx={{ fontSize: "15px", mt: 1, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: 1, ml: 0.7 }}
                       startDecorator={<BrandingWatermarkRoundedIcon />}
                     >
                       Brand: {ele.mb_nick}{" "}
                     </Typography>
                     <Typography
                       level="body2"
-                      sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 0.7 }}
                     >
                       <Link
                         href="#"
@@ -124,7 +124,7 @@ export function BestShops() {
                     </Typography>
                     <Typography
                       level="body2"
-                      sx={{ fontSize: "15px", mt: 0.1, ml: 1 }}
+                      sx={{ fontSize: "15px", mt: 0.1, ml: 0.7 }}
                     >
                       <Link
                         href="#"
