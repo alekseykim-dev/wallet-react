@@ -75,7 +75,7 @@ export function MemberPosts(props: any) {
                     alt="profile pic"
                     width={"35px"}
                     height={"35px"}
-                    style={{ borderRadius: "10%", backgroundSize: "cover" }}
+                    style={{ borderRadius: "50%", backgroundSize: "cover" }}
                   />
                   <span className="all_article_author_user">
                     {article?.member_data?.mb_nick}
