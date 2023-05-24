@@ -143,7 +143,7 @@ export function NavbarHome(props: any) {
   if (isMobile()) {
     
     return (
-      <div className="format home_navbar1" id="home">
+      <div className="format home_navbar" id="home">
         <div className="navbar_block">
           <div className="navbar_config" id="navbar">
             <Box onClick={props.setPath}>
