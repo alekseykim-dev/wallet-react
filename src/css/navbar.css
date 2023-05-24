@@ -458,3 +458,42 @@
 }
 
 
+ .home_navbar .navbar_config1 {
+        background-color: #282828;
+            height: 80px;
+            position: fixed;
+            transition: top .3s ease;
+            width: auto;
+            height: 360px;
+            max-width: 400px;
+            z-index: 99;
+    }
+@media (max-width: 480px) {
+/* 
+    .home_navbar .navbar_config {
+        background-color: #282828;
+            height: 80px;
+            position: fixed;
+            transition: top .3s ease;
+            width: auto;
+            height: 360px;
+            max-width: 400px;
+            z-index: 99;
+    } */
+
+    .home_navbar .navbar_links {
+        width: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .home_navbar .hover-line {
+        margin: 5px;
+    }
+}
+
+@media (max-width: 767px) {
+    .basket_frame {
+        width: 100%;
+    }
+}

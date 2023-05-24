@@ -226,7 +226,7 @@ export function VisitMyPage(props: any) {
                 </TabPanel>
 
                 <TabPanel value="5">
-                  <Box className="menu_name">Chosen article</Box>
+                  <Box className="menu_name">Picked article</Box>
                   <Box className="menu_content">
                     <TViewer chosenSingleBoArticles={chosenSingleBoArticles} />
                   </Box>

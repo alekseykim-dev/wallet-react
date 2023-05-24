@@ -14,11 +14,12 @@ import {
   MenuItem,
   Stack,
 } from "@mui/material";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import Favorites from "./favorites";
 import { verifiedMemberData } from "../../apiServices/verify";
+import useDeviceDetect from "../../../lib/responsive/useDeviceDetect";
 
 export function NavbarHome(props: any) {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -132,190 +133,405 @@ export function NavbarHome(props: any) {
        window.removeEventListener("scroll", handleScroll);
      };
    }, []);
-  return (
-    <div className="format home_navbar" id="home">
-      <div className="navbar_block">
-        <div className="navbar_config" id="navbar">
-          <Box onClick={props.setPath}>
-            <NavLink to="/">
-              <img src="/icons/logo1.svg" alt="logo" className="logo" />
-            </NavLink>
-          </Box>
-          <Stack className="navbar_links">
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/shop" activeClassName="underline">
-                Brands
-              </NavLink>
-            </Box>
-
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to={"/orders"} activeClassName="underline">
-                Orders
-              </NavLink>
-            </Box>
-
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/community" activeClassName="underline">
-                Articles
-              </NavLink>
-            </Box>
-
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/member-page" activeClassName="underline">
-                Profile
-              </NavLink>
-            </Box>
-
-            <Box className="hover-line" onClick={props.setPath}>
-              <NavLink to="/help" activeClassName="underline">
-                FAQ
-              </NavLink>
-            </Box>
-          </Stack>
-          <Stack className="navbar_icons">
-            {!verifiedMemberData ? (
-              <Box>
-                <Button
-                  className="nav_button"
-                  variant="contained"
+  
+     const history = useHistory<History>();
+     const { isMobile } = useDeviceDetect();
+     const handlePushConstruction = () => {
+       history.push("/construction");
+       props.setPath();
+     };
+  if (isMobile()) {
+    
+    return (
+      <div className="format home_navbar1" id="home">
+        <div className="navbar_block">
+          <div className="navbar_config" id="navbar">
+            <Box onClick={props.setPath}>
+              <NavLink to="/">
+                <img
                   style={{
-                    color: isHovered1 ? "#282828" : "#f5f5f5",
-                    opacity: isHovered1 ? 0.7 : 1,
-                    backgroundColor: isHovered1 ? "#f5f5f5" : "#282828",
+                    width: "100px",
+                    height: "100px",
+                    cursor: "pointer",
+                    // borderRadius: "24px",
                   }}
-                  onMouseEnter={handleMouseEnter1}
-                  onMouseLeave={handleMouseLeave1}
-                  onClick={props.handleSignUpOpen}
-                >
-                  Sign up
-                </Button>
+                  src="/icons/logo1.svg"
+                  alt="logo"
+                  className="logo"
+                />
+              </NavLink>
+            </Box>
+            <Stack className="navbar_links">
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/shop" activeClassName="underline">
+                  Brands
+                </NavLink>
               </Box>
-            ) : null}
 
-            {!verifiedMemberData ? (
-              <Box>
-                <Button
-                  variant="contained"
-                  style={{
-                    color: isHovered2 ? "#282828" : "#f5f5f5",
-                    opacity: isHovered2 ? 0.7 : 1,
-                    backgroundColor: isHovered2 ? "#f5f5f5" : "#282828",
-                  }}
-                  onMouseEnter={handleMouseEnter2}
-                  onMouseLeave={handleMouseLeave2}
-                  onClick={props.handleLoginOpen}
-                >
-                  Log in
-                </Button>
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to={"/orders"} activeClassName="underline">
+                  Orders
+                </NavLink>
               </Box>
-            ) : (
-              <img
-                style={{ width: "48px", height: "48px", borderRadius: "24px" }}
-                src={verifiedMemberData.mb_image}
-                alt=""
-                onClick={props.handleLogOutClick}
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/community" activeClassName="underline">
+                  Articles
+                </NavLink>
+              </Box>
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/member-page" activeClassName="underline">
+                  Profile
+                </NavLink>
+              </Box>
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/help" activeClassName="underline">
+                  FAQ
+                </NavLink>
+              </Box>
+            </Stack>
+            <Stack className="navbar_icons">
+              {!verifiedMemberData ? (
+                <Box>
+                  <Button
+                    className="nav_button"
+                    variant="contained"
+                    style={{
+                      color: isHovered1 ? "#282828" : "#f5f5f5",
+                      opacity: isHovered1 ? 0.7 : 1,
+                      backgroundColor: isHovered1 ? "#f5f5f5" : "#282828",
+                    }}
+                    onMouseEnter={handleMouseEnter1}
+                    onMouseLeave={handleMouseLeave1}
+                    onClick={props.handleSignUpOpen}
+                  >
+                    Sign up
+                  </Button>
+                </Box>
+              ) : null}
+
+              {!verifiedMemberData ? (
+                <Box>
+                  <Button
+                    variant="contained"
+                    style={{
+                      color: isHovered2 ? "#282828" : "#f5f5f5",
+                      opacity: isHovered2 ? 0.7 : 1,
+                      backgroundColor: isHovered2 ? "#f5f5f5" : "#282828",
+                    }}
+                    onMouseEnter={handleMouseEnter2}
+                    onMouseLeave={handleMouseLeave2}
+                    onClick={props.handleLoginOpen}
+                  >
+                    Log in
+                  </Button>
+                </Box>
+              ) : (
+                <img
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "24px",
+                  }}
+                  src={verifiedMemberData.mb_image}
+                  alt=""
+                  onClick={props.handleLogOutClick}
+                />
+              )}
+              <Favorites
+                favItems={props.favItems}
+                onDeleteFav={props.onDeleteFav}
+                onDeleteAllFav={props.onDeleteAllFav}
+                setOrderRebuild={props.setOrderRebuild}
               />
-            )}
-            <Favorites
-              favItems={props.favItems}
-              onDeleteFav={props.onDeleteFav}
-              onDeleteAllFav={props.onDeleteAllFav}
-              setOrderRebuild={props.setOrderRebuild}
-            />
-            <Basket
-              cartItems={props.cartItems}
-              onAdd={props.onAdd}
-              onRemove={props.onRemove}
-              onDelete={props.onDelete}
-              onDeleteAll={props.onDeleteAll}
-              setOrderRebuild={props.setOrderRebuild}
-            />
+              <Basket
+                cartItems={props.cartItems}
+                onAdd={props.onAdd}
+                onRemove={props.onRemove}
+                onDelete={props.onDelete}
+                onDeleteAll={props.onDeleteAll}
+                setOrderRebuild={props.setOrderRebuild}
+              />
 
-            <Menu
-              anchorEl={props.anchorEl}
-              open={props.open}
-              onClose={props.handleCloseLogOut}
-              onClick={props.handleCloseLogOut}
-              PaperProps={{
-                elevation: 0,
-                sx: {
-                  overflow: "hidden",
-                  backgroundColor: "#fff", // Set the background color to transparent
-                  mt: "15px",
-                  "& .MuiAvatar-root": {
-                    width: 32,
-                    height: 32,
-                    ml: -0.5,
-                    mr: 1,
+              <Menu
+                anchorEl={props.anchorEl}
+                open={props.open}
+                onClose={props.handleCloseLogOut}
+                onClick={props.handleCloseLogOut}
+                PaperProps={{
+                  elevation: 0,
+                  sx: {
+                    overflow: "hidden",
+                    backgroundColor: "#fff", // Set the background color to transparent
+                    mt: "15px",
+                    "& .MuiAvatar-root": {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    "&:before": {
+                      display: "block",
+                      position: "absolute",
+                      top: 0,
+                      right: 14,
+                      width: 10,
+                      height: 10,
+                      bgcolor: "background.paper",
+                      transform: "translateY(-50%) rotate(45deg)",
+                      zIndex: 0,
+                    },
                   },
-                  "&:before": {
-                    display: "block",
-                    position: "absolute",
-                    top: 0,
-                    right: 14,
-                    width: 10,
-                    height: 10,
-                    bgcolor: "background.paper",
-                    transform: "translateY(-50%) rotate(45deg)",
-                    zIndex: 0,
-                  },
-                },
-              }}
-              transformOrigin={{ horizontal: "right", vertical: "top" }}
-              anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
-            >
-              <MenuItem
-                onClick={props.handleLogOutRequest}
-                style={{ color: "#1f1f1f" }}
+                }}
+                transformOrigin={{ horizontal: "right", vertical: "top" }}
+                anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
               >
-                <ListItemIcon>
-                  <Logout fontSize="small" style={{ color: "#222222" }} />
-                </ListItemIcon>
-                <span style={{ color: "#222222", fontWeight: "600" }}>
-                  {" "}
-                  Log out
-                </span>
-              </MenuItem>
-            </Menu>
+                <MenuItem
+                  onClick={props.handleLogOutRequest}
+                  style={{ color: "#1f1f1f" }}
+                >
+                  <ListItemIcon>
+                    <Logout fontSize="small" style={{ color: "#222222" }} />
+                  </ListItemIcon>
+                  <span style={{ color: "#222222", fontWeight: "600" }}>
+                    {" "}
+                    Log out
+                  </span>
+                </MenuItem>
+              </Menu>
+            </Stack>
+          </div>
+
+          <Stack className="head_information" justifyContent={"row"}>
+            <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
+              <Box>
+                <span>Welcome to ₿itSafe!</span>
+              </Box>
+              <Box className="define_shop">
+                We provide easy solution for complex problems.
+                <div className="crossed_under">
+                  <style>{styles} </style> <span ref={textRef}></span>
+                </div>
+              </Box>
+            </Stack>
           </Stack>
         </div>
+        <div className="framer-motion-wrapper">
+          <div onClick={handleClick} className="framer-motion-container">
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="framer-motion-element"
+            />
+          </div>
+        </div>
+        <style>{styles}</style>
 
-        <Stack className="head_information" justifyContent={"row"}>
-          <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
-            <Box>
-              <span>Welcome to ₿itSafe!</span>
-            </Box>
-            <Box className="define_shop">
-              We provide easy solution for complex problems.
-              <div className="crossed_under">
-                <style>{styles} </style> <span ref={textRef}></span>
-              </div>
-            </Box>
-          </Stack>
-        </Stack>
-      </div>
-      <div className="framer-motion-wrapper">
-        <div onClick={handleClick} className="framer-motion-container">
-          <motion.div
-            animate={{
-              y: [0, 24, 0],
-            }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              repeatType: "loop",
-            }}
-            className="framer-motion-element"
-          />
+        <div className="scroll-button">
+          <Button style={{ color: "black" }} onClick={handleClickHome}>
+            <ArrowUpwardIcon />
+          </Button>
         </div>
       </div>
-      <style>{styles}</style>
+    );
+  } else {
+    return (
+      <div className="format home_navbar" id="home">
+        <div className="navbar_block">
+          <div className="navbar_config" id="navbar">
+            <Box onClick={props.setPath}>
+              <NavLink to="/">
+                <img src="/icons/logo1.svg" alt="logo" className="logo" />
+              </NavLink>
+            </Box>
+            <Stack className="navbar_links">
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/shop" activeClassName="underline">
+                  Brands
+                </NavLink>
+              </Box>
 
-      <div className="scroll-button">
-        <Button style={{ color: "black" }} onClick={handleClickHome}>
-          <ArrowUpwardIcon />
-        </Button>
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to={"/orders"} activeClassName="underline">
+                  Orders
+                </NavLink>
+              </Box>
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/community" activeClassName="underline">
+                  Articles
+                </NavLink>
+              </Box>
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/member-page" activeClassName="underline">
+                  Profile
+                </NavLink>
+              </Box>
+
+              <Box className="hover-line" onClick={props.setPath}>
+                <NavLink to="/help" activeClassName="underline">
+                  FAQ
+                </NavLink>
+              </Box>
+            </Stack>
+            <Stack className="navbar_icons">
+              {!verifiedMemberData ? (
+                <Box>
+                  <Button
+                    className="nav_button"
+                    variant="contained"
+                    style={{
+                      color: isHovered1 ? "#282828" : "#f5f5f5",
+                      opacity: isHovered1 ? 0.7 : 1,
+                      backgroundColor: isHovered1 ? "#f5f5f5" : "#282828",
+                    }}
+                    onMouseEnter={handleMouseEnter1}
+                    onMouseLeave={handleMouseLeave1}
+                    onClick={props.handleSignUpOpen}
+                  >
+                    Sign up
+                  </Button>
+                </Box>
+              ) : null}
+
+              {!verifiedMemberData ? (
+                <Box>
+                  <Button
+                    variant="contained"
+                    style={{
+                      color: isHovered2 ? "#282828" : "#f5f5f5",
+                      opacity: isHovered2 ? 0.7 : 1,
+                      backgroundColor: isHovered2 ? "#f5f5f5" : "#282828",
+                    }}
+                    onMouseEnter={handleMouseEnter2}
+                    onMouseLeave={handleMouseLeave2}
+                    onClick={props.handleLoginOpen}
+                  >
+                    Log in
+                  </Button>
+                </Box>
+              ) : (
+                <img
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "24px",
+                  }}
+                  src={verifiedMemberData.mb_image}
+                  alt=""
+                  onClick={props.handleLogOutClick}
+                />
+              )}
+              <Favorites
+                favItems={props.favItems}
+                onDeleteFav={props.onDeleteFav}
+                onDeleteAllFav={props.onDeleteAllFav}
+                setOrderRebuild={props.setOrderRebuild}
+              />
+              <Basket
+                cartItems={props.cartItems}
+                onAdd={props.onAdd}
+                onRemove={props.onRemove}
+                onDelete={props.onDelete}
+                onDeleteAll={props.onDeleteAll}
+                setOrderRebuild={props.setOrderRebuild}
+              />
+
+              <Menu
+                anchorEl={props.anchorEl}
+                open={props.open}
+                onClose={props.handleCloseLogOut}
+                onClick={props.handleCloseLogOut}
+                PaperProps={{
+                  elevation: 0,
+                  sx: {
+                    overflow: "hidden",
+                    backgroundColor: "#fff", // Set the background color to transparent
+                    mt: "15px",
+                    "& .MuiAvatar-root": {
+                      width: 32,
+                      height: 32,
+                      ml: -0.5,
+                      mr: 1,
+                    },
+                    "&:before": {
+                      display: "block",
+                      position: "absolute",
+                      top: 0,
+                      right: 14,
+                      width: 10,
+                      height: 10,
+                      bgcolor: "background.paper",
+                      transform: "translateY(-50%) rotate(45deg)",
+                      zIndex: 0,
+                    },
+                  },
+                }}
+                transformOrigin={{ horizontal: "right", vertical: "top" }}
+                anchorOrigin={{ horizontal: "right", vertical: "bottom" }}
+              >
+                <MenuItem
+                  onClick={props.handleLogOutRequest}
+                  style={{ color: "#1f1f1f" }}
+                >
+                  <ListItemIcon>
+                    <Logout fontSize="small" style={{ color: "#222222" }} />
+                  </ListItemIcon>
+                  <span style={{ color: "#222222", fontWeight: "600" }}>
+                    {" "}
+                    Log out
+                  </span>
+                </MenuItem>
+              </Menu>
+            </Stack>
+          </div>
+
+          <Stack className="head_information" justifyContent={"row"}>
+            <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
+              <Box>
+                <span>Welcome to ₿itSafe!</span>
+              </Box>
+              <Box className="define_shop">
+                We provide easy solution for complex problems.
+                <div className="crossed_under">
+                  <style>{styles} </style> <span ref={textRef}></span>
+                </div>
+              </Box>
+            </Stack>
+          </Stack>
+        </div>
+        <div className="framer-motion-wrapper">
+          <div onClick={handleClick} className="framer-motion-container">
+            <motion.div
+              animate={{
+                y: [0, 24, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                repeatType: "loop",
+              }}
+              className="framer-motion-element"
+            />
+          </div>
+        </div>
+        <style>{styles}</style>
+
+        <div className="scroll-button">
+          <Button style={{ color: "black" }} onClick={handleClickHome}>
+            <ArrowUpwardIcon />
+          </Button>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
