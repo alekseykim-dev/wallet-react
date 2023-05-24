@@ -11,7 +11,7 @@ export function Statistics() {
             <div className="character_img left"></div>
             <div className="character_text">
               <Box className="static_num">Free Shipping </Box>
-              <Box className="static_text">When order over $100</Box>
+              <Box className="static_text">When order over $200</Box>
             </div>
           </Stack>
 
@@ -19,7 +19,7 @@ export function Statistics() {
             <div className="character_img middle"></div>
             <div className="character_text">
               <Box className="static_num">24/7 Support </Box>
-              <Box className="static_text">Get support any time</Box>
+              <Box className="static_text">Contact us any time</Box>
             </div>
           </Stack>
 

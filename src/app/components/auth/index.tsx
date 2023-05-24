@@ -190,7 +190,7 @@ const [mb_password, set_mb_password] = useState<string>("");
               />
               <Fab
                 onClick={handleSignupRequest}
-                sx={{ width: "130px" }}
+                sx={{ width: "130px", margin: "0.8rem" }}
                 variant="extended"
                 color="primary"
               >
@@ -267,7 +267,7 @@ const [mb_password, set_mb_password] = useState<string>("");
               />
               <Fab
                 onClick={handleLoginRequest}
-                sx={{ width: "130px" }}
+                sx={{ width: "130px", margin: "0.8rem" }}
                 variant="extended"
                 color="primary"
               >
