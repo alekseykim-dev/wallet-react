@@ -205,7 +205,7 @@ export function VisitOtherPage(props: any) {
             <Stack className="my_page_left">
               <Box display={"flex"} flexDirection={"column"}>
                 <TabPanel value="1">
-                  <Box className="menu_name">Comments</Box>
+                  <Box className="menu_name">Articles</Box>
                   <Box className="menu_content">
                     <MemberPosts
                       chosenMemberBoArticles={chosenMemberBoArticles}

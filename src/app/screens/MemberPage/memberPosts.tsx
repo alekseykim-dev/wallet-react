@@ -67,7 +67,11 @@ export function MemberPosts(props: any) {
               <Box style={{ width: "50%" }}>
                 <Box alignItems={"center"} display="flex">
                   <img
-                    src={article?.member_data?.mb_image}
+                    src={
+                      article?.member_data?.mb_image
+                        ? `${serverApi}/${article?.member_data?.mb_image}`
+                        : "/auth/default_user.svg"
+                    }
                     alt="profile pic"
                     width={"35px"}
                     height={"35px"}
