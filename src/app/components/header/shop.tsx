@@ -57,7 +57,7 @@ export function NavbarShop(props: any) {
     z-index: 999;
     background-color: transparent;
     backdrop-filter: blur(20px);
-    border: 1px solid #000;
+    border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 12px;
     cursor: pointer;

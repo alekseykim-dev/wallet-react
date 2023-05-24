@@ -62,7 +62,7 @@ export function NavbarHome(props: any) {
       const options = {
         strings: ["Save your money.", "Save your crypto.", "Save your assets."],
         startDelay: 300,
-        typeSpeed: 130,
+        typeSpeed: 70,
         backSpeed: 50,
         backDelay: 150,
         smartBackspace: true,
@@ -91,7 +91,7 @@ export function NavbarHome(props: any) {
     z-index: 999;
     background-color: transparent;
     backdrop-filter: blur(20px);
-    border: 1px solid #cccccc;
+    border: 1px solid #ccc;
     border-radius: 3px;
     font-size: 12px;
     cursor: pointer;

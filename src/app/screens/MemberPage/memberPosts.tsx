@@ -67,11 +67,11 @@ export function MemberPosts(props: any) {
               <Box style={{ width: "50%" }}>
                 <Box alignItems={"center"} display="flex">
                   <img
-                    src={verifiedMemberData?.mb_image}
+                    src={article?.member_data?.mb_image}
                     alt="profile pic"
                     width={"35px"}
                     height={"35px"}
-                    style={{ borderRadius: "50%", backgroundSize: "cover" }}
+                    style={{ borderRadius: "10%", backgroundSize: "cover" }}
                   />
                   <span className="all_article_author_user">
                     {article?.member_data?.mb_nick}

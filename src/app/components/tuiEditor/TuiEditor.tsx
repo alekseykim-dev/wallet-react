@@ -144,7 +144,6 @@ export const TuiEditor = (props: any) => {
       <Editor
         // @ts-ignore
         ref={editorRef}
-        initialValue="Type here"
         placeholder="Type here"
         previewStyle="vertical"
         height="640px"

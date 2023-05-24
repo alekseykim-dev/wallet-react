@@ -386,7 +386,7 @@ export function VisitOtherPage(props: any) {
                     component={(e) => (
                       <div className={`menu_box`} onClick={() => setValue("1")}>
                         <img src="/icons/post.svg" />
-                        <span>Comments</span>
+                        <span>All Articles</span>
                       </div>
                     )}
                   />

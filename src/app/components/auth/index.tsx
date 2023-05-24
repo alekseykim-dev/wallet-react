@@ -163,6 +163,7 @@ const [mb_password, set_mb_password] = useState<string>("");
                 }}
                 id="outlined-basic"
                 label="Email"
+                type="email"
                 variant="outlined"
                 inputProps={{
                   style: {
