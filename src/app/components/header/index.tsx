@@ -240,7 +240,6 @@ export function NavbarHome(props: any) {
                   onClick={props.handleLogOutClick}
                 />
               )}
-             
 
               <Menu
                 anchorEl={props.anchorEl}
@@ -293,8 +292,8 @@ export function NavbarHome(props: any) {
 
           <Stack className="head_information" justifyContent={"row"}>
             <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
-            
               <Box className="define_shop">
+                We provide easy solution for complex problems.
                 <div className="crossed_under">
                   <style>{styles} </style> <span ref={textRef}></span>
                 </div>
