@@ -108,7 +108,7 @@ export function NavbarShop(props: any) {
                 <img
                   style={{
                     width: "100px",
-                    height: "80px",
+                    height: "35px",
                     cursor: "pointer",
                     // borderRadius: "24px",
                   }}

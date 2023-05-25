@@ -118,7 +118,7 @@ export function NavbarHome(props: any) {
        const navbar = document.getElementById("navbar");
 
        if (scrollTop > lastScrollTop) {
-         navbar!.style.top = "-80px";
+         navbar!.style.top = "-100px";
        } else {
          navbar!.style.top = "0";
        }
@@ -151,7 +151,7 @@ export function NavbarHome(props: any) {
                 <img
                   style={{
                     width: "100px",
-                    height: "40px",
+                    height: "35px",
                     cursor: "pointer",
                     // borderRadius: "24px",
                   }}
@@ -231,8 +231,8 @@ export function NavbarHome(props: any) {
               ) : (
                 <img
                   style={{
-                    width: "48px",
-                    height: "48px",
+                    width: "45px",
+                    height: "45px",
                     borderRadius: "24px",
                   }}
                   src={verifiedMemberData.mb_image}
@@ -276,7 +276,8 @@ export function NavbarHome(props: any) {
               >
                 <MenuItem
                   onClick={props.handleLogOutRequest}
-                  style={{ color: "#1f1f1f" }}
+                  style={{
+                    color: "#1f1f1f" }}
                 >
                   <ListItemIcon>
                     <Logout fontSize="small" style={{ color: "#222222" }} />
