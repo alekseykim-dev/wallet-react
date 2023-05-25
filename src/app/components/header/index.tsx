@@ -300,7 +300,7 @@ export function NavbarHome(props: any) {
             </Stack>
           </Stack>
         </div>
-        <div className="framer-motion-wrapper">
+        {/* <div className="framer-motion-wrapper">
           <div onClick={handleClick} className="framer-motion-container">
             <motion.div
               animate={{
@@ -321,7 +321,7 @@ export function NavbarHome(props: any) {
           <Button style={{ color: "black" }} onClick={handleClickHome}>
             <ArrowUpwardIcon />
           </Button>
-        </div>
+        </div> */}
       </div>
     );
   } else {

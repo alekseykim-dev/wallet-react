@@ -1100,6 +1100,14 @@
         line-height: 36px;
         color: #1f1f1f;
     }
+        .review_title_p {
+            font-style: italic;
+            color: #a1a1a1;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            text-align: center;
+        }
 
     .homepage .coin_frame {
         width: 100%;
@@ -1136,4 +1144,72 @@
                     flex-direction: row;
                     margin-top: 35px;
                 }
+
+.under-construction {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50vh;
+    background-color: #f7f7f7;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.under-construction h1 {
+    font-size: 16px;
+}
+
+
+
+.back00{
+    position: absolute;
+    top: 0px;
+    left: -40px
+}
+.back01 {
+    position: absolute;
+    right: 0px;
+    bottom: -50px
+}
+
+
+.crypto-logo {
+    width: 100px;
+    height: 100px;
+    background: url("/public/store/BitSafe_const.png");
+    /* Replace with your own image */
+    background-size: contain;
+    background-repeat: no-repeat;
+     position: absolute;
+animation: bounce 16s linear infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        top: 0;
+        left: 0;
+    }
+
+    25% {
+        top: calc(50vh - 35px);
+        left: calc(100vw - 100px);
+    }
+
+    50% {
+        top: calc(50vh - 35px);
+        left: 0;
+    }
+
+    75% {
+        top: 0;
+        left: calc(100vw - 100px);
+    }
+}
+.construction{
+    text-align: center;
+}
 }

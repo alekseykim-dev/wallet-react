@@ -113,12 +113,10 @@ const { isMobile } = useDeviceDetect();
                       <Card
                         className={"swiper-width"}
                         style={{ borderRadius: "10px" }}
-                        onClick={() => chosenShopHandler(ele._id)}
+                        onClick={handleClickOpenAlert}
                         ref={(ref) => (refs.current[index] = ref)}
                       >
-                        <CardCover
-                          style={{ borderRadius: "10px" }}
-                        >
+                        <CardCover style={{ borderRadius: "10px" }}>
                           <img
                             style={{
                               borderRadius: "10px",

@@ -102,7 +102,7 @@ export function BestShops() {
                   <CssVarsProvider key={ele._id}>
                     <Card
                       className="customer_card1"
-                      onClick={() => chosenShopHandler(ele._id)}
+                      onClick={handleClickOpenAlert}
                       variant="outlined"
                       sx={{ paddingBottom: "5px" }}
                     >

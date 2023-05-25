@@ -72,10 +72,7 @@ export function BestProducts() {
                         backgroundImage: `url(${image_path})`,
                       }}
                     >
-                      <div
-                        className="view_btn"
-                        onClick={() => chosenProductHandler(product._id)}
-                      >
+                      <div className="view_btn" onClick={handleClickOpenAlert}>
                         Take a look
                         <img
                           src="/icons/arrow.svg"

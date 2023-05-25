@@ -460,6 +460,28 @@
 
 
 @media (max-width: 390px) {
+    .format.home_navbar {
+            width: 100%;
+            height: 640px;
+            display: flex;
+            background: url("/public/store/responsive_pc.jpg");
+            background-size: cover;
+        }
+                .format_shop.home_navbar {
+                    width: 100%;
+                    height: 535px;
+                    display: flex;
+            background: url("/public/store/responsive_pc.jpg");
+                    background-size: cover;
+                }
+        
+                .format_others.home_navbar {
+                    width: 100%;
+                    height: 535px;
+                    display: flex;
+            background: url("/public/store/responsive_pc.jpg");
+                    background-size: cover;
+                }
 
     .format.home_navbar {
             width: 100%;
@@ -500,9 +522,9 @@
 
     .head_information span {
     font-family: 'Quattrocento Sans', sans-serif;
-    font-style: italic;
-    font-weight: 400;
-    font-size: 30px;
+    /* font-style: italic; */
+    font-weight: 600;
+    font-size: 35px;
     line-height: 44px;
     color: #F1F1F1;
 }
@@ -522,7 +544,7 @@
             position: relative;
                 width: 390px;
                 height: auto;
-                margin-top: 150px;
+                margin-top: 230px;
                 font-family: "Poppins", sans-serif;
                 font-style: normal;
                 font-weight: 600;

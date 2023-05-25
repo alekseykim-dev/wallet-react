@@ -5,6 +5,7 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay, Navigation, Pagination } from "swiper";
 import { useHistory } from "react-router-dom";
+import useDeviceDetect from "../../../lib/responsiveDetector";
 
 SwiperCore.use([Autoplay, Navigation, Pagination]);
 
@@ -51,56 +52,114 @@ export function Experts() {
   const handleContainerClick = () => {
     history.push("/community");
   };
-  
-
-  return (
-    <div className="review_for_shop">
-      <div className="review_container" style={{display: "flex", width: "100%"}}>
-        <Box className={"category_title_review"}>Food For Thought</Box>
-        
-        <Swiper
-          className={"swiper-wrapper2"}
-          slidesPerView={1}
-          centeredSlides={true}
-          spaceBetween={30} // space between sliders
-          navigation={{
-            nextEl: ".swiper-button-next",
-            prevEl: ".swiper-button-prev",
-          }}
-          pagination={{
-            el: ".swiper-pagination",
-            clickable: true,
-          }}
-          autoplay={{
-            delay: 4000,
-            disableOnInteraction: true, //slider stops when touch it
-          }}
+  const { isMobile } = useDeviceDetect();
+  if (isMobile()) {
+    return (
+      <div className="review_for_shop">
+        <div
+          className="review_container"
+          style={{ display: "flex", width: "100%" }}
         >
-          {events_list.map((value, number) => {
-            return (
-              <SwiperSlide key={number}>
-                <div onClick={handleContainerClick}>
-                  <Stack className="review_wrapper">
-                    <Box className="review_left">
-                      <Box className="img_wrapper">
-                        <img src={value.img} className="review_img" />
+          <Box className={"category_title_review"}>Food For Thought</Box>
+
+          <Swiper
+            className={"swiper-wrapper2"}
+            slidesPerView={1}
+            centeredSlides={true}
+            spaceBetween={30} // space between sliders
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: true, //slider stops when touch it
+            }}
+          >
+            {events_list.map((value, number) => {
+              return (
+                <SwiperSlide key={number}>
+                  <div >
+                    <Stack className="review_wrapper">
+                      <Box className="review_left">
+                        <Box className="img_wrapper">
+                          <img src={value.img} className="review_img" />
+                        </Box>
                       </Box>
-                    </Box>
-                    <Stack className="review_right">
-                      <Box>
-                        <p className="review_title">{value.author}</p>
-                        <p className="review_title_p">{value.job}</p>
-                      </Box>
-                      <Box className="review_text">{value.desc}</Box>
-                      <Box className="review_text_auth">{value.article}</Box>
+                      <Stack className="review_right">
+                        <Box>
+                          <p className="review_title">{value.author}</p>
+                          <p className="review_title_p">{value.job}</p>
+                        </Box>
+                        <Box className="review_text">{value.desc}</Box>
+                        <Box className="review_text_auth">{value.article}</Box>
+                      </Stack>
                     </Stack>
-                  </Stack>
-                </div>
-              </SwiperSlide>
-            );
-          })}
-        </Swiper>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
       </div>
-    </div>
-  );
+    );
+  } else {
+    return (
+      <div className="review_for_shop">
+        <div
+          className="review_container"
+          style={{ display: "flex", width: "100%" }}
+        >
+          <Box className={"category_title_review"}>Food For Thought</Box>
+
+          <Swiper
+            className={"swiper-wrapper2"}
+            slidesPerView={1}
+            centeredSlides={true}
+            spaceBetween={30} // space between sliders
+            navigation={{
+              nextEl: ".swiper-button-next",
+              prevEl: ".swiper-button-prev",
+            }}
+            pagination={{
+              el: ".swiper-pagination",
+              clickable: true,
+            }}
+            autoplay={{
+              delay: 4000,
+              disableOnInteraction: true, //slider stops when touch it
+            }}
+          >
+            {events_list.map((value, number) => {
+              return (
+                <SwiperSlide key={number}>
+                  <div onClick={handleContainerClick}>
+                    <Stack className="review_wrapper">
+                      <Box className="review_left">
+                        <Box className="img_wrapper">
+                          <img src={value.img} className="review_img" />
+                        </Box>
+                      </Box>
+                      <Stack className="review_right">
+                        <Box>
+                          <p className="review_title">{value.author}</p>
+                          <p className="review_title_p">{value.job}</p>
+                        </Box>
+                        <Box className="review_text">{value.desc}</Box>
+                        <Box className="review_text_auth">{value.article}</Box>
+                      </Stack>
+                    </Stack>
+                  </div>
+                </SwiperSlide>
+              );
+            })}
+          </Swiper>
+        </div>
+      </div>
+    );
+  }
 }

@@ -31,6 +31,8 @@ import "../app/apiServices/verify";
 import { CartItem, FavItem } from "../types/others";
 import { Product } from "../types/product";
 import { CommunityChats } from "./components/header/communityChats";
+import { Responsive } from "./screens/404";
+import { useHistory } from "react-router-dom";
 
 function App() {
   /** INITIALIZATION */
@@ -180,6 +182,10 @@ function App() {
       setFavItems([]);
       localStorage.removeItem("fav_data");
     };
+      const history = useHistory<History>();
+    const handleClickOpenAlert = () => {
+      history.push("/construction");
+    };
   
   return (
     <Router>
@@ -271,6 +277,12 @@ function App() {
         </Route>
         <Route path="/login">
           <LoginPage />
+        </Route>
+        <Route path="/construction">
+          <Responsive
+            handleClickOpenAlert={handleClickOpenAlert}
+            setPath={setPath}
+          />
         </Route>
         <Route path="/">
           {/* <Car/> */}
