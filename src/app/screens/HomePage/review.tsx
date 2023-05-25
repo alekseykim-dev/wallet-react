@@ -59,7 +59,7 @@ export function Experts() {
         <Box className={"category_title_review"}>Food For Thought</Box>
         
         <Swiper
-          className={"swiper-wrapper"}
+          className={"swiper-wrapper2"}
           slidesPerView={1}
           centeredSlides={true}
           spaceBetween={30} // space between sliders
@@ -72,7 +72,7 @@ export function Experts() {
             clickable: true,
           }}
           autoplay={{
-            delay: 6000,
+            delay: 4000,
             disableOnInteraction: true, //slider stops when touch it
           }}
         >

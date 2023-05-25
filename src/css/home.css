@@ -415,6 +415,7 @@
     transform: scale(1.03);
     transition: transform 0.3s ease-in-out;
 }
+
 .homepage .swiper-pagination-bullet {
     margin-right: 5px;
     width: 8px;
@@ -436,10 +437,12 @@
     cursor: pointer;
     border-radius: 0px 10px 10px 0px;
 }
+
 .card:hover {
     transform: scale(1.01);
     transition: transform 0.3s ease-in-out;
 }
+
 .card_desc {
     font-style: italic;
 }
@@ -489,7 +492,7 @@
     cursor: pointer;
 }
 
-.homepage .article_container .article_box:hover{
+.homepage .article_container .article_box:hover {
     transform: scale(1.03);
     transition: transform 0.3s ease-in-out;
 }
@@ -525,7 +528,7 @@
     align-items: center;
     background: #ffffff;
     border-radius: 20px;
-    
+
 }
 
 .homepage .article_info .article_main_info {
@@ -580,7 +583,7 @@
     justify-content: center;
     flex-direction: column;
     z-index: 1;
-    
+
 }
 
 .coin-container {
@@ -674,7 +677,7 @@
     z-index: 1;
 }
 
-.coin_frame_width{
+.coin_frame_width {
     width: 1320px;
     flex-direction: column;
     align-items: center;
@@ -821,33 +824,37 @@
     opacity: 0.8;
     /* Reduce opacity when hovering */
 }
+
 .attention_img.left,
 .lock_img.right {
-     /* Add your attention and lock image styles here */
-  animation: shakeIcon 5s linear infinite; /* Apply the animation with 0.4 seconds duration */
-  transform-origin: top; /* Set the rotation origin to the center of the icon */
+    /* Add your attention and lock image styles here */
+    animation: shakeIcon 5s linear infinite;
+    /* Apply the animation with 0.4 seconds duration */
+    transform-origin: top;
+    /* Set the rotation origin to the center of the icon */
 }
-        @keyframes shakeIcon {
-            0% {
-                transform: translateX(0);
-                /* Start position */
-            }
-    
-             25% {
-                transform: translateX(0) rotate(-12deg);
-                /* Shake to the left */
-            }
-    
-            75% {
-                transform: translateX(0) rotate(12deg);
-                /* Shake to the right */
-            }
-            
-            100% {
-                transform: translateX(0) ;
-                /* End position */
-            }
-        }
+
+@keyframes shakeIcon {
+    0% {
+        transform: translateX(0);
+        /* Start position */
+    }
+
+    25% {
+        transform: translateX(0) rotate(-12deg);
+        /* Shake to the left */
+    }
+
+    75% {
+        transform: translateX(0) rotate(12deg);
+        /* Shake to the right */
+    }
+
+    100% {
+        transform: translateX(0);
+        /* End position */
+    }
+}
 
 
 
@@ -864,6 +871,7 @@
     display: flex;
     background: #f5f5f5;
 }
+
 .review_wrapper {
     display: flex;
     flex-direction: column;
@@ -962,33 +970,82 @@
 
 @media (max-width: 480px) {
     .homepage .ads_shop_frame {
-            width: 100%;
-            /* height: 810px; */
-            display: flex;
-            margin-top: 100px;
-            overflow: hidden;
-            box-shadow: 0px -22px 40px rgba(0, 0, 0, 0.25)
-                /* margin-top: 100px; */
-                /* background-color: #956dd3; */
-            ;
-        }
-                .homepage .category_title {
-                    font-size: 29px;
-                    font-family: 'Montserrat', sans-serif;
-                    font-style: normal;
-                    font-size: 20px;
-                    font-size: 20px;
-                    line-height: 37px;
-                    margin-bottom: 35px;
-                    margin-top: 30px;
-                    color: #222222;
-                }
+        width: 100%;
+        /* height: 810px; */
+        display: flex;
+        margin-top: 100px;
+        overflow: hidden;
+        box-shadow: 0px -22px 40px rgba(0, 0, 0, 0.25)
+            /* margin-top: 100px; */
+            /* background-color: #956dd3; */
+        ;
+    }
 
-                                .homepage .swiper-wrapper {
-                                    width: 390px;
-                                    margin-left: 12px;
-                                    display: flex;
-                                    justify-content: flex-start;
-                                    flex-direction: row;
-                                }
+    .homepage .category_title {
+        font-size: 29px;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-size: 20px;
+        font-size: 20px;
+        line-height: 37px;
+        margin-bottom: 35px;
+        margin-top: 30px;
+        color: #222222;
+    }
+
+    .homepage .top_shop_frame {
+        width: 100%;
+        height: 580px;
+        display: flex;
+        background: #f5f5f5;
+    }
+
+    .homepage .swiper-wrapper {
+        width: 390px;
+        margin-left: 12px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+    .homepage .swiper-wrapper2 {
+        width: 390px;
+        margin-left: 12px;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: row;
+    }
+
+    .category_title_review {
+        font-family: "Dancing Script", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 37px;
+        color: #222222;
+        margin-bottom: 20px;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .review_for_shop {
+        width: auto;
+        height: auto;
+        display: flex;
+        background: #f5f5f5;
+    }
+
+    .review_wrapper {
+        display: flex;
+        flex-direction: column;
+        width: 88%;
+        margin-top: 20px;
+        border-bottom: 0.5px solid gray;
+        background: #ffffffd0;
+        border-radius: 10px;
+        color: #000;
+        z-index: 1;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        cursor: pointer;
+    }
 }

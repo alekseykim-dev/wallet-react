@@ -112,16 +112,16 @@ const { isMobile } = useDeviceDetect();
                     <CssVarsProvider>
                       <Card
                         className={"swiper-width"}
-                        style={{ borderRadius: "10px 0px 0px 10px" }}
+                        style={{ borderRadius: "10px" }}
                         onClick={() => chosenShopHandler(ele._id)}
                         ref={(ref) => (refs.current[index] = ref)}
                       >
                         <CardCover
-                          style={{ borderRadius: "10px 0px 0px 10px" }}
+                          style={{ borderRadius: "10px" }}
                         >
                           <img
                             style={{
-                              borderRadius: "10px 0px 0px 10px",
+                              borderRadius: "10px",
                             }}
                             src={image_path}
                             loading="lazy"
@@ -131,7 +131,7 @@ const { isMobile } = useDeviceDetect();
                         <CardCover
                           className="card_swiper"
                           sx={{
-                            borderRadius: "10px 0px 0px 10px",
+                            borderRadius: "10px",
                             background:
                               "linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0) 200px)",
                           }}
