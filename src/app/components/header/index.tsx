@@ -161,7 +161,7 @@ export function NavbarHome(props: any) {
                 />
               </NavLink>
             </Box>
-            <Stack className="navbar_links">
+            {/* <Stack className="navbar_links">
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/shop" activeClassName="underline">
                   Brands
@@ -191,7 +191,7 @@ export function NavbarHome(props: any) {
                   FAQ
                 </NavLink>
               </Box>
-            </Stack>
+            </Stack> */}
             <Stack className="navbar_icons">
               {!verifiedMemberData ? (
                 <Box>
@@ -240,20 +240,7 @@ export function NavbarHome(props: any) {
                   onClick={props.handleLogOutClick}
                 />
               )}
-              <Favorites
-                favItems={props.favItems}
-                onDeleteFav={props.onDeleteFav}
-                onDeleteAllFav={props.onDeleteAllFav}
-                setOrderRebuild={props.setOrderRebuild}
-              />
-              <Basket
-                cartItems={props.cartItems}
-                onAdd={props.onAdd}
-                onRemove={props.onRemove}
-                onDelete={props.onDelete}
-                onDeleteAll={props.onDeleteAll}
-                setOrderRebuild={props.setOrderRebuild}
-              />
+             
 
               <Menu
                 anchorEl={props.anchorEl}
@@ -306,11 +293,8 @@ export function NavbarHome(props: any) {
 
           <Stack className="head_information" justifyContent={"row"}>
             <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
-              <Box>
-                <span>Welcome to ₿itSafe!</span>
-              </Box>
+            
               <Box className="define_shop">
-                We provide easy solution for complex problems.
                 <div className="crossed_under">
                   <style>{styles} </style> <span ref={textRef}></span>
                 </div>
