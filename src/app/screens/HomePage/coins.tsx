@@ -55,14 +55,8 @@ const Coins = () => {
                     <tr>
                       <th>#</th>
                       <th>Coin</th>
-                      <th className="coins-right">Symbol</th>
                       <th className="coins-right">Price</th>
-                      <th className="coins-right">Market Cap</th>
                       <th className="coins-right">24h Change</th>
-                      <th className="coins-right">24h High</th>
-                      <th className="coins-right">24h Low</th>
-                      <th className="coins-right">All-time High</th>
-                      <th className="coins-right">ATH Change</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -77,16 +71,10 @@ const Coins = () => {
                             width="24"
                             height="24"
                           />{" "}
-                          {coin.name}
-                        </td>
-                        <td className="coins-right">
-                          {coin.symbol.toUpperCase()}
+                          {coin.name} {coin.symbol.toUpperCase()}
                         </td>
                         <td className="coins-right">
                           ${coin.current_price.toLocaleString()}
-                        </td>
-                        <td className="coins-right">
-                          ${coin.market_cap.toLocaleString()}
                         </td>
                         <td
                           className="coins-right"
@@ -98,24 +86,6 @@ const Coins = () => {
                           }}
                         >
                           {coin.price_change_percentage_24h.toFixed(2)}%
-                        </td>
-                        <td className="coins-right">
-                          ${coin.high_24h.toLocaleString()}
-                        </td>
-                        <td className="coins-right">
-                          ${coin.low_24h.toLocaleString()}
-                        </td>
-                        <td className="coins-right">
-                          ${coin.ath.toLocaleString()}
-                        </td>
-                        <td
-                          className="coins-right"
-                          style={{
-                            color:
-                              coin.ath_change_percentage >= 0 ? "green" : "red",
-                          }}
-                        >
-                          {coin.ath_change_percentage.toFixed(2)}%
                         </td>
                       </tr>
                     ))}

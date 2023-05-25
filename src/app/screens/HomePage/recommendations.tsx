@@ -21,6 +21,7 @@ import { serverApi } from "../../../lib/config";
 import TViewer from "../../components/tuiEditor/TViewer";
 import { useHistory } from "react-router-dom";
 import moment from "moment";
+import useDeviceDetect from "../../../lib/responsiveDetector";
 
 /** REDUX SLICE */
 const actionDispatch = (dispach: Dispatch) => ({
@@ -79,111 +80,117 @@ export function Recommendations() {
       .catch((err) => console.log(err));
   }, []);
 
-  return (
-    <div className={"top_article_frame"}>
-      <Container
-        maxWidth="lg"
-        sx={{ mb: "100px" }}
-        style={{ position: "relative" }}
-      >
-        <Stack flexDirection={"column"} alignItems={"center"}>
-          <Box className={"category_title"}>Reading Hub</Box>
-          <Stack className={"article_main"} flexDirection={"row"}>
-            <Stack className={"article_container"}>
-              <Box className={"article_category"}>Trending News</Box>
-              {newsBoArticles?.map((article: BoArticle) => {
-                const art_image_url = article?.art_image
-                  ? `${serverApi}/${article?.art_image}`
-                  : "/community/default_article.svg";
-                return (
-                  <Stack
-                    className={"article_box"}
-                    onClick={chosenArticleHandler}
-                    key={article._id}
-                  >
-                    <Box
-                      className={"article_img"}
-                      sx={{
-                        backgroundImage: `url(${art_image_url})`,
-                      }}
-                    ></Box>
-                    <Box className={"article_info"}>
-                      <Box className={"article_main_info"}>
-                        <div className={"article_author"}>
-                          <Avatar
-                            alt="Author_photo"
-                            src={
-                              article?.member_data?.mb_image
-                                ? `${serverApi}/${article?.member_data?.mb_image}`
-                                : "/auth/user_art.svg"
-                            }
-                            sx={{ width: "35px", height: "35px" }}
-                          />
-                          <span className={"author_username"}>
-                            {article?.member_data?.mb_nick}
-                          </span>
-                        </div>
-                        <span className={"article_title"}>
-                          {article?.art_subject}
-                        </span>
-                        <p className={"article_desc"}>
-                          {moment(article?.createdAt).format("YY-MM-DD hh:mm")}
-                        </p>
-                      </Box>
-                    </Box>
-                  </Stack>
-                );
-              })}
-            </Stack>
+  const { isMobile } = useDeviceDetect();
 
-            <Stack className={"article_container"}>
-              <Box className={"article_category"}>Crypto Security News</Box>
-
-              {trendBoArticles?.map((article: BoArticle) => {
-                const art_image_url = article?.art_image
-                  ? `${serverApi}/${article?.art_image}`
-                  : "/community/default_article.svg";
-                return (
-                  <Stack
-                    className={"article_box"}
-                    onClick={chosenArticleHandler}
-                    key={article._id}
-                  >
-                    <Box
-                      className={"article_img"}
-                      sx={{
-                        backgroundImage: `url(${art_image_url})`,
-                      }}
-                    ></Box>
-                    <Box className={"article_info"}>
-                      <Box className={"article_main_info"}>
-                        <div className={"article_author"}>
-                          <Avatar
-                            alt="Author_photo"
-                            src={
-                              article?.member_data?.mb_image
-                                ? `${serverApi}/${article?.member_data?.mb_image}`
-                                : "/auth/user_art.svg"
-                            }
-                            sx={{ width: "35px", height: "35px" }}
-                          />
-                          <span className={"author_username"}>
-                            {article?.member_data?.mb_nick}
+  if (isMobile()) {
+    return null
+  } else {
+    return (
+      <div className={"top_article_frame"}>
+        <Container
+          maxWidth="lg"
+          sx={{ mb: "100px" }}
+          style={{ position: "relative" }}
+        >
+          <Stack flexDirection={"column"} alignItems={"center"}>
+            <Box className={"category_title"}>Reading Hub</Box>
+            <Stack className={"article_main"} flexDirection={"row"}>
+              <Stack className={"article_container"}>
+                <Box className={"article_category"}>Trending News</Box>
+                {newsBoArticles?.map((article: BoArticle) => {
+                  const art_image_url = article?.art_image
+                    ? `${serverApi}/${article?.art_image}`
+                    : "/community/default_article.svg";
+                  return (
+                    <Stack
+                      className={"article_box"}
+                      onClick={chosenArticleHandler}
+                      key={article._id}
+                    >
+                      <Box
+                        className={"article_img"}
+                        sx={{
+                          backgroundImage: `url(${art_image_url})`,
+                        }}
+                      ></Box>
+                      <Box className={"article_info"}>
+                        <Box className={"article_main_info"}>
+                          <div className={"article_author"}>
+                            <Avatar
+                              alt="Author_photo"
+                              src={
+                                article?.member_data?.mb_image
+                                  ? `${serverApi}/${article?.member_data?.mb_image}`
+                                  : "/auth/user_art.svg"
+                              }
+                              sx={{ width: "35px", height: "35px" }}
+                            />
+                            <span className={"author_username"}>
+                              {article?.member_data?.mb_nick}
+                            </span>
+                          </div>
+                          <span className={"article_title"}>
+                            {article?.art_subject}
                           </span>
-                        </div>
-                        <span className={"article_title"}>
-                          {article?.art_subject}
-                        </span>
-                        <p className={"article_desc"}>   {moment(article?.createdAt).format("YY-MM-DD hh:mm")}</p>
+                          <p className={"article_desc"}>
+                            {moment(article?.createdAt).format("YY-MM-DD hh:mm")}
+                          </p>
+                        </Box>
                       </Box>
-                    </Box>
-                  </Stack>
-                );
-              })}
+                    </Stack>
+                  );
+                })}
+              </Stack>
+
+              <Stack className={"article_container"}>
+                <Box className={"article_category"}>Crypto Security News</Box>
+
+                {trendBoArticles?.map((article: BoArticle) => {
+                  const art_image_url = article?.art_image
+                    ? `${serverApi}/${article?.art_image}`
+                    : "/community/default_article.svg";
+                  return (
+                    <Stack
+                      className={"article_box"}
+                      onClick={chosenArticleHandler}
+                      key={article._id}
+                    >
+                      <Box
+                        className={"article_img"}
+                        sx={{
+                          backgroundImage: `url(${art_image_url})`,
+                        }}
+                      ></Box>
+                      <Box className={"article_info"}>
+                        <Box className={"article_main_info"}>
+                          <div className={"article_author"}>
+                            <Avatar
+                              alt="Author_photo"
+                              src={
+                                article?.member_data?.mb_image
+                                  ? `${serverApi}/${article?.member_data?.mb_image}`
+                                  : "/auth/user_art.svg"
+                              }
+                              sx={{ width: "35px", height: "35px" }}
+                            />
+                            <span className={"author_username"}>
+                              {article?.member_data?.mb_nick}
+                            </span>
+                          </div>
+                          <span className={"article_title"}>
+                            {article?.art_subject}
+                          </span>
+                          <p className={"article_desc"}>   {moment(article?.createdAt).format("YY-MM-DD hh:mm")}</p>
+                        </Box>
+                      </Box>
+                    </Stack>
+                  );
+                })}
+              </Stack>
             </Stack>
           </Stack>
-        </Stack>
-      </Container>
-    </div>
-  );
+        </Container>
+      </div>
+    );
+  }
 }
