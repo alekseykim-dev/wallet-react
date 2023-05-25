@@ -459,7 +459,7 @@
 
 
 
-@media (max-width: 480px) {
+@media (max-width: 390px) {
 
     .format.home_navbar {
             width: 100%;
@@ -528,11 +528,5 @@
                 align-items: flex-end;
                 text-align: center;
                 margin-left: 150px;
-    }
-}
-
-@media (max-width: 767px) {
-    .basket_frame {
-        width: 100%;
     }
 }
