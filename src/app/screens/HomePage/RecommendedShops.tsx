@@ -94,7 +94,7 @@ const { isMobile } = useDeviceDetect();
                 clickable: true,
               }}
               autoplay={{
-                delay: 3000,
+                delay: 2000,
                 disableOnInteraction: true, //slider stops when touch it
               }}
             >

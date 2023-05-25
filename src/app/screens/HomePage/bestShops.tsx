@@ -19,6 +19,8 @@ import MemberApiService from "../../apiServices/memberApiService";
 import { Definer } from "../../../lib/Definer";
 import { useHistory } from "react-router-dom";
 import { verifiedMemberData } from "../../apiServices/verify";
+import useDeviceDetect from "../../../lib/responsiveDetector";
+
 
 /** REDUX SELECTOR */
 const bestShopRetriever = createSelector(
@@ -82,7 +84,180 @@ export function BestShops() {
     }
   };
 
-  return (
+  const { isMobile } = useDeviceDetect();
+  const handleClickOpenAlert = () => {
+    history.push("/construction");
+  };
+
+  if (isMobile()) {
+    return (
+      <div className="best_shop_frame">
+        <Container>
+          <Stack flexDirection={"column"} alignItems={"center"}>
+            <Box className="category_title_shop">Customer Favorites</Box>
+            <Stack flexDirection={"column"} sx={{ mt: "10px" }}>
+              {bestShops.map((ele: Shop) => {
+                const image_path = `${serverApi}/${ele.mb_image}`;
+                return (
+                  <CssVarsProvider key={ele._id}>
+                    <Card
+                      className="customer_card1"
+                      onClick={() => chosenShopHandler(ele._id)}
+                      variant="outlined"
+                      sx={{ paddingBottom: "5px" }}
+                    >
+                      <CardOverflow>
+                        <AspectRatio ratio="1">
+                          <img src={image_path} alt="best" />
+                        </AspectRatio>
+                      </CardOverflow>
+                      <Typography
+                        level="h2"
+                        sx={{ fontSize: "15px", mt: 1, ml: 0.7 }}
+                        startDecorator={<BrandingWatermarkRoundedIcon />}
+                      >
+                        Brand: {ele.mb_nick}{" "}
+                      </Typography>
+                      <Typography
+                        level="body2"
+                        sx={{ fontSize: "15px", mt: 0.5, mb: 0.2, ml: 0.7 }}
+                      >
+                        <Link
+                          href="#"
+                          startDecorator={<ApartmentRoundedIcon />}
+                          textColor="neutral.700"
+                        >
+                          Manufactured in {ele.mb_address}
+                        </Link>
+                      </Typography>
+                      <Typography
+                        level="body2"
+                        sx={{ fontSize: "15px", mt: 0.1, ml: 0.7 }}
+                      >
+                        <Link
+                          href="#"
+                          startDecorator={<AttachEmailRoundedIcon />}
+                          textColor="neutral.700"
+                        >
+                          {" "}
+                          Email: {ele.mb_email}{" "}
+                        </Link>
+                      </Typography>
+
+                      <CardActions
+                        sx={{
+                          display: "flex",
+                          justifyContent: "space-evenly",
+                        }}
+                        onClick={(e) => e.stopPropagation()}
+                      >
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_views}
+                          </span>
+                          <Visibility
+                            sx={{ fontSize: "23px", marginLeft: "5px" }}
+                          />
+                        </Typography>
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_point}
+                          </span>
+                          <CurrencyRubleIcon
+                            sx={{ fontSize: "23px", marginLeft: "5px" }}
+                          />
+                        </Typography>
+                        <Typography
+                          level="body3"
+                          sx={{
+                            fontWeight: "md",
+                            color: "#5a5a72",
+                            alignItems: "center",
+                            display: "flex",
+                            justifyContent: "center",
+                            width: "30px",
+                            height: "auto",
+                          }}
+                        >
+                          <span
+                            ref={(element) => (refs.current[ele._id] = element)}
+                            style={{ fontSize: "15px" }}
+                          >
+                            {ele.mb_likes}
+                          </span>
+                          <Favorite
+                            onClick={(e) => {
+                              targetLikeBest(e, ele._id);
+                            }}
+                            style={{
+                              fontSize: "25px",
+                              fill:
+                                ele?.me_liked && ele?.me_liked[0]?.my_favorite
+                                  ? "red"
+                                  : "#5a5a72",
+                            }}
+                          />
+                        </Typography>
+                      </CardActions>
+                    </Card>
+                  </CssVarsProvider>
+                );
+              })}
+            </Stack>
+
+            <Stack
+              flexDirection={"row"}
+              justifyContent={"center"}
+              sx={{ width: "100%" }}
+            >
+              <Button
+                className="nav_button"
+                variant="outlined"
+                style={{
+                  color: isHovered1 ? "#ffffff" : "#000000",
+                  opacity: isHovered1 ? 0.7 : 1,
+                  backgroundColor: isHovered1 ? "#000000" : "transparent",
+                }}
+                onMouseEnter={handleMouseEnter1}
+                onMouseLeave={handleMouseLeave1}
+                onClick={goShopHandler}
+              >
+                See All Shops
+              </Button>
+            </Stack>
+          </Stack>
+        </Container>
+      </div>
+    );
+  } else{return (
     <div className="best_shop_frame">
       <Container>
         <Stack flexDirection={"column"} alignItems={"center"}>
@@ -249,4 +424,5 @@ export function BestShops() {
       </Container>
     </div>
   );
+  }
 }
