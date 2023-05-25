@@ -158,7 +158,7 @@ export function NavbarShop(props: any) {
                     style={{
                       color: isHovered1 ? "#282828" : "#f5f5f5",
                       opacity: isHovered1 ? 0.7 : 1,
-                      backgroundColor: isHovered1 ? "#f5f5f5" : "#282828",
+                      backgroundColor: isHovered1 ? "#f5f5f5" : "transparent",
                     }}
                     onMouseEnter={handleMouseEnter1}
                     onMouseLeave={handleMouseLeave1}
@@ -176,7 +176,7 @@ export function NavbarShop(props: any) {
                     style={{
                       color: isHovered2 ? "#282828" : "#f5f5f5",
                       opacity: isHovered2 ? 0.7 : 1,
-                      backgroundColor: isHovered2 ? "#f5f5f5" : "#282828",
+                      backgroundColor: isHovered2 ? "#f5f5f5" : "transparent",
                     }}
                     onMouseEnter={handleMouseEnter2}
                     onMouseLeave={handleMouseLeave2}
