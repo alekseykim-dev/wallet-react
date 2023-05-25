@@ -1001,19 +1001,19 @@
     }
 
     .homepage .swiper-wrapper {
-        width: 390px;
-        margin-left: 12px;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
+            width: 360px;
+                padding-left: 12px;
+                display: flex;
+                justify-content: flex-start;
+                flex-direction: row;
     }
 
     .homepage .swiper-wrapper2 {
-        width: 390px;
-        margin-left: 12px;
-        display: flex;
-        justify-content: flex-start;
-        flex-direction: row;
+        width: 378px;
+            margin-left: 12px;
+            display: flex;
+            justify-content: flex-start;
+            flex-direction: row;
     }
 
     .category_title_review {
@@ -1036,17 +1036,17 @@
     }
 
     .review_wrapper {
-        display: flex;
-        flex-direction: column;
-        width: 88%;
-        margin-top: 20px;
-        border-bottom: 0.5px solid gray;
-        background: #ffffffd0;
-        border-radius: 10px;
-        color: #000;
-        z-index: 1;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        cursor: pointer;
+            display: flex;
+                flex-direction: column;
+                width: 342px;
+                margin-top: 20px;
+                border-bottom: 0.5px solid gray;
+                background: #ffffffd0;
+                border-radius: 10px;
+                color: #000;
+                z-index: 1;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                cursor: pointer;
     }
 
     .homepage .category_title_shop {
@@ -1124,6 +1124,16 @@
             padding: 8px;
             text-align: left;
             border-bottom: 1px solid #ccc;
-            text-align: center;
+            text-align: left;
         }
+
+                .main_footer_container .contact_links {
+                    width: 180px;
+                    height: 19.14px;
+                    position: relative;
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: row;
+                    margin-top: 35px;
+                }
 }

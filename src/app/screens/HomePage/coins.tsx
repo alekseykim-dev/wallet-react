@@ -54,7 +54,7 @@ const Coins = () => {
                   <thead>
                     <tr>
                       <th>#</th>
-                      <th>Coin</th>
+                      <th style={{ textAlign: "center"}}>Coin</th>
                       <th className="coins-right">Price</th>
                       <th className="coins-right">24h Change</th>
                     </tr>
