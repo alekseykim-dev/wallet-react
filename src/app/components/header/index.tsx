@@ -151,7 +151,7 @@ export function NavbarHome(props: any) {
                 <img
                   style={{
                     width: "100px",
-                    height: "100px",
+                    height: "80px",
                     cursor: "pointer",
                     // borderRadius: "24px",
                   }}

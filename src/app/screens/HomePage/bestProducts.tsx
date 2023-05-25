@@ -57,10 +57,9 @@ export function BestProducts() {
           <Stack flexDirection={"column"} alignItems={"center"}>
             <Box className="category_title">
               Best Value
-              <img className="back4" src="/icons/bit_back3.svg" alt="" />
-              <img className="back5" src="/icons/bit_back3.svg" alt="" />
+             
             </Box>
-            <Stack sx={{ mt: "23px", zIndex: "1" }} flexDirection={"column"}>
+            <Stack  flexDirection={"column"}>
               {trendProducts.map((product: Product, index: number) => {
                 const image_path = `${serverApi}/${product.product_images[0]}`;
                 console.log("product", product);
