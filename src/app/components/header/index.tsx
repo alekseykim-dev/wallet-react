@@ -19,7 +19,7 @@ import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import Favorites from "./favorites";
 import { verifiedMemberData } from "../../apiServices/verify";
-import useDeviceDetect from "../../../lib/responsive/useDeviceDetect";
+import useDeviceDetect from "../../../lib/responsiveDetector";
 
 export function NavbarHome(props: any) {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -293,7 +293,6 @@ export function NavbarHome(props: any) {
           <Stack className="head_information" justifyContent={"row"}>
             <Stack justifyContent={"column"} style={{ marginTop: "200px" }}>
               <Box className="define_shop">
-                We provide easy solution for complex problems.
                 <div className="crossed_under">
                   <style>{styles} </style> <span ref={textRef}></span>
                 </div>

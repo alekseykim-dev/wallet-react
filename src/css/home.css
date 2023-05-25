@@ -958,3 +958,37 @@
     border-radius: 37px;
     margin: 20px 20px 0 20px;
 }
+
+
+@media (max-width: 480px) {
+    .homepage .ads_shop_frame {
+            width: 100%;
+            /* height: 810px; */
+            display: flex;
+            margin-top: 100px;
+            overflow: hidden;
+            box-shadow: 0px -22px 40px rgba(0, 0, 0, 0.25)
+                /* margin-top: 100px; */
+                /* background-color: #956dd3; */
+            ;
+        }
+                .homepage .category_title {
+                    font-size: 29px;
+                    font-family: 'Montserrat', sans-serif;
+                    font-style: normal;
+                    font-size: 20px;
+                    font-size: 20px;
+                    line-height: 37px;
+                    margin-bottom: 35px;
+                    margin-top: 30px;
+                    color: #222222;
+                }
+
+                                .homepage .swiper-wrapper {
+                                    width: 390px;
+                                    margin-left: 12px;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    flex-direction: row;
+                                }
+}

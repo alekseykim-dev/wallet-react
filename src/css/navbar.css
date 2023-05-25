@@ -495,6 +495,25 @@
     .home_navbar .hover-line {
         margin: 5px;
     }
+    .home_navbar .define_shop {
+            position: relative;
+                width: 550px;
+                height: auto;
+                margin-top: 200px;
+                font-family: "Poppins", sans-serif;
+                font-style: normal;
+                font-weight: 600;
+                font-size: 40px;
+                line-height: 55px;
+                color: #ffffff;
+    }
+    .crossed_under{
+            display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                text-align: center;
+                margin-left: 150px;
+    }
 }
 
 @media (max-width: 767px) {

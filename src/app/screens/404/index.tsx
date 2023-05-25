@@ -1,6 +1,6 @@
 import React from "react";
 import { Box, Button, Container, Stack } from "@mui/material";
-import useDeviceDetect from "../../../lib/responsive/useDeviceDetect";
+import useDeviceDetect from "../../../lib/responsiveDetector";
 import { NavLink } from "react-router-dom";
 
 export function Construction(props: any) {

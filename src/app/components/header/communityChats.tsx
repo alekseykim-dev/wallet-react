@@ -22,7 +22,7 @@ import {
   sweetFailureProvider,
 } from "../../../lib/sweetAlert";
 import { RippleBadge } from "../../MaterialTheme/styled";
-import useDeviceDetect from "../../../lib/responsive/useDeviceDetect";
+import useDeviceDetect from "../../../lib/responsiveDetector";
 
 const NewMessage = (data: any) => {
   if (data.new_message.mb_id == verifiedMemberData?._id) {
