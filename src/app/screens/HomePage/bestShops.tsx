@@ -248,7 +248,7 @@ export function BestShops() {
                 }}
                 onMouseEnter={handleMouseEnter1}
                 onMouseLeave={handleMouseLeave1}
-                onClick={goShopHandler}
+                onClick={handleClickOpenAlert}
               >
                 See All Shops
               </Button>
