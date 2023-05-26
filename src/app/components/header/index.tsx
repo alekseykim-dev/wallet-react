@@ -223,7 +223,7 @@ export function NavbarHome(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter2}
                     onMouseLeave={handleMouseLeave2}
-                    onClick={props.handleLoginOpen}
+                    onClick={handlePushConstruction}
                   >
                     Log in
                   </Button>
@@ -245,7 +245,7 @@ export function NavbarHome(props: any) {
                 anchorEl={props.anchorEl}
                 open={props.open}
                 onClose={props.handleCloseLogOut}
-                onClick={props.handleCloseLogOut}
+                onClick={handlePushConstruction}
                 PaperProps={{
                   elevation: 0,
                   sx: {
@@ -277,7 +277,8 @@ export function NavbarHome(props: any) {
                 <MenuItem
                   onClick={props.handleLogOutRequest}
                   style={{
-                    color: "#1f1f1f" }}
+                    color: "#1f1f1f",
+                  }}
                 >
                   <ListItemIcon>
                     <Logout fontSize="small" style={{ color: "#222222" }} />
@@ -342,11 +343,14 @@ export function NavbarHome(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to={"/orders"} activeClassName="underline">
+                    My Orders
+                  </NavLink>
+                </Box>
+              ) : null}
+
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/community" activeClassName="underline">
@@ -354,11 +358,13 @@ export function NavbarHome(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  Profile
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to="/member-page" activeClassName="underline">
+                    My Page
+                  </NavLink>
+                </Box>
+              ) : null}
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/help" activeClassName="underline">

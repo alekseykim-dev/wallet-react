@@ -31,7 +31,7 @@ import "../app/apiServices/verify";
 import { CartItem, FavItem } from "../types/others";
 import { Product } from "../types/product";
 import { CommunityChats } from "./components/header/communityChats";
-import { Responsive } from "./screens/404";
+import { Responsive } from "./screens/Responsive";
 import { useHistory } from "react-router-dom";
 
 function App() {

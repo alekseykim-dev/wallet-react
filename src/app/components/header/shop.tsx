@@ -8,13 +8,15 @@ import {
   MenuItem,
   Stack,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
 import Favorites from "./favorites";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import useDeviceDetect from "../../../lib/responsiveDetector";
+import { sweetFailureProvider } from "../../../lib/sweetAlert";
+
 
 export function NavbarShop(props: any) {
 
@@ -96,7 +98,12 @@ export function NavbarShop(props: any) {
         window.removeEventListener("scroll", handleScroll);
       };
     }, []);
-     const { isMobile } = useDeviceDetect();
+       const history = useHistory<History>();
+       const { isMobile } = useDeviceDetect();
+       const handlePushConstruction = () => {
+         history.push("/construction");
+         props.setPath();
+       };
   
   if (isMobile()) {
     return (
@@ -162,7 +169,7 @@ export function NavbarShop(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter1}
                     onMouseLeave={handleMouseLeave1}
-                    onClick={props.handleSignUpOpen}
+                    onClick={handlePushConstruction}
                   >
                     Sign up
                   </Button>
@@ -180,7 +187,7 @@ export function NavbarShop(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter2}
                     onMouseLeave={handleMouseLeave2}
-                    onClick={props.handleLoginOpen}
+                    onClick={handlePushConstruction}
                   >
                     Log in
                   </Button>
@@ -274,11 +281,13 @@ export function NavbarShop(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to={"/orders"} activeClassName="underline">
+                    My Orders
+                  </NavLink>
+                </Box>
+              ) : null}
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/community" activeClassName="underline">
@@ -286,11 +295,13 @@ export function NavbarShop(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  Profile
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to="/member-page" activeClassName="underline">
+                    My Page
+                  </NavLink>
+                </Box>
+              ) : null}
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/help" activeClassName="underline">

@@ -10,7 +10,7 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
-import { NavLink } from "react-router-dom";
+import { NavLink, useHistory } from "react-router-dom";
 import { Logout } from "@mui/icons-material";
 import Basket from "./basket";
 import { verifiedMemberData } from "../../apiServices/verify";
@@ -98,7 +98,12 @@ export function NavbarOthers(props: any) {
         window.removeEventListener("scroll", handleScroll);
       };
     }, []);
-     const { isMobile } = useDeviceDetect();
+   const history = useHistory<History>();
+   const { isMobile } = useDeviceDetect();
+   const handlePushConstruction = () => {
+     history.push("/construction");
+     props.setPath();
+   };
   
   if (isMobile()) {
     return (
@@ -290,11 +295,13 @@ export function NavbarOthers(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to={"/orders"} activeClassName="underline">
-                  Orders
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to={"/orders"} activeClassName="underline">
+                    My Orders
+                  </NavLink>
+                </Box>
+              ) : null}
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/community" activeClassName="underline">
@@ -302,11 +309,13 @@ export function NavbarOthers(props: any) {
                 </NavLink>
               </Box>
 
-              <Box className="hover-line" onClick={props.setPath}>
-                <NavLink to="/member-page" activeClassName="underline">
-                  Profile
-                </NavLink>
-              </Box>
+              {verifiedMemberData ? (
+                <Box className="hover-line" onClick={props.setPath}>
+                  <NavLink to="/member-page" activeClassName="underline">
+                    My Page
+                  </NavLink>
+                </Box>
+              ) : null}
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/help" activeClassName="underline">
@@ -356,7 +365,11 @@ export function NavbarOthers(props: any) {
                 </Box>
               ) : (
                 <img
-                  style={{ width: "48px", height: "48px", borderRadius: "24px" }}
+                  style={{
+                    width: "48px",
+                    height: "48px",
+                    borderRadius: "24px",
+                  }}
                   src={verifiedMemberData.mb_image}
                   alt=""
                   onClick={props.handleLogOutClick}
