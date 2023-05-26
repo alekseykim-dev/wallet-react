@@ -39,7 +39,7 @@ export default function AuthenticationModal(props: any) {
   /** INITIALIZATION */
 const classes = useStyles();
 const [mb_nick, set_mb_nick] = useState<string>("");
-const [mb_email, set_mb_email] = useState<number>(0);
+const [mb_email, set_mb_email] = useState<string>("");
 const [mb_password, set_mb_password] = useState<string>("");
 
 
@@ -57,8 +57,8 @@ const [mb_password, set_mb_password] = useState<string>("");
     const handleSignupRequest = async () => {
       try {
         const is_fulfilled =
-          mb_nick !== "" && mb_password !== "" && mb_email !== 0;
-        assert.ok(is_fulfilled, Definer.input_err1);
+          mb_nick !== "" && mb_password !== "" && mb_email.includes("@");
+        assert.ok(is_fulfilled, Definer.email_err);
 
         const signup_data = {
           mb_nick: mb_nick,
