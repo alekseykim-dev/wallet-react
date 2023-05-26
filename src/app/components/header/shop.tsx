@@ -214,8 +214,7 @@ export function NavbarShop(props: any) {
                   elevation: 0,
                   sx: {
                     overflow: "hidden",
-                    backdropFilter: "blur(10px)", // Apply blur effect to the background
-                    backgroundColor: "transparent", // Set the background color to transparent
+                    backgroundColor: "#fff",
                     mt: "15px",
                     "& .MuiAvatar-root": {
                       width: 32,
@@ -244,9 +243,9 @@ export function NavbarShop(props: any) {
                   style={{ color: "#1f1f1f" }}
                 >
                   <ListItemIcon>
-                    <Logout fontSize="small" style={{ color: "#f5f5f5" }} />
+                    <Logout fontSize="small" style={{ color: "#222222" }} />
                   </ListItemIcon>
-                  <span style={{ color: "#f5f5f5", fontWeight: "600" }}>
+                  <span style={{ color: "#222222", fontWeight: "600" }}>
                     {" "}
                     Log out
                   </span>
