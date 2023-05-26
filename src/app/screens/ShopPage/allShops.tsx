@@ -80,7 +80,7 @@ export function AllShops() {
   const chosenShopHandler = (id: string) => {
     history.push(`/shop/${id}`);
   };
-  const [activeLink, setActiveLink] = useState("");
+  const [activeLink, setActiveLink] = useState("mb_point");
 
   const searchHandler = (category: string) => {
 
@@ -155,18 +155,16 @@ export function AllShops() {
             </Box>
             <Box className="fill_box" style={{ cursor: "pointer" }}>
               <a
-                style={
-                  activeLink === "mb_point"
-                    ? {
-                        backgroundColor: "#606060d0",
-                        color: "white",
-                        borderRadius: "10px",
-                        transform: "scale(1.05)",
-                        transition:
-                          "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)",
-                      }
-                    : {}
-                }
+                style={{
+                  backgroundColor: activeLink === "mb_point" ? "#606060d0" : "",
+                  color: activeLink === "mb_point" ? "white" : "",
+                  borderRadius: activeLink === "mb_point" ? "10px" : "",
+                  transform: activeLink === "mb_point" ? "scale(1.05)" : "",
+                  transition:
+                    activeLink === "mb_point"
+                      ? "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)"
+                      : "",
+                }}
                 onClick={() => searchHandler("mb_point")}
               >
                 Top picks
