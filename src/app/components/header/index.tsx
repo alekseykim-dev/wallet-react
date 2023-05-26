@@ -251,7 +251,7 @@ export function NavbarHome(props: any) {
                   elevation: 0,
                   sx: {
                     overflow: "hidden",
-                    backgroundColor: "#fff", // Set the background color to transparent
+                    backgroundColor: "#fff", 
                     mt: "15px",
                     "& .MuiAvatar-root": {
                       width: 32,
@@ -430,6 +430,7 @@ export function NavbarHome(props: any) {
                     width: "48px",
                     height: "48px",
                     borderRadius: "24px",
+                    cursor: "pointer",
                   }}
                   src={verifiedMemberData.mb_image}
                   alt=""
