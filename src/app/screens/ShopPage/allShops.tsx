@@ -80,7 +80,11 @@ export function AllShops() {
   const chosenShopHandler = (id: string) => {
     history.push(`/shop/${id}`);
   };
+  const [activeLink, setActiveLink] = useState("");
+
   const searchHandler = (category: string) => {
+
+    setActiveLink(category);
     targetSearchObject.page = 1;
     targetSearchObject.order = category;
     setTargetSearchObject({ ...targetSearchObject }); // creates with new reference (spread operator) because useState is array // ref = accessing underlying component in DOM. // address in memory
@@ -150,10 +154,74 @@ export function AllShops() {
               </form>
             </Box>
             <Box className="fill_box" style={{ cursor: "pointer" }}>
-              <a onClick={() => searchHandler("mb_point")}>Top picks</a>
-              <a onClick={() => searchHandler("mb_views")}>Bestsellers</a>
-              <a onClick={() => searchHandler("mb_likes")}>Trending</a>
-              <a onClick={() => searchHandler("createdAt")}>Newly added</a>
+              <a
+                style={
+                  activeLink === "mb_point"
+                    ? {
+                        backgroundColor: "#606060d0",
+                        color: "white",
+                        borderRadius: "10px",
+                        transform: "scale(1.05)",
+                        transition:
+                          "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+                      }
+                    : {}
+                }
+                onClick={() => searchHandler("mb_point")}
+              >
+                Top picks
+              </a>
+              <a
+                style={
+                  activeLink === "mb_views"
+                    ? {
+                        backgroundColor: "#606060d0",
+                        color: "white",
+                        borderRadius: "10px",
+                        transform: "scale(1.05)",
+                        transition:
+                          "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+                      }
+                    : {}
+                }
+                onClick={() => searchHandler("mb_views")}
+              >
+                Bestsellers
+              </a>
+              <a
+                style={
+                  activeLink === "mb_likes"
+                    ? {
+                        backgroundColor: "#606060d0",
+                        color: "white",
+                        borderRadius: "10px",
+                        transform: "scale(1.05)",
+                        transition:
+                          "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+                      }
+                    : {}
+                }
+                onClick={() => searchHandler("mb_likes")}
+              >
+                Trending
+              </a>
+              <a
+                style={
+                  activeLink === "createdAt"
+                    ? {
+                        backgroundColor: "#606060d0",
+                        color: "white",
+                        borderRadius: "10px",
+                        transform: "scale(1.05)",
+                        transition:
+                          "all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95)",
+                      }
+                    : {}
+                }
+                onClick={() => searchHandler("createdAt")}
+              >
+                Newly added
+              </a>
             </Box>
           </Box>
 
@@ -299,9 +367,7 @@ export function AllShops() {
           </Stack>
           <Stack className="bottom_box">
             <Pagination
-              count={
-                3
-              } // can do it manually through backend
+              count={3} // can do it manually through backend
               page={targetSearchObject.page}
               renderItem={(item) => (
                 <PaginationItem

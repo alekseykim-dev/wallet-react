@@ -90,7 +90,11 @@ export default function Favorites(props: any) {
       >
         <Stack className={"basket_frame"}>
           <Box className={"all_check_box"}>
-            {false ? <div>No favorites</div> : <div>My Favorites:</div>}
+            {favItems.length === 0 ? (
+              <div>No favorites</div>
+            ) : (
+              <div>My Favorites:</div>
+            )}
           </Box>
 
           <Box className={"orders_main_wrapper"}>

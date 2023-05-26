@@ -99,6 +99,7 @@
     transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
+
 .home_navbar .hover-line a:hover::after {
     height: calc(100% + 8px)
 }
@@ -131,6 +132,44 @@
 .home_navbar .hover-line:hover:after {
     transform: scaleX(1);
 }
+
+/*start*/
+
+.home_navbar .hover-line1 {
+    color: #FFFFFF;
+
+}
+
+.home_navbar .hover-line1::after {
+    content: "";
+    background: #606060d0;
+    border-radius: 10px;
+    mix-blend-mode: color;
+    width: calc(100% + 20px);
+    height: 0;
+    position: absolute;
+    bottom: -4px;
+    left: -10px;
+    transition: all .3s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+
+
+.home_navbar .hover-line1:hover::after {
+    height: calc(100% + 8px)
+}
+
+.home_navbar .hover-line1::after:hover::after {
+    right: 0;
+    left: 0;
+    height: 100%;
+}
+
+
+.home_navbar .hover-line1:hover:after {
+    transform: scaleX(1);
+}
+
+/*end*/
 
 .home_navbar .head_information {
     display: flex;

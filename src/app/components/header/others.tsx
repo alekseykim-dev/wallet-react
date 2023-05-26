@@ -17,6 +17,7 @@ import { verifiedMemberData } from "../../apiServices/verify";
 import Favorites from "./favorites";
 import ArrowUpwardIcon from "@mui/icons-material/ArrowUpward";
 import useDeviceDetect from "../../../lib/responsiveDetector";
+import { sweetFailureProvider } from "../../../lib/sweetAlert";
 
 export function NavbarOthers(props: any) {
   const [isHovered1, setIsHovered1] = useState(false);
@@ -295,13 +296,29 @@ export function NavbarOthers(props: any) {
                 </NavLink>
               </Box>
 
-              {verifiedMemberData ? (
-                <Box className="hover-line" onClick={props.setPath}>
+              <Box className="hover-line">
+                {verifiedMemberData ? (
                   <NavLink to={"/orders"} activeClassName="underline">
                     My Orders
                   </NavLink>
-                </Box>
-              ) : null}
+                ) : (
+                  <span
+                    className="hover-line1"
+                    style={{
+                      display: "block",
+                      color: "white",
+                      textDecoration: "none",
+                      position: "relative",
+                      cursor: "pointer",
+                    }}
+                    onClick={() =>
+                      sweetFailureProvider("Please login first!", true, false)
+                    }
+                  >
+                    My Orders
+                  </span>
+                )}
+              </Box>
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/community" activeClassName="underline">
@@ -309,13 +326,29 @@ export function NavbarOthers(props: any) {
                 </NavLink>
               </Box>
 
-              {verifiedMemberData ? (
-                <Box className="hover-line" onClick={props.setPath}>
+              <Box className="hover-line">
+                {verifiedMemberData ? (
                   <NavLink to="/member-page" activeClassName="underline">
                     My Page
                   </NavLink>
-                </Box>
-              ) : null}
+                ) : (
+                  <span
+                    className="hover-line1"
+                    style={{
+                      display: "block",
+                      color: "white",
+                      textDecoration: "none",
+                      position: "relative",
+                      cursor: "pointer",
+                    }}
+                    onClick={() =>
+                      sweetFailureProvider("Please login first!", true, false)
+                    }
+                  >
+                    My Page
+                  </span>
+                )}
+              </Box>
 
               <Box className="hover-line" onClick={props.setPath}>
                 <NavLink to="/help" activeClassName="underline">

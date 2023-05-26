@@ -40,9 +40,7 @@ export function OrdersPage(props: any) {
 
 
   useEffect(() => {
-    if (!verifiedMemberData) {
-      sweetFailureProvider("Please login first!", true, true);
-    }
+    
     const orderService = new OrderApiService();
     orderService
       .getMyOrders("paused")

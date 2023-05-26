@@ -167,7 +167,7 @@ export function CommunityChats(props: any) {
     }
   };
 
-  if (!isMobile()) {
+  if (isMobile()) {
     return (
       <Stack className="chatting">
         {openButton ? (
@@ -230,6 +230,66 @@ export function CommunityChats(props: any) {
       </Stack>
     );
   } else {
-    return null;
+    return (
+      <Stack className="chatting">
+        {openButton ? (
+          <Button className={"chat_button"} onClick={handleOpenChat}>
+            {open ? (
+              <CloseIcon />
+            ) : (
+              <MarkUnreadChatAltIcon style={{ transform: "scaleX(-1)" }} />
+            )}
+          </Button>
+        ) : null}
+
+        <Stack className={"chat_frame3"}>
+          <Stack className={`chat_frame ${open ? "open" : ""}`}>
+            <Stack>
+              <Box className={"chat_top"}>
+                <div>Live Chat</div>
+                <RippleBadge
+                  style={{ margin: "-30px 0 0 20px", color: "white" }}
+                  badgeContent={onlineUsers}
+                />
+              </Box>
+              <Box
+                className={"chat_content"}
+                id="chat_content"
+                ref={chatContentRef}
+              >
+                <ScrollableFeed>
+                  <Stack className={"chat_main"}>
+                    <Box
+                      flexDirection={"row"}
+                      style={{ display: "flex" }}
+                      sx={{ m: "10px 0px" }}
+                    >
+                      <div className={"msg_left"}>Welcome to Live chat!🥳</div>
+                    </Box>
+                    {messagesList}
+                  </Stack>
+                </ScrollableFeed>
+              </Box>
+              <Box className={"chat_bott"}>
+                <input
+                  ref={textInput}
+                  type={"text"}
+                  name={"message"}
+                  className={"msg_input"}
+                  placeholder={"Type message"}
+                  onKeyDown={getKeyHandler}
+                  onChange={(e) => {
+                    getInputMessageHandler(e);
+                  }}
+                />
+                <button className={"send_msg_btn"} onClick={onClickHandler}>
+                  <SendIcon style={{ color: "#fff" }} />
+                </button>
+              </Box>
+            </Stack>
+          </Stack>
+        </Stack>
+      </Stack>
+    );
   }
 }
