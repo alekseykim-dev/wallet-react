@@ -60,7 +60,7 @@ export default function FinishedOrders(props: any) {
 
               <Box className={"total_price_box red_solid"}>
                 <Box className={"boxTotal2"}>
-                  <p>Payment completed!🥳 </p>
+                  <p>Payment completed! </p>
                   <p>Price:</p>
                   <p style={{ fontWeight: "400" }}>
                     ${order.order_total_amount - order.order_delivery_cost}
@@ -74,7 +74,7 @@ export default function FinishedOrders(props: any) {
                     ${order.order_delivery_cost}
                   </p>
                   <img
-                    src={"/icons/pause.svg"}
+                    src={"/icons/Pause.svg"}
                     alt="multiply"
                   />
                   <p>Total price:</p>
