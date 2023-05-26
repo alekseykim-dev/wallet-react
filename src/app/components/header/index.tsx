@@ -205,7 +205,7 @@ export function NavbarHome(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter1}
                     onMouseLeave={handleMouseLeave1}
-                    onClick={props.handleSignUpOpen}
+                    onClick={handlePushConstruction}
                   >
                     Sign up
                   </Button>
@@ -302,28 +302,13 @@ export function NavbarHome(props: any) {
             </Stack>
           </Stack>
         </div>
-        {/* <div className="framer-motion-wrapper">
-          <div onClick={handleClick} className="framer-motion-container">
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className="framer-motion-element"
-            />
-          </div>
-        </div>
         <style>{styles}</style>
 
         <div className="scroll-button">
-          <Button style={{ color: "black" }} onClick={handleClickHome}>
+         <Button style={{ color: "black" }} onClick={handleClickHome}>
             <ArrowUpwardIcon />
           </Button>
-        </div> */}
+       </div>
       </div>
     );
   } else {

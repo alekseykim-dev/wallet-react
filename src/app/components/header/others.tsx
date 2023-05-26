@@ -178,7 +178,7 @@ export function NavbarOthers(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter1}
                     onMouseLeave={handleMouseLeave1}
-                    onClick={props.handleSignUpOpen}
+                    onClick={handlePushConstruction}
                   >
                     Sign up
                   </Button>
@@ -196,7 +196,7 @@ export function NavbarOthers(props: any) {
                     }}
                     onMouseEnter={handleMouseEnter2}
                     onMouseLeave={handleMouseLeave2}
-                    onClick={props.handleLoginOpen}
+                    onClick={handlePushConstruction}
                   >
                     Log in
                   </Button>
