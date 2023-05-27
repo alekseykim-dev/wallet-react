@@ -57,7 +57,43 @@ const [mb_password, set_mb_password] = useState<string>("");
     const handleSignupRequest = async () => {
       try {
         const is_fulfilled =
-          mb_nick !== "" && mb_password !== "" && mb_email.includes("@");
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@gmail.com")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@mail")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@yandex")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@naver")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@hotmail")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@bk")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@yahoo")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@outlook")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@icloud")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@pm")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@gmx")) ||
+          (mb_nick !== "" &&
+            mb_password !== "" &&
+            mb_email.includes("@hubspot"));
+        
         assert.ok(is_fulfilled, Definer.email_err);
 
         const signup_data = {
