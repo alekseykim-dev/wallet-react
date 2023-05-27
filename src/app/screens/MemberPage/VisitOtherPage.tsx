@@ -19,6 +19,8 @@ import { MemberFollowing } from "./memberFollowing";
 import { MySettings } from "./mySettings";
 import TViewer from "../../components/tuiEditor/TViewer";
 import { TuiEditor } from "../../components/tuiEditor/TuiEditor";
+import LinkedInIcon from "@mui/icons-material/LinkedIn";
+import GitHubIcon from "@mui/icons-material/GitHub";
 
 import { Member } from "../../../types/user";
 import { BoArticle, SearchMemberArticlesObj } from "../../../types/boArticle";
@@ -304,10 +306,18 @@ export function VisitOtherPage(props: any) {
                 </Box>
 
                 <Box className="user_media_box">
-                  <FacebookIcon />
-                  <InstagramIcon />
-                  <TelegramIcon />
-                  <YouTubeIcon />
+                  <a href="https://github.com/alekseykim-dev">
+                    <GitHubIcon />
+                  </a>
+                  <a href="https://www.linkedin.com/in/aleksey-kim-61a916195/">
+                    <LinkedInIcon />
+                  </a>
+                  <a href="https://instagram.com">
+                    <InstagramIcon />
+                  </a>
+                  <a href="https://www.facebook.com">
+                    <FacebookIcon />
+                  </a>
                 </Box>
                 <Box className="user_media_box">
                   <p className="follows">

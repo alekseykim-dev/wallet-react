@@ -83,13 +83,13 @@ export function TargetArticles(props: any) {
                     className={"article_share_main"}
                     style={{
                       color: "#1f1f1f",
-                      marginLeft: "540px",
+                      marginLeft: "65%",
                       display: "flex",
                       alignItems: "center",
                     }}
                   >
                     <span>
-                      {moment(article?.createdAt).format("YY-MM-DD hh:mm")}
+                      {moment(article?.createdAt).format("YYYY.MM.DD")}
                     </span>
                     <Checkbox
                       sx={{ ml: "40px", padding: "0px" }}
