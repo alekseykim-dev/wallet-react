@@ -17,7 +17,7 @@ User Authentication: Secure login and registration system.
 
 ## Screenshots:
 1. Homepage
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home.png" width="500"  title="Homepage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home.png" width="auto"  title="Homepage">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 2. Home Login
 <img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_login.png" width="auto"  title="Home Login">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 3. Home Signup
@@ -25,15 +25,15 @@ User Authentication: Secure login and registration system.
 4. Home Store
 <img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_store.png" width="auto"  title="Home Store">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 5. Homepage products
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_Products.png" width="500"  title="Homepage products">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_Products.png" width="auto"  title="Homepage products">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
 6. Homepage crypto CoinGecko API 
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_crypto.png" width="500"  title=" Homepage crypto CoinGecko API">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/home_crypto.png" width="auto"  title=" Homepage crypto CoinGecko API">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 7. Orders Page
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/orders.png" width="500"  title="Orders Page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/orders.png" width="auto"  title="Orders Page">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 8. Reading Hub
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/reading_hub.png" width="500"  title="Reading Hub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/reading_hub.png" width="auto"  title="Reading Hub">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 9. Store Products
-<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/store_products.png" width="500"  title="Store Products">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/alekseykim-dev/wallet-react/blob/main/screenshots/store_products.png" width="auto"  title="Store Products">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
 
 
